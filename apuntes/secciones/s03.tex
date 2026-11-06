@@ -1,0 +1,13 @@
+\section{Código del método}
+\begin{enumerate}
+    \item Primero se realiza la configuración y se establece el estilo de las gráficas.
+    \item Carga de los datos, se descargan también 10 datasets de OpenML. Nos quedamos solo con atributos numéricos y si un dataset tiene más de 10.000 filas, usamos submuestra fija de 10.000 para que el coste sea comparable.
+    \item \texttt{ajustar(xt, theta) }recibe el entrenamiento y un vector $\theta=(\lambda, w)$ y devuelve una función `v` que transforma cualquier conjunto de datos. Lo importante es que la media y la desviación se calculan solo con el entrenamiento y se reutilizan para la validación.
+    \item Para las reglas de predicción tenemos KNN y regresión lineal local. Las dos funciones están escritas con NumPy por bloques para que sean rápidas, ya que el fitness las llama miles de veces. \texttt{knn\_rapido} da el mismo resultado que el \texttt{KNeighborsRegressor} (salvo en empates entre distancias iguales) y el \texttt{llr} es la regresión lineal local de la que se ha hablado en la teoría.
+
+    \item El fitness: cada función \texttt{hacer\_fitness\_*} devuelve una función \texttt{f(theta)} que se puede pasar a cualquier optimizador. Los pliegues de validación cruzada se fijan una vez (con la semilla), de modo que todos los candidatos se evalúan sobre los mismos pliegues y la comparación entre ellos es justa.
+
+    \item La búsqueda con CMA-ES se realiza con la función \texttt{buscar\_cma} que envuelve la librería de \texttt{cma}. Trabajamos como hemos dicho antes en el cubo $[0,1]^D$y reescalamos a los límites reales de cada parámetro, guardando el mejor fitness hallado tras cada evaluación para poder dibujar la curva de convergencia. La búsqueda arranca en $\theta_0$ (la estandarización), con un peso inicial de $\sigma_0=0.2$ (un 20\% del rango). 
+
+    \item Elegimos la k y la regularización sin usar la validación. En las configuraciones que no aprenden esos parámetros con CMA-ES (las líneas base), los elegimos por la validación cruzada dentro del entrenamiento, de modo que la comparación sea justa.
+\end{enumerate}

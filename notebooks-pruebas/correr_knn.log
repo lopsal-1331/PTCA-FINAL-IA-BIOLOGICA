@@ -1,0 +1,29 @@
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.prefix, expected /home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/notebooks-pruebas/../.venv
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/notebooks-pruebas/../.venv
+1 / 120
+2 / 120
+3 / 120
+4 / 120
+5 / 120
+6 / 120
+7 / 120
+8 / 120
+9 / 120
+10 / 120
+11 / 120
+12 / 120
+13 / 120
+14 / 120
+15 / 120
+16 / 120
+17 / 120
+18 / 120
+19 / 120
+20 / 120
+21 / 120
+22 / 120
+23 / 120
+/home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/.venv/lib/python3.14/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 26 leaked semlock objects to clean up at shutdown: {'/loky-1327441-s9g5cec1': 1, '/loky-1327441-v659pmei': 1, '/loky-1327441-zr03pr9p': 1, '/loky-1327441-i9fj_shq': 1, '/loky-1327441-nktn5spa': 1, '/loky-1327441-jjq1dhhd': 1, '/loky-1327441-lkig16sx': 1, '/loky-1327441-w1b789bq': 1, '/loky-1327441-hcpm1ryn': 1, '/loky-1327441-qt8xwh43': 1, '/loky-1327441-_dpryes5': 1, '/loky-1327441-rsa7yao9': 1, '/loky-1327441-8yvkkbyk': 1, '/loky-1327441-f8nu8nma': 1, '/loky-1327441-xf2i_luz': 1, '/loky-1327441-qz1g0eht': 1, '/loky-1327441-i4ixxqxc': 1, '/loky-1327441-_q67q47b': 1, '/loky-1327441-dtmfujs_': 1, '/loky-1327441-vwv0z9e8': 1, '/loky-1327441-asxy2v3q': 1, '/loky-1327441-yljka768': 1, '/loky-1327441-4ch5if7h': 1, '/loky-1327441-nn9kt49e': 1, '/loky-1327441-ph5r9nur': 1, '/loky-1327441-bvmu885t': 1}
+  warnings.warn(
+/home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/.venv/lib/python3.14/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 2 leaked folder objects to clean up at shutdown: {'/dev/shm/joblib_memmapping_folder_1327441_8f17a8d0087a497c8cc129057775711a_ae4ca3d4bdcb47c88675ce3f643d87ff': 1, '/dev/shm/joblib_memmapping_folder_1327441_8f17a8d0087a497c8cc129057775711a_645774a15001447399263a15087e8c5a': 1}
+  warnings.warn(

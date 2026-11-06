@@ -1,0 +1,18 @@
+dataset,semilla,metodo,mae,k_aprendido
+diabetes,13,estándar + k por CV,41.987218045112776,10
+diabetes,14,estándar + k por CV,48.21052631578947,11
+stock,13,estándar + k por CV,0.5631578947368421,2
+concrete_compressive_strength,13,estándar + k por CV,7.360987942660013,2
+stock,14,estándar + k por CV,0.5652046783625729,3
+concrete_compressive_strength,14,estándar + k por CV,6.848758435419228,2
+diabetes,15,estándar + k por CV,42.67368421052632,10
+concrete_compressive_strength,15,estándar + k por CV,6.142037725787052,2
+stock,15,estándar + k por CV,0.5059210526315789,2
+sulfur,13,estándar + k por CV,0.008844566,2
+space_ga,13,estándar + k por CV,0.08815940034865365,11
+bank8FM,14,estándar + k por CV,0.0371859692161649,6
+sulfur,14,estándar + k por CV,0.00886150675,4
+california,14,estándar + k por CV,0.4142923724160207,5
+space_ga,14,estándar + k por CV,0.08925059860454918,8
+bank8FM,13,estándar + k por CV,0.03833459187686466,6
+kin8nm,13,estándar + k por CV,0.09557010804182262,5

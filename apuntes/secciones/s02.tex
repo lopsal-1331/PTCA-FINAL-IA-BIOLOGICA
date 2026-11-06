@@ -1,0 +1,140 @@
+\section{Teoría}
+\subsection{Modelos basados en distancias: dependencia de la representación}
+El KNN predice el valor de un punto nuevo promediando el valor de sus \textit{k} vecinos más cercanos. La cercanía la defina la distancia, usualmente la euclídea: 
+
+\begin{equation}
+   d(x,x')^2 = \sum^n_{j=1}(x_j - x_j')^2 
+\end{equation}
+
+Esta fórmula trata a todos los atributos por igual, lo que supone un problema porque: 
+\begin{itemize}
+    \item Si un atributo se mide en miles, y otro en unidades, el primero dominará la distancia, incluso cuando no tiene por qué ser el más informativo. 
+
+    \item Los atributos de menor importancia añaden ruido a la distancia, por lo que muchos vecinos dejan de ser vecinos verdaderos: maldición de la dimensionalidad. 
+
+    \item Con atributos muy sesgados o con valores extremos, unos pocos puntos acaparan prácticamente todo el rango y el resto queda comprimido.
+\end{itemize}
+
+Un árbol de decisión no sufre nada de esto, porque solo compara los atributos con umbrales. Cualquier transformación monótona no cambiará el orden de los datos, y por ende, tampoco el árbol. LO usamos como control: si la transformación aprendida no cambia el error del árbol, es lo que esperamos, y por ende, confirma que la mejora en KNN viene de la geometría y no de otra cosa.
+
+\subsection{Transformación aprendida}
+Para cada atributo \textit{j} aprendemos dos números, un exponente $\lambda_j$ y un peso $w_j$.
+
+\subsubsection{Yeo-Johnson}
+Aquí tenemos en cuenta los exponentes Yeo-Johnson. Es una familia de transformaciones de potencia, que a diferencia de otras como Box-Cox, admite valores negativos y cero. 
+
+\begin{equation}
+\psi(x;\lambda) =
+\begin{cases}
+\dfrac{(x+1)^{\lambda}-1}{\lambda} & x \ge 0,\ \lambda \ne 0 \\[4pt]
+\log(x+1) & x \ge 0,\ \lambda = 0 \\[4pt]
+-\dfrac{(-x+1)^{2-\lambda}-1}{2-\lambda} & x < 0,\ \lambda \ne 2 \\[4pt]
+-\log(-x+1) & x < 0,\ \lambda = 2
+\end{cases}
+\end{equation}
+
+Con $\lambda = 1$ la transformación es la identidad; con valores menores a 1, comprime los valores grandes --- útil en presencia de colas largas a la derecha --- y con valores mayores a 1 los expande.
+
+\subsubsection{Estandarización y peso}
+Después de transformar, centramos y escalamos con la media $\mu_j$ y la desviación $\sigma_j$ del entrenamiento y multiplicamos por el peso. 
+
+\begin{equation}
+    z_j = w_j \cdot \frac{\psi (x_j;\lambda_j)-\mu_j}{\sigma_j}
+\end{equation}
+
+
+Con esto, la distancia euclídea en el espacio transformado es una distancia ponderada en el espacio original: 
+\begin{equation}
+    d_\theta (x, x')^2 = \sum_j w_j² (\tilde{x_j}-\tilde{x_j ')²}
+\end{equation}
+
+Donde $\tilde{x}_j$ es el atributo transformado y estandarizado. El peso $w_j ^2$ es la importancia del atributo \textit{j} en la distancia. Si $w_j=0$, el atributo desaparece, y si $w_j$ es grande domina. En términos de aprendizaje de métricas, es una \textbf{métrica diagonal}: matriz de Mahalanobis diagonal, con un paso previo de transformación no lineal por atributo. 
+
+\subsubsection{Parámetros}
+El vector que buscamos es $\theta=(\lambda_1, ..., \lambda_n, w_1,..., w_n)$ con dimensión $2n$ (16 en California y 20 en Diabetes). Lo limitamos a $\lambda_j \in [-2,2]$ y $w_j \in [0,3]$.
+
+\subsubsection{Punto de partida}
+Con $\theta_0=(1,...,1)$, la transformación es exactamente la estandarización. Por eso la búsqueda arranca de la línea base ''estándar'' y cualquier mejora que encuentre es mejora real sobre ella. Esta propiedad la usamos siempre al diseñar los experimentos. 
+
+\subsubsection{Limitación de $\lambda$}
+Sin límites, el estimador de máxima verosimilitud de Yeo-Johnson dio $\lambda\approx13,6$ para la  longitud de California. Con ese valor la columna se colapsaba prácticamente en un solo valor. Con el rango que se ha definido, eso no ocurre. 
+
+\subsection{CMA-ES}
+CMA-ES (Covariance Matrix Adaptation Evolution Strategy) es una estrategia evolutiva para optimización continua sin gradiente. Es la técnica evolutiva que usaremos para buscar $\theta$.
+
+Mantiene una distribución normal multivariante sobre el espacio de búsqueda con media \textit{m}, tamaño de paso $\sigma$ y matriz de covarianza $C$. En cada generación: 
+\begin{enumerate}
+    \item Muestrea $\lambda_{pop}$ candidatos: $x_k \sim m+\sigma \mathcal{N}(0,C) $. 
+
+    \item Evalúa el fitness de cada uno y los ordena. 
+
+    \item Selecciona los $\mu$ mejores y recalcula la media como una media ponderada entre ellos. 
+
+    \item Adapta el valor de $\sigma$ - con un camino de evolución que mide si los pasos van todos en la misma dirección o se cancelan - y C - con una actualización de rango uno y otra de rango $\mu$ - para que la distribución se alargue en las direcciones que funciona.
+\end{enumerate}
+
+Esto nos conviene porque: 
+\begin{enumerate}
+    \item No necesita gradiente. Nuestro fitness incluye vecinos más cercanos y ajustes locales, que no son derivables.
+
+    \item Solo usa el orden de los candidatos, no su valor. Es invariante a transformaciones monótonas del fitness y bastante robusto al ruido.
+
+    \item Aprende la forma del problema - qué parámetros están correlacionados o necesitan pasos distintos - con pocos parámetros propios. El tamaño de la población por defecto es: $\lambda_{pop}=4+\lfloor3\ln D\rfloor$
+\end{enumerate}
+
+\subsubsection{Implementación}
+Usamos una implementación propia en la práctica, pero en los experimentos de esta extensión usamos la librería de referencia `cma` (Hansen), con la que obtenemos resultados equivalentes. Trabajamos en el cubo normalizado $[0,1]^D$ y reescalamos a los límites de cada parámetro. 
+
+\subsubsection{Presupuesto}
+Cada evaluación del fitness es lo más caro --- validación cruzada con KNN o con el ajuste local. Usamos 1000 evaluaciones en los experimentos de la extensión y 2020 en el notebook principal. En todas las comparacioens, todos los métodos tienen el mismo presupuesto. 
+
+\subsection{El fitness. Cómo sabe la búsqueda que un $\theta$ es bueno}
+Para cada candidato $\theta$ medimos el error de un modelo sobre el entrenamiento usando validación cruzada de 5 pliegues. Pasos: 
+\begin{enumerate}
+    \item Subsample de hasta 2000 filas del entrenamiento - para que cada evaluación sea rápida. 
+    \item Transformamos con $\theta$, con la media y la desviación calculadas sobre esas filas.
+
+    \item Para cada pliegue ajustamos el modelo y medimos el MAE en el pliegue de prueba.
+
+    \item Dividimos entre $s = \overline{|y - \text{mediana}(y)|}$, el error de un predictor trivial que siempre dice la mediana: 
+
+    \begin{equation}
+        f(\theta)=\frac{1}{5}\sum_{\text{pliegues}}\frac{MAE_{\text{pliegue}}(\theta)}{s}
+    \end{equation}
+\end{enumerate}
+
+El fitness es una fracción del error trivial: 0.5 significa que el modelo comeye la mitad de error que un predictor sin información. Esa normalización permite comparar datasets con escalas diferentes. En el notebook principal el fitness promedia regresión lineal y KNN. En la extensión usa el modelo para el que optimizamos: KNN o la regla local lineal. 
+
+\subsubsection{Riesgo de sobreajuste al fitness}
+La búsqueda optimiza uan estimación del error, no el error real. Con pocos datos (Diabetes tiene 309 muestras de entrenamiento) la búsqueda aprende el ruido de esos pliegues. Veremos que el fitness mejora y la validación no. Es el problema central que tenemos con el dataset de Diabetes.
+
+\subsection{La regla de predicción. De KNN a regresión lineal local.}
+KNN es una regresión local constante. La predicción es la media de los \textit{k} vecinos. Funciona bien si la función es plana en el entorno, pero cuando hay pendiente comete un sesgo, sobre todo en los bordes de los datos.
+
+La regresión lineal local ponderada ajusta, para cada punto de consulta $q$, un hiperplano a sus vecinos, y evalúa en q. Para los k vecinos $z_j$ con valores $y_i$: 
+
+\begin{equation}
+    min_{\beta_0, \beta}\sum^{k}_{i=1} w_i(y_i - \beta_0 - \beta ^T (z_i -q))² + r \overline{w}||\beta||² 
+\end{equation}
+
+Y la predicción es $\hat{y}(q)=\beta_0$. Como centramos en q, el término independiente es directamente la predicción. 
+
+\begin{enumerate}
+    \item Pesos de vecindad tricúbicos: $w_i= (1-u_i ³)³$ con $u_i=\frac{d_i}{d_{max}}$ de modo que lso vecinos lejanos pesan menos y el último pesa casi cero. 
+    \item Ridge r: estabiliza el ajuste cuando hay pocos vecinos o atributos muy correlacionados. No penalizamos el término independiente. 
+    \item Parámetros de la regla: k y r. En el método final, los aprende CMA-ES junto a $\theta$.
+\end{enumerate}
+
+Es la idea clásica de la \textit{locally weighted regression} Atkenson, Moore y Schaal, 1997; y de la regresión polinómica local de la estadística no paramétrica. Lo que añadimos es optimizar la métrica de la distancia directamente para esta regla, en lugar de reutilizar la que era buena para KNN.
+
+\subsection{Qué hay en la literatura y dónde nos situamos}
+Aprender métricas para el KNN ya es un campo establecido. LMNN y NCA se plantean para la clarificación. Para la regresión, Weinberger y Tesauro aprenden la métrica minimizando el error de regresión por kernel con gradiente, y existe una adaptación de LMNN a regresión con algoritmo evolutivo. También se han publicado artículos donde se ponderan atributos con CMA-ES. Un ancho de banda por variable elegido por validación cruzada es, en la práctica, una métrica diagonal optimizada para el estimador de regresión no paramétrica y elimina de forma automática las variables irrelevantes. Cambiar la regla de predicción manteniendo una métrica fija lo hace DNNR, que usa información diferencial entre los vecinos.
+
+Lo que no encontramos publicado es una combinación concreta de:
+\begin{itemize}
+    \item Exponente de Yeo-Johnson y peso por atributo
+    \item Optimización con CMA-ES
+    \item Directamente contra la regla local lineal
+    \item Evaluación de forma sistemática frente a controles y modelos de referencia.
+\end{itemize}
+

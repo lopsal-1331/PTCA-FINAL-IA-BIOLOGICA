@@ -1,0 +1,26 @@
+\section{Problema}
+Nos piden un programa P que, dado un conjunto de entrenamiento $(X_t, y_t)$, aprenda con técnicas de computación evolutiva una transformación del los atributos: síntesis de atributos o reducción de dimensionalidad. Esa transformación se aplica después al conjunto de validación: $X_v'=v(X_v)$. 
+
+Si entrenamos un modelo arbitrario M con los atributos originales y medimos el error absoluto medio (MAE) en validación, obtenemos \textit{e}. Si entrenamos el mismo m odelo M con los atributos transformados y obtenemos \textit{e'}, el método funciona cuando \textit{e'}<\textit{e}.
+\subsection{Planteamiento}
+\begin{itemize}
+    \item El modelo M es arbitrario. Por eso evaluamos siempre con varios modelos --- regresión lineal, KNN y árbol de decisión --- y no con uno solo. 
+
+    \item La transformación se aprende solo con el entrenamiento, siendo la validación lo único que usamos para medir. 
+
+    \item Buscamos un método generalizable que funcione igual en datasets distintos sin ajustes a mano. 
+\end{itemize}
+
+\subsection{Datos}
+Partimos de dos datasets de regresión: Diabetes (442 muestras, 10 atributos) y California Housing (20640 muestras, 8 atributos). Para comprobar que el método es generalizable, se usan de manera adicional 10 datasets de OpenML --- la lista y sus tamaños los tenemos en una sección posterior.
+
+\subsection{Protocolo común}
+\begin{itemize}
+    \item Usamos una partición con 70\% de entrenamiento y 30\% de validación con semillas distintas para cada unas de las repeticiones.
+
+    \item La métrica va a ser el MAE en el conjunto de la validación. 
+
+    \item Para poder comprobar datasets con escalas muy distintas, usamos el MAE relativo a los datos originales, y el MAE/MAE(crudo), promediado con la media geométrica. Si es menor que 1, significa que hemos mejorado. 
+
+    \item Contrastes estadísticos, incluido el test de Wilcoxon por pares, aplicado sobre el cociente de errores de cada pareja (dataset, partición).
+\end{itemize}
