@@ -1,2 +1,57 @@
 \section{Demostración}
-Ejecutamos el método completo sobre una partición de cada dataset de la práctica 
+Ejecutamos el método completo sobre una partición de cada dataset de la práctica, con un presupuesto reducido: \texttt{PRESUPUESTO\_DEMO} evaluaciones, en lugar de las 1.000 de los experimentos, para ver cada paso funcionando. Los números exactos no coincidirán con los del final, ya que promediarán muchas más particiones, pero la tendencia si que la compartirán. En cada dataset se calculan las siguients configuraciones. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\hline
+\textbf{Configuración} & \textbf{Qué es} \\
+\hline
+crudo + KNN & $e$ del enunciado: KNN con los atributos originales \\
+estándar + KNN & línea base: atributos estandarizados, $k$ por validación cruzada \\
+estándar + LLR & regla local lineal con los atributos estandarizados \\
+métrica(KNN) + KNN & métrica aprendida con CMA-ES para KNN \\
+métrica(KNN) + LLR & la misma métrica, con la regla local lineal \\
+métrica(LLR) + LLR & método completo: métrica, $k$ y ridge optimizados para la regla local lineal \\
+\hline
+\end{tabular}
+\caption{Configuraciones evaluadas.}
+\label{tab:configuraciones}
+\end{table}
+
+Los resultaods de la aplicación de estas configuraciones los tenemos en la \autoref{tab:resultados-configuraciones}. Cada celda es el cambio del MAE respecto a KNN con los atributos originales (la referencia al error del enunciado). Un valor significa que $e'<e$, o lo que es equivalente, que mejoramos. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\hline
+\textbf{Configuración} & \textbf{california} & \textbf{diabetes} \\
+\hline
+crudo + KNN        & $+0.0$\,\%  & $+0.0$\,\% \\
+estándar + KNN     & $-45.8$\,\% & $-1.3$\,\% \\
+estándar + LLR     & $-49.7$\,\% & $+1.5$\,\% \\
+métrica(KNN) + KNN & $-58.5$\,\% & $+5.4$\,\% \\
+métrica(KNN) + LLR & $-59.7$\,\% & $+1.2$\,\% \\
+métrica(LLR) + LLR & $-60.6$\,\% & $+3.4$\,\% \\
+\hline
+\end{tabular}
+\caption{Variación del error respecto a crudo + KNN.}
+\label{tab:resultados-configuraciones}
+\end{table}
+
+En California vemos que la transformación aprendida mejora mucho respecto a KNN, porque los atributos tienen escalas y colas muy distintas. La regla local lineal también mejora. En Diabetes los cambios son pequeños, y vemos que alguno tiene incluso signo negativo. Hay pocos datos y todos los atributos están ya en una escala parecida o idéntica, por lo que hay poco margen y mucho ruido. Con una sola partición no se puede concluir nada sobre este segundo dataset. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{img/configs.png}
+\caption{Desglose de componentes para los resultados del KNN.}
+\label{fig:resultados_knn}
+\end{figure}
+
+En la \autoref{fig:resultados_knn} podemos ver en la columna de la izquierda el valor de los pesos resultantes. Un peso por encima de 1 significa que el atributo cuenta más que en la estandarización. Un peso cercano a 0 prácticamente queda ignorado. En el caso del dataset de California, vemos que tiene sentido que el mayor peso lo tengan la latitud y la longitud, sobre todo dado el dominio del dataset. Usualmente casas con precios elevados suelen encontrarse en zonas o localizaciones parecidas.
+
+En la columna central vemos los exponentes. Un valor lejano a 1 indica que la búsqueda ha decidido deformar el atributo (por ejemplo, comprimir una cola larga). Los atributos con $\lambda$ cercano a 1 se quedan prácticamente como estaban.
+
+En la columna derecha vemos la convergencia. La curva siempre es no creciente, ya que guarda el mejor valor hasta ese momento. Empieza en el fitness de $\theta_0$, que es el de la línea estándar, por lo que la distancia entre el inicio y el final de la curva es la mejora que logra la búsqueda sobre el entrenamiento. Una curva que sigue bajando al final indica que más presupuesto podría ayudar, y una curva plana puede indicar que la búsqueda empieza a estancarse. 
+
+Hay que tener cuidado con Diabetes, ya que una bajada del fitness no garantiza que baje el error de validación. Además, vemos que la bajada es mucho más brusca en California que en Diabetes, lo cual indica que el primer dataset seguramente pudiera obtener una mejora con un presupuesto mayor.

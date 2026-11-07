@@ -1,0 +1,52 @@
+\section{Análisis global}
+\subsection{Qué hemos aprendido en orden}
+
+En la \autoref{tab:resumen} se resumen las respuestas a las preguntas que se han ido formulando durante el desarrollo del trabajo. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{5.2cm}p{6.3cm}p{1.8cm}}
+\hline
+\textbf{Pregunta} & \textbf{Respuesta} & \textbf{Evidencia} \\
+\hline
+¿Funciona aprender la transformación con CMA-ES? & Sí, y mucho en California; no en Diabetes & 5.0 (13 particiones) \\
+\hline
+¿Importa qué algoritmo evolutivo se use? & Poco; CMA-ES es la opción más razonable & 5.2 \\
+\hline
+¿Mejora un híbrido a CMA-ES (pliegues cambiantes, DE, selección)? & No & 5.3 \\
+\hline
+¿Ayuda el PCA dentro de la búsqueda? & No de forma consistente (sí en \texttt{space\_ga}, no en \texttt{sulfur}) & 5.4 \\
+\hline
+¿Generaliza a otros datasets? & Sí: KNN mejora un 25\,\% de media (11 de 12 datasets) & 5.4 \\
+\hline
+¿Ayuda una regla local lineal y optimizar la métrica para ella? & Sí: otro 13\,\% frente a esa regla sin aprender & 5.5 \\
+\hline
+¿Es competitivo con modelos de referencia? & Sí, a la altura del mejor de ellos, no por encima & 5.6 \\
+\hline
+¿Y en Diabetes? & No mejora; sobreajuste por pocos datos & 5.7 \\
+\hline
+\end{tabular}
+\caption{Resumen de las preguntas planteadas y de la sección donde se encuentra la evidencia de cada respuesta.}
+\label{tab:resumen}
+\end{table}
+
+\subsection{Qué podemos afirmar}
+\begin{itemize}
+    \item Una transformaciín por atributo --- exponente de Yeo-Johnson y peso --- aprendida con CMA-ES mejora de forma sustancial a todos los modelos basados en distancias. Con 10 particiones nuevas y 12 datasets, KNN reduce su error un 25\% respecto a los atributos originales, y 14\% respecto a la estandarización simple. Con regresión linela, la mejora es del 6-7\% y con el árbol de decisión nula, como se espera por su invarianza. 
+    \item La mejora cumple el criterio del enunciado de $e'<e$ en la gran mayoría de datasets para KNN y en la mayoría para regresión lineal. Sin embargo, no llega a cumplirlo en Diabetes. 
+    \item Cambiar la regla de predicción a regresión lineal local y optimizar la métrica para ella da una mejora adicional respecto a usar la métrica de KNN. Es un efecto pequeño pero consistente. 
+    \item El método es competitivo con Random Forest, Gradient Boosting y procesos gaussianos ARD ajustados. Su error medio es menor que el de cada uno por separado, y comparable al del mejor de ellos en cada caso. 
+\end{itemize}
+
+\subsection{Lo que no podemos afirmar}
+\begin{itemize}
+    \item Aprender métricas para KNN, ponderar atributos con CMA-ES y la regresión lineal local están publicados. Lo que no hemos encontrado publicado es la combinación concreta, pero nuestra búsqueda bibliográfica puede estar limitada. 
+    \item Tampoco podemos confirmar que el algoritmo evolutivo sea lo que produce la mejora. La búsqueda aleatoria con el mimso presupuesto ya consigue la mayor parte en California. Lo que importa es la familia de transformaciones y la regla de predicción. 
+    \item No creemos que supere a modelos de referencia, como mucho estará a su altura con ganadores distintos dependiendo del dataset en el que se aplique. 
+    \item Con Diabetes tenemos la hipótesis de que este método no necesariamente tendrá buenos resultados con pocos datos.
+\end{itemize}
+
+\subsection{Limitaciones}
+En primer lugar, los resultados se basan en doce datasets pequeños o medianos, con atributos numéricos, que han sido elegidos por nosotros. No hay datos con muchas dimensiones, atributos categóricos, valores perdidos o muy ruidosos. Además, se han hecho entre 2 y 13 particiones dependiendo del experimento. Las conclusiones sobre Diabetes necesitan muchas particiones por el ruido y las primeras tandas --- 2 a 3 particiones --- solo son de carácter exploratorio. Por eso confirmamos lo importante con nuevas particiones. 
+
+Nuestro método ajusta más parámetros que modelos de referencia, por lo que parte de la ventaja puede venir de ahí. Además, la búsqueda tarda entre 1-3 minutos por partición, po lo que para un movelo que se entrena una vez es asumible, pero no para un uso interactivo. Finalmente, el fitness depende mucho del modelo objetivo. Optimizamos para KNN o para la regla local lineal, por lo que una trnaformación buena para ellos puede perjudicar a otro modelo. 
