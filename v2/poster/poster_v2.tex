@@ -1,0 +1,169 @@
+% Póster A0 vertical de P v2 (tikzposter). Compilar desde esta carpeta:  latexmk -pdf poster_v2.tex
+\documentclass[25pt, a0paper, portrait, margin=0mm, innermargin=14mm, blockverticalspace=14mm,
+               colspace=14mm, subcolspace=8mm]{tikzposter}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usetikzlibrary{arrows.meta,positioning}
+\graphicspath{{../figuras/}{../../final/figuras/}}
+\input{../../final/numeros.tex}\input{../../final/tablas.tex}
+\input{../numeros.tex}\input{../tablas.tex}
+
+\definecolor{uc3mazul}{HTML}{003A70}
+\definecolor{uc3mcian}{HTML}{00A6D6}
+\definecolor{fondo}{HTML}{F4F7FA}
+\definecolor{azulm}{HTML}{2E6DB4}\definecolor{naranjam}{HTML}{D9731A}
+\definecolor{verdem}{HTML}{2F9467}\definecolor{grism}{HTML}{5A6772}
+\definecolorstyle{uc3m}{}{%
+  \colorlet{backgroundcolor}{white}
+  \colorlet{framecolor}{uc3mazul}
+  \colorlet{titlefgcolor}{white}
+  \colorlet{titlebgcolor}{uc3mazul}
+  \colorlet{blocktitlebgcolor}{uc3mazul}
+  \colorlet{blocktitlefgcolor}{white}
+  \colorlet{blockbodybgcolor}{fondo}
+  \colorlet{blockbodyfgcolor}{black}
+  \colorlet{innerblocktitlebgcolor}{uc3mcian}
+  \colorlet{innerblocktitlefgcolor}{white}
+  \colorlet{innerblockbodybgcolor}{white}
+  \colorlet{innerblockbodyfgcolor}{black}
+  \colorlet{notefgcolor}{black}
+  \colorlet{notebgcolor}{uc3mcian!15}
+  \colorlet{noteframecolor}{uc3mcian}}
+\usecolorstyle{uc3m}
+\usetitlestyle{Filled}
+\useblockstyle{Default}
+\settitle{%
+  \parbox{\linewidth}{\centering\color{titlefgcolor}\vspace*{16mm}
+  {\fontsize{92}{104}\selectfont\bfseries Aumentar, ponderar y reducir\par}\vspace{8mm}
+  {\fontsize{50}{60}\selectfont aprendizaje evolutivo de una representación más pequeña para varios modelos\par}\vspace{12mm}
+  {\fontsize{40}{48}\selectfont \@author\par}\vspace{5mm}
+  {\fontsize{30}{36}\selectfont \@institute\par}\vspace*{14mm}}}
+\title{Aumentar, ponderar y reducir}
+\author{Andrea López Salazar}
+\institute{IA con inspiración biológica \textbullet\ Máster en Ciencia y Tecnología \textbullet\ Universidad Carlos III de Madrid}
+
+\newcommand{\cifra}[3]{%
+  \begin{minipage}[t]{0.48\linewidth}\centering
+  {\fontsize{64}{72}\selectfont\bfseries\color{#1}#2}\\[2mm]{\normalsize #3}\end{minipage}}
+
+\begin{document}
+\maketitle[width=\paperwidth, roundedcorners=0, linewidth=0, innersep=0mm, titletotopverticalspace=0mm,
+           titletoblockverticalspace=14mm]
+
+\begin{columns}
+% ===================================================================== columna 1
+\column{0.33}
+\block{1. El problema}{
+Aprender, \textbf{solo con el entrenamiento}, $X\mapsto X'$ con \textbf{síntesis y reducción} ($\dim X'<n$, criterio
+de eliminación evolutivo) tal que un modelo \textbf{arbitrario} $M$ entrenado con $X'$ tenga menor MAE: $e'<e$.
+\vspace{4mm}
+
+\textbf{Lo que aprendimos de la v1.} Con un fitness solo de KNN, la representación servía a KNN (\cambioKNN) pero no
+a la regresión lineal ni a los árboles: \textbf{el fitness decide para quién es la representación}.
+}
+
+\block{2. El método $P$ v2}{
+\begin{center}\includegraphics[width=\linewidth]{esquema_v2}\end{center}
+\vspace{2mm}
+\begin{itemize}
+\item \textbf{Aumentar}: $2n$ candidatos = atributos con forma Yeo-Johnson + sus componentes principales.
+\item \textbf{Pesos dobles}: un peso $v_k$ por candidato.
+\item \textbf{Reducir}: se conservan los de $v_k\ge\tau$, como mucho $n-1$. \textbf{CMA-ES aprende $\tau$}: qué y
+cuántos se eliminan.
+\item \textbf{Fitness}: media del MAE normalizado de \textbf{KNN, regresión lineal y un árbol} (validación cruzada).
+\item \textbf{CMA-ES} sobre $\theta=(\lambda,v,\tau)$, $3n+1$ genes, 1000 evaluaciones, inicio en estandarizar.
+\end{itemize}
+}
+
+\block{Protocolo}{
+\begin{itemize}
+\item 12 datasets (diabetes, california + 10 de OpenML).
+\item \textbf{Cribado} con semillas de exploración; \textbf{confirmación} en particiones 70/30 nuevas (las de la v1).
+\item \textbf{Modelos fijos}: R. lineal, KNN, árbol, RF.
+\item \textbf{Estadística por dataset} ($n=12$): Wilcoxon + Holm; Friedman + Nemenyi.
+\end{itemize}
+}
+
+\block{Diseño: el cribado}{
+\begin{center}\includegraphics[width=\linewidth]{cribado_v2}\end{center}
+{\small El fitness de varios modelos mejora la media (\dosCribMulti{} frente a \dosCribUno). \textbf{Parar por
+sobreajuste} con un 20\,\% apartado ahorra tiempo pero \textbf{empeora}: quita datos al fitness y su criterio es
+ruidoso.}
+}
+
+% ===================================================================== columna 2
+\column{0.34}
+\block{3. Resultado}{
+\cifra{azulm}{\dosDimMedia}{atributos usados de media \textbullet\ siempre $<n$}\hfill
+\cifra{azulm}{\dosCambioRL}{R. lineal \textbullet\ \dosDsRL{} datasets \textbullet\ $p$=\dosPRL}\\[8mm]
+\cifra{azulm}{\dosCambioKNN}{KNN \textbullet\ \dosDsKNN{} datasets \textbullet\ $p$=\dosPKNN}\hfill
+\cifra{grism}{\dosCambioRF}{Random Forest \textbullet\ árbol \dosCambioArbol}
+\vspace{6mm}
+
+{\small $p$: Wilcoxon por dataset con Holm. Frente a la v1: R.\ lineal \dosVsUnoRL{} ($p$=\dosPVsUnoRL), KNN
+\dosVsUnoKNN{} (n.s.). Mayor reducción: \dosMaxDsRL{} con R.\ lineal (\dosMaxRL) y \dosMaxDsKNN{} con KNN
+(\dosMaxKNN).}
+\vspace{2mm}
+\begin{center}\includegraphics[width=0.95\linewidth]{poster_barras_v2}\end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{poster_heatmap_v2}\end{center}
+}
+
+\block{4. Frente a otras diez transformaciones}{
+\begin{center}\small
+\begin{tabular}{@{}lcccccc@{}}\toprule
+ & R.\,lin. & KNN & Árbol & RF & Rango & $d/n$\\\midrule
+\filasComparativaDos\bottomrule
+\end{tabular}\end{center}
+{\small $e'/e$; negrita: mejor; $^*$: $P$ v2 mejor con $p<0{,}05$. Rango: Friedman. $d/n$: $\dim X'/n$.}
+\vspace{3mm}
+
+\textbf{Segunda en rango medio} (\dosRangoP) y \textbf{la mejor de las que no aumentan la dimensión}; solo la supera
+$P$ sin reducir ($2n$ atributos).
+}
+
+% ===================================================================== columna 3
+\column{0.33}
+\block{5. Reducción y síntesis}{
+\begin{itemize}
+\item $X'$: \dosOrigMedia{} originales + \dosCompMedia{} componentes de media. La v2 \textbf{sintetiza en el
+\dosFracConComp{}} de las particiones (la v1, casi nunca).
+\item \textbf{Solo PCA} (sustituir los ejes) empeora a RF \dosCompPCARF; \emph{elegir} qué conservar, no.
+\item \textbf{Caso negativo}: en kin8nm todos los atributos importan y cambiarlos por componentes empeora a los cuatro
+modelos (KNN \dosPeorDsKNN).
+\end{itemize}
+\begin{center}\includegraphics[width=\linewidth]{rf_v2}\end{center}
+}
+
+\block{6. La búsqueda}{
+\begin{itemize}
+\item \textbf{Los pesos son la pieza clave}; la búsqueda gana al azar (\ctrlAleat) y a la información mutua (\ctrlMI).
+\item CMA-ES es robusto a la población inicial y al rango de $\lambda$; mejor rango de fitness que AG, DE, PSO, BBO,
+HS y ABC con el mismo presupuesto.
+\end{itemize}
+\innerblock{Operadores evolutivos}{\small
+Selección por rango de $\mu=\lambda/2$ \textbullet\ recombinación intermedia ponderada \textbullet\ mutación
+$\mathcal N(m,\sigma^2C)$ adaptativa \textbullet\ reemplazo $(\mu/\mu_w,\lambda)$ + mejor guardado \textbullet\
+restricción $\dim X'<n$ por decodificación \textbullet\ parada: 1000 evaluaciones.}
+}
+
+\block{Coste}{
+\dosSegMediana\,s de mediana por búsqueda (v1: \segMediana\,s), una vez por dataset. Aplicarla es inmediato y $X'$ tiene
+menos columnas que $X$.
+}
+
+\block{7. Conclusiones}{
+\begin{itemize}
+\item \textbf{$\dim X'<n$ siempre}, criterio de eliminación aprendido, \textbf{síntesis real}.
+\item $e'<e$ en \textbf{R.\ lineal} (significativo) y \textbf{KNN}; árboles sin cambio en media.
+\item \textbf{El fitness decide para quién es $X'$}: tres modelos reparten mejor que uno.
+\item Mejor transformación que no aumenta la dimensión.
+\item La parada con datos apartados no compensa con datasets pequeños.
+\end{itemize}
+}
+\end{columns}
+\end{document}

@@ -1,0 +1,15 @@
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.prefix, expected /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/final/../.venv
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/final/../.venv
+                          dataset   D  lambda_pob  mu    mu_eff  generaciones  evaluaciones     parada  eval_mejor  fitness_inicial  fitness_final  sigma_final  active
+0                        diabetes  20          12   6  3.729459            84          1008  maxfevals         658         0.690187       0.630805     0.048210    True
+1                      california  16          12   6  3.729459            84          1008  maxfevals        1005         0.509199       0.383333     0.063848    True
+2   concrete_compressive_strength  16          12   6  3.729459            84          1008  maxfevals         952         0.523899       0.311230     0.051632    True
+3                           stock  18          12   6  3.729459            84          1008  maxfevals         969         0.109659       0.095458     0.033550    True
+4                        space_ga  12          11   5  3.414772            91          1001  maxfevals         998         0.584154       0.533409     0.030582    True
+5                          sulfur  12          11   5  3.414772            91          1001  maxfevals         892         0.483186       0.442524     0.022593    True
+6                          kin8nm  16          12   6  3.729459            84          1008  maxfevals        1005         0.505267       0.453572     0.007117    True
+7                         bank8FM  16          12   6  3.729459            84          1008  maxfevals         683         0.373481       0.201004     0.032312    True
+8                         puma8NH  16          12   6  3.729459            84          1008  maxfevals        1001         0.670776       0.536151     0.034633    True
+9                        house_8L  16          12   6  3.729459            84          1008  maxfevals         945         0.634043       0.562307     0.034157    True
+10                      cpu_small  24          13   6  3.980869            77          1001  maxfevals         973         0.269277       0.227377     0.029130    True
+11                   wine_quality  22          13   6  3.980869            77          1001  maxfevals        1000         0.872958       0.835686     0.051054    True

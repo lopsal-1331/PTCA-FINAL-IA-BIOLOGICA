@@ -1,0 +1,21 @@
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.prefix, expected /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/prueba_pca_rf/../.venv
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/prueba_pca_rf/../.venv
+1 / 24
+2 / 24
+3 / 24
+4 / 24
+5 / 24
+6 / 24
+7 / 24
+8 / 24
+9 / 24
+10 / 24
+11 / 24
+12 / 24
+13 / 24
+14 / 24
+15 / 24
+/home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv/lib/python3.14/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 18 leaked semlock objects to clean up at shutdown: {'/loky-335960-ts5kp3zk': 1, '/loky-335960-3khvjv7e': 1, '/loky-335960-ilbdxbu9': 1, '/loky-335960-71s6bgh6': 1, '/loky-335960-uw7exvfo': 1, '/loky-335960-5m1u_vio': 1, '/loky-335960-llfy1rvd': 1, '/loky-335960-ir8yo59a': 1, '/loky-335960-jorlrrvu': 1, '/loky-335960-ihf_nkat': 1, '/loky-335960-8wl6wb15': 1, '/loky-335960-i8j8xnhs': 1, '/loky-335960-69114n4g': 1, '/loky-335960-v8obyk57': 1, '/loky-335960-elv6994m': 1, '/loky-335960-znx9ja16': 1, '/loky-335960-y6n7w1sl': 1/home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv/lib/python3.14/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 26 leaked semlock objects to clean up at shutdown: {'/loky-321217-yfkogx8s': 1, '/loky-321217-0r9w56k8': 1, '/loky-321217-mamkj7i0': 1, '/loky-321217-u88od_62': 1, '/loky-321217-ys0ud4vn': 1, '/loky-321217-gmrau7z0': 1, '/loky-321217-tvec_5lh': 1, '/loky-321217-t2mqcnwq': 1, '/loky-321217-y6dovosb': 1, '/loky-321217-rrmlml0r': 1, '/loky-321217-6gyfmw2d': 1, '/loky-321217-w3qdthrl': 1, '/loky-321217-pdau4xqh': 1, '/loky-321217-10kk1x89': 1, '/loky-321217-t4lkkxvm': 1, '/loky-321217-7qvmscbx': 1, '/loky-321217-ek8j69vi': 1, '/loky-321217-939g2qj4': 1, '/loky-321217-zpyp8ld1': 1, '/loky-321217-k82cyifk': 1, '/loky-321217-e2p9sglw': 1, '/loky-321217-83p61zsx': 1, '/loky-321217-_o6j5t3c': 1, '/loky-321217-t66p73qs': 1, '/loky-321217-ffsr3xqj': 1, '/loky-321217-ut9nzeas': 1}
+  warnings.warn(
+/home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv/lib/python3.14/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 2 leaked folder objects to clean up at shutdown: {'/dev/shm/joblib_memmapping_folder_321217_8547337f716a404b91d7698e30e7a5e4_5ae8445ed7a54b41b99a49a509d9ab67': 1, '/dev/shm/joblib_memmapping_folder_321217_8547337f716a404b91d7698e30e7a5e4_1efe9b0622114c2cbee4ce2b6777267e': 1}
+  warnings.warn(

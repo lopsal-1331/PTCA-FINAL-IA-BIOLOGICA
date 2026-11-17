@@ -1,0 +1,1921 @@
+dataset,semilla,representacion,modelo,n_atributos,m95,MAE
+diabetes,0,estándar,KNN,10,8,49.00902255639098
+diabetes,0,estándar,Árbol,10,8,60.69172932330827
+diabetes,0,estándar,Random Forest,10,8,47.61041353383458
+diabetes,0,estándar,Extra Trees,10,8,45.93063909774436
+diabetes,0,PCA completa,KNN,10,8,49.00902255639098
+diabetes,0,PCA completa,Árbol,10,8,68.15789473684211
+diabetes,0,PCA completa,Random Forest,10,8,46.71154135338346
+diabetes,0,PCA completa,Extra Trees,10,8,46.20082706766918
+diabetes,0,PCA95,KNN,10,8,48.727819548872176
+diabetes,0,PCA95,Árbol,10,8,68.61654135338345
+diabetes,0,PCA95,Random Forest,10,8,46.46330827067669
+diabetes,0,PCA95,Extra Trees,10,8,46.35616541353383
+diabetes,0,estándar+PCA,KNN,10,8,49.00902255639098
+diabetes,0,estándar+PCA,Árbol,10,8,62.090225563909776
+diabetes,0,estándar+PCA,Random Forest,10,8,45.6737969924812
+diabetes,0,estándar+PCA,Extra Trees,10,8,44.94973684210527
+diabetes,1,estándar,KNN,10,7,44.47819548872181
+diabetes,1,estándar,Árbol,10,7,69.09022556390977
+diabetes,1,estándar,Random Forest,10,7,47.830488721804514
+diabetes,1,estándar,Extra Trees,10,7,45.037781954887215
+diabetes,1,PCA completa,KNN,10,7,44.47819548872181
+diabetes,1,PCA completa,Árbol,10,7,49.42857142857143
+diabetes,1,PCA completa,Random Forest,10,7,42.26285714285714
+diabetes,1,PCA completa,Extra Trees,10,7,40.95541353383459
+diabetes,1,PCA95,KNN,10,7,41.00751879699248
+diabetes,1,PCA95,Árbol,10,7,52.278195488721806
+diabetes,1,PCA95,Random Forest,10,7,42.09296992481203
+diabetes,1,PCA95,Extra Trees,10,7,40.540488721804515
+diabetes,1,estándar+PCA,KNN,10,7,44.47819548872181
+diabetes,1,estándar+PCA,Árbol,10,7,60.51127819548872
+diabetes,1,estándar+PCA,Random Forest,10,7,44.70466165413534
+diabetes,1,estándar+PCA,Extra Trees,10,7,42.54488721804511
+stock,0,estándar,KNN,9,5,0.6028070175438596
+stock,0,estándar,Árbol,9,5,0.8587719298245614
+stock,0,estándar,Random Forest,9,5,0.632923245614035
+stock,0,estándar,Extra Trees,9,5,0.48941447368421065
+stock,0,PCA completa,KNN,9,5,0.6028070175438596
+stock,0,PCA completa,Árbol,9,5,1.1057017543859649
+stock,0,PCA completa,Random Forest,9,5,0.8269539473684211
+stock,0,PCA completa,Extra Trees,9,5,0.5388837719298245
+stock,0,PCA95,KNN,9,5,0.6569298245614031
+stock,0,PCA95,Árbol,9,5,1.0228070175438597
+stock,0,PCA95,Random Forest,9,5,0.7824583333333335
+stock,0,PCA95,Extra Trees,9,5,0.6092434210526316
+stock,0,estándar+PCA,KNN,9,5,0.6028070175438596
+stock,0,estándar+PCA,Árbol,9,5,0.8771929824561403
+stock,0,estándar+PCA,Random Forest,9,5,0.6198969298245615
+stock,0,estándar+PCA,Extra Trees,9,5,0.4901008771929824
+concrete_compressive_strength,1,estándar,KNN,8,6,7.121892201167682
+concrete_compressive_strength,1,estándar,Árbol,8,6,5.185653230223035
+concrete_compressive_strength,1,estándar,Random Forest,8,6,3.8745010110591873
+concrete_compressive_strength,1,estándar,Extra Trees,8,6,3.334181780990232
+concrete_compressive_strength,1,PCA completa,KNN,8,6,7.121892201167682
+concrete_compressive_strength,1,PCA completa,Árbol,8,6,7.675931207818844
+concrete_compressive_strength,1,PCA completa,Random Forest,8,6,6.03209157713209
+concrete_compressive_strength,1,PCA completa,Extra Trees,8,6,5.573330684588737
+concrete_compressive_strength,1,PCA95,KNN,8,6,7.346662078438407
+concrete_compressive_strength,1,PCA95,Árbol,8,6,7.778100521968856
+concrete_compressive_strength,1,PCA95,Random Forest,8,6,6.343010708682804
+concrete_compressive_strength,1,PCA95,Extra Trees,8,6,5.696810014063399
+concrete_compressive_strength,1,estándar+PCA,KNN,8,6,7.121892201167682
+concrete_compressive_strength,1,estándar+PCA,Árbol,8,6,5.331546734404117
+concrete_compressive_strength,1,estándar+PCA,Random Forest,8,6,3.9104391394166993
+concrete_compressive_strength,1,estándar+PCA,Extra Trees,8,6,3.434667962332358
+stock,1,estándar,KNN,9,5,0.5779824561403507
+stock,1,estándar,Árbol,9,5,0.825
+stock,1,estándar,Random Forest,9,5,0.5833464912280701
+stock,1,estándar,Extra Trees,9,5,0.44804166666666645
+stock,1,PCA completa,KNN,9,5,0.5779824561403507
+stock,1,PCA completa,Árbol,9,5,1.0114035087719297
+stock,1,PCA completa,Random Forest,9,5,0.7436184210526317
+stock,1,PCA completa,Extra Trees,9,5,0.5191776315789474
+stock,1,PCA95,KNN,9,5,0.5909649122807018
+stock,1,PCA95,Árbol,9,5,1.0285087719298245
+stock,1,PCA95,Random Forest,9,5,0.7605855263157896
+stock,1,PCA95,Extra Trees,9,5,0.539155701754386
+stock,1,estándar+PCA,KNN,9,5,0.5779824561403507
+stock,1,estándar+PCA,Árbol,9,5,0.9035087719298246
+stock,1,estándar+PCA,Random Forest,9,5,0.6148684210526317
+stock,1,estándar+PCA,Extra Trees,9,5,0.46700657894736847
+concrete_compressive_strength,0,estándar,KNN,8,6,7.242762157246493
+concrete_compressive_strength,0,estándar,Árbol,8,6,4.9550510809261015
+concrete_compressive_strength,0,estándar,Random Forest,8,6,3.5830614044418545
+concrete_compressive_strength,0,estándar,Extra Trees,8,6,3.075331041249923
+concrete_compressive_strength,0,PCA completa,KNN,8,6,7.241437968071547
+concrete_compressive_strength,0,PCA completa,Árbol,8,6,7.086718979907025
+concrete_compressive_strength,0,PCA completa,Random Forest,8,6,5.571309817288116
+concrete_compressive_strength,0,PCA completa,Extra Trees,8,6,4.897584204593074
+concrete_compressive_strength,0,PCA95,KNN,8,6,7.30420329845912
+concrete_compressive_strength,0,PCA95,Árbol,8,6,7.379907253341414
+concrete_compressive_strength,0,PCA95,Random Forest,8,6,5.6953874042320525
+concrete_compressive_strength,0,PCA95,Extra Trees,8,6,4.930592775643547
+concrete_compressive_strength,0,estándar+PCA,KNN,8,6,7.237371749088565
+concrete_compressive_strength,0,estándar+PCA,Árbol,8,6,4.817342673741709
+concrete_compressive_strength,0,estándar+PCA,Random Forest,8,6,3.690528982710793
+concrete_compressive_strength,0,estándar+PCA,Extra Trees,8,6,3.026642196931529
+space_ga,0,estándar,KNN,6,3,0.09171435354780764
+space_ga,0,estándar,Árbol,6,3,0.10785371108428436
+space_ga,0,estándar,Random Forest,6,3,0.08382311654740093
+space_ga,0,estándar,Extra Trees,6,3,0.08495695868167362
+space_ga,0,PCA completa,KNN,6,3,0.09171435354780764
+space_ga,0,PCA completa,Árbol,6,3,0.10625919942859689
+space_ga,0,PCA completa,Random Forest,6,3,0.0773327912456649
+space_ga,0,PCA completa,Extra Trees,6,3,0.07474578454860184
+space_ga,0,PCA95,KNN,6,3,0.09473093007435124
+space_ga,0,PCA95,Árbol,6,3,0.11635560599712509
+space_ga,0,PCA95,Random Forest,6,3,0.0906198073124096
+space_ga,0,PCA95,Extra Trees,6,3,0.09065201127295626
+space_ga,0,estándar+PCA,KNN,6,3,0.09171435354780764
+space_ga,0,estándar+PCA,Árbol,6,3,0.10527569118311979
+space_ga,0,estándar+PCA,Random Forest,6,3,0.07321665918123361
+space_ga,0,estándar+PCA,Extra Trees,6,3,0.07354548113599499
+space_ga,1,estándar,KNN,6,3,0.08766182953619343
+space_ga,1,estándar,Árbol,6,3,0.1075397870719583
+space_ga,1,estándar,Random Forest,6,3,0.07964077926688169
+space_ga,1,estándar,Extra Trees,6,3,0.07919810253865062
+space_ga,1,PCA completa,KNN,6,3,0.08766182953619343
+space_ga,1,PCA completa,Árbol,6,3,0.10919923062343095
+space_ga,1,PCA completa,Random Forest,6,3,0.07344004457129157
+space_ga,1,PCA completa,Extra Trees,6,3,0.07104612795388894
+space_ga,1,PCA95,KNN,6,3,0.09219168947706387
+space_ga,1,PCA95,Árbol,6,3,0.12129157040314228
+space_ga,1,PCA95,Random Forest,6,3,0.08711665303965176
+space_ga,1,PCA95,Extra Trees,6,3,0.08717851137569091
+space_ga,1,estándar+PCA,KNN,6,3,0.08766182953619343
+space_ga,1,estándar+PCA,Árbol,6,3,0.1024058880669281
+space_ga,1,estándar+PCA,Random Forest,6,3,0.06884337024844332
+space_ga,1,estándar+PCA,Extra Trees,6,3,0.06825153456291265
+diabetes,2,estándar,KNN,10,7,50.206015037593986
+diabetes,2,estándar,Árbol,10,7,63.18796992481203
+diabetes,2,estándar,Random Forest,10,7,47.80646616541353
+diabetes,2,estándar,Extra Trees,10,7,48.40488721804512
+diabetes,2,PCA completa,KNN,10,7,50.206015037593986
+diabetes,2,PCA completa,Árbol,10,7,60.49624060150376
+diabetes,2,PCA completa,Random Forest,10,7,50.00883458646616
+diabetes,2,PCA completa,Extra Trees,10,7,50.31003759398496
+diabetes,2,PCA95,KNN,10,7,49.56691729323308
+diabetes,2,PCA95,Árbol,10,7,65.25563909774436
+diabetes,2,PCA95,Random Forest,10,7,49.19966165413534
+diabetes,2,PCA95,Extra Trees,10,7,49.5503007518797
+diabetes,2,estándar+PCA,KNN,10,7,50.206015037593986
+diabetes,2,estándar+PCA,Árbol,10,7,58.16541353383459
+diabetes,2,estándar+PCA,Random Forest,10,7,48.13778195488722
+diabetes,2,estándar+PCA,Extra Trees,10,7,48.21360902255639
+concrete_compressive_strength,2,estándar,KNN,8,6,7.048727736681306
+concrete_compressive_strength,2,estándar,Árbol,8,6,4.765741733196323
+concrete_compressive_strength,2,estándar,Random Forest,8,6,3.4447237748453308
+concrete_compressive_strength,2,estándar,Extra Trees,8,6,2.9554663244771495
+concrete_compressive_strength,2,PCA completa,KNN,8,6,7.048727736681304
+concrete_compressive_strength,2,PCA completa,Árbol,8,6,7.239528069595405
+concrete_compressive_strength,2,PCA completa,Random Forest,8,6,5.69985964074198
+concrete_compressive_strength,2,PCA completa,Extra Trees,8,6,5.108632168023569
+concrete_compressive_strength,2,PCA95,KNN,8,6,7.0054717400985815
+concrete_compressive_strength,2,PCA95,Árbol,8,6,7.385194617198831
+concrete_compressive_strength,2,PCA95,Random Forest,8,6,5.797210085546877
+concrete_compressive_strength,2,PCA95,Extra Trees,8,6,5.208628902788078
+concrete_compressive_strength,2,estándar+PCA,KNN,8,6,7.0340287331292
+concrete_compressive_strength,2,estándar+PCA,Árbol,8,6,4.904501089168147
+concrete_compressive_strength,2,estándar+PCA,Random Forest,8,6,3.581121476912225
+concrete_compressive_strength,2,estándar+PCA,Extra Trees,8,6,3.0774551835186625
+stock,2,estándar,KNN,9,5,0.6307894736842105
+stock,2,estándar,Árbol,9,5,0.8964912280701754
+stock,2,estándar,Random Forest,9,5,0.655186403508772
+stock,2,estándar,Extra Trees,9,5,0.5073026315789475
+stock,2,PCA completa,KNN,9,5,0.6307894736842105
+stock,2,PCA completa,Árbol,9,5,0.9377192982456141
+stock,2,PCA completa,Random Forest,9,5,0.6753837719298247
+stock,2,PCA completa,Extra Trees,9,5,0.5743859649122807
+stock,2,PCA95,KNN,9,5,0.6426315789473686
+stock,2,PCA95,Árbol,9,5,0.9627192982456141
+stock,2,PCA95,Random Forest,9,5,0.7188004385964912
+stock,2,PCA95,Extra Trees,9,5,0.6079035087719298
+stock,2,estándar+PCA,KNN,9,5,0.6307894736842105
+stock,2,estándar+PCA,Árbol,9,5,0.8960526315789473
+stock,2,estándar+PCA,Random Forest,9,5,0.6541447368421053
+stock,2,estándar+PCA,Extra Trees,9,5,0.5300592105263159
+kin8nm,0,estándar,KNN,8,8,0.09432737293401139
+kin8nm,0,estándar,Árbol,8,8,0.1705351296261188
+kin8nm,0,estándar,Random Forest,8,8,0.11471254165022784
+kin8nm,0,estándar,Extra Trees,8,8,0.1076299285519162
+kin8nm,0,PCA completa,KNN,8,8,0.09432737293401139
+kin8nm,0,PCA completa,Árbol,8,8,0.1624134623584215
+kin8nm,0,PCA completa,Random Forest,8,8,0.10634702597829536
+kin8nm,0,PCA completa,Extra Trees,8,8,0.10353094053257118
+kin8nm,0,PCA95,KNN,8,8,0.09432737293401139
+kin8nm,0,PCA95,Árbol,8,8,0.1624134623584215
+kin8nm,0,PCA95,Random Forest,8,8,0.10634702597829536
+kin8nm,0,PCA95,Extra Trees,8,8,0.10353094053257118
+kin8nm,0,estándar+PCA,KNN,8,8,0.09432737293401139
+kin8nm,0,estándar+PCA,Árbol,8,8,0.14543272271643612
+kin8nm,0,estándar+PCA,Random Forest,8,8,0.09720518482154802
+kin8nm,0,estándar+PCA,Extra Trees,8,8,0.09145430184889138
+bank8FM,0,estándar,KNN,8,8,0.03852454987794955
+bank8FM,0,estándar,Árbol,8,8,0.03134059967453214
+bank8FM,0,estándar,Random Forest,8,8,0.022406340376322217
+bank8FM,0,estándar,Extra Trees,8,8,0.02220479789259561
+bank8FM,0,PCA completa,KNN,8,8,0.03852454987794955
+bank8FM,0,PCA completa,Árbol,8,8,0.04936901668022783
+bank8FM,0,PCA completa,Random Forest,8,8,0.03159733894019528
+bank8FM,0,PCA completa,Extra Trees,8,8,0.029753594361269325
+bank8FM,0,PCA95,KNN,8,8,0.03852454987794955
+bank8FM,0,PCA95,Árbol,8,8,0.04936901668022783
+bank8FM,0,PCA95,Random Forest,8,8,0.03159733894019528
+bank8FM,0,PCA95,Extra Trees,8,8,0.029753594361269325
+bank8FM,0,estándar+PCA,KNN,8,8,0.03852454987794955
+bank8FM,0,estándar+PCA,Árbol,8,8,0.031786371033360454
+bank8FM,0,estándar+PCA,Random Forest,8,8,0.022105613319772177
+bank8FM,0,estándar+PCA,Extra Trees,8,8,0.021720410905207484
+space_ga,2,estándar,KNN,6,3,0.08377754691267283
+space_ga,2,estándar,Árbol,6,3,0.10776173568129259
+space_ga,2,estándar,Random Forest,6,3,0.07965664215916719
+space_ga,2,estándar,Extra Trees,6,3,0.07814087177727841
+space_ga,2,PCA completa,KNN,6,3,0.08377754691267283
+space_ga,2,PCA completa,Árbol,6,3,0.11093944501776926
+space_ga,2,PCA completa,Random Forest,6,3,0.07648635324516574
+space_ga,2,PCA completa,Extra Trees,6,3,0.07303139603735183
+space_ga,2,PCA95,KNN,6,3,0.08794825105622235
+space_ga,2,PCA95,Árbol,6,3,0.11745350260266156
+space_ga,2,PCA95,Random Forest,6,3,0.08607625113819405
+space_ga,2,PCA95,Extra Trees,6,3,0.08387777830978081
+space_ga,2,estándar+PCA,KNN,6,3,0.08377754691267283
+space_ga,2,estándar+PCA,Árbol,6,3,0.10206584197015156
+space_ga,2,estándar+PCA,Random Forest,6,3,0.07281352223442392
+space_ga,2,estándar+PCA,Extra Trees,6,3,0.07141684346957726
+sulfur,1,estándar,KNN,6,4,0.008911804533333333
+sulfur,1,estándar,Árbol,6,4,0.011706491666666667
+sulfur,1,estándar,Random Forest,6,4,0.009301935548333333
+sulfur,1,estándar,Extra Trees,6,4,0.008386437731666663
+sulfur,1,PCA completa,KNN,6,4,0.008911804533333333
+sulfur,1,PCA completa,Árbol,6,4,0.012083737333333332
+sulfur,1,PCA completa,Random Forest,6,4,0.009511833236666666
+sulfur,1,PCA completa,Extra Trees,6,4,0.008561936071666667
+sulfur,1,PCA95,KNN,6,4,0.009196069066666666
+sulfur,1,PCA95,Árbol,6,4,0.011748778999999999
+sulfur,1,PCA95,Random Forest,6,4,0.009295423769999997
+sulfur,1,PCA95,Extra Trees,6,4,0.008706662583333332
+sulfur,1,estándar+PCA,KNN,6,4,0.008911804533333333
+sulfur,1,estándar+PCA,Árbol,6,4,0.011320352333333335
+sulfur,1,estándar+PCA,Random Forest,6,4,0.009159914258333332
+sulfur,1,estándar+PCA,Extra Trees,6,4,0.008112099324999997
+wine_quality,0,estándar,KNN,11,9,0.5435897435897437
+wine_quality,0,estándar,Árbol,11,9,0.5266666666666666
+wine_quality,0,estándar,Random Forest,11,9,0.45326410256410254
+wine_quality,0,estándar,Extra Trees,11,9,0.411225641025641
+wine_quality,0,PCA completa,KNN,11,9,0.5435897435897437
+wine_quality,0,PCA completa,Árbol,11,9,0.541025641025641
+wine_quality,0,PCA completa,Random Forest,11,9,0.45725128205128207
+wine_quality,0,PCA completa,Extra Trees,11,9,0.41425897435897435
+wine_quality,0,PCA95,KNN,11,9,0.5375384615384615
+wine_quality,0,PCA95,Árbol,11,9,0.5415384615384615
+wine_quality,0,PCA95,Random Forest,11,9,0.45796923076923074
+wine_quality,0,PCA95,Extra Trees,11,9,0.41435641025641023
+wine_quality,0,estándar+PCA,KNN,11,9,0.5435897435897437
+wine_quality,0,estándar+PCA,Árbol,11,9,0.5246153846153846
+wine_quality,0,estándar+PCA,Random Forest,11,9,0.45141794871794866
+wine_quality,0,estándar+PCA,Extra Trees,11,9,0.40612820512820513
+puma8NH,1,estándar,KNN,8,8,3.049713509682669
+puma8NH,1,estándar,Árbol,8,8,3.419007064686737
+puma8NH,1,estándar,Random Forest,8,8,2.5118189677725797
+puma8NH,1,estándar,Extra Trees,8,8,2.505699984835232
+puma8NH,1,PCA completa,KNN,8,8,3.049713509682669
+puma8NH,1,PCA completa,Árbol,8,8,4.022485952400325
+puma8NH,1,PCA completa,Random Forest,8,8,2.9313779182078927
+puma8NH,1,PCA completa,Extra Trees,8,8,2.8430628324776244
+puma8NH,1,PCA95,KNN,8,8,3.049713509682669
+puma8NH,1,PCA95,Árbol,8,8,4.022485952400325
+puma8NH,1,PCA95,Random Forest,8,8,2.9313779182078927
+puma8NH,1,PCA95,Extra Trees,8,8,2.8430628324776244
+puma8NH,1,estándar+PCA,KNN,8,8,3.049713509682669
+puma8NH,1,estándar+PCA,Árbol,8,8,3.3889849198535393
+puma8NH,1,estándar+PCA,Random Forest,8,8,2.5177085787917006
+puma8NH,1,estándar+PCA,Extra Trees,8,8,2.5194095715541094
+house_8L,0,estándar,KNN,8,8,18814.934133333336
+house_8L,0,estándar,Árbol,8,8,21847.747333333333
+house_8L,0,estándar,Random Forest,8,8,16350.74946
+house_8L,0,estándar,Extra Trees,8,8,16332.014141666667
+house_8L,0,PCA completa,KNN,8,8,18814.934133333336
+house_8L,0,PCA completa,Árbol,8,8,26530.649
+house_8L,0,PCA completa,Random Forest,8,8,18885.612761666667
+house_8L,0,PCA completa,Extra Trees,8,8,18568.044565
+house_8L,0,PCA95,KNN,8,8,18814.934133333336
+house_8L,0,PCA95,Árbol,8,8,26530.649
+house_8L,0,PCA95,Random Forest,8,8,18885.612761666667
+house_8L,0,PCA95,Extra Trees,8,8,18568.044565
+house_8L,0,estándar+PCA,KNN,8,8,18814.934133333336
+house_8L,0,estándar+PCA,Árbol,8,8,22973.580333333335
+house_8L,0,estándar+PCA,Random Forest,8,8,16226.568510000001
+house_8L,0,estándar+PCA,Extra Trees,8,8,16431.18198166667
+wine_quality,1,estándar,KNN,11,9,0.5396923076923077
+wine_quality,1,estándar,Árbol,11,9,0.5015384615384615
+wine_quality,1,estándar,Random Forest,11,9,0.45011025641025637
+wine_quality,1,estándar,Extra Trees,11,9,0.4071025641025641
+wine_quality,1,PCA completa,KNN,11,9,0.5396923076923077
+wine_quality,1,PCA completa,Árbol,11,9,0.5374358974358975
+wine_quality,1,PCA completa,Random Forest,11,9,0.45649999999999996
+wine_quality,1,PCA completa,Extra Trees,11,9,0.41126666666666667
+wine_quality,1,PCA95,KNN,11,9,0.5458461538461539
+wine_quality,1,PCA95,Árbol,11,9,0.5297435897435897
+wine_quality,1,PCA95,Random Forest,11,9,0.4597871794871795
+wine_quality,1,PCA95,Extra Trees,11,9,0.4105666666666667
+wine_quality,1,estándar+PCA,KNN,11,9,0.5396923076923077
+wine_quality,1,estándar+PCA,Árbol,11,9,0.5235897435897436
+wine_quality,1,estándar+PCA,Random Forest,11,9,0.4490512820512821
+wine_quality,1,estándar+PCA,Extra Trees,11,9,0.4069128205128205
+diabetes,3,estándar,KNN,10,8,46.85413533834586
+diabetes,3,estándar,Árbol,10,8,61.38345864661654
+diabetes,3,estándar,Random Forest,10,8,46.068233082706776
+diabetes,3,estándar,Extra Trees,10,8,44.915263157894735
+diabetes,3,PCA completa,KNN,10,8,46.85413533834586
+diabetes,3,PCA completa,Árbol,10,8,66.72932330827068
+diabetes,3,PCA completa,Random Forest,10,8,43.691842105263156
+diabetes,3,PCA completa,Extra Trees,10,8,44.16458646616541
+diabetes,3,PCA95,KNN,10,8,47.610526315789464
+diabetes,3,PCA95,Árbol,10,8,58.88721804511278
+diabetes,3,PCA95,Random Forest,10,8,43.22796992481203
+diabetes,3,PCA95,Extra Trees,10,8,43.47868421052632
+diabetes,3,estándar+PCA,KNN,10,8,46.85413533834586
+diabetes,3,estándar+PCA,Árbol,10,8,61.8421052631579
+diabetes,3,estándar+PCA,Random Forest,10,8,44.91721804511279
+diabetes,3,estándar+PCA,Extra Trees,10,8,44.69872180451128
+puma8NH,0,estándar,KNN,8,8,3.038956744019528
+puma8NH,0,estándar,Árbol,8,8,3.3986494674532133
+puma8NH,0,estándar,Random Forest,8,8,2.4769044688323842
+puma8NH,0,estándar,Extra Trees,8,8,2.4668715808462163
+puma8NH,0,PCA completa,KNN,8,8,3.038956744019528
+puma8NH,0,PCA completa,Árbol,8,8,4.1566046635476
+puma8NH,0,PCA completa,Random Forest,8,8,2.8680356130532956
+puma8NH,0,PCA completa,Extra Trees,8,8,2.8210430344731487
+puma8NH,0,PCA95,KNN,8,8,3.038956744019528
+puma8NH,0,PCA95,Árbol,8,8,4.1566046635476
+puma8NH,0,PCA95,Random Forest,8,8,2.8680356130532956
+puma8NH,0,PCA95,Extra Trees,8,8,2.8210430344731487
+puma8NH,0,estándar+PCA,KNN,8,8,3.038956744019528
+puma8NH,0,estándar+PCA,Árbol,8,8,3.4619628889340928
+puma8NH,0,estándar+PCA,Random Forest,8,8,2.481131538706265
+puma8NH,0,estándar+PCA,Extra Trees,8,8,2.474462499149715
+cpu_small,0,estándar,KNN,12,9,2.3031733116354762
+cpu_small,0,estándar,Árbol,12,9,2.8124491456468674
+cpu_small,0,estándar,Random Forest,12,9,1.9817636289666396
+cpu_small,0,estándar,Extra Trees,12,9,1.9140419039869814
+cpu_small,0,PCA completa,KNN,12,9,2.3031733116354762
+cpu_small,0,PCA completa,Árbol,12,9,3.065500406834825
+cpu_small,0,PCA completa,Random Forest,12,9,2.399513832384052
+cpu_small,0,PCA completa,Extra Trees,12,9,2.2259641985353946
+cpu_small,0,PCA95,KNN,12,9,2.3642799023596424
+cpu_small,0,PCA95,Árbol,12,9,3.226606997558991
+cpu_small,0,PCA95,Random Forest,12,9,2.4938303498779497
+cpu_small,0,PCA95,Extra Trees,12,9,2.338907648494711
+cpu_small,0,estándar+PCA,KNN,12,9,2.3031733116354762
+cpu_small,0,estándar+PCA,Árbol,12,9,2.7013832384052074
+cpu_small,0,estándar+PCA,Random Forest,12,9,1.9530777054515867
+cpu_small,0,estándar+PCA,Extra Trees,12,9,1.9294385679414157
+stock,3,estándar,KNN,9,5,0.6044736842105264
+stock,3,estándar,Árbol,9,5,0.8267543859649122
+stock,3,estándar,Random Forest,9,5,0.5522456140350877
+stock,3,estándar,Extra Trees,9,5,0.4219320175438596
+stock,3,PCA completa,KNN,9,5,0.6044736842105264
+stock,3,PCA completa,Árbol,9,5,0.9092105263157895
+stock,3,PCA completa,Random Forest,9,5,0.6976074561403509
+stock,3,PCA completa,Extra Trees,9,5,0.507046052631579
+stock,3,PCA95,KNN,9,5,0.612982456140351
+stock,3,PCA95,Árbol,9,5,0.9828947368421053
+stock,3,PCA95,Random Forest,9,5,0.7169517543859648
+stock,3,PCA95,Extra Trees,9,5,0.5574956140350876
+stock,3,estándar+PCA,KNN,9,5,0.6044736842105264
+stock,3,estándar+PCA,Árbol,9,5,0.8096491228070175
+stock,3,estándar+PCA,Random Forest,9,5,0.5677609649122807
+stock,3,estándar+PCA,Extra Trees,9,5,0.4441271929824561
+concrete_compressive_strength,3,estándar,KNN,8,6,7.315552972402108
+concrete_compressive_strength,3,estándar,Árbol,8,6,4.07574541204813
+concrete_compressive_strength,3,estándar,Random Forest,8,6,3.268805698996237
+concrete_compressive_strength,3,estándar,Extra Trees,8,6,2.8340593273438244
+concrete_compressive_strength,3,PCA completa,KNN,8,6,7.3142779358819485
+concrete_compressive_strength,3,PCA completa,Árbol,8,6,6.462114606958392
+concrete_compressive_strength,3,PCA completa,Random Forest,8,6,5.740667553124131
+concrete_compressive_strength,3,PCA completa,Extra Trees,8,6,4.990010335180974
+concrete_compressive_strength,3,PCA95,KNN,8,6,7.2956861183191375
+concrete_compressive_strength,3,PCA95,Árbol,8,6,6.534855121894468
+concrete_compressive_strength,3,PCA95,Random Forest,8,6,5.710029445421779
+concrete_compressive_strength,3,PCA95,Extra Trees,8,6,5.044593826345486
+concrete_compressive_strength,3,estándar+PCA,KNN,8,6,7.315552972402109
+concrete_compressive_strength,3,estándar+PCA,Árbol,8,6,4.810708340061574
+concrete_compressive_strength,3,estándar+PCA,Random Forest,8,6,3.8464527065619474
+concrete_compressive_strength,3,estándar+PCA,Extra Trees,8,6,2.902931980696485
+sulfur,0,estándar,KNN,6,4,0.009236748400000001
+sulfur,0,estándar,Árbol,6,4,0.011623845666666667
+sulfur,0,estándar,Random Forest,6,4,0.009239813486666665
+sulfur,0,estándar,Extra Trees,6,4,0.008048141678333327
+sulfur,0,PCA completa,KNN,6,4,0.009236748400000001
+sulfur,0,PCA completa,Árbol,6,4,0.011646424666666665
+sulfur,0,PCA completa,Random Forest,6,4,0.009439157053333333
+sulfur,0,PCA completa,Extra Trees,6,4,0.008362479411666665
+sulfur,0,PCA95,KNN,6,4,0.009591914600000001
+sulfur,0,PCA95,Árbol,6,4,0.012509128666666666
+sulfur,0,PCA95,Random Forest,6,4,0.009729277950000002
+sulfur,0,PCA95,Extra Trees,6,4,0.008772883913333333
+sulfur,0,estándar+PCA,KNN,6,4,0.009236748400000001
+sulfur,0,estándar+PCA,Árbol,6,4,0.011109539333333335
+sulfur,0,estándar+PCA,Random Forest,6,4,0.009024977580000001
+sulfur,0,estándar+PCA,Extra Trees,6,4,0.007825073561666663
+bank8FM,1,estándar,KNN,8,8,0.03865168576078112
+bank8FM,1,estándar,Árbol,8,8,0.03245970504475183
+bank8FM,1,estándar,Random Forest,8,8,0.023045366586655822
+bank8FM,1,estándar,Extra Trees,8,8,0.022557783905614325
+bank8FM,1,PCA completa,KNN,8,8,0.03865168576078112
+bank8FM,1,PCA completa,Árbol,8,8,0.05182826281529699
+bank8FM,1,PCA completa,Random Forest,8,8,0.03305736112693246
+bank8FM,1,PCA completa,Extra Trees,8,8,0.031389412253864934
+bank8FM,1,PCA95,KNN,8,8,0.03865168576078112
+bank8FM,1,PCA95,Árbol,8,8,0.05182826281529699
+bank8FM,1,PCA95,Random Forest,8,8,0.03305736112693246
+bank8FM,1,PCA95,Extra Trees,8,8,0.031389412253864934
+bank8FM,1,estándar+PCA,KNN,8,8,0.03865168576078112
+bank8FM,1,estándar+PCA,Árbol,8,8,0.03222549877949552
+bank8FM,1,estándar+PCA,Random Forest,8,8,0.022724510469894224
+bank8FM,1,estándar+PCA,Extra Trees,8,8,0.02222626645036616
+kin8nm,1,estándar,KNN,8,8,0.09395262872416599
+kin8nm,1,estándar,Árbol,8,8,0.16162100225386494
+kin8nm,1,estándar,Random Forest,8,8,0.1122708289728438
+kin8nm,1,estándar,Extra Trees,8,8,0.10754309013726203
+kin8nm,1,PCA completa,KNN,8,8,0.09395262872416599
+kin8nm,1,PCA completa,Árbol,8,8,0.15906098008014646
+kin8nm,1,PCA completa,Random Forest,8,8,0.10365279654001222
+kin8nm,1,PCA completa,Extra Trees,8,8,0.09989134117544346
+kin8nm,1,PCA95,KNN,8,8,0.09395262872416599
+kin8nm,1,PCA95,Árbol,8,8,0.15906098008014646
+kin8nm,1,PCA95,Random Forest,8,8,0.10365279654001222
+kin8nm,1,PCA95,Extra Trees,8,8,0.09989134117544346
+kin8nm,1,estándar+PCA,KNN,8,8,0.09395262872416599
+kin8nm,1,estándar+PCA,Árbol,8,8,0.15279716677257932
+kin8nm,1,estándar+PCA,Random Forest,8,8,0.09456251396918228
+kin8nm,1,estándar+PCA,Extra Trees,8,8,0.08843622348352728
+cpu_small,1,estándar,KNN,12,9,2.25313262815297
+cpu_small,1,estándar,Árbol,12,9,2.7493897477624083
+cpu_small,1,estándar,Random Forest,12,9,1.9565622457282341
+cpu_small,1,estándar,Extra Trees,12,9,1.9299694873881204
+cpu_small,1,PCA completa,KNN,12,9,2.25313262815297
+cpu_small,1,PCA completa,Árbol,12,9,3.1407648494711147
+cpu_small,1,PCA completa,Random Forest,12,9,2.3388893409275835
+cpu_small,1,PCA completa,Extra Trees,12,9,2.2675610252237592
+cpu_small,1,PCA95,KNN,12,9,2.343287225386493
+cpu_small,1,PCA95,Árbol,12,9,3.259153783563873
+cpu_small,1,PCA95,Random Forest,12,9,2.4711757526444265
+cpu_small,1,PCA95,Extra Trees,12,9,2.3858828315703824
+cpu_small,1,estándar+PCA,KNN,12,9,2.25313262815297
+cpu_small,1,estándar+PCA,Árbol,12,9,2.770951993490643
+cpu_small,1,estándar+PCA,Random Forest,12,9,1.9377176566314076
+cpu_small,1,estándar+PCA,Extra Trees,12,9,1.930720097640358
+space_ga,3,estándar,KNN,6,3,0.08600539586948588
+space_ga,3,estándar,Árbol,6,3,0.1080650091020961
+space_ga,3,estándar,Random Forest,6,3,0.07937639018673151
+space_ga,3,estándar,Extra Trees,6,3,0.0808275484002203
+space_ga,3,PCA completa,KNN,6,3,0.08600539586948588
+space_ga,3,PCA completa,Árbol,6,3,0.10910006713801669
+space_ga,3,PCA completa,Random Forest,6,3,0.07827944687077255
+space_ga,3,PCA completa,Extra Trees,6,3,0.07495699066766646
+space_ga,3,PCA95,KNN,6,3,0.090127949701368
+space_ga,3,PCA95,Árbol,6,3,0.11760990912252287
+space_ga,3,PCA95,Random Forest,6,3,0.08655572101873
+space_ga,3,PCA95,Extra Trees,6,3,0.08676700173135674
+space_ga,3,estándar+PCA,KNN,6,3,0.08600539586948588
+space_ga,3,estándar+PCA,Árbol,6,3,0.09745906523431024
+space_ga,3,estándar+PCA,Random Forest,6,3,0.07306242639285909
+space_ga,3,estándar+PCA,Extra Trees,6,3,0.07123195773991008
+sulfur,2,estándar,KNN,6,4,0.008990313466666667
+sulfur,2,estándar,Árbol,6,4,0.011811390333333333
+sulfur,2,estándar,Random Forest,6,4,0.009703742426666665
+sulfur,2,estándar,Extra Trees,6,4,0.008343751378333333
+sulfur,2,PCA completa,KNN,6,4,0.008990313466666667
+sulfur,2,PCA completa,Árbol,6,4,0.011713475333333332
+sulfur,2,PCA completa,Random Forest,6,4,0.00924243242
+sulfur,2,PCA completa,Extra Trees,6,4,0.008057016656666667
+sulfur,2,PCA95,KNN,6,4,0.009286601666666667
+sulfur,2,PCA95,Árbol,6,4,0.011876179333333334
+sulfur,2,PCA95,Random Forest,6,4,0.009588390538333331
+sulfur,2,PCA95,Extra Trees,6,4,0.008675909939999999
+sulfur,2,estándar+PCA,KNN,6,4,0.008990313466666667
+sulfur,2,estándar+PCA,Árbol,6,4,0.011714616666666667
+sulfur,2,estándar+PCA,Random Forest,6,4,0.009398922206666667
+sulfur,2,estándar+PCA,Extra Trees,6,4,0.008059644554999997
+house_8L,1,estándar,KNN,8,8,18241.9558
+house_8L,1,estándar,Árbol,8,8,22840.367
+house_8L,1,estándar,Random Forest,8,8,15900.947408333332
+house_8L,1,estándar,Extra Trees,8,8,16285.291596666666
+house_8L,1,PCA completa,KNN,8,8,18241.9558
+house_8L,1,PCA completa,Árbol,8,8,24426.235666666667
+house_8L,1,PCA completa,Random Forest,8,8,18704.975451666665
+house_8L,1,PCA completa,Extra Trees,8,8,18437.968405
+house_8L,1,PCA95,KNN,8,8,18241.9558
+house_8L,1,PCA95,Árbol,8,8,24426.235666666667
+house_8L,1,PCA95,Random Forest,8,8,18704.975451666665
+house_8L,1,PCA95,Extra Trees,8,8,18437.968405
+house_8L,1,estándar+PCA,KNN,8,8,18241.9558
+house_8L,1,estándar+PCA,Árbol,8,8,21432.808
+house_8L,1,estándar+PCA,Random Forest,8,8,16056.291268333332
+house_8L,1,estándar+PCA,Extra Trees,8,8,16426.443454999997
+diabetes,4,estándar,KNN,10,8,44.96992481203007
+diabetes,4,estándar,Árbol,10,8,65.18045112781955
+diabetes,4,estándar,Random Forest,10,8,45.42537593984962
+diabetes,4,estándar,Extra Trees,10,8,44.92225563909774
+diabetes,4,PCA completa,KNN,10,8,44.96992481203007
+diabetes,4,PCA completa,Árbol,10,8,65.33082706766918
+diabetes,4,PCA completa,Random Forest,10,8,45.624135338345866
+diabetes,4,PCA completa,Extra Trees,10,8,43.68800751879699
+diabetes,4,PCA95,KNN,10,8,45.65413533834587
+diabetes,4,PCA95,Árbol,10,8,66.84962406015038
+diabetes,4,PCA95,Random Forest,10,8,45.584924812030074
+diabetes,4,PCA95,Extra Trees,10,8,43.74229323308271
+diabetes,4,estándar+PCA,KNN,10,8,44.96992481203007
+diabetes,4,estándar+PCA,Árbol,10,8,60.24812030075188
+diabetes,4,estándar+PCA,Random Forest,10,8,43.89567669172932
+diabetes,4,estándar+PCA,Extra Trees,10,8,43.536842105263155
+wine_quality,2,estándar,KNN,11,9,0.5298461538461539
+wine_quality,2,estándar,Árbol,11,9,0.5030769230769231
+wine_quality,2,estándar,Random Forest,11,9,0.44839487179487175
+wine_quality,2,estándar,Extra Trees,11,9,0.3959179487179487
+wine_quality,2,PCA completa,KNN,11,9,0.5298461538461539
+wine_quality,2,PCA completa,Árbol,11,9,0.5051282051282051
+wine_quality,2,PCA completa,Random Forest,11,9,0.4581282051282052
+wine_quality,2,PCA completa,Extra Trees,11,9,0.40545641025641027
+wine_quality,2,PCA95,KNN,11,9,0.5311794871794872
+wine_quality,2,PCA95,Árbol,11,9,0.5030769230769231
+wine_quality,2,PCA95,Random Forest,11,9,0.4594564102564102
+wine_quality,2,PCA95,Extra Trees,11,9,0.4039128205128205
+wine_quality,2,estándar+PCA,KNN,11,9,0.5298461538461539
+wine_quality,2,estándar+PCA,Árbol,11,9,0.49435897435897436
+wine_quality,2,estándar+PCA,Random Forest,11,9,0.44806666666666667
+wine_quality,2,estándar+PCA,Extra Trees,11,9,0.3958205128205128
+kin8nm,2,estándar,KNN,8,8,0.09656246736541904
+kin8nm,2,estándar,Árbol,8,8,0.17209980358909682
+kin8nm,2,estándar,Random Forest,8,8,0.11532999376468879
+kin8nm,2,estándar,Extra Trees,8,8,0.11026085410718471
+kin8nm,2,PCA completa,KNN,8,8,0.09656246736541904
+kin8nm,2,PCA completa,Árbol,8,8,0.15775482232343366
+kin8nm,2,PCA completa,Random Forest,8,8,0.10467305421409481
+kin8nm,2,PCA completa,Extra Trees,8,8,0.10272171097009562
+kin8nm,2,PCA95,KNN,8,8,0.09656246736541904
+kin8nm,2,PCA95,Árbol,8,8,0.15775482232343366
+kin8nm,2,PCA95,Random Forest,8,8,0.10467305421409481
+kin8nm,2,PCA95,Extra Trees,8,8,0.10272171097009562
+kin8nm,2,estándar+PCA,KNN,8,8,0.09656246736541904
+kin8nm,2,estándar+PCA,Árbol,8,8,0.148062307142799
+kin8nm,2,estándar+PCA,Random Forest,8,8,0.09813952562087065
+kin8nm,2,estándar+PCA,Extra Trees,8,8,0.09274088283304721
+concrete_compressive_strength,4,estándar,KNN,8,6,6.9400885684138105
+concrete_compressive_strength,4,estándar,Árbol,8,6,4.068808363279396
+concrete_compressive_strength,4,estándar,Random Forest,8,6,3.480098960852319
+concrete_compressive_strength,4,estándar,Extra Trees,8,6,2.949478552733811
+concrete_compressive_strength,4,PCA completa,KNN,8,6,6.938361531442937
+concrete_compressive_strength,4,PCA completa,Árbol,8,6,6.559829368386874
+concrete_compressive_strength,4,PCA completa,Random Forest,8,6,5.751587849793577
+concrete_compressive_strength,4,PCA completa,Extra Trees,8,6,5.25495758062478
+concrete_compressive_strength,4,PCA95,KNN,8,6,7.019906874803927
+concrete_compressive_strength,4,PCA95,Árbol,8,6,7.031886140403395
+concrete_compressive_strength,4,PCA95,Random Forest,8,6,5.827458945651985
+concrete_compressive_strength,4,PCA95,Extra Trees,8,6,5.299384957485521
+concrete_compressive_strength,4,estándar+PCA,KNN,8,6,6.938937210433229
+concrete_compressive_strength,4,estándar+PCA,Árbol,8,6,4.402970254150676
+concrete_compressive_strength,4,estándar+PCA,Random Forest,8,6,3.760877877546189
+concrete_compressive_strength,4,estándar+PCA,Extra Trees,8,6,2.9750062969228557
+stock,4,estándar,KNN,9,5,0.593859649122807
+stock,4,estándar,Árbol,9,5,0.6978070175438597
+stock,4,estándar,Random Forest,9,5,0.6147719298245614
+stock,4,estándar,Extra Trees,9,5,0.47604605263157906
+stock,4,PCA completa,KNN,9,5,0.593859649122807
+stock,4,PCA completa,Árbol,9,5,0.918859649122807
+stock,4,PCA completa,Random Forest,9,5,0.7361666666666665
+stock,4,PCA completa,Extra Trees,9,5,0.5365394736842105
+stock,4,PCA95,KNN,9,5,0.6051754385964913
+stock,4,PCA95,Árbol,9,5,1.006578947368421
+stock,4,PCA95,Random Forest,9,5,0.7684627192982456
+stock,4,PCA95,Extra Trees,9,5,0.5880701754385966
+stock,4,estándar+PCA,KNN,9,5,0.593859649122807
+stock,4,estándar+PCA,Árbol,9,5,0.8583333333333333
+stock,4,estándar+PCA,Random Forest,9,5,0.6407105263157895
+stock,4,estándar+PCA,Extra Trees,9,5,0.4845635964912278
+space_ga,4,estándar,KNN,6,3,0.09201142241252377
+space_ga,4,estándar,Árbol,6,3,0.11195196163529664
+space_ga,4,estándar,Random Forest,6,3,0.08431886264175753
+space_ga,4,estándar,Extra Trees,6,3,0.08368890966530051
+space_ga,4,PCA completa,KNN,6,3,0.09201142241252377
+space_ga,4,PCA completa,Árbol,6,3,0.10585366275814141
+space_ga,4,PCA completa,Random Forest,6,3,0.07699080338646162
+space_ga,4,PCA completa,Extra Trees,6,3,0.07447284296456318
+space_ga,4,PCA95,KNN,6,3,0.09754810715395217
+space_ga,4,PCA95,Árbol,6,3,0.11999443157719042
+space_ga,4,PCA95,Random Forest,6,3,0.09079425384956379
+space_ga,4,PCA95,Extra Trees,6,3,0.0889866925279871
+space_ga,4,estándar+PCA,KNN,6,3,0.09201142241252377
+space_ga,4,estándar+PCA,Árbol,6,3,0.09637915799038307
+space_ga,4,estándar+PCA,Random Forest,6,3,0.07332936510617834
+space_ga,4,estándar+PCA,Extra Trees,6,3,0.07183835469525557
+puma8NH,2,estándar,KNN,8,8,3.0874914711147277
+puma8NH,2,estándar,Árbol,8,8,3.4651622241659887
+puma8NH,2,estándar,Random Forest,8,8,2.562686702862083
+puma8NH,2,estándar,Extra Trees,8,8,2.562926720362083
+puma8NH,2,PCA completa,KNN,8,8,3.0874914711147277
+puma8NH,2,PCA completa,Árbol,8,8,4.131970155004068
+puma8NH,2,PCA completa,Random Forest,8,8,2.8961720611594792
+puma8NH,2,PCA completa,Extra Trees,8,8,2.8476965053580146
+puma8NH,2,PCA95,KNN,8,8,3.0874914711147277
+puma8NH,2,PCA95,Árbol,8,8,4.131970155004068
+puma8NH,2,PCA95,Random Forest,8,8,2.8961720611594792
+puma8NH,2,PCA95,Extra Trees,8,8,2.8476965053580146
+puma8NH,2,estándar+PCA,KNN,8,8,3.0874914711147277
+puma8NH,2,estándar+PCA,Árbol,8,8,3.4111027196908057
+puma8NH,2,estándar+PCA,Random Forest,8,8,2.5650300740663146
+puma8NH,2,estándar+PCA,Extra Trees,8,8,2.565400535770952
+bank8FM,2,estándar,KNN,8,8,0.0379554623270952
+bank8FM,2,estándar,Árbol,8,8,0.031273823026851104
+bank8FM,2,estándar,Random Forest,8,8,0.02249922776240846
+bank8FM,2,estándar,Extra Trees,8,8,0.02238818954841334
+bank8FM,2,PCA completa,KNN,8,8,0.0379554623270952
+bank8FM,2,PCA completa,Árbol,8,8,0.05121201830756713
+bank8FM,2,PCA completa,Random Forest,8,8,0.03222557792310822
+bank8FM,2,PCA completa,Extra Trees,8,8,0.029505292070789262
+bank8FM,2,PCA95,KNN,8,8,0.0379554623270952
+bank8FM,2,PCA95,Árbol,8,8,0.05121201830756713
+bank8FM,2,PCA95,Random Forest,8,8,0.03222557792310822
+bank8FM,2,PCA95,Extra Trees,8,8,0.029505292070789262
+bank8FM,2,estándar+PCA,KNN,8,8,0.0379554623270952
+bank8FM,2,estándar+PCA,Árbol,8,8,0.03061420504475183
+bank8FM,2,estándar+PCA,Random Forest,8,8,0.022063079519934903
+bank8FM,2,estándar+PCA,Extra Trees,8,8,0.0213856915724166
+wine_quality,3,estándar,KNN,11,9,0.5283076923076924
+wine_quality,3,estándar,Árbol,11,9,0.49333333333333335
+wine_quality,3,estándar,Random Forest,11,9,0.43676410256410253
+wine_quality,3,estándar,Extra Trees,11,9,0.3875974358974359
+wine_quality,3,PCA completa,KNN,11,9,0.5283076923076924
+wine_quality,3,PCA completa,Árbol,11,9,0.5158974358974359
+wine_quality,3,PCA completa,Random Forest,11,9,0.44214102564102564
+wine_quality,3,PCA completa,Extra Trees,11,9,0.39674358974358975
+wine_quality,3,PCA95,KNN,11,9,0.5302564102564102
+wine_quality,3,PCA95,Árbol,11,9,0.5292307692307693
+wine_quality,3,PCA95,Random Forest,11,9,0.4446871794871795
+wine_quality,3,PCA95,Extra Trees,11,9,0.3974051282051282
+wine_quality,3,estándar+PCA,KNN,11,9,0.5283076923076924
+wine_quality,3,estándar+PCA,Árbol,11,9,0.5353846153846153
+wine_quality,3,estándar+PCA,Random Forest,11,9,0.43233333333333335
+wine_quality,3,estándar+PCA,Extra Trees,11,9,0.38371538461538457
+cpu_small,2,estándar,KNN,12,9,2.4047192839707083
+cpu_small,2,estándar,Árbol,12,9,2.773393002441009
+cpu_small,2,estándar,Random Forest,12,9,1.9598087876322217
+cpu_small,2,estándar,Extra Trees,12,9,1.910972335231896
+cpu_small,2,PCA completa,KNN,12,9,2.4047192839707083
+cpu_small,2,PCA completa,Árbol,12,9,3.2314890154597236
+cpu_small,2,PCA completa,Random Forest,12,9,2.4322721724979655
+cpu_small,2,PCA completa,Extra Trees,12,9,2.265559397884459
+cpu_small,2,PCA95,KNN,12,9,2.4858421480878765
+cpu_small,2,PCA95,Árbol,12,9,3.434499593165175
+cpu_small,2,PCA95,Random Forest,12,9,2.5159560618388936
+cpu_small,2,PCA95,Extra Trees,12,9,2.4005431244914566
+cpu_small,2,estándar+PCA,KNN,12,9,2.4047192839707083
+cpu_small,2,estándar+PCA,Árbol,12,9,2.757119609438568
+cpu_small,2,estándar+PCA,Random Forest,12,9,1.95986574450773
+cpu_small,2,estándar+PCA,Extra Trees,12,9,1.921006916192026
+cpu_small,3,estándar,KNN,12,9,2.326525630593979
+cpu_small,3,estándar,Árbol,12,9,2.7314890154597236
+cpu_small,3,estándar,Random Forest,12,9,1.951912123677787
+cpu_small,3,estándar,Extra Trees,12,9,1.932613913751017
+cpu_small,3,PCA completa,KNN,12,9,2.326525630593979
+cpu_small,3,PCA completa,Árbol,12,9,3.047192839707079
+cpu_small,3,PCA completa,Random Forest,12,9,2.2809743694060214
+cpu_small,3,PCA completa,Extra Trees,12,9,2.177839707078926
+cpu_small,3,PCA95,KNN,12,9,2.3857607811228645
+cpu_small,3,PCA95,Árbol,12,9,2.9780309194467045
+cpu_small,3,PCA95,Random Forest,12,9,2.317278275020342
+cpu_small,3,PCA95,Extra Trees,12,9,2.2731448331977213
+cpu_small,3,estándar+PCA,KNN,12,9,2.326525630593979
+cpu_small,3,estándar+PCA,Árbol,12,9,2.795362082994304
+cpu_small,3,estándar+PCA,Random Forest,12,9,1.9781407648494713
+cpu_small,3,estándar+PCA,Extra Trees,12,9,1.9413303498779495
+bank8FM,3,estándar,KNN,8,8,0.03745516981285598
+bank8FM,3,estándar,Árbol,8,8,0.03183229658258747
+bank8FM,3,estándar,Random Forest,8,8,0.022699601914157853
+bank8FM,3,estándar,Extra Trees,8,8,0.022487922203010578
+bank8FM,3,PCA completa,KNN,8,8,0.03745516981285598
+bank8FM,3,PCA completa,Árbol,8,8,0.0361393523189585
+bank8FM,3,PCA completa,Random Forest,8,8,0.024825596739218882
+bank8FM,3,PCA completa,Extra Trees,8,8,0.02414000449552482
+bank8FM,3,PCA95,KNN,8,8,0.03745516981285598
+bank8FM,3,PCA95,Árbol,8,8,0.0361393523189585
+bank8FM,3,PCA95,Random Forest,8,8,0.024825596739218882
+bank8FM,3,PCA95,Extra Trees,8,8,0.02414000449552482
+bank8FM,3,estándar+PCA,KNN,8,8,0.03745516981285598
+bank8FM,3,estándar+PCA,Árbol,8,8,0.03263490195280716
+bank8FM,3,estándar+PCA,Random Forest,8,8,0.02242907072416599
+bank8FM,3,estándar+PCA,Extra Trees,8,8,0.021607099908462168
+diabetes,5,estándar,KNN,10,8,47.73834586466166
+diabetes,5,estándar,Árbol,10,8,64.06766917293233
+diabetes,5,estándar,Random Forest,10,8,47.46827067669174
+diabetes,5,estándar,Extra Trees,10,8,45.43390977443609
+diabetes,5,PCA completa,KNN,10,8,47.73834586466166
+diabetes,5,PCA completa,Árbol,10,8,59.473684210526315
+diabetes,5,PCA completa,Random Forest,10,8,45.91984962406015
+diabetes,5,PCA completa,Extra Trees,10,8,45.87563909774436
+diabetes,5,PCA95,KNN,10,8,48.20751879699248
+diabetes,5,PCA95,Árbol,10,8,59.556390977443606
+diabetes,5,PCA95,Random Forest,10,8,45.92518796992481
+diabetes,5,PCA95,Extra Trees,10,8,45.67624060150376
+diabetes,5,estándar+PCA,KNN,10,8,47.73834586466166
+diabetes,5,estándar+PCA,Árbol,10,8,63.10526315789474
+diabetes,5,estándar+PCA,Random Forest,10,8,45.785714285714285
+diabetes,5,estándar+PCA,Extra Trees,10,8,45.34597744360903
+kin8nm,3,estándar,KNN,8,8,0.09353656365720096
+kin8nm,3,estándar,Árbol,8,8,0.17206018386371033
+kin8nm,3,estándar,Random Forest,8,8,0.1145051188357099
+kin8nm,3,estándar,Extra Trees,8,8,0.11089162474057974
+kin8nm,3,PCA completa,KNN,8,8,0.09353656365720096
+kin8nm,3,PCA completa,Árbol,8,8,0.17154958722945485
+kin8nm,3,PCA completa,Random Forest,8,8,0.11187637999036817
+kin8nm,3,PCA completa,Extra Trees,8,8,0.10807468548851303
+kin8nm,3,PCA95,KNN,8,8,0.09353656365720096
+kin8nm,3,PCA95,Árbol,8,8,0.17154958722945485
+kin8nm,3,PCA95,Random Forest,8,8,0.11187637999036817
+kin8nm,3,PCA95,Extra Trees,8,8,0.10807468548851303
+kin8nm,3,estándar+PCA,KNN,8,8,0.09353656365720096
+kin8nm,3,estándar+PCA,Árbol,8,8,0.15440428595809602
+kin8nm,3,estándar+PCA,Random Forest,8,8,0.10219182190728844
+kin8nm,3,estándar+PCA,Extra Trees,8,8,0.09521362812552278
+house_8L,2,estándar,KNN,8,8,18721.3088
+house_8L,2,estándar,Árbol,8,8,22290.255666666668
+house_8L,2,estándar,Random Forest,8,8,16443.46981833333
+house_8L,2,estándar,Extra Trees,8,8,16778.72936
+house_8L,2,PCA completa,KNN,8,8,18721.3088
+house_8L,2,PCA completa,Árbol,8,8,25130.768666666667
+house_8L,2,PCA completa,Random Forest,8,8,18609.55396
+house_8L,2,PCA completa,Extra Trees,8,8,18381.65407666667
+house_8L,2,PCA95,KNN,8,8,18721.3088
+house_8L,2,PCA95,Árbol,8,8,25130.768666666667
+house_8L,2,PCA95,Random Forest,8,8,18609.55396
+house_8L,2,PCA95,Extra Trees,8,8,18381.65407666667
+house_8L,2,estándar+PCA,KNN,8,8,18721.3088
+house_8L,2,estándar+PCA,Árbol,8,8,22026.175666666666
+house_8L,2,estándar+PCA,Random Forest,8,8,16381.790388333333
+house_8L,2,estándar+PCA,Extra Trees,8,8,16895.504718333334
+kin8nm,4,estándar,KNN,8,8,0.09582846193897478
+kin8nm,4,estándar,Árbol,8,8,0.16368744286533768
+kin8nm,4,estándar,Random Forest,8,8,0.1126426540684764
+kin8nm,4,estándar,Extra Trees,8,8,0.10772146074397679
+kin8nm,4,PCA completa,KNN,8,8,0.09582846193897478
+kin8nm,4,PCA completa,Árbol,8,8,0.16324992946867373
+kin8nm,4,PCA completa,Random Forest,8,8,0.1074781221990724
+kin8nm,4,PCA completa,Extra Trees,8,8,0.1047278520244589
+kin8nm,4,PCA95,KNN,8,8,0.09582846193897478
+kin8nm,4,PCA95,Árbol,8,8,0.16324992946867373
+kin8nm,4,PCA95,Random Forest,8,8,0.1074781221990724
+kin8nm,4,PCA95,Extra Trees,8,8,0.1047278520244589
+kin8nm,4,estándar+PCA,KNN,8,8,0.09582846193897478
+kin8nm,4,estándar+PCA,Árbol,8,8,0.1506612795292921
+kin8nm,4,estándar+PCA,Random Forest,8,8,0.10057803347782954
+kin8nm,4,estándar+PCA,Extra Trees,8,8,0.09476592781645239
+sulfur,3,estándar,KNN,6,4,0.008784774866666666
+sulfur,3,estándar,Árbol,6,4,0.011816079333333335
+sulfur,3,estándar,Random Forest,6,4,0.009375568334999999
+sulfur,3,estándar,Extra Trees,6,4,0.007897987291666667
+sulfur,3,PCA completa,KNN,6,4,0.008784774866666666
+sulfur,3,PCA completa,Árbol,6,4,0.011957430000000002
+sulfur,3,PCA completa,Random Forest,6,4,0.008874800956666665
+sulfur,3,PCA completa,Extra Trees,6,4,0.008195496421666663
+sulfur,3,PCA95,KNN,6,4,0.009039196533333333
+sulfur,3,PCA95,Árbol,6,4,0.011732421666666668
+sulfur,3,PCA95,Random Forest,6,4,0.00921204821333333
+sulfur,3,PCA95,Extra Trees,6,4,0.008379140881666665
+sulfur,3,estándar+PCA,KNN,6,4,0.008784774866666666
+sulfur,3,estándar+PCA,Árbol,6,4,0.011766381333333333
+sulfur,3,estándar+PCA,Random Forest,6,4,0.008968794490000001
+sulfur,3,estándar+PCA,Extra Trees,6,4,0.007662274184999997
+concrete_compressive_strength,5,estándar,KNN,8,6,7.275417563933585
+concrete_compressive_strength,5,estándar,Árbol,8,6,4.115331789726903
+concrete_compressive_strength,5,estándar,Random Forest,8,6,3.6501769554432686
+concrete_compressive_strength,5,estándar,Extra Trees,8,6,3.2647335516243787
+concrete_compressive_strength,5,PCA completa,KNN,8,6,7.296775700736175
+concrete_compressive_strength,5,PCA completa,Árbol,8,6,7.290477891550096
+concrete_compressive_strength,5,PCA completa,Random Forest,8,6,5.914268475209007
+concrete_compressive_strength,5,PCA completa,Extra Trees,8,6,5.379361616548732
+concrete_compressive_strength,5,PCA95,KNN,8,6,7.326917755401668
+concrete_compressive_strength,5,PCA95,Árbol,8,6,7.2371864650234645
+concrete_compressive_strength,5,PCA95,Random Forest,8,6,5.872008800949167
+concrete_compressive_strength,5,PCA95,Extra Trees,8,6,5.367992728944262
+concrete_compressive_strength,5,estándar+PCA,KNN,8,6,7.275417563933585
+concrete_compressive_strength,5,estándar+PCA,Árbol,8,6,4.500515648269079
+concrete_compressive_strength,5,estándar+PCA,Random Forest,8,6,3.8943813988055243
+concrete_compressive_strength,5,estándar+PCA,Extra Trees,8,6,3.3425552512200936
+stock,5,estándar,KNN,9,5,0.5980701754385966
+stock,5,estándar,Árbol,9,5,0.856140350877193
+stock,5,estándar,Random Forest,9,5,0.6131096491228069
+stock,5,estándar,Extra Trees,9,5,0.4658728070175439
+stock,5,PCA completa,KNN,9,5,0.5980701754385966
+stock,5,PCA completa,Árbol,9,5,1.013157894736842
+stock,5,PCA completa,Random Forest,9,5,0.7509671052631579
+stock,5,PCA completa,Extra Trees,9,5,0.5058311403508772
+stock,5,PCA95,KNN,9,5,0.6094736842105263
+stock,5,PCA95,Árbol,9,5,0.9385964912280702
+stock,5,PCA95,Random Forest,9,5,0.7076491228070173
+stock,5,PCA95,Extra Trees,9,5,0.5383464912280701
+stock,5,estándar+PCA,KNN,9,5,0.5980701754385966
+stock,5,estándar+PCA,Árbol,9,5,0.7223684210526315
+stock,5,estándar+PCA,Random Forest,9,5,0.5897938596491226
+stock,5,estándar+PCA,Extra Trees,9,5,0.47107017543859636
+space_ga,5,estándar,KNN,6,3,0.08485150614594694
+space_ga,5,estándar,Árbol,6,3,0.11182652366493824
+space_ga,5,estándar,Random Forest,6,3,0.07921589195757692
+space_ga,5,estándar,Extra Trees,6,3,0.07993678202611074
+space_ga,5,PCA completa,KNN,6,3,0.08485150614594694
+space_ga,5,PCA completa,Árbol,6,3,0.10731806918786162
+space_ga,5,PCA completa,Random Forest,6,3,0.07582801244773177
+space_ga,5,PCA completa,Extra Trees,6,3,0.07267834462471909
+space_ga,5,PCA95,KNN,6,3,0.09117580847629153
+space_ga,5,PCA95,Árbol,6,3,0.12029454124447385
+space_ga,5,PCA95,Random Forest,6,3,0.08779661289040354
+space_ga,5,PCA95,Extra Trees,6,3,0.08818138978096221
+space_ga,5,estándar+PCA,KNN,6,3,0.08485150614594694
+space_ga,5,estándar+PCA,Árbol,6,3,0.09478932248035779
+space_ga,5,estándar+PCA,Random Forest,6,3,0.07085817555312783
+space_ga,5,estándar+PCA,Extra Trees,6,3,0.0696686451409353
+puma8NH,3,estándar,KNN,8,8,2.954819011391375
+puma8NH,3,estándar,Árbol,8,8,3.4075976777868187
+puma8NH,3,estándar,Random Forest,8,8,2.478452382284378
+puma8NH,3,estándar,Extra Trees,8,8,2.472256034794549
+puma8NH,3,PCA completa,KNN,8,8,2.954819011391375
+puma8NH,3,PCA completa,Árbol,8,8,3.9300084422294543
+puma8NH,3,PCA completa,Random Forest,8,8,2.7632189348982914
+puma8NH,3,PCA completa,Extra Trees,8,8,2.715882005573637
+puma8NH,3,PCA95,KNN,8,8,2.954819011391375
+puma8NH,3,PCA95,Árbol,8,8,3.9300084422294543
+puma8NH,3,PCA95,Random Forest,8,8,2.7632189348982914
+puma8NH,3,PCA95,Extra Trees,8,8,2.715882005573637
+puma8NH,3,estándar+PCA,KNN,8,8,2.954819011391375
+puma8NH,3,estándar+PCA,Árbol,8,8,3.455269397477624
+puma8NH,3,estándar+PCA,Random Forest,8,8,2.485453321507323
+puma8NH,3,estándar+PCA,Extra Trees,8,8,2.4829797221419856
+california,0,estándar,KNN,8,6,0.4413406107881137
+california,0,estándar,Árbol,8,6,0.46607693636950903
+california,0,estándar,Random Forest,8,6,0.33763181457525865
+california,0,estándar,Extra Trees,8,6,0.3296118883317186
+california,0,PCA completa,KNN,8,6,0.4413406107881137
+california,0,PCA completa,Árbol,8,6,0.5627422448320413
+california,0,PCA completa,Random Forest,8,6,0.4044255758559434
+california,0,PCA completa,Extra Trees,8,6,0.4017013929344318
+california,0,PCA95,KNN,8,6,0.5128045965762275
+california,0,PCA95,Árbol,8,6,0.6551163210594315
+california,0,PCA95,Random Forest,8,6,0.4778556049903102
+california,0,PCA95,Extra Trees,8,6,0.4778585169896642
+california,0,estándar+PCA,KNN,8,6,0.4413406107881137
+california,0,estándar+PCA,Árbol,8,6,0.47297333656330753
+california,0,estándar+PCA,Random Forest,8,6,0.3425999345930235
+california,0,estándar+PCA,Extra Trees,8,6,0.340699083672481
+puma8NH,4,estándar,KNN,8,8,3.01260980349878
+puma8NH,4,estándar,Árbol,8,8,3.3520948677786824
+puma8NH,4,estándar,Random Forest,8,8,2.4919871265866558
+puma8NH,4,estándar,Extra Trees,8,8,2.4930636752095197
+puma8NH,4,PCA completa,KNN,8,8,3.01260980349878
+puma8NH,4,PCA completa,Árbol,8,8,4.109678258746949
+puma8NH,4,PCA completa,Random Forest,8,8,2.937344825058991
+puma8NH,4,PCA completa,Extra Trees,8,8,2.8932906997640355
+puma8NH,4,PCA95,KNN,8,8,3.01260980349878
+puma8NH,4,PCA95,Árbol,8,8,4.109678258746949
+puma8NH,4,PCA95,Random Forest,8,8,2.937344825058991
+puma8NH,4,PCA95,Extra Trees,8,8,2.8932906997640355
+puma8NH,4,estándar+PCA,KNN,8,8,3.01260980349878
+puma8NH,4,estándar+PCA,Árbol,8,8,3.4263047526444264
+puma8NH,4,estándar+PCA,Random Forest,8,8,2.4843725088954436
+puma8NH,4,estándar+PCA,Extra Trees,8,8,2.49889393158869
+wine_quality,4,estándar,KNN,11,9,0.5285128205128206
+wine_quality,4,estándar,Árbol,11,9,0.5005128205128205
+wine_quality,4,estándar,Random Forest,11,9,0.4388025641025641
+wine_quality,4,estándar,Extra Trees,11,9,0.3918051282051282
+wine_quality,4,PCA completa,KNN,11,9,0.5285128205128206
+wine_quality,4,PCA completa,Árbol,11,9,0.5307692307692308
+wine_quality,4,PCA completa,Random Forest,11,9,0.44606153846153845
+wine_quality,4,PCA completa,Extra Trees,11,9,0.3964846153846154
+wine_quality,4,PCA95,KNN,11,9,0.5342564102564104
+wine_quality,4,PCA95,Árbol,11,9,0.5384615384615384
+wine_quality,4,PCA95,Random Forest,11,9,0.4507461538461538
+wine_quality,4,PCA95,Extra Trees,11,9,0.39977179487179487
+wine_quality,4,estándar+PCA,KNN,11,9,0.5285128205128206
+wine_quality,4,estándar+PCA,Árbol,11,9,0.5158974358974359
+wine_quality,4,estándar+PCA,Random Forest,11,9,0.4403974358974359
+wine_quality,4,estándar+PCA,Extra Trees,11,9,0.3894358974358974
+sulfur,4,estándar,KNN,6,4,0.009554240066666667
+sulfur,4,estándar,Árbol,6,4,0.012279692000000002
+sulfur,4,estándar,Random Forest,6,4,0.009816534233333334
+sulfur,4,estándar,Extra Trees,6,4,0.008354948365000002
+sulfur,4,PCA completa,KNN,6,4,0.009554240066666667
+sulfur,4,PCA completa,Árbol,6,4,0.012544877333333334
+sulfur,4,PCA completa,Random Forest,6,4,0.009399560805000002
+sulfur,4,PCA completa,Extra Trees,6,4,0.008485754114999997
+sulfur,4,PCA95,KNN,6,4,0.009835387
+sulfur,4,PCA95,Árbol,6,4,0.012298165333333335
+sulfur,4,PCA95,Random Forest,6,4,0.009976684288333334
+sulfur,4,PCA95,Extra Trees,6,4,0.008918755365000001
+sulfur,4,estándar+PCA,KNN,6,4,0.009554240066666667
+sulfur,4,estándar+PCA,Árbol,6,4,0.011241513666666668
+sulfur,4,estándar+PCA,Random Forest,6,4,0.009407424068333331
+sulfur,4,estándar+PCA,Extra Trees,6,4,0.008077670104999999
+diabetes,6,estándar,KNN,10,7,48.562406015037595
+diabetes,6,estándar,Árbol,10,7,62.18796992481203
+diabetes,6,estándar,Random Forest,10,7,47.90048872180451
+diabetes,6,estándar,Extra Trees,10,7,47.534172932330826
+diabetes,6,PCA completa,KNN,10,7,48.562406015037595
+diabetes,6,PCA completa,Árbol,10,7,63.67669172932331
+diabetes,6,PCA completa,Random Forest,10,7,44.563458646616546
+diabetes,6,PCA completa,Extra Trees,10,7,46.318609022556394
+diabetes,6,PCA95,KNN,10,7,46.64661654135338
+diabetes,6,PCA95,Árbol,10,7,61.83458646616541
+diabetes,6,PCA95,Random Forest,10,7,45.2693984962406
+diabetes,6,PCA95,Extra Trees,10,7,45.981917293233074
+diabetes,6,estándar+PCA,KNN,10,7,48.562406015037595
+diabetes,6,estándar+PCA,Árbol,10,7,59.06015037593985
+diabetes,6,estándar+PCA,Random Forest,10,7,47.59199248120301
+diabetes,6,estándar+PCA,Extra Trees,10,7,47.02387218045113
+concrete_compressive_strength,6,estándar,KNN,8,6,7.691256445624415
+concrete_compressive_strength,6,estándar,Árbol,8,6,4.66510968804942
+concrete_compressive_strength,6,estándar,Random Forest,8,6,3.9556945547790447
+concrete_compressive_strength,6,estándar,Extra Trees,8,6,3.4102810273417283
+concrete_compressive_strength,6,PCA completa,KNN,8,6,7.690051536109852
+concrete_compressive_strength,6,PCA completa,Árbol,8,6,7.3165188126023315
+concrete_compressive_strength,6,PCA completa,Random Forest,8,6,6.15675817017106
+concrete_compressive_strength,6,PCA completa,Extra Trees,8,6,5.580919698820864
+concrete_compressive_strength,6,PCA95,KNN,8,6,7.886411432060463
+concrete_compressive_strength,6,PCA95,Árbol,8,6,7.784962768556635
+concrete_compressive_strength,6,PCA95,Random Forest,8,6,6.431404826274137
+concrete_compressive_strength,6,PCA95,Extra Trees,8,6,5.69239838930874
+concrete_compressive_strength,6,estándar+PCA,KNN,8,6,7.691256445624415
+concrete_compressive_strength,6,estándar+PCA,Árbol,8,6,5.331695594883155
+concrete_compressive_strength,6,estándar+PCA,Random Forest,8,6,4.359879660008778
+concrete_compressive_strength,6,estándar+PCA,Extra Trees,8,6,3.595529953751708
+house_8L,4,estándar,KNN,8,8,18851.541933333334
+house_8L,4,estándar,Árbol,8,8,21671.318666666666
+house_8L,4,estándar,Random Forest,8,8,15984.923765000001
+house_8L,4,estándar,Extra Trees,8,8,16260.367888333332
+house_8L,4,PCA completa,KNN,8,8,18851.541933333334
+house_8L,4,PCA completa,Árbol,8,8,25004.318
+house_8L,4,PCA completa,Random Forest,8,8,18471.489233333334
+house_8L,4,PCA completa,Extra Trees,8,8,18255.672383333334
+house_8L,4,PCA95,KNN,8,8,18851.541933333334
+house_8L,4,PCA95,Árbol,8,8,25004.318
+house_8L,4,PCA95,Random Forest,8,8,18471.489233333334
+house_8L,4,PCA95,Extra Trees,8,8,18255.672383333334
+house_8L,4,estándar+PCA,KNN,8,8,18851.541933333334
+house_8L,4,estándar+PCA,Árbol,8,8,22293.823333333334
+house_8L,4,estándar+PCA,Random Forest,8,8,15970.985758333336
+house_8L,4,estándar+PCA,Extra Trees,8,8,16381.766839999998
+bank8FM,4,estándar,KNN,8,8,0.03881691773799837
+bank8FM,4,estándar,Árbol,8,8,0.032429425549227016
+bank8FM,4,estándar,Random Forest,8,8,0.023256678163140768
+bank8FM,4,estándar,Extra Trees,8,8,0.02292018076078112
+bank8FM,4,PCA completa,KNN,8,8,0.03881691773799837
+bank8FM,4,PCA completa,Árbol,8,8,0.06004038445890969
+bank8FM,4,PCA completa,Random Forest,8,8,0.03777886502441009
+bank8FM,4,PCA completa,Extra Trees,8,8,0.03475490976606998
+bank8FM,4,PCA95,KNN,8,8,0.03881691773799837
+bank8FM,4,PCA95,Árbol,8,8,0.06004038445890969
+bank8FM,4,PCA95,Random Forest,8,8,0.03777886502441009
+bank8FM,4,PCA95,Extra Trees,8,8,0.03475490976606998
+bank8FM,4,estándar+PCA,KNN,8,8,0.03881691773799837
+bank8FM,4,estándar+PCA,Árbol,8,8,0.03251437225386493
+bank8FM,4,estándar+PCA,Random Forest,8,8,0.023117666682262
+bank8FM,4,estándar+PCA,Extra Trees,8,8,0.022669300152563063
+stock,6,estándar,KNN,9,5,0.5790350877192981
+stock,6,estándar,Árbol,9,5,0.8236842105263158
+stock,6,estándar,Random Forest,9,5,0.6022916666666667
+stock,6,estándar,Extra Trees,9,5,0.46352412280701755
+stock,6,PCA completa,KNN,9,5,0.5790350877192981
+stock,6,PCA completa,Árbol,9,5,0.8135964912280702
+stock,6,PCA completa,Random Forest,9,5,0.7464846491228072
+stock,6,PCA completa,Extra Trees,9,5,0.5309429824561402
+stock,6,PCA95,KNN,9,5,0.5785087719298244
+stock,6,PCA95,Árbol,9,5,0.9140350877192982
+stock,6,PCA95,Random Forest,9,5,0.7563815789473683
+stock,6,PCA95,Extra Trees,9,5,0.5598530701754386
+stock,6,estándar+PCA,KNN,9,5,0.5790350877192981
+stock,6,estándar+PCA,Árbol,9,5,0.7640350877192983
+stock,6,estándar+PCA,Random Forest,9,5,0.6238684210526316
+stock,6,estándar+PCA,Extra Trees,9,5,0.48796052631578957
+house_8L,3,estándar,KNN,8,8,18529.2972
+house_8L,3,estándar,Árbol,8,8,21233.845
+house_8L,3,estándar,Random Forest,8,8,16040.025519999997
+house_8L,3,estándar,Extra Trees,8,8,16263.893766666666
+house_8L,3,PCA completa,KNN,8,8,18529.2972
+house_8L,3,PCA completa,Árbol,8,8,24370.017666666667
+house_8L,3,PCA completa,Random Forest,8,8,18557.286013333334
+house_8L,3,PCA completa,Extra Trees,8,8,18221.583718333335
+house_8L,3,PCA95,KNN,8,8,18529.2972
+house_8L,3,PCA95,Árbol,8,8,24370.017666666667
+house_8L,3,PCA95,Random Forest,8,8,18557.286013333334
+house_8L,3,PCA95,Extra Trees,8,8,18221.583718333335
+house_8L,3,estándar+PCA,KNN,8,8,18529.2972
+house_8L,3,estándar+PCA,Árbol,8,8,21282.843666666668
+house_8L,3,estándar+PCA,Random Forest,8,8,16081.408706666669
+house_8L,3,estándar+PCA,Extra Trees,8,8,16229.021488333334
+cpu_small,4,estándar,KNN,12,9,2.336371033360456
+cpu_small,4,estándar,Árbol,12,9,2.9300244100895037
+cpu_small,4,estándar,Random Forest,12,9,2.0176159479251425
+cpu_small,4,estándar,Extra Trees,12,9,1.9618002441008948
+cpu_small,4,PCA completa,KNN,12,9,2.336371033360456
+cpu_small,4,PCA completa,Árbol,12,9,2.982912937347437
+cpu_small,4,PCA completa,Random Forest,12,9,2.277316924328723
+cpu_small,4,PCA completa,Extra Trees,12,9,2.2214564686737184
+cpu_small,4,PCA95,KNN,12,9,2.4209113100081368
+cpu_small,4,PCA95,Árbol,12,9,3.175345809601302
+cpu_small,4,PCA95,Random Forest,12,9,2.4286960943856792
+cpu_small,4,PCA95,Extra Trees,12,9,2.3673454027664764
+cpu_small,4,estándar+PCA,KNN,12,9,2.336371033360456
+cpu_small,4,estándar+PCA,Árbol,12,9,2.8848657445077297
+cpu_small,4,estándar+PCA,Random Forest,12,9,2.022880390561432
+cpu_small,4,estándar+PCA,Extra Trees,12,9,1.9712571196094384
+space_ga,6,estándar,KNN,6,3,0.08622301481299433
+space_ga,6,estándar,Árbol,6,3,0.10707475043421029
+space_ga,6,estándar,Random Forest,6,3,0.07817616624701919
+space_ga,6,estándar,Extra Trees,6,3,0.07860060324022558
+space_ga,6,PCA completa,KNN,6,3,0.08622301481299433
+space_ga,6,PCA completa,Árbol,6,3,0.10417607609590653
+space_ga,6,PCA completa,Random Forest,6,3,0.07411858352959118
+space_ga,6,PCA completa,Extra Trees,6,3,0.07091202383495283
+space_ga,6,PCA95,KNN,6,3,0.09187184626826517
+space_ga,6,PCA95,Árbol,6,3,0.1236107970877433
+space_ga,6,PCA95,Random Forest,6,3,0.08629033006191515
+space_ga,6,PCA95,Extra Trees,6,3,0.08530340040942438
+space_ga,6,estándar+PCA,KNN,6,3,0.08622301481299433
+space_ga,6,estándar+PCA,Árbol,6,3,0.09900255447904581
+space_ga,6,estándar+PCA,Random Forest,6,3,0.07001067727715958
+space_ga,6,estándar+PCA,Extra Trees,6,3,0.06869268818115466
+puma8NH,5,estándar,KNN,8,8,3.033573701545972
+puma8NH,5,estándar,Árbol,8,8,3.4662691350691612
+puma8NH,5,estándar,Random Forest,8,8,2.5073372422518307
+puma8NH,5,estándar,Extra Trees,8,8,2.50372350455655
+puma8NH,5,PCA completa,KNN,8,8,3.033573701545972
+puma8NH,5,PCA completa,Árbol,8,8,4.398920628966639
+puma8NH,5,PCA completa,Random Forest,8,8,3.109537280478031
+puma8NH,5,PCA completa,Extra Trees,8,8,3.091631844003255
+puma8NH,5,PCA95,KNN,8,8,3.033573701545972
+puma8NH,5,PCA95,Árbol,8,8,4.398920628966639
+puma8NH,5,PCA95,Random Forest,8,8,3.109537280478031
+puma8NH,5,PCA95,Extra Trees,8,8,3.091631844003255
+puma8NH,5,estándar+PCA,KNN,8,8,3.033573701545972
+puma8NH,5,estándar+PCA,Árbol,8,8,3.436082738405208
+puma8NH,5,estándar+PCA,Random Forest,8,8,2.500052486092352
+puma8NH,5,estándar+PCA,Extra Trees,8,8,2.475884159265663
+california,1,estándar,KNN,8,6,0.45144452777777777
+california,1,estándar,Árbol,8,6,0.45091288113695094
+california,1,estándar,Random Forest,8,6,0.33159366795865663
+california,1,estándar,Extra Trees,8,6,0.33085388682170574
+california,1,PCA completa,KNN,8,6,0.45144452777777777
+california,1,PCA completa,Árbol,8,6,0.5727985820413437
+california,1,PCA completa,Random Forest,8,6,0.4152516344961243
+california,1,PCA completa,Extra Trees,8,6,0.4158526465681527
+california,1,PCA95,KNN,8,6,0.522440825258398
+california,1,PCA95,Árbol,8,6,0.6645149983850129
+california,1,PCA95,Random Forest,8,6,0.4847959201388891
+california,1,PCA95,Extra Trees,8,6,0.49077751872577535
+california,1,estándar+PCA,KNN,8,6,0.45144452777777777
+california,1,estándar+PCA,Árbol,8,6,0.4926725645994832
+california,1,estándar+PCA,Random Forest,8,6,0.342480168039406
+california,1,estándar+PCA,Extra Trees,8,6,0.3375432098514215
+kin8nm,5,estándar,KNN,8,8,0.09482394913067535
+kin8nm,5,estándar,Árbol,8,8,0.16390690301220504
+kin8nm,5,estándar,Random Forest,8,8,0.11119434976357202
+kin8nm,5,estándar,Extra Trees,8,8,0.10669583646513835
+kin8nm,5,PCA completa,KNN,8,8,0.09482394913067535
+kin8nm,5,PCA completa,Árbol,8,8,0.1624952366855167
+kin8nm,5,PCA completa,Random Forest,8,8,0.10957380179887712
+kin8nm,5,PCA completa,Extra Trees,8,8,0.10509260931221115
+kin8nm,5,PCA95,KNN,8,8,0.09482394913067535
+kin8nm,5,PCA95,Árbol,8,8,0.1624952366855167
+kin8nm,5,PCA95,Random Forest,8,8,0.10957380179887712
+kin8nm,5,PCA95,Extra Trees,8,8,0.10509260931221115
+kin8nm,5,estándar+PCA,KNN,8,8,0.09482394913067535
+kin8nm,5,estándar+PCA,Árbol,8,8,0.15225900294182262
+kin8nm,5,estándar+PCA,Random Forest,8,8,0.09996233523485151
+kin8nm,5,estándar+PCA,Extra Trees,8,8,0.09294053717724574
+california,2,estándar,KNN,8,6,0.44501360271317836
+california,2,estándar,Árbol,8,6,0.46410379198966417
+california,2,estándar,Random Forest,8,6,0.33282026922642155
+california,2,estándar,Extra Trees,8,6,0.33086946468023287
+california,2,PCA completa,KNN,8,6,0.44501360271317836
+california,2,PCA completa,Árbol,8,6,0.5830521866925065
+california,2,PCA completa,Random Forest,8,6,0.41150508418120185
+california,2,PCA completa,Extra Trees,8,6,0.4057272724321708
+california,2,PCA95,KNN,8,6,0.5159703104005168
+california,2,PCA95,Árbol,8,6,0.6645463565891473
+california,2,PCA95,Random Forest,8,6,0.4822379031815248
+california,2,PCA95,Extra Trees,8,6,0.4865628211159563
+california,2,estándar+PCA,KNN,8,6,0.44501360271317836
+california,2,estándar+PCA,Árbol,8,6,0.48615629844961245
+california,2,estándar+PCA,Random Forest,8,6,0.3422208471091735
+california,2,estándar+PCA,Extra Trees,8,6,0.33786939439599517
+diabetes,7,estándar,KNN,10,8,46.73233082706766
+diabetes,7,estándar,Árbol,10,8,60.31578947368421
+diabetes,7,estándar,Random Forest,10,8,43.17684210526316
+diabetes,7,estándar,Extra Trees,10,8,42.66571428571429
+diabetes,7,PCA completa,KNN,10,8,46.73233082706766
+diabetes,7,PCA completa,Árbol,10,8,60.58646616541353
+diabetes,7,PCA completa,Random Forest,10,8,47.72496240601504
+diabetes,7,PCA completa,Extra Trees,10,8,44.916654135338355
+diabetes,7,PCA95,KNN,10,8,45.73533834586467
+diabetes,7,PCA95,Árbol,10,8,64.71428571428571
+diabetes,7,PCA95,Random Forest,10,8,48.07026315789474
+diabetes,7,PCA95,Extra Trees,10,8,45.31808270676692
+diabetes,7,estándar+PCA,KNN,10,8,46.73233082706766
+diabetes,7,estándar+PCA,Árbol,10,8,58.421052631578945
+diabetes,7,estándar+PCA,Random Forest,10,8,43.2375939849624
+diabetes,7,estándar+PCA,Extra Trees,10,8,42.07319548872181
+california,3,estándar,KNN,8,6,0.4435663914728682
+california,3,estándar,Árbol,8,6,0.4641268378552972
+california,3,estándar,Random Forest,8,6,0.32352241074773935
+california,3,estándar,Extra Trees,8,6,0.3196831539890184
+california,3,PCA completa,KNN,8,6,0.4435663914728682
+california,3,PCA completa,Árbol,8,6,0.5820340633074935
+california,3,PCA completa,Random Forest,8,6,0.40966920121124056
+california,3,PCA completa,Extra Trees,8,6,0.4113078212774551
+california,3,PCA95,KNN,8,6,0.5224184841731266
+california,3,PCA95,Árbol,8,6,0.666914294250646
+california,3,PCA95,Random Forest,8,6,0.483248250896318
+california,3,PCA95,Extra Trees,8,6,0.4893910851824937
+california,3,estándar+PCA,KNN,8,6,0.4435663914728682
+california,3,estándar+PCA,Árbol,8,6,0.4740793782299742
+california,3,estándar+PCA,Random Forest,8,6,0.33030639521156363
+california,3,estándar+PCA,Extra Trees,8,6,0.33014535293120184
+wine_quality,5,estándar,KNN,11,9,0.5298461538461539
+wine_quality,5,estándar,Árbol,11,9,0.5025641025641026
+wine_quality,5,estándar,Random Forest,11,9,0.44353589743589744
+wine_quality,5,estándar,Extra Trees,11,9,0.3971333333333334
+wine_quality,5,PCA completa,KNN,11,9,0.5298461538461539
+wine_quality,5,PCA completa,Árbol,11,9,0.5261538461538462
+wine_quality,5,PCA completa,Random Forest,11,9,0.45742820512820515
+wine_quality,5,PCA completa,Extra Trees,11,9,0.40390000000000004
+wine_quality,5,PCA95,KNN,11,9,0.5272820512820513
+wine_quality,5,PCA95,Árbol,11,9,0.518974358974359
+wine_quality,5,PCA95,Random Forest,11,9,0.46286153846153844
+wine_quality,5,PCA95,Extra Trees,11,9,0.4071820512820512
+wine_quality,5,estándar+PCA,KNN,11,9,0.5298461538461539
+wine_quality,5,estándar+PCA,Árbol,11,9,0.5123076923076924
+wine_quality,5,estándar+PCA,Random Forest,11,9,0.44014102564102564
+wine_quality,5,estándar+PCA,Extra Trees,11,9,0.3944538461538461
+bank8FM,5,estándar,KNN,8,8,0.03741546899918633
+bank8FM,5,estándar,Árbol,8,8,0.03173886574450773
+bank8FM,5,estándar,Random Forest,8,8,0.023210595425142387
+bank8FM,5,estándar,Extra Trees,8,8,0.022943426454434496
+bank8FM,5,PCA completa,KNN,8,8,0.03741546899918633
+bank8FM,5,PCA completa,Árbol,8,8,0.04800989991863303
+bank8FM,5,PCA completa,Random Forest,8,8,0.03093421826891782
+bank8FM,5,PCA completa,Extra Trees,8,8,0.030162671661920267
+bank8FM,5,PCA95,KNN,8,8,0.03741546899918633
+bank8FM,5,PCA95,Árbol,8,8,0.04800989991863303
+bank8FM,5,PCA95,Random Forest,8,8,0.03093421826891782
+bank8FM,5,PCA95,Extra Trees,8,8,0.030162671661920267
+bank8FM,5,estándar+PCA,KNN,8,8,0.03741546899918633
+bank8FM,5,estándar+PCA,Árbol,8,8,0.0322139593165175
+bank8FM,5,estándar+PCA,Random Forest,8,8,0.02282951294548413
+bank8FM,5,estándar+PCA,Extra Trees,8,8,0.02254859391171684
+stock,7,estándar,KNN,9,5,0.6382456140350876
+stock,7,estándar,Árbol,9,5,0.8131578947368421
+stock,7,estándar,Random Forest,9,5,0.6574999999999999
+stock,7,estándar,Extra Trees,9,5,0.5207916666666665
+stock,7,PCA completa,KNN,9,5,0.6382456140350876
+stock,7,PCA completa,Árbol,9,5,0.9618421052631579
+stock,7,PCA completa,Random Forest,9,5,0.7788640350877193
+stock,7,PCA completa,Extra Trees,9,5,0.6064473684210525
+stock,7,PCA95,KNN,9,5,0.6465789473684209
+stock,7,PCA95,Árbol,9,5,0.9083333333333333
+stock,7,PCA95,Random Forest,9,5,0.8353004385964915
+stock,7,PCA95,Extra Trees,9,5,0.6484122807017543
+stock,7,estándar+PCA,KNN,9,5,0.6382456140350876
+stock,7,estándar+PCA,Árbol,9,5,0.7868421052631579
+stock,7,estándar+PCA,Random Forest,9,5,0.6701030701754387
+stock,7,estándar+PCA,Extra Trees,9,5,0.5437916666666668
+concrete_compressive_strength,7,estándar,KNN,8,6,6.567257816183892
+concrete_compressive_strength,7,estándar,Árbol,8,6,4.248460690710887
+concrete_compressive_strength,7,estándar,Random Forest,8,6,3.445089911960653
+concrete_compressive_strength,7,estándar,Extra Trees,8,6,2.7947683718320055
+concrete_compressive_strength,7,PCA completa,KNN,8,6,6.545899679381303
+concrete_compressive_strength,7,PCA completa,Árbol,8,6,6.3716792413788435
+concrete_compressive_strength,7,PCA completa,Random Forest,8,6,5.246822833046937
+concrete_compressive_strength,7,PCA completa,Extra Trees,8,6,4.499134679546943
+concrete_compressive_strength,7,PCA95,KNN,8,6,6.7739550070103745
+concrete_compressive_strength,7,PCA95,Árbol,8,6,6.524257761962585
+concrete_compressive_strength,7,PCA95,Random Forest,8,6,5.232560538269742
+concrete_compressive_strength,7,PCA95,Extra Trees,8,6,4.422062332719582
+concrete_compressive_strength,7,estándar+PCA,KNN,8,6,6.567257816183892
+concrete_compressive_strength,7,estándar+PCA,Árbol,8,6,4.343374515911714
+concrete_compressive_strength,7,estándar+PCA,Random Forest,8,6,3.6783063720000917
+concrete_compressive_strength,7,estándar+PCA,Extra Trees,8,6,2.8781786957144173
+space_ga,7,estándar,KNN,6,3,0.08910675631273991
+space_ga,7,estándar,Árbol,6,3,0.114818685314107
+space_ga,7,estándar,Random Forest,6,3,0.07990538809453951
+space_ga,7,estándar,Extra Trees,6,3,0.08131566104255818
+space_ga,7,PCA completa,KNN,6,3,0.08910675631273991
+space_ga,7,PCA completa,Árbol,6,3,0.10758344596341317
+space_ga,7,PCA completa,Random Forest,6,3,0.07450810243723194
+space_ga,7,PCA completa,Extra Trees,6,3,0.07310734825872339
+space_ga,7,PCA95,KNN,6,3,0.09199517192923745
+space_ga,7,PCA95,Árbol,6,3,0.12502399112044257
+space_ga,7,PCA95,Random Forest,6,3,0.08683622034203928
+space_ga,7,PCA95,Extra Trees,6,3,0.08651164623101598
+space_ga,7,estándar+PCA,KNN,6,3,0.08910675631273991
+space_ga,7,estándar+PCA,Árbol,6,3,0.10347218197319263
+space_ga,7,estándar+PCA,Random Forest,6,3,0.07017510100554669
+space_ga,7,estándar+PCA,Extra Trees,6,3,0.07030737044625417
+california,4,estándar,KNN,8,6,0.4472599573643411
+california,4,estándar,Árbol,8,6,0.4654052551679587
+california,4,estándar,Random Forest,8,6,0.3328763256459951
+california,4,estándar,Extra Trees,8,6,0.3315830178133078
+california,4,PCA completa,KNN,8,6,0.4472599573643411
+california,4,PCA completa,Árbol,8,6,0.5806303472222222
+california,4,PCA completa,Random Forest,8,6,0.40685845485303634
+california,4,PCA completa,Extra Trees,8,6,0.40270391229005187
+california,4,PCA95,KNN,8,6,0.5234901715116279
+california,4,PCA95,Árbol,8,6,0.6624066521317828
+california,4,PCA95,Random Forest,8,6,0.4833755486353361
+california,4,PCA95,Extra Trees,8,6,0.4839184083171836
+california,4,estándar+PCA,KNN,8,6,0.4472599573643411
+california,4,estándar+PCA,Árbol,8,6,0.4849438791989664
+california,4,estándar+PCA,Random Forest,8,6,0.3387311959706075
+california,4,estándar+PCA,Extra Trees,8,6,0.34143755415859195
+house_8L,5,estándar,KNN,8,8,18290.559400000002
+house_8L,5,estándar,Árbol,8,8,22733.483333333334
+house_8L,5,estándar,Random Forest,8,8,15856.800170000002
+house_8L,5,estándar,Extra Trees,8,8,16235.154915000001
+house_8L,5,PCA completa,KNN,8,8,18290.559400000002
+house_8L,5,PCA completa,Árbol,8,8,24302.841666666667
+house_8L,5,PCA completa,Random Forest,8,8,18413.99593166667
+house_8L,5,PCA completa,Extra Trees,8,8,18093.802473333333
+house_8L,5,PCA95,KNN,8,8,18290.559400000002
+house_8L,5,PCA95,Árbol,8,8,24302.841666666667
+house_8L,5,PCA95,Random Forest,8,8,18413.99593166667
+house_8L,5,PCA95,Extra Trees,8,8,18093.802473333333
+house_8L,5,estándar+PCA,KNN,8,8,18290.559400000002
+house_8L,5,estándar+PCA,Árbol,8,8,21505.380333333334
+house_8L,5,estándar+PCA,Random Forest,8,8,15959.67244
+house_8L,5,estándar+PCA,Extra Trees,8,8,16186.617258333335
+sulfur,5,estándar,KNN,6,4,0.008940527066666665
+sulfur,5,estándar,Árbol,6,4,0.011632751333333333
+sulfur,5,estándar,Random Forest,6,4,0.009297916531666665
+sulfur,5,estándar,Extra Trees,6,4,0.008020032029999999
+sulfur,5,PCA completa,KNN,6,4,0.008940527066666665
+sulfur,5,PCA completa,Árbol,6,4,0.011374727333333334
+sulfur,5,PCA completa,Random Forest,6,4,0.008908075623333334
+sulfur,5,PCA completa,Extra Trees,6,4,0.007971939554999998
+sulfur,5,PCA95,KNN,6,4,0.009204956133333332
+sulfur,5,PCA95,Árbol,6,4,0.011942345
+sulfur,5,PCA95,Random Forest,6,4,0.009413324451666667
+sulfur,5,PCA95,Extra Trees,6,4,0.008456273084999999
+sulfur,5,estándar+PCA,KNN,6,4,0.008940527066666665
+sulfur,5,estándar+PCA,Árbol,6,4,0.011385431333333335
+sulfur,5,estándar+PCA,Random Forest,6,4,0.008828519068333334
+sulfur,5,estándar+PCA,Extra Trees,6,4,0.00753501258
+kin8nm,6,estándar,KNN,8,8,0.09606489325044752
+kin8nm,6,estándar,Árbol,8,8,0.16733286372213182
+kin8nm,6,estándar,Random Forest,8,8,0.11527477989840929
+kin8nm,6,estándar,Extra Trees,8,8,0.11002255369762814
+kin8nm,6,PCA completa,KNN,8,8,0.09606489325044752
+kin8nm,6,PCA completa,Árbol,8,8,0.16634157514646053
+kin8nm,6,PCA completa,Random Forest,8,8,0.1112066823576302
+kin8nm,6,PCA completa,Extra Trees,8,8,0.10541421497827298
+kin8nm,6,PCA95,KNN,8,8,0.09606489325044752
+kin8nm,6,PCA95,Árbol,8,8,0.16634157514646053
+kin8nm,6,PCA95,Random Forest,8,8,0.1112066823576302
+kin8nm,6,PCA95,Extra Trees,8,8,0.10541421497827298
+kin8nm,6,estándar+PCA,KNN,8,8,0.09606489325044752
+kin8nm,6,estándar+PCA,Árbol,8,8,0.14588990176769734
+kin8nm,6,estándar+PCA,Random Forest,8,8,0.09789007146866356
+kin8nm,6,estándar+PCA,Extra Trees,8,8,0.09141055765473556
+cpu_small,5,estándar,KNN,12,9,2.26493083807974
+cpu_small,5,estándar,Árbol,12,9,2.771765663140765
+cpu_small,5,estándar,Random Forest,12,9,2.023413344182262
+cpu_small,5,estándar,Extra Trees,12,9,1.9612266069975588
+cpu_small,5,PCA completa,KNN,12,9,2.26493083807974
+cpu_small,5,PCA completa,Árbol,12,9,3.11106590724166
+cpu_small,5,PCA completa,Random Forest,12,9,2.287127746135069
+cpu_small,5,PCA completa,Extra Trees,12,9,2.1957851912123676
+cpu_small,5,PCA95,KNN,12,9,2.3969080553295363
+cpu_small,5,PCA95,Árbol,12,9,3.0398698128559807
+cpu_small,5,PCA95,Random Forest,12,9,2.33313262815297
+cpu_small,5,PCA95,Extra Trees,12,9,2.315321399511798
+cpu_small,5,estándar+PCA,KNN,12,9,2.26493083807974
+cpu_small,5,estándar+PCA,Árbol,12,9,2.7070789259560617
+cpu_small,5,estándar+PCA,Random Forest,12,9,1.9827969894222945
+cpu_small,5,estándar+PCA,Extra Trees,12,9,1.9531529698942232
+diabetes,8,estándar,KNN,10,7,45.54887218045113
+diabetes,8,estándar,Árbol,10,7,63.24812030075188
+diabetes,8,estándar,Random Forest,10,7,48.761729323308266
+diabetes,8,estándar,Extra Trees,10,7,46.823759398496236
+diabetes,8,PCA completa,KNN,10,7,45.54887218045113
+diabetes,8,PCA completa,Árbol,10,7,61.255639097744364
+diabetes,8,PCA completa,Random Forest,10,7,47.18507518796992
+diabetes,8,PCA completa,Extra Trees,10,7,46.75695488721804
+diabetes,8,PCA95,KNN,10,7,45.23759398496241
+diabetes,8,PCA95,Árbol,10,7,67.29323308270676
+diabetes,8,PCA95,Random Forest,10,7,46.2621052631579
+diabetes,8,PCA95,Extra Trees,10,7,46.23067669172933
+diabetes,8,estándar+PCA,KNN,10,7,45.54887218045113
+diabetes,8,estándar+PCA,Árbol,10,7,65.00751879699249
+diabetes,8,estándar+PCA,Random Forest,10,7,47.204097744360894
+diabetes,8,estándar+PCA,Extra Trees,10,7,46.19296992481204
+concrete_compressive_strength,8,estándar,KNN,8,6,7.1575059476064435
+concrete_compressive_strength,8,estándar,Árbol,8,6,4.457933147236247
+concrete_compressive_strength,8,estándar,Random Forest,8,6,3.4973498576528836
+concrete_compressive_strength,8,estándar,Extra Trees,8,6,3.2168417554934576
+concrete_compressive_strength,8,PCA completa,KNN,8,6,7.162086388812916
+concrete_compressive_strength,8,PCA completa,Árbol,8,6,7.033576413870586
+concrete_compressive_strength,8,PCA completa,Random Forest,8,6,5.999891718461334
+concrete_compressive_strength,8,PCA completa,Extra Trees,8,6,5.265058925225405
+concrete_compressive_strength,8,PCA95,KNN,8,6,7.14223859652342
+concrete_compressive_strength,8,PCA95,Árbol,8,6,6.871217407007665
+concrete_compressive_strength,8,PCA95,Random Forest,8,6,5.996344893776361
+concrete_compressive_strength,8,PCA95,Extra Trees,8,6,5.39796849175537
+concrete_compressive_strength,8,estándar+PCA,KNN,8,6,7.162086388812916
+concrete_compressive_strength,8,estándar+PCA,Árbol,8,6,4.597593635331508
+concrete_compressive_strength,8,estándar+PCA,Random Forest,8,6,3.8636042282478833
+concrete_compressive_strength,8,estándar+PCA,Extra Trees,8,6,3.35651955535555
+stock,8,estándar,KNN,9,5,0.6240350877192983
+stock,8,estándar,Árbol,9,5,0.874561403508772
+stock,8,estándar,Random Forest,9,5,0.6414210526315792
+stock,8,estándar,Extra Trees,9,5,0.5123377192982456
+stock,8,PCA completa,KNN,9,5,0.6240350877192983
+stock,8,PCA completa,Árbol,9,5,1.025438596491228
+stock,8,PCA completa,Random Forest,9,5,0.816530701754386
+stock,8,PCA completa,Extra Trees,9,5,0.5878333333333333
+stock,8,PCA95,KNN,9,5,0.6434210526315786
+stock,8,PCA95,Árbol,9,5,1.0328947368421053
+stock,8,PCA95,Random Forest,9,5,0.834826754385965
+stock,8,PCA95,Extra Trees,9,5,0.6332631578947369
+stock,8,estándar+PCA,KNN,9,5,0.6240350877192983
+stock,8,estándar+PCA,Árbol,9,5,0.9271929824561403
+stock,8,estándar+PCA,Random Forest,9,5,0.7013947368421052
+stock,8,estándar+PCA,Extra Trees,9,5,0.5287236842105262
+wine_quality,6,estándar,KNN,11,9,0.536923076923077
+wine_quality,6,estándar,Árbol,11,9,0.5051282051282051
+wine_quality,6,estándar,Random Forest,11,9,0.4416051282051282
+wine_quality,6,estándar,Extra Trees,11,9,0.39632564102564105
+wine_quality,6,PCA completa,KNN,11,9,0.536923076923077
+wine_quality,6,PCA completa,Árbol,11,9,0.5266666666666666
+wine_quality,6,PCA completa,Random Forest,11,9,0.4432589743589744
+wine_quality,6,PCA completa,Extra Trees,11,9,0.3966948717948718
+wine_quality,6,PCA95,KNN,11,9,0.5361025641025642
+wine_quality,6,PCA95,Árbol,11,9,0.5384615384615384
+wine_quality,6,PCA95,Random Forest,11,9,0.4487025641025641
+wine_quality,6,PCA95,Extra Trees,11,9,0.39687179487179486
+wine_quality,6,estándar+PCA,KNN,11,9,0.536923076923077
+wine_quality,6,estándar+PCA,Árbol,11,9,0.5056410256410256
+wine_quality,6,estándar+PCA,Random Forest,11,9,0.44301282051282054
+wine_quality,6,estándar+PCA,Extra Trees,11,9,0.3914820512820513
+sulfur,6,estándar,KNN,6,4,0.009184282266666666
+sulfur,6,estándar,Árbol,6,4,0.011943655666666667
+sulfur,6,estándar,Random Forest,6,4,0.009509069271666665
+sulfur,6,estándar,Extra Trees,6,4,0.008383435811666664
+sulfur,6,PCA completa,KNN,6,4,0.009184282266666666
+sulfur,6,PCA completa,Árbol,6,4,0.011896625000000001
+sulfur,6,PCA completa,Random Forest,6,4,0.009187032068333333
+sulfur,6,PCA completa,Extra Trees,6,4,0.008485201576666665
+sulfur,6,PCA95,KNN,6,4,0.0092862238
+sulfur,6,PCA95,Árbol,6,4,0.012411835333333334
+sulfur,6,PCA95,Random Forest,6,4,0.00994290675166667
+sulfur,6,PCA95,Extra Trees,6,4,0.008915010018333334
+sulfur,6,estándar+PCA,KNN,6,4,0.009184282266666666
+sulfur,6,estándar+PCA,Árbol,6,4,0.011658868666666667
+sulfur,6,estándar+PCA,Random Forest,6,4,0.00946452909
+sulfur,6,estándar+PCA,Extra Trees,6,4,0.00816018198333333
+space_ga,8,estándar,KNN,6,3,0.08760138051929924
+space_ga,8,estándar,Árbol,6,3,0.1055093539846693
+space_ga,8,estándar,Random Forest,6,3,0.08014866881545053
+space_ga,8,estándar,Extra Trees,6,3,0.07980497482242314
+space_ga,8,PCA completa,KNN,6,3,0.08760138051929924
+space_ga,8,PCA completa,Árbol,6,3,0.10537765493146761
+space_ga,8,PCA completa,Random Forest,6,3,0.07290582275222979
+space_ga,8,PCA completa,Extra Trees,6,3,0.07090401301705422
+space_ga,8,PCA95,KNN,6,3,0.09130023710012605
+space_ga,8,PCA95,Árbol,6,3,0.11700246249918468
+space_ga,8,PCA95,Random Forest,6,3,0.0882390005399645
+space_ga,8,PCA95,Extra Trees,6,3,0.0861575905956627
+space_ga,8,estándar+PCA,KNN,6,3,0.08760138051929924
+space_ga,8,estándar+PCA,Árbol,6,3,0.10434302617381046
+space_ga,8,estándar+PCA,Random Forest,6,3,0.07066118199198627
+space_ga,8,estándar+PCA,Extra Trees,6,3,0.06932929266463955
+bank8FM,6,estándar,KNN,8,8,0.03904444719283971
+bank8FM,6,estándar,Árbol,8,8,0.03124491619202604
+bank8FM,6,estándar,Random Forest,8,8,0.02280586522172498
+bank8FM,6,estándar,Extra Trees,8,8,0.02260271649715216
+bank8FM,6,PCA completa,KNN,8,8,0.03904444719283971
+bank8FM,6,PCA completa,Árbol,8,8,0.05389123962571197
+bank8FM,6,PCA completa,Random Forest,8,8,0.03466588896460537
+bank8FM,6,PCA completa,Extra Trees,8,8,0.03241422662327095
+bank8FM,6,PCA95,KNN,8,8,0.03904444719283971
+bank8FM,6,PCA95,Árbol,8,8,0.05389123962571197
+bank8FM,6,PCA95,Random Forest,8,8,0.03466588896460537
+bank8FM,6,PCA95,Extra Trees,8,8,0.03241422662327095
+bank8FM,6,estándar+PCA,KNN,8,8,0.03904444719283971
+bank8FM,6,estándar+PCA,Árbol,8,8,0.031875051668022784
+bank8FM,6,estándar+PCA,Random Forest,8,8,0.022607096562245736
+bank8FM,6,estándar+PCA,Extra Trees,8,8,0.022491812406427992
+kin8nm,7,estándar,KNN,8,8,0.09531015824092759
+kin8nm,7,estándar,Árbol,8,8,0.15986833406956874
+kin8nm,7,estándar,Random Forest,8,8,0.11492676229340727
+kin8nm,7,estándar,Extra Trees,8,8,0.11089851632629782
+kin8nm,7,PCA completa,KNN,8,8,0.09531015824092759
+kin8nm,7,PCA completa,Árbol,8,8,0.16050458741171683
+kin8nm,7,PCA completa,Random Forest,8,8,0.10559649626022174
+kin8nm,7,PCA completa,Extra Trees,8,8,0.10223567324503054
+kin8nm,7,PCA95,KNN,8,8,0.09531015824092759
+kin8nm,7,PCA95,Árbol,8,8,0.16050458741171683
+kin8nm,7,PCA95,Random Forest,8,8,0.10559649626022174
+kin8nm,7,PCA95,Extra Trees,8,8,0.10223567324503054
+kin8nm,7,estándar+PCA,KNN,8,8,0.09531015824092759
+kin8nm,7,estándar+PCA,Árbol,8,8,0.15412485031366963
+kin8nm,7,estándar+PCA,Random Forest,8,8,0.1011441348903682
+kin8nm,7,estándar+PCA,Extra Trees,8,8,0.09481257635735153
+cpu_small,6,estándar,KNN,12,9,2.351423921887714
+cpu_small,6,estándar,Árbol,12,9,2.840113913751017
+cpu_small,6,estándar,Random Forest,12,9,2.0100244100895033
+cpu_small,6,estándar,Extra Trees,12,9,1.9721338486574451
+cpu_small,6,PCA completa,KNN,12,9,2.351423921887714
+cpu_small,6,PCA completa,Árbol,12,9,3.1053702196908057
+cpu_small,6,PCA completa,Random Forest,12,9,2.294991863303499
+cpu_small,6,PCA completa,Extra Trees,12,9,2.1984641985353948
+cpu_small,6,PCA95,KNN,12,9,2.390805532953621
+cpu_small,6,PCA95,Árbol,12,9,3.2640358014646056
+cpu_small,6,PCA95,Random Forest,12,9,2.4357628152969895
+cpu_small,6,PCA95,Extra Trees,12,9,2.327194873881204
+cpu_small,6,estándar+PCA,KNN,12,9,2.351423921887714
+cpu_small,6,estándar+PCA,Árbol,12,9,2.775427176566314
+cpu_small,6,estándar+PCA,Random Forest,12,9,1.9603275020341744
+cpu_small,6,estándar+PCA,Extra Trees,12,9,1.961946704637917
+puma8NH,6,estándar,KNN,8,8,3.100157935557364
+puma8NH,6,estándar,Árbol,8,8,3.4925041322213177
+puma8NH,6,estándar,Random Forest,8,8,2.6007898564727423
+puma8NH,6,estándar,Extra Trees,8,8,2.6088181936350696
+puma8NH,6,PCA completa,KNN,8,8,3.100157935557364
+puma8NH,6,PCA completa,Árbol,8,8,4.050517435313263
+puma8NH,6,PCA completa,Random Forest,8,8,2.938882392955655
+puma8NH,6,PCA completa,Extra Trees,8,8,2.879576815323434
+puma8NH,6,PCA95,KNN,8,8,3.100157935557364
+puma8NH,6,PCA95,Árbol,8,8,4.050517435313263
+puma8NH,6,PCA95,Random Forest,8,8,2.938882392955655
+puma8NH,6,PCA95,Extra Trees,8,8,2.879576815323434
+puma8NH,6,estándar+PCA,KNN,8,8,3.100157935557364
+puma8NH,6,estándar+PCA,Árbol,8,8,3.6101141082180632
+puma8NH,6,estándar+PCA,Random Forest,8,8,2.6067999484072417
+puma8NH,6,estándar+PCA,Extra Trees,8,8,2.6092702963649312
+puma8NH,7,estándar,KNN,8,8,3.06330703270952
+puma8NH,7,estándar,Árbol,8,8,3.430115006509357
+puma8NH,7,estándar,Random Forest,8,8,2.5459660132811233
+puma8NH,7,estándar,Extra Trees,8,8,2.547071212272172
+puma8NH,7,PCA completa,KNN,8,8,3.06330703270952
+puma8NH,7,PCA completa,Árbol,8,8,4.145992141578519
+puma8NH,7,PCA completa,Random Forest,8,8,3.0336617934845402
+puma8NH,7,PCA completa,Extra Trees,8,8,3.000446671552075
+puma8NH,7,PCA95,KNN,8,8,3.06330703270952
+puma8NH,7,PCA95,Árbol,8,8,4.145992141578519
+puma8NH,7,PCA95,Random Forest,8,8,3.0336617934845402
+puma8NH,7,PCA95,Extra Trees,8,8,3.000446671552075
+puma8NH,7,estándar+PCA,KNN,8,8,3.06330703270952
+puma8NH,7,estándar+PCA,Árbol,8,8,3.5500400402766474
+puma8NH,7,estándar+PCA,Random Forest,8,8,2.5650605863832383
+puma8NH,7,estándar+PCA,Extra Trees,8,8,2.542538035201383
+sulfur,7,estándar,KNN,6,4,0.009778324333333333
+sulfur,7,estándar,Árbol,6,4,0.012649377000000002
+sulfur,7,estándar,Random Forest,6,4,0.009929279965
+sulfur,7,estándar,Extra Trees,6,4,0.008628049430000003
+sulfur,7,PCA completa,KNN,6,4,0.009778324333333333
+sulfur,7,PCA completa,Árbol,6,4,0.012065425666666666
+sulfur,7,PCA completa,Random Forest,6,4,0.009424831806666669
+sulfur,7,PCA completa,Extra Trees,6,4,0.008522911138333337
+sulfur,7,PCA95,KNN,6,4,0.009989341733333334
+sulfur,7,PCA95,Árbol,6,4,0.012981787000000002
+sulfur,7,PCA95,Random Forest,6,4,0.009799223553333335
+sulfur,7,PCA95,Extra Trees,6,4,0.009120033121666666
+sulfur,7,estándar+PCA,KNN,6,4,0.009778324333333333
+sulfur,7,estándar+PCA,Árbol,6,4,0.012281890333333335
+sulfur,7,estándar+PCA,Random Forest,6,4,0.009343488535000001
+sulfur,7,estándar+PCA,Extra Trees,6,4,0.008305534551666667
+house_8L,6,estándar,KNN,8,8,18249.414666666667
+house_8L,6,estándar,Árbol,8,8,21134.643666666667
+house_8L,6,estándar,Random Forest,8,8,15786.232381666665
+house_8L,6,estándar,Extra Trees,8,8,15905.196588333334
+house_8L,6,PCA completa,KNN,8,8,18249.414666666667
+house_8L,6,PCA completa,Árbol,8,8,24526.245333333332
+house_8L,6,PCA completa,Random Forest,8,8,17766.316078333333
+house_8L,6,PCA completa,Extra Trees,8,8,17729.047118333332
+house_8L,6,PCA95,KNN,8,8,18249.414666666667
+house_8L,6,PCA95,Árbol,8,8,24526.245333333332
+house_8L,6,PCA95,Random Forest,8,8,17766.316078333333
+house_8L,6,PCA95,Extra Trees,8,8,17729.047118333332
+house_8L,6,estándar+PCA,KNN,8,8,18249.414666666667
+house_8L,6,estándar+PCA,Árbol,8,8,22029.312
+house_8L,6,estándar+PCA,Random Forest,8,8,15769.15405
+house_8L,6,estándar+PCA,Extra Trees,8,8,15852.196341666666
+diabetes,9,estándar,KNN,10,8,43.48721804511278
+diabetes,9,estándar,Árbol,10,8,59.526315789473685
+diabetes,9,estándar,Random Forest,10,8,43.37522556390977
+diabetes,9,estándar,Extra Trees,10,8,42.473458646616535
+diabetes,9,PCA completa,KNN,10,8,43.48721804511278
+diabetes,9,PCA completa,Árbol,10,8,56.51127819548872
+diabetes,9,PCA completa,Random Forest,10,8,41.299699248120305
+diabetes,9,PCA completa,Extra Trees,10,8,41.5203007518797
+diabetes,9,PCA95,KNN,10,8,43.9593984962406
+diabetes,9,PCA95,Árbol,10,8,55.59398496240601
+diabetes,9,PCA95,Random Forest,10,8,41.459924812030074
+diabetes,9,PCA95,Extra Trees,10,8,41.59996240601504
+diabetes,9,estándar+PCA,KNN,10,8,43.48721804511278
+diabetes,9,estándar+PCA,Árbol,10,8,59.12781954887218
+diabetes,9,estándar+PCA,Random Forest,10,8,42.87097744360902
+diabetes,9,estándar+PCA,Extra Trees,10,8,41.86827067669173
+concrete_compressive_strength,9,estándar,KNN,8,6,7.4778965514764195
+concrete_compressive_strength,9,estándar,Árbol,8,6,4.523905768344649
+concrete_compressive_strength,9,estándar,Random Forest,8,6,3.438423569010902
+concrete_compressive_strength,9,estándar,Extra Trees,8,6,3.355533756205527
+concrete_compressive_strength,9,PCA completa,KNN,8,6,7.4778965514764195
+concrete_compressive_strength,9,PCA completa,Árbol,8,6,7.174135802764215
+concrete_compressive_strength,9,PCA completa,Random Forest,8,6,5.713387835330177
+concrete_compressive_strength,9,PCA completa,Extra Trees,8,6,5.256785726534986
+concrete_compressive_strength,9,PCA95,KNN,8,6,7.5381139126536985
+concrete_compressive_strength,9,PCA95,Árbol,8,6,7.519122753670901
+concrete_compressive_strength,9,PCA95,Random Forest,8,6,5.823052515665951
+concrete_compressive_strength,9,PCA95,Extra Trees,8,6,5.462978025193258
+concrete_compressive_strength,9,estándar+PCA,KNN,8,6,7.484428053570919
+concrete_compressive_strength,9,estándar+PCA,Árbol,8,6,5.094333839505513
+concrete_compressive_strength,9,estándar+PCA,Random Forest,8,6,3.869977183110071
+concrete_compressive_strength,9,estándar+PCA,Extra Trees,8,6,3.4342596128779714
+stock,9,estándar,KNN,9,5,0.5535087719298247
+stock,9,estándar,Árbol,9,5,0.7859649122807018
+stock,9,estándar,Random Forest,9,5,0.5724714912280701
+stock,9,estándar,Extra Trees,9,5,0.4652324561403508
+stock,9,PCA completa,KNN,9,5,0.5535087719298247
+stock,9,PCA completa,Árbol,9,5,0.8596491228070176
+stock,9,PCA completa,Random Forest,9,5,0.6810197368421053
+stock,9,PCA completa,Extra Trees,9,5,0.5243706140350876
+stock,9,PCA95,KNN,9,5,0.5982456140350877
+stock,9,PCA95,Árbol,9,5,0.8162280701754386
+stock,9,PCA95,Random Forest,9,5,0.6906842105263156
+stock,9,PCA95,Extra Trees,9,5,0.567657894736842
+stock,9,estándar+PCA,KNN,9,5,0.5535087719298247
+stock,9,estándar+PCA,Árbol,9,5,0.7824561403508772
+stock,9,estándar+PCA,Random Forest,9,5,0.6153289473684211
+stock,9,estándar+PCA,Extra Trees,9,5,0.48285745614035075
+cpu_small,7,estándar,KNN,12,9,2.3025223759153786
+cpu_small,7,estándar,Árbol,12,9,2.999593165174939
+cpu_small,7,estándar,Random Forest,12,9,1.990473962571196
+cpu_small,7,estándar,Extra Trees,12,9,1.937497965825875
+cpu_small,7,PCA completa,KNN,12,9,2.3025223759153786
+cpu_small,7,PCA completa,Árbol,12,9,3.0549227013832385
+cpu_small,7,PCA completa,Random Forest,12,9,2.2761920260374287
+cpu_small,7,PCA completa,Extra Trees,12,9,2.193399104963385
+cpu_small,7,PCA95,KNN,12,9,2.3961757526444267
+cpu_small,7,PCA95,Árbol,12,9,2.9768104149715215
+cpu_small,7,PCA95,Random Forest,12,9,2.359045972335232
+cpu_small,7,PCA95,Extra Trees,12,9,2.3166863303498775
+cpu_small,7,estándar+PCA,KNN,12,9,2.3025223759153786
+cpu_small,7,estándar+PCA,Árbol,12,9,2.7359641985353944
+cpu_small,7,estándar+PCA,Random Forest,12,9,1.9678702196908053
+cpu_small,7,estándar+PCA,Extra Trees,12,9,1.9399410089503661
+space_ga,9,estándar,KNN,6,3,0.08704662428249342
+space_ga,9,estándar,Árbol,6,3,0.11094197584064068
+space_ga,9,estándar,Random Forest,6,3,0.08119902651845497
+space_ga,9,estándar,Extra Trees,6,3,0.08218152511219094
+space_ga,9,PCA completa,KNN,6,3,0.08704662428249342
+space_ga,9,PCA completa,Árbol,6,3,0.10457477457718703
+space_ga,9,PCA completa,Random Forest,6,3,0.0744509159739431
+space_ga,9,PCA completa,Extra Trees,6,3,0.07218348889683417
+space_ga,9,PCA95,KNN,6,3,0.09192680567528409
+space_ga,9,PCA95,Árbol,6,3,0.12312690595379999
+space_ga,9,PCA95,Random Forest,6,3,0.08942524282743454
+space_ga,9,PCA95,Extra Trees,6,3,0.08775862470098898
+space_ga,9,estándar+PCA,KNN,6,3,0.08704662428249342
+space_ga,9,estándar+PCA,Árbol,6,3,0.09904420262151327
+space_ga,9,estándar+PCA,Random Forest,6,3,0.07123106808243676
+space_ga,9,estándar+PCA,Extra Trees,6,3,0.06968322988321951
+house_8L,7,estándar,KNN,8,8,18319.663066666668
+house_8L,7,estándar,Árbol,8,8,21821.049
+house_8L,7,estándar,Random Forest,8,8,15919.399891666666
+house_8L,7,estándar,Extra Trees,8,8,16110.961670000002
+house_8L,7,PCA completa,KNN,8,8,18319.663066666668
+house_8L,7,PCA completa,Árbol,8,8,23996.290333333334
+house_8L,7,PCA completa,Random Forest,8,8,17880.715001666664
+house_8L,7,PCA completa,Extra Trees,8,8,17711.538763333334
+house_8L,7,PCA95,KNN,8,8,18319.663066666668
+house_8L,7,PCA95,Árbol,8,8,23996.290333333334
+house_8L,7,PCA95,Random Forest,8,8,17880.715001666664
+house_8L,7,PCA95,Extra Trees,8,8,17711.538763333334
+house_8L,7,estándar+PCA,KNN,8,8,18319.663066666668
+house_8L,7,estándar+PCA,Árbol,8,8,21908.759666666665
+house_8L,7,estándar+PCA,Random Forest,8,8,15764.475443333333
+house_8L,7,estándar+PCA,Extra Trees,8,8,16023.662615
+wine_quality,7,estándar,KNN,11,9,0.5252307692307693
+wine_quality,7,estándar,Árbol,11,9,0.4882051282051282
+wine_quality,7,estándar,Random Forest,11,9,0.4358230769230769
+wine_quality,7,estándar,Extra Trees,11,9,0.3927948717948718
+wine_quality,7,PCA completa,KNN,11,9,0.5252307692307693
+wine_quality,7,PCA completa,Árbol,11,9,0.5261538461538462
+wine_quality,7,PCA completa,Random Forest,11,9,0.4507846153846154
+wine_quality,7,PCA completa,Extra Trees,11,9,0.4062615384615385
+wine_quality,7,PCA95,KNN,11,9,0.5275897435897436
+wine_quality,7,PCA95,Árbol,11,9,0.541025641025641
+wine_quality,7,PCA95,Random Forest,11,9,0.45495641025641026
+wine_quality,7,PCA95,Extra Trees,11,9,0.4055717948717949
+wine_quality,7,estándar+PCA,KNN,11,9,0.5252307692307693
+wine_quality,7,estándar+PCA,Árbol,11,9,0.5128205128205128
+wine_quality,7,estándar+PCA,Random Forest,11,9,0.44085384615384615
+wine_quality,7,estándar+PCA,Extra Trees,11,9,0.39507435897435894
+bank8FM,7,estándar,KNN,8,8,0.038002007485760776
+bank8FM,7,estándar,Árbol,8,8,0.031667468673718474
+bank8FM,7,estándar,Random Forest,8,8,0.022995449646053705
+bank8FM,7,estándar,Extra Trees,8,8,0.022739186783970706
+bank8FM,7,PCA completa,KNN,8,8,0.038002007485760776
+bank8FM,7,PCA completa,Árbol,8,8,0.05409812408462164
+bank8FM,7,PCA completa,Random Forest,8,8,0.03440048489829129
+bank8FM,7,PCA completa,Extra Trees,8,8,0.03156483100284785
+bank8FM,7,PCA95,KNN,8,8,0.038002007485760776
+bank8FM,7,PCA95,Árbol,8,8,0.05409812408462164
+bank8FM,7,PCA95,Random Forest,8,8,0.03440048489829129
+bank8FM,7,PCA95,Extra Trees,8,8,0.03156483100284785
+bank8FM,7,estándar+PCA,KNN,8,8,0.038002007485760776
+bank8FM,7,estándar+PCA,Árbol,8,8,0.031981899104963386
+bank8FM,7,estándar+PCA,Random Forest,8,8,0.022794669460943856
+bank8FM,7,estándar+PCA,Extra Trees,8,8,0.02240962507933279
+sulfur,8,estándar,KNN,6,4,0.0087722216
+sulfur,8,estándar,Árbol,6,4,0.011346369
+sulfur,8,estándar,Random Forest,6,4,0.009227365166666668
+sulfur,8,estándar,Extra Trees,6,4,0.007895927835
+sulfur,8,PCA completa,KNN,6,4,0.0087722216
+sulfur,8,PCA completa,Árbol,6,4,0.011936911
+sulfur,8,PCA completa,Random Forest,6,4,0.009079961563333332
+sulfur,8,PCA completa,Extra Trees,6,4,0.00819815382
+sulfur,8,PCA95,KNN,6,4,0.009030872666666667
+sulfur,8,PCA95,Árbol,6,4,0.012088765666666664
+sulfur,8,PCA95,Random Forest,6,4,0.009150302434999999
+sulfur,8,PCA95,Extra Trees,6,4,0.008540863623333332
+sulfur,8,estándar+PCA,KNN,6,4,0.0087722216
+sulfur,8,estándar+PCA,Árbol,6,4,0.010652515999999999
+sulfur,8,estándar+PCA,Random Forest,6,4,0.008852776776666666
+sulfur,8,estándar+PCA,Extra Trees,6,4,0.007677618521666664
+bank8FM,8,estándar,KNN,8,8,0.03772934288039056
+bank8FM,8,estándar,Árbol,8,8,0.031832377135882835
+bank8FM,8,estándar,Random Forest,8,8,0.022557394483319778
+bank8FM,8,estándar,Extra Trees,8,8,0.022513826849064285
+bank8FM,8,PCA completa,KNN,8,8,0.03772934288039056
+bank8FM,8,PCA completa,Árbol,8,8,0.05204407851912125
+bank8FM,8,PCA completa,Random Forest,8,8,0.03372435370016274
+bank8FM,8,PCA completa,Extra Trees,8,8,0.0313739911248983
+bank8FM,8,PCA95,KNN,8,8,0.03772934288039056
+bank8FM,8,PCA95,Árbol,8,8,0.05204407851912125
+bank8FM,8,PCA95,Random Forest,8,8,0.03372435370016274
+bank8FM,8,PCA95,Extra Trees,8,8,0.0313739911248983
+bank8FM,8,estándar+PCA,KNN,8,8,0.03772934288039056
+bank8FM,8,estándar+PCA,Árbol,8,8,0.03141879658258748
+bank8FM,8,estándar+PCA,Random Forest,8,8,0.022557360406834825
+bank8FM,8,estándar+PCA,Extra Trees,8,8,0.02225111739625712
+cpu_small,8,estándar,KNN,12,9,2.2771358828315704
+cpu_small,8,estándar,Árbol,12,9,2.801871440195281
+cpu_small,8,estándar,Random Forest,12,9,2.052186737184703
+cpu_small,8,estándar,Extra Trees,12,9,1.9766354759967453
+cpu_small,8,PCA completa,KNN,12,9,2.2771358828315704
+cpu_small,8,PCA completa,Árbol,12,9,2.9938974776240848
+cpu_small,8,PCA completa,Random Forest,12,9,2.178529292107404
+cpu_small,8,PCA completa,Extra Trees,12,9,2.165834011391375
+cpu_small,8,PCA95,KNN,12,9,2.3467860048820177
+cpu_small,8,PCA95,Árbol,12,9,2.986167615947925
+cpu_small,8,PCA95,Random Forest,12,9,2.251051668022783
+cpu_small,8,PCA95,Extra Trees,12,9,2.2407017900732304
+cpu_small,8,estándar+PCA,KNN,12,9,2.2771358828315704
+cpu_small,8,estándar+PCA,Árbol,12,9,2.8161106590724168
+cpu_small,8,estándar+PCA,Random Forest,12,9,1.9944304312449144
+cpu_small,8,estándar+PCA,Extra Trees,12,9,1.98096623270952
+puma8NH,8,estándar,KNN,8,8,2.9862712377542717
+puma8NH,8,estándar,Árbol,8,8,3.457774294955248
+puma8NH,8,estándar,Random Forest,8,8,2.5045006068673716
+puma8NH,8,estándar,Extra Trees,8,8,2.514515065158666
+puma8NH,8,PCA completa,KNN,8,8,2.9862712377542717
+puma8NH,8,PCA completa,Árbol,8,8,4.033521386493084
+puma8NH,8,PCA completa,Random Forest,8,8,2.843640481659886
+puma8NH,8,PCA completa,Extra Trees,8,8,2.799476832441009
+puma8NH,8,PCA95,KNN,8,8,2.9862712377542717
+puma8NH,8,PCA95,Árbol,8,8,4.033521386493084
+puma8NH,8,PCA95,Random Forest,8,8,2.843640481659886
+puma8NH,8,PCA95,Extra Trees,8,8,2.799476832441009
+puma8NH,8,estándar+PCA,KNN,8,8,2.9862712377542717
+puma8NH,8,estándar+PCA,Árbol,8,8,3.5292607685109845
+puma8NH,8,estándar+PCA,Random Forest,8,8,2.520426961611066
+puma8NH,8,estándar+PCA,Extra Trees,8,8,2.520264313091945
+california,6,estándar,KNN,8,6,0.4494271492248062
+california,6,estándar,Árbol,8,6,0.4834734835271318
+california,6,estándar,Random Forest,8,6,0.3309957896317833
+california,6,estándar,Extra Trees,8,6,0.32819840385981947
+california,6,PCA completa,KNN,8,6,0.4494271492248062
+california,6,PCA completa,Árbol,8,6,0.5899851518087855
+california,6,PCA completa,Random Forest,8,6,0.41684964328165397
+california,6,PCA completa,Extra Trees,8,6,0.41299644042312683
+california,6,PCA95,KNN,8,6,0.5256807377260982
+california,6,PCA95,Árbol,8,6,0.6731520510335918
+california,6,PCA95,Random Forest,8,6,0.48318332510497436
+california,6,PCA95,Extra Trees,8,6,0.48818629220768756
+california,6,estándar+PCA,KNN,8,6,0.4494271492248062
+california,6,estándar+PCA,Árbol,8,6,0.4959172674418605
+california,6,estándar+PCA,Random Forest,8,6,0.34459687546027157
+california,6,estándar+PCA,Extra Trees,8,6,0.33997778105620186
+wine_quality,8,estándar,KNN,11,9,0.5184615384615385
+wine_quality,8,estándar,Árbol,11,9,0.4897435897435897
+wine_quality,8,estándar,Random Forest,11,9,0.41444358974358975
+wine_quality,8,estándar,Extra Trees,11,9,0.36541282051282054
+wine_quality,8,PCA completa,KNN,11,9,0.5184615384615385
+wine_quality,8,PCA completa,Árbol,11,9,0.4764102564102564
+wine_quality,8,PCA completa,Random Forest,11,9,0.4209076923076923
+wine_quality,8,PCA completa,Extra Trees,11,9,0.3684923076923077
+wine_quality,8,PCA95,KNN,11,9,0.5106666666666667
+wine_quality,8,PCA95,Árbol,11,9,0.522051282051282
+wine_quality,8,PCA95,Random Forest,11,9,0.4265820512820513
+wine_quality,8,PCA95,Extra Trees,11,9,0.37245128205128203
+wine_quality,8,estándar+PCA,KNN,11,9,0.5184615384615385
+wine_quality,8,estándar+PCA,Árbol,11,9,0.4764102564102564
+wine_quality,8,estándar+PCA,Random Forest,11,9,0.4139025641025641
+wine_quality,8,estándar+PCA,Extra Trees,11,9,0.36526153846153847
+california,5,estándar,KNN,8,6,0.44826788824289404
+california,5,estándar,Árbol,8,6,0.4830718330103359
+california,5,estándar,Random Forest,8,6,0.3334932667151166
+california,5,estándar,Extra Trees,8,6,0.3247246811046515
+california,5,PCA completa,KNN,8,6,0.44826788824289404
+california,5,PCA completa,Árbol,8,6,0.5760607558139536
+california,5,PCA completa,Random Forest,8,6,0.4115637096656979
+california,5,PCA completa,Extra Trees,8,6,0.40739060199450927
+california,5,PCA95,KNN,8,6,0.5174882028423773
+california,5,PCA95,Árbol,8,6,0.6667854263565892
+california,5,PCA95,Random Forest,8,6,0.480010615277778
+california,5,PCA95,Extra Trees,8,6,0.48213506912952214
+california,5,estándar+PCA,KNN,8,6,0.44826788824289404
+california,5,estándar+PCA,Árbol,8,6,0.4800214260335917
+california,5,estándar+PCA,Random Forest,8,6,0.34021996251615017
+california,5,estándar+PCA,Extra Trees,8,6,0.3373415745316541
+kin8nm,8,estándar,KNN,8,8,0.0962518935170057
+kin8nm,8,estándar,Árbol,8,8,0.1653350773462164
+kin8nm,8,estándar,Random Forest,8,8,0.11311958913513426
+kin8nm,8,estándar,Extra Trees,8,8,0.1078381543455289
+kin8nm,8,PCA completa,KNN,8,8,0.0962518935170057
+kin8nm,8,PCA completa,Árbol,8,8,0.16039357252685113
+kin8nm,8,PCA completa,Random Forest,8,8,0.10828016099067535
+kin8nm,8,PCA completa,Extra Trees,8,8,0.1003793706525529
+kin8nm,8,PCA95,KNN,8,8,0.0962518935170057
+kin8nm,8,PCA95,Árbol,8,8,0.16039357252685113
+kin8nm,8,PCA95,Random Forest,8,8,0.10828016099067535
+kin8nm,8,PCA95,Extra Trees,8,8,0.1003793706525529
+kin8nm,8,estándar+PCA,KNN,8,8,0.0962518935170057
+kin8nm,8,estándar+PCA,Árbol,8,8,0.15017160683970707
+kin8nm,8,estándar+PCA,Random Forest,8,8,0.09808203780924125
+kin8nm,8,estándar+PCA,Extra Trees,8,8,0.09306969569593167
+house_8L,8,estándar,KNN,8,8,19263.944733333334
+house_8L,8,estándar,Árbol,8,8,22278.981333333333
+house_8L,8,estándar,Random Forest,8,8,16569.970113333333
+house_8L,8,estándar,Extra Trees,8,8,16695.167098333335
+house_8L,8,PCA completa,KNN,8,8,19263.944733333334
+house_8L,8,PCA completa,Árbol,8,8,25431.415666666668
+house_8L,8,PCA completa,Random Forest,8,8,18894.266275
+house_8L,8,PCA completa,Extra Trees,8,8,18583.426678333333
+house_8L,8,PCA95,KNN,8,8,19263.944733333334
+house_8L,8,PCA95,Árbol,8,8,25431.415666666668
+house_8L,8,PCA95,Random Forest,8,8,18894.266275
+house_8L,8,PCA95,Extra Trees,8,8,18583.426678333333
+house_8L,8,estándar+PCA,KNN,8,8,19263.944733333334
+house_8L,8,estándar+PCA,Árbol,8,8,22429.469
+house_8L,8,estándar+PCA,Random Forest,8,8,16568.107843333335
+house_8L,8,estándar+PCA,Extra Trees,8,8,16803.120228333333
+wine_quality,9,estándar,KNN,11,9,0.5412307692307693
+wine_quality,9,estándar,Árbol,11,9,0.5333333333333333
+wine_quality,9,estándar,Random Forest,11,9,0.4587846153846154
+wine_quality,9,estándar,Extra Trees,11,9,0.4133153846153846
+wine_quality,9,PCA completa,KNN,11,9,0.5412307692307693
+wine_quality,9,PCA completa,Árbol,11,9,0.5133333333333333
+wine_quality,9,PCA completa,Random Forest,11,9,0.46237435897435897
+wine_quality,9,PCA completa,Extra Trees,11,9,0.4182615384615384
+wine_quality,9,PCA95,KNN,11,9,0.5408205128205128
+wine_quality,9,PCA95,Árbol,11,9,0.521025641025641
+wine_quality,9,PCA95,Random Forest,11,9,0.46373846153846154
+wine_quality,9,PCA95,Extra Trees,11,9,0.4190307692307692
+wine_quality,9,estándar+PCA,KNN,11,9,0.5412307692307693
+wine_quality,9,estándar+PCA,Árbol,11,9,0.518974358974359
+wine_quality,9,estándar+PCA,Random Forest,11,9,0.45761794871794875
+wine_quality,9,estándar+PCA,Extra Trees,11,9,0.4111564102564102
+sulfur,9,estándar,KNN,6,4,0.009604737266666667
+sulfur,9,estándar,Árbol,6,4,0.012232669666666666
+sulfur,9,estándar,Random Forest,6,4,0.009738872555
+sulfur,9,estándar,Extra Trees,6,4,0.008107546753333333
+sulfur,9,PCA completa,KNN,6,4,0.009604737266666667
+sulfur,9,PCA completa,Árbol,6,4,0.011618875333333332
+sulfur,9,PCA completa,Random Forest,6,4,0.008986598923333337
+sulfur,9,PCA completa,Extra Trees,6,4,0.008223000853333334
+sulfur,9,PCA95,KNN,6,4,0.009662026533333333
+sulfur,9,PCA95,Árbol,6,4,0.011231982666666668
+sulfur,9,PCA95,Random Forest,6,4,0.009422308915000002
+sulfur,9,PCA95,Extra Trees,6,4,0.008620068531666669
+sulfur,9,estándar+PCA,KNN,6,4,0.009604737266666667
+sulfur,9,estándar+PCA,Árbol,6,4,0.011567777666666668
+sulfur,9,estándar+PCA,Random Forest,6,4,0.009332778258333332
+sulfur,9,estándar+PCA,Extra Trees,6,4,0.007677749430000002
+kin8nm,9,estándar,KNN,8,8,0.09624744572742067
+kin8nm,9,estándar,Árbol,8,8,0.17116579304597235
+kin8nm,9,estándar,Random Forest,8,8,0.11406250527389342
+kin8nm,9,estándar,Extra Trees,8,8,0.10992082450758747
+kin8nm,9,PCA completa,KNN,8,8,0.09624744572742067
+kin8nm,9,PCA completa,Árbol,8,8,0.16724463785353946
+kin8nm,9,PCA completa,Random Forest,8,8,0.11406904687848456
+kin8nm,9,PCA completa,Extra Trees,8,8,0.109410711812559
+kin8nm,9,PCA95,KNN,8,8,0.09624744572742067
+kin8nm,9,PCA95,Árbol,8,8,0.16724463785353946
+kin8nm,9,PCA95,Random Forest,8,8,0.11406904687848456
+kin8nm,9,PCA95,Extra Trees,8,8,0.109410711812559
+kin8nm,9,estándar+PCA,KNN,8,8,0.09624744572742067
+kin8nm,9,estándar+PCA,Árbol,8,8,0.15813757220626523
+kin8nm,9,estándar+PCA,Random Forest,8,8,0.1057071548186778
+kin8nm,9,estándar+PCA,Extra Trees,8,8,0.0995474501660476
+bank8FM,9,estándar,KNN,8,8,0.03787878958502849
+bank8FM,9,estándar,Árbol,8,8,0.032700391375101716
+bank8FM,9,estándar,Random Forest,8,8,0.022754060683482503
+bank8FM,9,estándar,Extra Trees,8,8,0.02236428950976404
+bank8FM,9,PCA completa,KNN,8,8,0.03787878958502849
+bank8FM,9,PCA completa,Árbol,8,8,0.05829656265256307
+bank8FM,9,PCA completa,Random Forest,8,8,0.03477884732302686
+bank8FM,9,PCA completa,Extra Trees,8,8,0.03195394086859236
+bank8FM,9,PCA95,KNN,8,8,0.03787878958502849
+bank8FM,9,PCA95,Árbol,8,8,0.05829656265256307
+bank8FM,9,PCA95,Random Forest,8,8,0.03477884732302686
+bank8FM,9,PCA95,Extra Trees,8,8,0.03195394086859236
+bank8FM,9,estándar+PCA,KNN,8,8,0.03787878958502849
+bank8FM,9,estándar+PCA,Árbol,8,8,0.032093812449145644
+bank8FM,9,estándar+PCA,Random Forest,8,8,0.022567807227420668
+bank8FM,9,estándar+PCA,Extra Trees,8,8,0.021982579129373476
+puma8NH,9,estándar,KNN,8,8,3.0627966867371845
+puma8NH,9,estándar,Árbol,8,8,3.344311771765663
+puma8NH,9,estándar,Random Forest,8,8,2.4768515397843776
+puma8NH,9,estándar,Extra Trees,8,8,2.4875591782729862
+puma8NH,9,PCA completa,KNN,8,8,3.0627966867371845
+puma8NH,9,PCA completa,Árbol,8,8,4.226348169243287
+puma8NH,9,PCA completa,Random Forest,8,8,3.2006407613628967
+puma8NH,9,PCA completa,Extra Trees,8,8,3.122790914312449
+puma8NH,9,PCA95,KNN,8,8,3.0627966867371845
+puma8NH,9,PCA95,Árbol,8,8,4.226348169243287
+puma8NH,9,PCA95,Random Forest,8,8,3.2006407613628967
+puma8NH,9,PCA95,Extra Trees,8,8,3.122790914312449
+puma8NH,9,estándar+PCA,KNN,8,8,3.0627966867371845
+puma8NH,9,estándar+PCA,Árbol,8,8,3.3809839434499596
+puma8NH,9,estándar+PCA,Random Forest,8,8,2.478993187978031
+puma8NH,9,estándar+PCA,Extra Trees,8,8,2.4910889247823436
+cpu_small,9,estándar,KNN,12,9,2.3192839707078927
+cpu_small,9,estándar,Árbol,12,9,2.902766476810415
+cpu_small,9,estándar,Random Forest,12,9,2.044347030105777
+cpu_small,9,estándar,Extra Trees,12,9,1.979997965825875
+cpu_small,9,PCA completa,KNN,12,9,2.3192839707078927
+cpu_small,9,PCA completa,Árbol,12,9,3.1525630593978846
+cpu_small,9,PCA completa,Random Forest,12,9,2.2988852725793327
+cpu_small,9,PCA completa,Extra Trees,12,9,2.2409703010577706
+cpu_small,9,PCA95,KNN,12,9,2.4069975589910495
+cpu_small,9,PCA95,Árbol,12,9,3.242473555736371
+cpu_small,9,PCA95,Random Forest,12,9,2.4268429617575267
+cpu_small,9,PCA95,Extra Trees,12,9,2.3611696501220503
+cpu_small,9,estándar+PCA,KNN,12,9,2.3192839707078927
+cpu_small,9,estándar+PCA,Árbol,12,9,2.8641171684296176
+cpu_small,9,estándar+PCA,Random Forest,12,9,2.001466639544345
+cpu_small,9,estándar+PCA,Extra Trees,12,9,1.9604983726606997
+house_8L,9,estándar,KNN,8,8,18415.052133333334
+house_8L,9,estándar,Árbol,8,8,21071.355333333333
+house_8L,9,estándar,Random Forest,8,8,16103.715991666668
+house_8L,9,estándar,Extra Trees,8,8,16279.672433333333
+house_8L,9,PCA completa,KNN,8,8,18415.052133333334
+house_8L,9,PCA completa,Árbol,8,8,24808.853
+house_8L,9,PCA completa,Random Forest,8,8,18391.36442833333
+house_8L,9,PCA completa,Extra Trees,8,8,18014.716958333334
+house_8L,9,PCA95,KNN,8,8,18415.052133333334
+house_8L,9,PCA95,Árbol,8,8,24808.853
+house_8L,9,PCA95,Random Forest,8,8,18391.36442833333
+house_8L,9,PCA95,Extra Trees,8,8,18014.716958333334
+house_8L,9,estándar+PCA,KNN,8,8,18415.052133333334
+house_8L,9,estándar+PCA,Árbol,8,8,21356.998666666666
+house_8L,9,estándar+PCA,Random Forest,8,8,16009.984973333334
+house_8L,9,estándar+PCA,Extra Trees,8,8,16293.093285
+california,7,estándar,KNN,8,6,0.43870960691214467
+california,7,estándar,Árbol,8,6,0.46917967861757104
+california,7,estándar,Random Forest,8,6,0.3410127373385016
+california,7,estándar,Extra Trees,8,6,0.33132241884689956
+california,7,PCA completa,KNN,8,6,0.43870960691214467
+california,7,PCA completa,Árbol,8,6,0.5623698094315246
+california,7,PCA completa,Random Forest,8,6,0.4043223013323647
+california,7,PCA completa,Extra Trees,8,6,0.39932542008236466
+california,7,PCA95,KNN,8,6,0.5143152764857881
+california,7,PCA95,Árbol,8,6,0.658307684108527
+california,7,PCA95,Random Forest,8,6,0.47668207273901836
+california,7,PCA95,Extra Trees,8,6,0.4770195025436049
+california,7,estándar+PCA,KNN,8,6,0.43870960691214467
+california,7,estándar+PCA,Árbol,8,6,0.47234764373385013
+california,7,estándar+PCA,Random Forest,8,6,0.34194980691214505
+california,7,estándar+PCA,Extra Trees,8,6,0.3453058044654396
+california,8,estándar,KNN,8,6,0.4454464376614987
+california,8,estándar,Árbol,8,6,0.47026412790697675
+california,8,estándar,Random Forest,8,6,0.33427444627745495
+california,8,estándar,Extra Trees,8,6,0.3311982360222871
+california,8,PCA completa,KNN,8,6,0.4454464376614987
+california,8,PCA completa,Árbol,8,6,0.581036170865633
+california,8,PCA completa,Random Forest,8,6,0.4109569679909563
+california,8,PCA completa,Extra Trees,8,6,0.40905796720768756
+california,8,PCA95,KNN,8,6,0.5245467700258397
+california,8,PCA95,Árbol,8,6,0.6757148223514212
+california,8,PCA95,Random Forest,8,6,0.4894749887919898
+california,8,PCA95,Extra Trees,8,6,0.4940201417958658
+california,8,estándar+PCA,KNN,8,6,0.4454464376614987
+california,8,estándar+PCA,Árbol,8,6,0.49235071059431523
+california,8,estándar+PCA,Random Forest,8,6,0.3430183987080106
+california,8,estándar+PCA,Extra Trees,8,6,0.34059852153585296
+california,9,estándar,KNN,8,6,0.4351889941860465
+california,9,estándar,Árbol,8,6,0.4644274014857881
+california,9,estándar,Random Forest,8,6,0.3191399888404396
+california,9,estándar,Extra Trees,8,6,0.32131999890988405
+california,9,PCA completa,KNN,8,6,0.4351889941860465
+california,9,PCA completa,Árbol,8,6,0.5669035804263567
+california,9,PCA completa,Random Forest,8,6,0.4006707248062018
+california,9,PCA completa,Extra Trees,8,6,0.3980201809512276
+california,9,PCA95,KNN,8,6,0.5140358284883721
+california,9,PCA95,Árbol,8,6,0.6629991860465116
+california,9,PCA95,Random Forest,8,6,0.47528983975290723
+california,9,PCA95,Extra Trees,8,6,0.4782961109819124
+california,9,estándar+PCA,KNN,8,6,0.4351889941860465
+california,9,estándar+PCA,Árbol,8,6,0.48346119186046516
+california,9,estándar+PCA,Random Forest,8,6,0.336623008406008
+california,9,estándar+PCA,Extra Trees,8,6,0.3328016397690572

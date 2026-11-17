@@ -1,0 +1,721 @@
+dataset,semilla,n,representacion,modelo,mae,segundos,dim,n_orig,n_comp,evaluaciones,fitness
+diabetes,40,10,original,Regresión lineal,48.822665170603074,,,,,,
+diabetes,40,10,original,KNN,52.69774436090225,,,,,,
+diabetes,40,10,original,Árbol,64.27067669172932,,,,,,
+diabetes,40,10,original,Random Forest,50.40263157894737,,,,,,
+diabetes,40,10,estándar,Regresión lineal,48.82266517060306,,,,,,
+diabetes,40,10,estándar,KNN,52.89774436090226,,,,,,
+diabetes,40,10,estándar,Árbol,64.22556390977444,,,,,,
+diabetes,40,10,estándar,Random Forest,50.23135338345865,,,,,,
+diabetes,41,10,original,Regresión lineal,47.560348830442976,,,,,,
+diabetes,41,10,original,KNN,49.88571428571428,,,,,,
+diabetes,41,10,original,Árbol,61.70676691729323,,,,,,
+diabetes,41,10,original,Random Forest,50.484210526315785,,,,,,
+diabetes,41,10,estándar,Regresión lineal,47.560348830442976,,,,,,
+diabetes,41,10,estándar,KNN,47.99097744360902,,,,,,
+diabetes,41,10,estándar,Árbol,61.62406015037594,,,,,,
+diabetes,41,10,estándar,Random Forest,50.32375939849624,,,,,,
+concrete_compressive_strength,40,8,original,Regresión lineal,8.575305968663518,,,,,,
+concrete_compressive_strength,40,8,original,KNN,7.299569178332954,,,,,,
+concrete_compressive_strength,40,8,original,Árbol,4.612819802750128,,,,,,
+concrete_compressive_strength,40,8,original,Random Forest,3.6864852995643846,,,,,,
+concrete_compressive_strength,40,8,estándar,Regresión lineal,8.575305968663516,,,,,,
+concrete_compressive_strength,40,8,estándar,KNN,6.933969413251454,,,,,,
+concrete_compressive_strength,40,8,estándar,Árbol,4.609965952251746,,,,,,
+concrete_compressive_strength,40,8,estándar,Random Forest,3.6921739005140295,,,,,,
+stock,40,9,original,Regresión lineal,1.8874879059600755,,,,,,
+stock,40,9,original,KNN,0.6185087719298247,,,,,,
+stock,40,9,original,Árbol,0.7355263157894737,,,,,,
+stock,40,9,original,Random Forest,0.6147456140350879,,,,,,
+stock,40,9,estándar,Regresión lineal,1.8874879059600744,,,,,,
+stock,40,9,estándar,KNN,0.6418421052631581,,,,,,
+stock,40,9,estándar,Árbol,0.7342105263157894,,,,,,
+stock,40,9,estándar,Random Forest,0.6163771929824562,,,,,,
+concrete_compressive_strength,41,8,original,Regresión lineal,8.45736220336058,,,,,,
+concrete_compressive_strength,41,8,original,KNN,7.117339747028198,,,,,,
+concrete_compressive_strength,41,8,original,Árbol,4.134637223933726,,,,,,
+concrete_compressive_strength,41,8,original,Random Forest,3.3889404594502905,,,,,,
+concrete_compressive_strength,41,8,estándar,Regresión lineal,8.457362203360578,,,,,,
+concrete_compressive_strength,41,8,estándar,KNN,6.998114843096669,,,,,,
+concrete_compressive_strength,41,8,estándar,Árbol,4.134637223933726,,,,,,
+concrete_compressive_strength,41,8,estándar,Random Forest,3.387859461172562,,,,,,
+stock,41,9,original,Regresión lineal,1.813429668862975,,,,,,
+stock,41,9,original,KNN,0.5714035087719299,,,,,,
+stock,41,9,original,Árbol,0.7833333333333333,,,,,,
+stock,41,9,original,Random Forest,0.6265657894736841,,,,,,
+stock,41,9,estándar,Regresión lineal,1.8134296688629754,,,,,,
+stock,41,9,estándar,KNN,0.6113157894736841,,,,,,
+stock,41,9,estándar,Árbol,0.7842105263157895,,,,,,
+stock,41,9,estándar,Random Forest,0.6220175438596491,,,,,,
+diabetes,42,10,original,Regresión lineal,41.91937845679274,,,,,,
+diabetes,42,10,original,KNN,44.00300751879699,,,,,,
+diabetes,42,10,original,Árbol,60.015037593984964,,,,,,
+diabetes,42,10,original,Random Forest,42.75075187969925,,,,,,
+diabetes,42,10,estándar,Regresión lineal,41.91937845679274,,,,,,
+diabetes,42,10,estándar,KNN,44.80451127819549,,,,,,
+diabetes,42,10,estándar,Árbol,59.83458646616541,,,,,,
+diabetes,42,10,estándar,Random Forest,42.712406015037594,,,,,,
+concrete_compressive_strength,42,8,original,Regresión lineal,8.298641626767537,,,,,,
+concrete_compressive_strength,42,8,original,KNN,7.230381170185639,,,,,,
+concrete_compressive_strength,42,8,original,Árbol,4.315438571836217,,,,,,
+concrete_compressive_strength,42,8,original,Random Forest,3.720621505405787,,,,,,
+concrete_compressive_strength,42,8,estándar,Regresión lineal,8.29864162676754,,,,,,
+concrete_compressive_strength,42,8,estándar,KNN,7.337673453571331,,,,,,
+concrete_compressive_strength,42,8,estándar,Árbol,4.367874448858871,,,,,,
+concrete_compressive_strength,42,8,estándar,Random Forest,3.7229568495514886,,,,,,
+stock,42,9,original,Regresión lineal,1.7905720232935165,,,,,,
+stock,42,9,original,KNN,0.5597368421052631,,,,,,
+stock,42,9,original,Árbol,0.7482456140350877,,,,,,
+stock,42,9,original,Random Forest,0.587872807017544,,,,,,
+stock,42,9,estándar,Regresión lineal,1.7905720232935163,,,,,,
+stock,42,9,estándar,KNN,0.580175438596491,,,,,,
+stock,42,9,estándar,Árbol,0.7486842105263158,,,,,,
+stock,42,9,estándar,Random Forest,0.5870394736842105,,,,,,
+space_ga,40,6,original,Regresión lineal,0.12231203895821681,,,,,,
+space_ga,40,6,original,KNN,0.10106240671455638,,,,,,
+space_ga,40,6,original,Árbol,0.11719105548422168,,,,,,
+space_ga,40,6,original,Random Forest,0.08637041260124605,,,,,,
+space_ga,40,6,estándar,Regresión lineal,0.09906709791657281,,,,,,
+space_ga,40,6,estándar,KNN,0.09240973996584996,,,,,,
+space_ga,40,6,estándar,Árbol,0.11719105548422168,,,,,,
+space_ga,40,6,estándar,Random Forest,0.0863638230481427,,,,,,
+space_ga,41,6,original,Regresión lineal,0.12009394004399128,,,,,,
+space_ga,41,6,original,KNN,0.09514136001526448,,,,,,
+space_ga,41,6,original,Árbol,0.11578682655713621,,,,,,
+space_ga,41,6,original,Random Forest,0.08020917759105153,,,,,,
+space_ga,41,6,estándar,Regresión lineal,0.09695980103270462,,,,,,
+space_ga,41,6,estándar,KNN,0.08886163304787896,,,,,,
+space_ga,41,6,estándar,Árbol,0.11578682655713621,,,,,,
+space_ga,41,6,estándar,Random Forest,0.080206989225685,,,,,,
+sulfur,40,6,original,Regresión lineal,0.01900933135509485,,,,,,
+sulfur,40,6,original,KNN,0.010473241199999999,,,,,,
+sulfur,40,6,original,Árbol,0.012139750000000001,,,,,,
+sulfur,40,6,original,Random Forest,0.009581212336666665,,,,,,
+sulfur,40,6,estándar,Regresión lineal,0.019009331355094906,,,,,,
+sulfur,40,6,estándar,KNN,0.0095742124,,,,,,
+sulfur,40,6,estándar,Árbol,0.012137238333333333,,,,,,
+sulfur,40,6,estándar,Random Forest,0.009582623803333332,,,,,,
+sulfur,41,6,original,Regresión lineal,0.018688864046024586,,,,,,
+sulfur,41,6,original,KNN,0.010107696333333333,,,,,,
+sulfur,41,6,original,Árbol,0.012103966333333334,,,,,,
+sulfur,41,6,original,Random Forest,0.009608674966666666,,,,,,
+sulfur,41,6,estándar,Regresión lineal,0.018688864046024663,,,,,,
+sulfur,41,6,estándar,KNN,0.009241828333333334,,,,,,
+sulfur,41,6,estándar,Árbol,0.012102045999999998,,,,,,
+sulfur,41,6,estándar,Random Forest,0.009608848126666666,,,,,,
+wine_quality,40,11,original,Regresión lineal,0.5996955069116906,,,,,,
+wine_quality,40,11,original,KNN,0.6408205128205128,,,,,,
+wine_quality,40,11,original,Árbol,0.5205128205128206,,,,,,
+wine_quality,40,11,original,Random Forest,0.4637435897435897,,,,,,
+wine_quality,40,11,estándar,Regresión lineal,0.5996955069116965,,,,,,
+wine_quality,40,11,estándar,KNN,0.5511794871794872,,,,,,
+wine_quality,40,11,estándar,Árbol,0.5184615384615384,,,,,,
+wine_quality,40,11,estándar,Random Forest,0.4637179487179487,,,,,,
+kin8nm,40,8,original,Regresión lineal,0.16292253037822127,,,,,,
+kin8nm,40,8,original,KNN,0.09553077918169244,,,,,,
+kin8nm,40,8,original,Árbol,0.16489637344751829,,,,,,
+kin8nm,40,8,original,Random Forest,0.1130719936976322,,,,,,
+kin8nm,40,8,estándar,Regresión lineal,0.16292253037822127,,,,,,
+kin8nm,40,8,estándar,KNN,0.09593086583563874,,,,,,
+kin8nm,40,8,estándar,Árbol,0.16489637344751829,,,,,,
+kin8nm,40,8,estándar,Random Forest,0.1130719936976322,,,,,,
+kin8nm,41,8,original,Regresión lineal,0.1649767188191743,,,,,,
+kin8nm,41,8,original,KNN,0.09682935227697315,,,,,,
+kin8nm,41,8,original,Árbol,0.16054694374369405,,,,,,
+kin8nm,41,8,original,Random Forest,0.11405259475583807,,,,,,
+kin8nm,41,8,estándar,Regresión lineal,0.1649767188191743,,,,,,
+kin8nm,41,8,estándar,KNN,0.09657269054060211,,,,,,
+kin8nm,41,8,estándar,Árbol,0.16054694374369405,,,,,,
+kin8nm,41,8,estándar,Random Forest,0.1140539686555533,,,,,,
+wine_quality,41,11,original,Regresión lineal,0.5706209328450562,,,,,,
+wine_quality,41,11,original,KNN,0.6351794871794871,,,,,,
+wine_quality,41,11,original,Árbol,0.5076923076923077,,,,,,
+wine_quality,41,11,original,Random Forest,0.4504564102564102,,,,,,
+wine_quality,41,11,estándar,Regresión lineal,0.57062093284506,,,,,,
+wine_quality,41,11,estándar,KNN,0.5240000000000001,,,,,,
+wine_quality,41,11,estándar,Árbol,0.5066666666666667,,,,,,
+wine_quality,41,11,estándar,Random Forest,0.4504461538461538,,,,,,
+bank8FM,40,8,original,Regresión lineal,0.02865459232584167,,,,,,
+bank8FM,40,8,original,KNN,0.025204020992676976,,,,,,
+bank8FM,40,8,original,Árbol,0.03183670911310009,,,,,,
+bank8FM,40,8,original,Random Forest,0.022726321765663138,,,,,,
+bank8FM,40,8,estándar,Regresión lineal,0.028654592325841673,,,,,,
+bank8FM,40,8,estándar,KNN,0.0393049048820179,,,,,,
+bank8FM,40,8,estándar,Árbol,0.031804137103336044,,,,,,
+bank8FM,40,8,estándar,Random Forest,0.022721370358014647,,,,,,
+bank8FM,41,8,original,Regresión lineal,0.028481119502855486,,,,,,
+bank8FM,41,8,original,KNN,0.025032628071602933,,,,,,
+bank8FM,41,8,original,Árbol,0.03159927054515867,,,,,,
+bank8FM,41,8,original,Random Forest,0.023000888185516682,,,,,,
+bank8FM,41,8,estándar,Regresión lineal,0.028481119502855475,,,,,,
+bank8FM,41,8,estándar,KNN,0.03771773417412531,,,,,,
+bank8FM,41,8,estándar,Árbol,0.03159927054515867,,,,,,
+bank8FM,41,8,estándar,Random Forest,0.023000596151342555,,,,,,
+puma8NH,40,8,original,Regresión lineal,3.6029983629269537,,,,,,
+puma8NH,40,8,original,KNN,2.8158633359641985,,,,,,
+puma8NH,40,8,original,Árbol,3.398244324247355,,,,,,
+puma8NH,40,8,original,Random Forest,2.487934963527258,,,,,,
+puma8NH,40,8,estándar,Regresión lineal,3.602998362926953,,,,,,
+puma8NH,40,8,estándar,KNN,3.0053066531326285,,,,,,
+puma8NH,40,8,estándar,Árbol,3.398244324247355,,,,,,
+puma8NH,40,8,estándar,Random Forest,2.4879992553986985,,,,,,
+puma8NH,41,8,original,Regresión lineal,3.631182123413408,,,,,,
+puma8NH,41,8,original,KNN,2.847005667371847,,,,,,
+puma8NH,41,8,original,Árbol,3.415777410903173,,,,,,
+puma8NH,41,8,original,Random Forest,2.512859817347437,,,,,,
+puma8NH,41,8,estándar,Regresión lineal,3.631182123413408,,,,,,
+puma8NH,41,8,estándar,KNN,3.0119902232709523,,,,,,
+puma8NH,41,8,estándar,Árbol,3.415777410903173,,,,,,
+puma8NH,41,8,estándar,Random Forest,2.512859817347437,,,,,,
+house_8L,40,8,original,Regresión lineal,24853.644405060342,,,,,,
+house_8L,40,8,original,KNN,27947.63146666667,,,,,,
+house_8L,40,8,original,Árbol,21830.045666666665,,,,,,
+house_8L,40,8,original,Random Forest,16383.861513333333,,,,,,
+house_8L,40,8,estándar,Regresión lineal,24853.644405084575,,,,,,
+house_8L,40,8,estándar,KNN,18217.400066666665,,,,,,
+house_8L,40,8,estándar,Árbol,21825.279333333332,,,,,,
+house_8L,40,8,estándar,Random Forest,16380.431473333334,,,,,,
+diabetes,43,10,original,Regresión lineal,45.72220685858617,,,,,,
+diabetes,43,10,original,KNN,50.001503759398496,,,,,,
+diabetes,43,10,original,Árbol,71.0827067669173,,,,,,
+diabetes,43,10,original,Random Forest,50.503684210526316,,,,,,
+diabetes,43,10,estándar,Regresión lineal,45.72220685858617,,,,,,
+diabetes,43,10,estándar,KNN,49.50075187969925,,,,,,
+diabetes,43,10,estándar,Árbol,71.45112781954887,,,,,,
+diabetes,43,10,estándar,Random Forest,50.65165413533835,,,,,,
+house_8L,41,8,original,Regresión lineal,24703.10387903588,,,,,,
+house_8L,41,8,original,KNN,27253.954933333338,,,,,,
+house_8L,41,8,original,Árbol,22296.313,,,,,,
+house_8L,41,8,original,Random Forest,16119.54874666667,,,,,,
+house_8L,41,8,estándar,Regresión lineal,24703.103879035018,,,,,,
+house_8L,41,8,estándar,KNN,19182.001066666668,,,,,,
+house_8L,41,8,estándar,Árbol,22285.379666666668,,,,,,
+house_8L,41,8,estándar,Random Forest,16112.660050000002,,,,,,
+cpu_small,40,12,original,Regresión lineal,6.255786993866672,,,,,,
+cpu_small,40,12,original,KNN,4.638567941415785,,,,,,
+cpu_small,40,12,original,Árbol,2.922294548413344,,,,,,
+cpu_small,40,12,original,Random Forest,1.9569202603742883,,,,,,
+cpu_small,40,12,estándar,Regresión lineal,6.255786993866371,,,,,,
+cpu_small,40,12,estándar,KNN,2.310089503661514,,,,,,
+cpu_small,40,12,estándar,Árbol,2.9312449145646866,,,,,,
+cpu_small,40,12,estándar,Random Forest,1.9580675345809602,,,,,,
+concrete_compressive_strength,43,8,original,Regresión lineal,8.187228320725154,,,,,,
+concrete_compressive_strength,43,8,original,KNN,7.102455353255489,,,,,,
+concrete_compressive_strength,43,8,original,Árbol,4.737133632475315,,,,,,
+concrete_compressive_strength,43,8,original,Random Forest,3.9989499234980332,,,,,,
+concrete_compressive_strength,43,8,estándar,Regresión lineal,8.18722832072515,,,,,,
+concrete_compressive_strength,43,8,estándar,KNN,6.894560201864132,,,,,,
+concrete_compressive_strength,43,8,estándar,Árbol,4.787396209743924,,,,,,
+concrete_compressive_strength,43,8,estándar,Random Forest,4.001284569561335,,,,,,
+cpu_small,41,12,original,Regresión lineal,6.396414837290723,,,,,,
+cpu_small,41,12,original,KNN,4.660211554109032,,,,,,
+cpu_small,41,12,original,Árbol,2.8510984540276647,,,,,,
+cpu_small,41,12,original,Random Forest,1.988079739625712,,,,,,
+cpu_small,41,12,estándar,Regresión lineal,6.396414837290631,,,,,,
+cpu_small,41,12,estándar,KNN,2.3301871440195283,,,,,,
+cpu_small,41,12,estándar,Árbol,2.8474369406021154,,,,,,
+cpu_small,41,12,estándar,Random Forest,1.9884580960130187,,,,,,
+stock,43,9,original,Regresión lineal,1.8359372303708075,,,,,,
+stock,43,9,original,KNN,0.5906140350877193,,,,,,
+stock,43,9,original,Árbol,0.7315789473684211,,,,,,
+stock,43,9,original,Random Forest,0.6404561403508771,,,,,,
+stock,43,9,estándar,Regresión lineal,1.8359372303708066,,,,,,
+stock,43,9,estándar,KNN,0.6054385964912279,,,,,,
+stock,43,9,estándar,Árbol,0.7346491228070176,,,,,,
+stock,43,9,estándar,Random Forest,0.6381798245614035,,,,,,
+space_ga,42,6,original,Regresión lineal,0.12345408019329393,,,,,,
+space_ga,42,6,original,KNN,0.09903141333288686,,,,,,
+space_ga,42,6,original,Árbol,0.10948550458434654,,,,,,
+space_ga,42,6,original,Random Forest,0.08561770015913324,,,,,,
+space_ga,42,6,estándar,Regresión lineal,0.10004102503558865,,,,,,
+space_ga,42,6,estándar,KNN,0.0906797550338531,,,,,,
+space_ga,42,6,estándar,Árbol,0.10948550458434654,,,,,,
+space_ga,42,6,estándar,Random Forest,0.0856161108847565,,,,,,
+diabetes,44,10,original,Regresión lineal,42.437665768850735,,,,,,
+diabetes,44,10,original,KNN,47.04360902255639,,,,,,
+diabetes,44,10,original,Árbol,63.037593984962406,,,,,,
+diabetes,44,10,original,Random Forest,44.79097744360903,,,,,,
+diabetes,44,10,estándar,Regresión lineal,42.43766576885073,,,,,,
+diabetes,44,10,estándar,KNN,47.37894736842105,,,,,,
+diabetes,44,10,estándar,Árbol,63.12781954887218,,,,,,
+diabetes,44,10,estándar,Random Forest,44.981954887218045,,,,,,
+california,41,8,original,Regresión lineal,0.5376888960064606,,,,,,
+california,41,8,original,KNN,0.8281488698320414,,,,,,
+california,41,8,original,Árbol,0.4614009350775194,,,,,,
+california,41,8,original,Random Forest,0.32489851051356605,,,,,,
+california,41,8,estándar,Regresión lineal,0.5376888960065154,,,,,,
+california,41,8,estándar,KNN,0.4327005894702842,,,,,,
+california,41,8,estándar,Árbol,0.46096407945736434,,,,,,
+california,41,8,estándar,Random Forest,0.32503130941537484,,,,,,
+california,40,8,original,Regresión lineal,0.5424799334532464,,,,,,
+california,40,8,original,KNN,0.8335147790697675,,,,,,
+california,40,8,original,Árbol,0.47670070251937985,,,,,,
+california,40,8,original,Random Forest,0.3416434159076229,,,,,,
+california,40,8,estándar,Regresión lineal,0.5424799334532415,,,,,,
+california,40,8,estándar,KNN,0.4321305471576227,,,,,,
+california,40,8,estándar,Árbol,0.4761008947028424,,,,,,
+california,40,8,estándar,Random Forest,0.3417226156330751,,,,,,
+concrete_compressive_strength,44,8,original,Regresión lineal,8.16593169937079,,,,,,
+concrete_compressive_strength,44,8,original,KNN,7.393777738168932,,,,,,
+concrete_compressive_strength,44,8,original,Árbol,4.628763178232256,,,,,,
+concrete_compressive_strength,44,8,original,Random Forest,3.801480041823515,,,,,,
+concrete_compressive_strength,44,8,estándar,Regresión lineal,8.16593169937079,,,,,,
+concrete_compressive_strength,44,8,estándar,KNN,7.581017616645657,,,,,,
+concrete_compressive_strength,44,8,estándar,Árbol,4.6312934882128385,,,,,,
+concrete_compressive_strength,44,8,estándar,Random Forest,3.8068423386137584,,,,,,
+california,42,8,original,Regresión lineal,0.5272474538306174,,,,,,
+california,42,8,original,KNN,0.8217871040051679,,,,,,
+california,42,8,original,Árbol,0.4744537790697675,,,,,,
+california,42,8,original,Random Forest,0.3318150804102069,,,,,,
+california,42,8,estándar,Regresión lineal,0.5272474538305952,,,,,,
+california,42,8,estándar,KNN,0.44652109916020666,,,,,,
+california,42,8,estándar,Árbol,0.4740463162144703,,,,,,
+california,42,8,estándar,Random Forest,0.3318689983204136,,,,,,
+stock,44,9,original,Regresión lineal,1.8643008210546532,,,,,,
+stock,44,9,original,KNN,0.5268421052631577,,,,,,
+stock,44,9,original,Árbol,0.6885964912280702,,,,,,
+stock,44,9,original,Random Forest,0.5965877192982457,,,,,,
+stock,44,9,estándar,Regresión lineal,1.8643008210546508,,,,,,
+stock,44,9,estándar,KNN,0.5935964912280705,,,,,,
+stock,44,9,estándar,Árbol,0.6890350877192982,,,,,,
+stock,44,9,estándar,Random Forest,0.5942675438596493,,,,,,
+kin8nm,42,8,original,Regresión lineal,0.16234091031121237,,,,,,
+kin8nm,42,8,original,KNN,0.09466792392026037,,,,,,
+kin8nm,42,8,original,Árbol,0.16626667870463793,,,,,,
+kin8nm,42,8,original,Random Forest,0.11400108619149713,,,,,,
+kin8nm,42,8,estándar,Regresión lineal,0.16234091031121234,,,,,,
+kin8nm,42,8,estándar,KNN,0.09495260324735558,,,,,,
+kin8nm,42,8,estándar,Árbol,0.16626667870463793,,,,,,
+kin8nm,42,8,estándar,Random Forest,0.11400108619149713,,,,,,
+space_ga,43,6,original,Regresión lineal,0.12395165620256014,,,,,,
+space_ga,43,6,original,KNN,0.10244123207308357,,,,,,
+space_ga,43,6,original,Árbol,0.10916503680387707,,,,,,
+space_ga,43,6,original,Random Forest,0.08278871466647252,,,,,,
+space_ga,43,6,estándar,Regresión lineal,0.09936526822577883,,,,,,
+space_ga,43,6,estándar,KNN,0.09029863678408595,,,,,,
+space_ga,43,6,estándar,Árbol,0.10916503680387707,,,,,,
+space_ga,43,6,estándar,Random Forest,0.08279006671947463,,,,,,
+bank8FM,42,8,original,Regresión lineal,0.02839907465843951,,,,,,
+bank8FM,42,8,original,KNN,0.02532621969080553,,,,,,
+bank8FM,42,8,original,Árbol,0.031925449145646864,,,,,,
+bank8FM,42,8,original,Random Forest,0.02264357666395444,,,,,,
+bank8FM,42,8,estándar,Regresión lineal,0.028399074658439466,,,,,,
+bank8FM,42,8,estándar,KNN,0.03827283173311635,,,,,,
+bank8FM,42,8,estándar,Árbol,0.031947255899104965,,,,,,
+bank8FM,42,8,estándar,Random Forest,0.022643535329536207,,,,,,
+sulfur,42,6,original,Regresión lineal,0.018699464981126734,,,,,,
+sulfur,42,6,original,KNN,0.0101822068,,,,,,
+sulfur,42,6,original,Árbol,0.011714012666666666,,,,,,
+sulfur,42,6,original,Random Forest,0.009608963799999998,,,,,,
+sulfur,42,6,estándar,Regresión lineal,0.018699464981126738,,,,,,
+sulfur,42,6,estándar,KNN,0.0093026958,,,,,,
+sulfur,42,6,estándar,Árbol,0.011710581,,,,,,
+sulfur,42,6,estándar,Random Forest,0.009611246586666665,,,,,,
+wine_quality,42,11,original,Regresión lineal,0.5639225414939204,,,,,,
+wine_quality,42,11,original,KNN,0.6243076923076923,,,,,,
+wine_quality,42,11,original,Árbol,0.4928205128205128,,,,,,
+wine_quality,42,11,original,Random Forest,0.4365948717948717,,,,,,
+wine_quality,42,11,estándar,Regresión lineal,0.5639225414939321,,,,,,
+wine_quality,42,11,estándar,KNN,0.525948717948718,,,,,,
+wine_quality,42,11,estándar,Árbol,0.49230769230769234,,,,,,
+wine_quality,42,11,estándar,Random Forest,0.4369641025641025,,,,,,
+puma8NH,42,8,original,Regresión lineal,3.6413879824502886,,,,,,
+puma8NH,42,8,original,KNN,2.890864093165175,,,,,,
+puma8NH,42,8,original,Árbol,3.389511261594792,,,,,,
+puma8NH,42,8,original,Random Forest,2.5207965358462165,,,,,,
+puma8NH,42,8,estándar,Regresión lineal,3.6413879824502886,,,,,,
+puma8NH,42,8,estándar,KNN,3.0422339166802277,,,,,,
+puma8NH,42,8,estándar,Árbol,3.389511261594792,,,,,,
+puma8NH,42,8,estándar,Random Forest,2.520816896916192,,,,,,
+sulfur,43,6,original,Regresión lineal,0.018727606421958504,,,,,,
+sulfur,43,6,original,KNN,0.0101764094,,,,,,
+sulfur,43,6,original,Árbol,0.011805175666666667,,,,,,
+sulfur,43,6,original,Random Forest,0.009229184873333334,,,,,,
+sulfur,43,6,estándar,Regresión lineal,0.018727606421958545,,,,,,
+sulfur,43,6,estándar,KNN,0.0089763884,,,,,,
+sulfur,43,6,estándar,Árbol,0.011805824666666666,,,,,,
+sulfur,43,6,estándar,Random Forest,0.009230942380000001,,,,,,
+cpu_small,42,12,original,Regresión lineal,6.245225979443561,,,,,,
+cpu_small,42,12,original,KNN,4.6244100895036615,,,,,,
+cpu_small,42,12,original,Árbol,2.8637103336045566,,,,,,
+cpu_small,42,12,original,Random Forest,2.0098576078112282,,,,,,
+cpu_small,42,12,estándar,Regresión lineal,6.2452259794438625,,,,,,
+cpu_small,42,12,estándar,KNN,2.311716842961758,,,,,,
+cpu_small,42,12,estándar,Árbol,2.8641171684296176,,,,,,
+cpu_small,42,12,estándar,Random Forest,2.010834011391375,,,,,,
+bank8FM,43,8,original,Regresión lineal,0.028482197274404354,,,,,,
+bank8FM,43,8,original,KNN,0.025095017005695688,,,,,,
+bank8FM,43,8,original,Árbol,0.0331898311635476,,,,,,
+bank8FM,43,8,original,Random Forest,0.022946236159479255,,,,,,
+bank8FM,43,8,estándar,Regresión lineal,0.02848219727440435,,,,,,
+bank8FM,43,8,estándar,KNN,0.038191176729048,,,,,,
+bank8FM,43,8,estándar,Árbol,0.03319232546786005,,,,,,
+bank8FM,43,8,estándar,Random Forest,0.02294972281936534,,,,,,
+house_8L,43,8,original,Regresión lineal,24451.4314077487,,,,,,
+house_8L,43,8,original,KNN,27673.288066666668,,,,,,
+house_8L,43,8,original,Árbol,22103.117,,,,,,
+house_8L,43,8,original,Random Forest,16149.28707,,,,,,
+house_8L,43,8,estándar,Regresión lineal,24451.431407793007,,,,,,
+house_8L,43,8,estándar,KNN,18666.673199999997,,,,,,
+house_8L,43,8,estándar,Árbol,22110.516666666666,,,,,,
+house_8L,43,8,estándar,Random Forest,16148.233459999998,,,,,,
+kin8nm,43,8,original,Regresión lineal,0.16163787463831916,,,,,,
+kin8nm,43,8,original,KNN,0.0952721611280716,,,,,,
+kin8nm,43,8,original,Árbol,0.16825340834377542,,,,,,
+kin8nm,43,8,original,Random Forest,0.11310957246031325,,,,,,
+kin8nm,43,8,estándar,Regresión lineal,0.16163787463831916,,,,,,
+kin8nm,43,8,estándar,KNN,0.09549263985956062,,,,,,
+kin8nm,43,8,estándar,Árbol,0.16825340834377542,,,,,,
+kin8nm,43,8,estándar,Random Forest,0.11310957246031325,,,,,,
+house_8L,42,8,original,Regresión lineal,24627.692259064825,,,,,,
+house_8L,42,8,original,KNN,28674.908933333332,,,,,,
+house_8L,42,8,original,Árbol,22834.145666666667,,,,,,
+house_8L,42,8,original,Random Forest,17157.343903333334,,,,,,
+house_8L,42,8,estándar,Regresión lineal,24627.69225909047,,,,,,
+house_8L,42,8,estándar,KNN,18770.2666,,,,,,
+house_8L,42,8,estándar,Árbol,22833.378666666667,,,,,,
+house_8L,42,8,estándar,Random Forest,17151.80189,,,,,,
+cpu_small,43,12,original,Regresión lineal,6.21206120003175,,,,,,
+cpu_small,43,12,original,KNN,4.552400325467859,,,,,,
+cpu_small,43,12,original,Árbol,2.853946297803092,,,,,,
+cpu_small,43,12,original,Random Forest,2.01173311635476,,,,,,
+cpu_small,43,12,estándar,Regresión lineal,6.212061200031771,,,,,,
+cpu_small,43,12,estándar,KNN,2.284947111472742,,,,,,
+cpu_small,43,12,estándar,Árbol,2.85720097640358,,,,,,
+cpu_small,43,12,estándar,Random Forest,2.0122660699755897,,,,,,
+puma8NH,43,8,original,Regresión lineal,3.6600199564420453,,,,,,
+puma8NH,43,8,original,KNN,2.9227591007323026,,,,,,
+puma8NH,43,8,original,Árbol,3.4743266712774616,,,,,,
+puma8NH,43,8,original,Random Forest,2.500017381037429,,,,,,
+puma8NH,43,8,estándar,Regresión lineal,3.6600199564420444,,,,,,
+puma8NH,43,8,estándar,KNN,3.032068844344996,,,,,,
+puma8NH,43,8,estándar,Árbol,3.4743266712774616,,,,,,
+puma8NH,43,8,estándar,Random Forest,2.500017381037429,,,,,,
+california,43,8,original,Regresión lineal,0.5290682249719441,,,,,,
+california,43,8,original,KNN,0.8157859228036176,,,,,,
+california,43,8,original,Árbol,0.45775623546511635,,,,,,
+california,43,8,original,Random Forest,0.3233708088662793,,,,,,
+california,43,8,estándar,Regresión lineal,0.5290682249718781,,,,,,
+california,43,8,estándar,KNN,0.4373962177002583,,,,,,
+california,43,8,estándar,Árbol,0.45597296673126614,,,,,,
+california,43,8,estándar,Random Forest,0.3234049968507754,,,,,,
+wine_quality,43,11,original,Regresión lineal,0.5808637192115773,,,,,,
+wine_quality,43,11,original,KNN,0.6440000000000001,,,,,,
+wine_quality,43,11,original,Árbol,0.4876923076923077,,,,,,
+wine_quality,43,11,original,Random Forest,0.4427897435897436,,,,,,
+wine_quality,43,11,estándar,Regresión lineal,0.5808637192115779,,,,,,
+wine_quality,43,11,estándar,KNN,0.5344615384615384,,,,,,
+wine_quality,43,11,estándar,Árbol,0.4897435897435897,,,,,,
+wine_quality,43,11,estándar,Random Forest,0.4426564102564103,,,,,,
+space_ga,44,6,original,Regresión lineal,0.12262112115083572,,,,,,
+space_ga,44,6,original,KNN,0.09829888287424329,,,,,,
+space_ga,44,6,original,Árbol,0.11490757041783964,,,,,,
+space_ga,44,6,original,Random Forest,0.08332095550315212,,,,,,
+space_ga,44,6,estándar,Regresión lineal,0.09807668489313169,,,,,,
+space_ga,44,6,estándar,KNN,0.08840565462019208,,,,,,
+space_ga,44,6,estándar,Árbol,0.11490757041783964,,,,,,
+space_ga,44,6,estándar,Random Forest,0.08332749102807321,,,,,,
+puma8NH,44,8,original,Regresión lineal,3.6264674710754914,,,,,,
+puma8NH,44,8,original,KNN,2.8096771545158665,,,,,,
+puma8NH,44,8,original,Árbol,3.421761952400326,,,,,,
+puma8NH,44,8,original,Random Forest,2.4891140432912935,,,,,,
+puma8NH,44,8,estándar,Regresión lineal,3.6264674710754914,,,,,,
+puma8NH,44,8,estándar,KNN,3.0064635148901546,,,,,,
+puma8NH,44,8,estándar,Árbol,3.421761952400326,,,,,,
+puma8NH,44,8,estándar,Random Forest,2.489121295854353,,,,,,
+bank8FM,44,8,original,Regresión lineal,0.028373015052654053,,,,,,
+bank8FM,44,8,original,KNN,0.02475135956061839,,,,,,
+bank8FM,44,8,original,Árbol,0.0316621899918633,,,,,,
+bank8FM,44,8,original,Random Forest,0.022328293787632226,,,,,,
+bank8FM,44,8,estándar,Regresión lineal,0.028373015052654077,,,,,,
+bank8FM,44,8,estándar,KNN,0.037406145077298614,,,,,,
+bank8FM,44,8,estándar,Árbol,0.0316558539462978,,,,,,
+bank8FM,44,8,estándar,Random Forest,0.022323046891781936,,,,,,
+cpu_small,44,12,original,Regresión lineal,6.137769909637518,,,,,,
+cpu_small,44,12,original,KNN,4.593653376729049,,,,,,
+cpu_small,44,12,original,Árbol,2.8059397884458908,,,,,,
+cpu_small,44,12,original,Random Forest,1.941285598047193,,,,,,
+cpu_small,44,12,estándar,Regresión lineal,6.137769909637562,,,,,,
+cpu_small,44,12,estándar,KNN,2.2132628152969898,,,,,,
+cpu_small,44,12,estándar,Árbol,2.809194467046379,,,,,,
+cpu_small,44,12,estándar,Random Forest,1.9419243287225387,,,,,,
+sulfur,44,6,original,Regresión lineal,0.01849275936364533,,,,,,
+sulfur,44,6,original,KNN,0.009872466466666667,,,,,,
+sulfur,44,6,original,Árbol,0.011492247666666667,,,,,,
+sulfur,44,6,original,Random Forest,0.009274288280000001,,,,,,
+sulfur,44,6,estándar,Regresión lineal,0.018492759363645358,,,,,,
+sulfur,44,6,estándar,KNN,0.008865337333333334,,,,,,
+sulfur,44,6,estándar,Árbol,0.011491225,,,,,,
+sulfur,44,6,estándar,Random Forest,0.009268003653333334,,,,,,
+kin8nm,44,8,original,Regresión lineal,0.16519624290984425,,,,,,
+kin8nm,44,8,original,KNN,0.09612929822986167,,,,,,
+kin8nm,44,8,original,Árbol,0.16576475764401954,,,,,,
+kin8nm,44,8,original,Random Forest,0.11391772395977219,,,,,,
+kin8nm,44,8,estándar,Regresión lineal,0.16519624290984425,,,,,,
+kin8nm,44,8,estándar,KNN,0.09642602693775428,,,,,,
+kin8nm,44,8,estándar,Árbol,0.16576475764401954,,,,,,
+kin8nm,44,8,estándar,Random Forest,0.11391772395977219,,,,,,
+house_8L,44,8,original,Regresión lineal,24368.7306679077,,,,,,
+house_8L,44,8,original,KNN,28114.155666666666,,,,,,
+house_8L,44,8,original,Árbol,20689.114,,,,,,
+house_8L,44,8,original,Random Forest,15977.775946666668,,,,,,
+house_8L,44,8,estándar,Regresión lineal,24368.730667908003,,,,,,
+house_8L,44,8,estándar,KNN,18561.195933333333,,,,,,
+house_8L,44,8,estándar,Árbol,20685.280666666666,,,,,,
+house_8L,44,8,estándar,Random Forest,15971.732256666668,,,,,,
+wine_quality,44,11,original,Regresión lineal,0.5616143635804356,,,,,,
+wine_quality,44,11,original,KNN,0.6204102564102565,,,,,,
+wine_quality,44,11,original,Árbol,0.47435897435897434,,,,,,
+wine_quality,44,11,original,Random Forest,0.43193333333333334,,,,,,
+wine_quality,44,11,estándar,Regresión lineal,0.5616143635804595,,,,,,
+wine_quality,44,11,estándar,KNN,0.5085128205128205,,,,,,
+wine_quality,44,11,estándar,Árbol,0.47333333333333333,,,,,,
+wine_quality,44,11,estándar,Random Forest,0.4314153846153846,,,,,,
+california,44,8,original,Regresión lineal,0.5295903265503635,,,,,,
+california,44,8,original,KNN,0.8303580478036174,,,,,,
+california,44,8,original,Árbol,0.45840818313953496,,,,,,
+california,44,8,original,Random Forest,0.3264411159237728,,,,,,
+california,44,8,estándar,Regresión lineal,0.529590326550343,,,,,,
+california,44,8,estándar,KNN,0.44432116957364337,,,,,,
+california,44,8,estándar,Árbol,0.4582859302325581,,,,,,
+california,44,8,estándar,Random Forest,0.32631926075581413,,,,,,
+diabetes,41,10,P,Regresión lineal,47.034254183481686,49.19331502914429,9.0,6.0,3.0,1008.0,0.7432788739032319
+diabetes,41,10,P,KNN,48.92631578947368,49.19331502914429,9.0,6.0,3.0,1008.0,0.7432788739032319
+diabetes,41,10,P,Árbol,67.92481203007519,49.19331502914429,9.0,6.0,3.0,1008.0,0.7432788739032319
+diabetes,41,10,P,Random Forest,51.310225563909775,49.19331502914429,9.0,6.0,3.0,1008.0,0.7432788739032319
+diabetes,40,10,P,Regresión lineal,48.99870646501155,53.910191774368286,9.0,6.0,3.0,1008.0,0.694102548820612
+diabetes,40,10,P,KNN,48.71729323308271,53.910191774368286,9.0,6.0,3.0,1008.0,0.694102548820612
+diabetes,40,10,P,Árbol,66.53383458646617,53.910191774368286,9.0,6.0,3.0,1008.0,0.694102548820612
+diabetes,40,10,P,Random Forest,49.9875939849624,53.910191774368286,9.0,6.0,3.0,1008.0,0.694102548820612
+concrete_compressive_strength,40,8,P,Regresión lineal,5.691059822907378,78.43252658843994,7.0,6.0,1.0,1001.0,0.3401206527975218
+concrete_compressive_strength,40,8,P,KNN,4.405812076837672,78.43252658843994,7.0,6.0,1.0,1001.0,0.3401206527975218
+concrete_compressive_strength,40,8,P,Árbol,4.64394567562445,78.43252658843994,7.0,6.0,1.0,1001.0,0.3401206527975218
+concrete_compressive_strength,40,8,P,Random Forest,3.7050065875634814,78.43252658843994,7.0,6.0,1.0,1001.0,0.3401206527975218
+stock,41,9,P,Regresión lineal,1.639347249467756,82.62190842628479,8.0,7.0,1.0,1001.0,0.17924283018196166
+stock,41,9,P,KNN,0.5600877192982455,82.62190842628479,8.0,7.0,1.0,1001.0,0.17924283018196166
+stock,41,9,P,Árbol,0.6859649122807018,82.62190842628479,8.0,7.0,1.0,1001.0,0.17924283018196166
+stock,41,9,P,Random Forest,0.5502149122807015,82.62190842628479,8.0,7.0,1.0,1001.0,0.17924283018196166
+stock,40,9,P,Regresión lineal,1.6719325009563675,85.55211067199707,8.0,6.0,2.0,1001.0,0.18172952193725767
+stock,40,9,P,KNN,0.6349122807017545,85.55211067199707,8.0,6.0,2.0,1001.0,0.18172952193725767
+stock,40,9,P,Árbol,0.7416666666666667,85.55211067199707,8.0,6.0,2.0,1001.0,0.18172952193725767
+stock,40,9,P,Random Forest,0.6279342105263157,85.55211067199707,8.0,6.0,2.0,1001.0,0.18172952193725767
+concrete_compressive_strength,41,8,P,Regresión lineal,5.421064049141646,85.26893281936646,6.0,6.0,0.0,1001.0,0.36174751214033474
+concrete_compressive_strength,41,8,P,KNN,3.9938041697828885,85.26893281936646,6.0,6.0,0.0,1001.0,0.36174751214033474
+concrete_compressive_strength,41,8,P,Árbol,4.661892877154058,85.26893281936646,6.0,6.0,0.0,1001.0,0.36174751214033474
+concrete_compressive_strength,41,8,P,Random Forest,3.467499169573571,85.26893281936646,6.0,6.0,0.0,1001.0,0.36174751214033474
+diabetes,42,10,P,Regresión lineal,41.74486383797891,61.41062307357788,9.0,8.0,1.0,1008.0,0.7389737729973624
+diabetes,42,10,P,KNN,42.796992481203006,61.41062307357788,9.0,8.0,1.0,1008.0,0.7389737729973624
+diabetes,42,10,P,Árbol,55.81954887218045,61.41062307357788,9.0,8.0,1.0,1008.0,0.7389737729973624
+diabetes,42,10,P,Random Forest,43.001804511278195,61.41062307357788,9.0,8.0,1.0,1008.0,0.7389737729973624
+stock,42,9,P,Regresión lineal,1.6657907711524347,91.10353970527649,8.0,7.0,1.0,1001.0,0.18263011020248154
+stock,42,9,P,KNN,0.5596491228070175,91.10353970527649,8.0,7.0,1.0,1001.0,0.18263011020248154
+stock,42,9,P,Árbol,0.7179824561403508,91.10353970527649,8.0,7.0,1.0,1001.0,0.18263011020248154
+stock,42,9,P,Random Forest,0.5786359649122808,91.10353970527649,8.0,7.0,1.0,1001.0,0.18263011020248154
+concrete_compressive_strength,42,8,P,Regresión lineal,5.680962710396527,95.36673927307129,7.0,5.0,2.0,1001.0,0.3593048396095079
+concrete_compressive_strength,42,8,P,KNN,4.456219561995684,95.36673927307129,7.0,5.0,2.0,1001.0,0.3593048396095079
+concrete_compressive_strength,42,8,P,Árbol,4.526180114733606,95.36673927307129,7.0,5.0,2.0,1001.0,0.3593048396095079
+concrete_compressive_strength,42,8,P,Random Forest,3.655490809581158,95.36673927307129,7.0,5.0,2.0,1001.0,0.3593048396095079
+puma8NH,40,8,P,Regresión lineal,3.5209971414679595,257.68157267570496,3.0,2.0,1.0,1001.0,0.6673597740693065
+puma8NH,40,8,P,KNN,2.597159319934906,257.68157267570496,3.0,2.0,1.0,1001.0,0.6673597740693065
+puma8NH,40,8,P,Árbol,3.418301978844589,257.68157267570496,3.0,2.0,1.0,1001.0,0.6673597740693065
+puma8NH,40,8,P,Random Forest,2.5457357383848658,257.68157267570496,3.0,2.0,1.0,1001.0,0.6673597740693065
+puma8NH,41,8,P,Regresión lineal,3.523405813956344,266.62619948387146,3.0,2.0,1.0,1001.0,0.6508943265127909
+puma8NH,41,8,P,KNN,2.678377987632221,266.62619948387146,3.0,2.0,1.0,1001.0,0.6508943265127909
+puma8NH,41,8,P,Árbol,3.43210837184703,266.62619948387146,3.0,2.0,1.0,1001.0,0.6508943265127909
+puma8NH,41,8,P,Random Forest,2.6077337513018715,266.62619948387146,3.0,2.0,1.0,1001.0,0.6508943265127909
+space_ga,40,6,P,Regresión lineal,0.09221714110577045,300.91554498672485,5.0,3.0,2.0,1008.0,0.5689098766221898
+space_ga,40,6,P,KNN,0.07634475827643611,300.91554498672485,5.0,3.0,2.0,1008.0,0.5689098766221898
+space_ga,40,6,P,Árbol,0.10451461909614196,300.91554498672485,5.0,3.0,2.0,1008.0,0.5689098766221898
+space_ga,40,6,P,Random Forest,0.07442641355622474,300.91554498672485,5.0,3.0,2.0,1008.0,0.5689098766221898
+sulfur,41,6,P,Regresión lineal,0.01811075247377652,308.3666470050812,5.0,3.0,2.0,1008.0,0.5639166013219001
+sulfur,41,6,P,KNN,0.009054902866666667,308.3666470050812,5.0,3.0,2.0,1008.0,0.5639166013219001
+sulfur,41,6,P,Árbol,0.011351238666666668,308.3666470050812,5.0,3.0,2.0,1008.0,0.5639166013219001
+sulfur,41,6,P,Random Forest,0.009088430619999999,308.3666470050812,5.0,3.0,2.0,1008.0,0.5639166013219001
+space_ga,41,6,P,Regresión lineal,0.09196584580658303,316.21288204193115,5.0,3.0,2.0,1008.0,0.569548099399674
+space_ga,41,6,P,KNN,0.07221568183544345,316.21288204193115,5.0,3.0,2.0,1008.0,0.569548099399674
+space_ga,41,6,P,Árbol,0.10164902506378842,316.21288204193115,5.0,3.0,2.0,1008.0,0.569548099399674
+space_ga,41,6,P,Random Forest,0.07043734831361793,316.21288204193115,5.0,3.0,2.0,1008.0,0.569548099399674
+sulfur,40,6,P,Regresión lineal,0.018315572766483868,316.02521896362305,5.0,3.0,2.0,1008.0,0.5550479992310382
+sulfur,40,6,P,KNN,0.009340122533333333,316.02521896362305,5.0,3.0,2.0,1008.0,0.5550479992310382
+sulfur,40,6,P,Árbol,0.010491440666666667,316.02521896362305,5.0,3.0,2.0,1008.0,0.5550479992310382
+sulfur,40,6,P,Random Forest,0.00903658968333333,316.02521896362305,5.0,3.0,2.0,1008.0,0.5550479992310382
+bank8FM,40,8,P,Regresión lineal,0.028387287648585443,333.0163896083832,7.0,4.0,3.0,1001.0,0.24367178642891102
+bank8FM,40,8,P,KNN,0.024809236371033362,333.0163896083832,7.0,4.0,3.0,1001.0,0.24367178642891102
+bank8FM,40,8,P,Árbol,0.03217388283157038,333.0163896083832,7.0,4.0,3.0,1001.0,0.24367178642891102
+bank8FM,40,8,P,Random Forest,0.023178682917005696,333.0163896083832,7.0,4.0,3.0,1001.0,0.24367178642891102
+house_8L,41,8,P,Regresión lineal,22927.730110199955,340.71818923950195,7.0,6.0,1.0,1001.0,0.7183742507990913
+house_8L,41,8,P,KNN,17324.345466666666,340.71818923950195,7.0,6.0,1.0,1001.0,0.7183742507990913
+house_8L,41,8,P,Árbol,22047.255666666668,340.71818923950195,7.0,6.0,1.0,1001.0,0.7183742507990913
+house_8L,41,8,P,Random Forest,16504.276670000003,340.71818923950195,7.0,6.0,1.0,1001.0,0.7183742507990913
+bank8FM,41,8,P,Regresión lineal,0.028087067475183164,345.68106174468994,7.0,4.0,3.0,1001.0,0.24012523263128333
+bank8FM,41,8,P,KNN,0.02490889869812856,345.68106174468994,7.0,4.0,3.0,1001.0,0.24012523263128333
+bank8FM,41,8,P,Árbol,0.034140529292107404,345.68106174468994,7.0,4.0,3.0,1001.0,0.24012523263128333
+bank8FM,41,8,P,Random Forest,0.024725420988608627,345.68106174468994,7.0,4.0,3.0,1001.0,0.24012523263128333
+california,41,8,P,Regresión lineal,0.4854933639660864,338.09888100624084,7.0,4.0,3.0,1001.0,0.5218078267340618
+california,41,8,P,KNN,0.3635366159560724,338.09888100624084,7.0,4.0,3.0,1001.0,0.5218078267340618
+california,41,8,P,Árbol,0.44342400839793283,338.09888100624084,7.0,4.0,3.0,1001.0,0.5218078267340618
+california,41,8,P,Random Forest,0.3229646692183464,338.09888100624084,7.0,4.0,3.0,1001.0,0.5218078267340618
+kin8nm,41,8,P,Regresión lineal,0.1650399310128252,355.3482873439789,7.0,1.0,6.0,1001.0,0.7022038111253236
+kin8nm,41,8,P,KNN,0.131690528941904,355.3482873439789,7.0,1.0,6.0,1001.0,0.7022038111253236
+kin8nm,41,8,P,Árbol,0.18261023187591538,355.3482873439789,7.0,1.0,6.0,1001.0,0.7022038111253236
+kin8nm,41,8,P,Random Forest,0.1337797501171847,355.3482873439789,7.0,1.0,6.0,1001.0,0.7022038111253236
+california,40,8,P,Regresión lineal,0.49359179832991656,341.00218749046326,7.0,6.0,1.0,1001.0,0.5062223177461861
+california,40,8,P,KNN,0.3277464305555556,341.00218749046326,7.0,6.0,1.0,1001.0,0.5062223177461861
+california,40,8,P,Árbol,0.45082277131782944,341.00218749046326,7.0,6.0,1.0,1001.0,0.5062223177461861
+california,40,8,P,Random Forest,0.3323828386304911,341.00218749046326,7.0,6.0,1.0,1001.0,0.5062223177461861
+kin8nm,40,8,P,Regresión lineal,0.1659045929117543,358.6986587047577,7.0,4.0,3.0,1001.0,0.6436014109125993
+kin8nm,40,8,P,KNN,0.12279550637257933,358.6986587047577,7.0,4.0,3.0,1001.0,0.6436014109125993
+kin8nm,40,8,P,Árbol,0.16611231853905614,358.6986587047577,7.0,4.0,3.0,1001.0,0.6436014109125993
+kin8nm,40,8,P,Random Forest,0.120748968716251,358.6986587047577,7.0,4.0,3.0,1001.0,0.6436014109125993
+wine_quality,40,11,P,Regresión lineal,0.598017974847315,368.9157190322876,10.0,7.0,3.0,1008.0,0.8720232231809802
+wine_quality,40,11,P,KNN,0.5640000000000001,368.9157190322876,10.0,7.0,3.0,1008.0,0.8720232231809802
+wine_quality,40,11,P,Árbol,0.5456410256410257,368.9157190322876,10.0,7.0,3.0,1008.0,0.8720232231809802
+wine_quality,40,11,P,Random Forest,0.46656923076923074,368.9157190322876,10.0,7.0,3.0,1008.0,0.8720232231809802
+house_8L,40,8,P,Regresión lineal,22730.202977678313,370.58147716522217,7.0,2.0,5.0,1001.0,0.6946501487188945
+house_8L,40,8,P,KNN,17228.578133333333,370.58147716522217,7.0,2.0,5.0,1001.0,0.6946501487188945
+house_8L,40,8,P,Árbol,22669.079333333335,370.58147716522217,7.0,2.0,5.0,1001.0,0.6946501487188945
+house_8L,40,8,P,Random Forest,17335.155540000003,370.58147716522217,7.0,2.0,5.0,1001.0,0.6946501487188945
+diabetes,43,10,P,Regresión lineal,45.66254142421333,61.17751383781433,9.0,5.0,4.0,1008.0,0.7201322297779769
+diabetes,43,10,P,KNN,50.82406015037594,61.17751383781433,9.0,5.0,4.0,1008.0,0.7201322297779769
+diabetes,43,10,P,Árbol,62.16541353383459,61.17751383781433,9.0,5.0,4.0,1008.0,0.7201322297779769
+diabetes,43,10,P,Random Forest,48.42293233082706,61.17751383781433,9.0,5.0,4.0,1008.0,0.7201322297779769
+cpu_small,40,12,P,Regresión lineal,2.531186557171229,417.15481066703796,11.0,8.0,3.0,1008.0,0.27342496156746277
+cpu_small,40,12,P,KNN,2.245809601301872,417.15481066703796,11.0,8.0,3.0,1008.0,0.27342496156746277
+cpu_small,40,12,P,Árbol,2.796582587469487,417.15481066703796,11.0,8.0,3.0,1008.0,0.27342496156746277
+cpu_small,40,12,P,Random Forest,1.9448250610252238,417.15481066703796,11.0,8.0,3.0,1008.0,0.27342496156746277
+concrete_compressive_strength,43,8,P,Regresión lineal,5.705271856966629,80.26275253295898,7.0,6.0,1.0,1001.0,0.3625856962368815
+concrete_compressive_strength,43,8,P,KNN,4.700366233069281,80.26275253295898,7.0,6.0,1.0,1001.0,0.3625856962368815
+concrete_compressive_strength,43,8,P,Árbol,4.6837660225323505,80.26275253295898,7.0,6.0,1.0,1001.0,0.3625856962368815
+concrete_compressive_strength,43,8,P,Random Forest,3.8504216143257675,80.26275253295898,7.0,6.0,1.0,1001.0,0.3625856962368815
+stock,43,9,P,Regresión lineal,1.6404277091461756,89.58154940605164,8.0,5.0,3.0,1001.0,0.18828933710451481
+stock,43,9,P,KNN,0.6444736842105263,89.58154940605164,8.0,5.0,3.0,1001.0,0.18828933710451481
+stock,43,9,P,Árbol,0.8482456140350877,89.58154940605164,8.0,5.0,3.0,1001.0,0.18828933710451481
+stock,43,9,P,Random Forest,0.6697587719298247,89.58154940605164,8.0,5.0,3.0,1001.0,0.18828933710451481
+wine_quality,41,11,P,Regresión lineal,0.5704245894299177,396.321236371994,10.0,4.0,6.0,1008.0,0.8969794278776575
+wine_quality,41,11,P,KNN,0.5364102564102564,396.321236371994,10.0,4.0,6.0,1008.0,0.8969794278776575
+wine_quality,41,11,P,Árbol,0.5128205128205128,396.321236371994,10.0,4.0,6.0,1008.0,0.8969794278776575
+wine_quality,41,11,P,Random Forest,0.4573025641025641,396.321236371994,10.0,4.0,6.0,1008.0,0.8969794278776575
+space_ga,42,6,P,Regresión lineal,0.09641386390818568,317.99165320396423,5.0,3.0,2.0,1008.0,0.5592346924597378
+space_ga,42,6,P,KNN,0.07976513714746418,317.99165320396423,5.0,3.0,2.0,1008.0,0.5592346924597378
+space_ga,42,6,P,Árbol,0.10304483493613201,317.99165320396423,5.0,3.0,2.0,1008.0,0.5592346924597378
+space_ga,42,6,P,Random Forest,0.07763484127839589,317.99165320396423,5.0,3.0,2.0,1008.0,0.5592346924597378
+california,42,8,P,Regresión lineal,0.5015595828685061,361.5838119983673,7.0,4.0,3.0,1001.0,0.5159893921796808
+california,42,8,P,KNN,0.3287238472222222,361.5838119983673,7.0,4.0,3.0,1001.0,0.5159893921796808
+california,42,8,P,Árbol,0.4133330620155039,361.5838119983673,7.0,4.0,3.0,1001.0,0.5159893921796808
+california,42,8,P,Random Forest,0.30670855366602084,361.5838119983673,7.0,4.0,3.0,1001.0,0.5159893921796808
+diabetes,44,10,P,Regresión lineal,42.29471815329483,54.95204782485962,9.0,6.0,3.0,1008.0,0.7524920511980123
+diabetes,44,10,P,KNN,49.30676691729323,54.95204782485962,9.0,6.0,3.0,1008.0,0.7524920511980123
+diabetes,44,10,P,Árbol,70.13533834586467,54.95204782485962,9.0,6.0,3.0,1008.0,0.7524920511980123
+diabetes,44,10,P,Random Forest,47.758345864661656,54.95204782485962,9.0,6.0,3.0,1008.0,0.7524920511980123
+cpu_small,41,12,P,Regresión lineal,2.494530464634139,437.93293356895447,11.0,8.0,3.0,1008.0,0.2517295203798904
+cpu_small,41,12,P,KNN,2.2751017087062655,437.93293356895447,11.0,8.0,3.0,1008.0,0.2517295203798904
+cpu_small,41,12,P,Árbol,2.7656631407648495,437.93293356895447,11.0,8.0,3.0,1008.0,0.2517295203798904
+cpu_small,41,12,P,Random Forest,1.9852115541090316,437.93293356895447,11.0,8.0,3.0,1008.0,0.2517295203798904
+sulfur,42,6,P,Regresión lineal,0.01826122152116703,318.860967874527,5.0,3.0,2.0,1008.0,0.5682460605449011
+sulfur,42,6,P,KNN,0.009270087733333333,318.860967874527,5.0,3.0,2.0,1008.0,0.5682460605449011
+sulfur,42,6,P,Árbol,0.011458225666666665,318.860967874527,5.0,3.0,2.0,1008.0,0.5682460605449011
+sulfur,42,6,P,Random Forest,0.009226428643333333,318.860967874527,5.0,3.0,2.0,1008.0,0.5682460605449011
+puma8NH,42,8,P,Regresión lineal,3.5617726490870796,252.93333339691162,3.0,2.0,1.0,1001.0,0.6413846463982791
+puma8NH,42,8,P,KNN,2.6625106492270136,252.93333339691162,3.0,2.0,1.0,1001.0,0.6413846463982791
+puma8NH,42,8,P,Árbol,3.4336931737184693,252.93333339691162,3.0,2.0,1.0,1001.0,0.6413846463982791
+puma8NH,42,8,P,Random Forest,2.573849298458096,252.93333339691162,3.0,2.0,1.0,1001.0,0.6413846463982791
+concrete_compressive_strength,44,8,P,Regresión lineal,5.454638723182264,92.88318943977356,7.0,6.0,1.0,1001.0,0.3602110291886265
+concrete_compressive_strength,44,8,P,KNN,4.668030031787285,92.88318943977356,7.0,6.0,1.0,1001.0,0.3602110291886265
+concrete_compressive_strength,44,8,P,Árbol,4.6122269108018354,92.88318943977356,7.0,6.0,1.0,1001.0,0.3602110291886265
+concrete_compressive_strength,44,8,P,Random Forest,3.9772799021336,92.88318943977356,7.0,6.0,1.0,1001.0,0.3602110291886265
+kin8nm,42,8,P,Regresión lineal,0.16402694997298695,366.08499240875244,7.0,6.0,1.0,1001.0,0.6396843842014489
+kin8nm,42,8,P,KNN,0.10527913961765663,366.08499240875244,7.0,6.0,1.0,1001.0,0.6396843842014489
+kin8nm,42,8,P,Árbol,0.17369243230024412,366.08499240875244,7.0,6.0,1.0,1001.0,0.6396843842014489
+kin8nm,42,8,P,Random Forest,0.12403622335217655,366.08499240875244,7.0,6.0,1.0,1001.0,0.6396843842014489
+stock,44,9,P,Regresión lineal,1.6593486704174758,97.14857506752014,8.0,7.0,1.0,1001.0,0.1875678842654502
+stock,44,9,P,KNN,0.562280701754386,97.14857506752014,8.0,7.0,1.0,1001.0,0.1875678842654502
+stock,44,9,P,Árbol,0.7662280701754386,97.14857506752014,8.0,7.0,1.0,1001.0,0.1875678842654502
+stock,44,9,P,Random Forest,0.6095570175438596,97.14857506752014,8.0,7.0,1.0,1001.0,0.1875678842654502
+bank8FM,42,8,P,Regresión lineal,0.028482662189650166,352.2773561477661,7.0,3.0,4.0,1001.0,0.24335946866706698
+bank8FM,42,8,P,KNN,0.02614186761594792,352.2773561477661,7.0,3.0,4.0,1001.0,0.24335946866706698
+bank8FM,42,8,P,Árbol,0.03242856224572824,352.2773561477661,7.0,3.0,4.0,1001.0,0.24335946866706698
+bank8FM,42,8,P,Random Forest,0.023326867937347433,352.2773561477661,7.0,3.0,4.0,1001.0,0.24335946866706698
+wine_quality,42,11,P,Regresión lineal,0.557931898751594,317.7667694091797,10.0,7.0,3.0,1008.0,0.8747517506057919
+wine_quality,42,11,P,KNN,0.5383589743589745,317.7667694091797,10.0,7.0,3.0,1008.0,0.8747517506057919
+wine_quality,42,11,P,Árbol,0.5097435897435898,317.7667694091797,10.0,7.0,3.0,1008.0,0.8747517506057919
+wine_quality,42,11,P,Random Forest,0.4455641025641025,317.7667694091797,10.0,7.0,3.0,1008.0,0.8747517506057919
+california,43,8,P,Regresión lineal,0.4927609973213339,290.7982089519501,7.0,5.0,2.0,1001.0,0.5394427661870581
+california,43,8,P,KNN,0.3538025129198966,290.7982089519501,7.0,5.0,2.0,1001.0,0.5394427661870581
+california,43,8,P,Árbol,0.4405299773901809,290.7982089519501,7.0,5.0,2.0,1001.0,0.5394427661870581
+california,43,8,P,Random Forest,0.31734860915697694,290.7982089519501,7.0,5.0,2.0,1001.0,0.5394427661870581
+space_ga,43,6,P,Regresión lineal,0.09256153718616351,292.8020989894867,5.0,3.0,2.0,1008.0,0.5638334782044742
+space_ga,43,6,P,KNN,0.07700455353609305,292.8020989894867,5.0,3.0,2.0,1008.0,0.5638334782044742
+space_ga,43,6,P,Árbol,0.10064483376416868,292.8020989894867,5.0,3.0,2.0,1008.0,0.5638334782044742
+space_ga,43,6,P,Random Forest,0.07521586552623168,292.8020989894867,5.0,3.0,2.0,1008.0,0.5638334782044742
+house_8L,42,8,P,Regresión lineal,23019.65722824308,344.36837553977966,7.0,7.0,0.0,1001.0,0.6961574904622738
+house_8L,42,8,P,KNN,17772.230266666666,344.36837553977966,7.0,7.0,0.0,1001.0,0.6961574904622738
+house_8L,42,8,P,Árbol,22940.123,344.36837553977966,7.0,7.0,0.0,1001.0,0.6961574904622738
+house_8L,42,8,P,Random Forest,17421.43387,344.36837553977966,7.0,7.0,0.0,1001.0,0.6961574904622738
+puma8NH,43,8,P,Regresión lineal,3.5656369686530005,278.876677274704,3.0,3.0,0.0,1001.0,0.6633882282951167
+puma8NH,43,8,P,KNN,2.6216086428803904,278.876677274704,3.0,3.0,0.0,1001.0,0.6633882282951167
+puma8NH,43,8,P,Árbol,3.3843660036615133,278.876677274704,3.0,3.0,0.0,1001.0,0.6633882282951167
+puma8NH,43,8,P,Random Forest,2.5397795625101707,278.876677274704,3.0,3.0,0.0,1001.0,0.6633882282951167
+cpu_small,42,12,P,Regresión lineal,2.5304261055477886,367.5930607318878,11.0,7.0,4.0,1008.0,0.23985232037517018
+cpu_small,42,12,P,KNN,2.3394629780309195,367.5930607318878,11.0,7.0,4.0,1008.0,0.23985232037517018
+cpu_small,42,12,P,Árbol,2.696094385679414,367.5930607318878,11.0,7.0,4.0,1008.0,0.23985232037517018
+cpu_small,42,12,P,Random Forest,2.005040683482506,367.5930607318878,11.0,7.0,4.0,1008.0,0.23985232037517018
+kin8nm,43,8,P,Regresión lineal,0.16555926535781365,329.15574979782104,7.0,6.0,1.0,1001.0,0.5987996691597345
+kin8nm,43,8,P,KNN,0.15966590624662327,329.15574979782104,7.0,6.0,1.0,1001.0,0.5987996691597345
+kin8nm,43,8,P,Árbol,0.2069274386903987,329.15574979782104,7.0,6.0,1.0,1001.0,0.5987996691597345
+kin8nm,43,8,P,Random Forest,0.1538308241124654,329.15574979782104,7.0,6.0,1.0,1001.0,0.5987996691597345
+sulfur,43,6,P,Regresión lineal,0.018033846254590657,327.63942861557007,5.0,3.0,2.0,1008.0,0.5755750758583212
+sulfur,43,6,P,KNN,0.009763029866666667,327.63942861557007,5.0,3.0,2.0,1008.0,0.5755750758583212
+sulfur,43,6,P,Árbol,0.011768672666666667,327.63942861557007,5.0,3.0,2.0,1008.0,0.5755750758583212
+sulfur,43,6,P,Random Forest,0.009394001366666667,327.63942861557007,5.0,3.0,2.0,1008.0,0.5755750758583212
+bank8FM,43,8,P,Regresión lineal,0.028148414249656598,334.7996971607208,7.0,4.0,3.0,1001.0,0.23969093982880132
+bank8FM,43,8,P,KNN,0.025318354434499594,334.7996971607208,7.0,4.0,3.0,1001.0,0.23969093982880132
+bank8FM,43,8,P,Árbol,0.0321554479251424,334.7996971607208,7.0,4.0,3.0,1001.0,0.23969093982880132
+bank8FM,43,8,P,Random Forest,0.02322698073637104,334.7996971607208,7.0,4.0,3.0,1001.0,0.23969093982880132
+wine_quality,43,11,P,Regresión lineal,0.5775797258453934,279.8698799610138,10.0,8.0,2.0,1008.0,0.8906287477216702
+wine_quality,43,11,P,KNN,0.5353846153846153,279.8698799610138,10.0,8.0,2.0,1008.0,0.8906287477216702
+wine_quality,43,11,P,Árbol,0.48256410256410254,279.8698799610138,10.0,8.0,2.0,1008.0,0.8906287477216702
+wine_quality,43,11,P,Random Forest,0.4448102564102564,279.8698799610138,10.0,8.0,2.0,1008.0,0.8906287477216702
+house_8L,43,8,P,Regresión lineal,22488.034500107988,333.5139834880829,7.0,6.0,1.0,1001.0,0.728163400107956
+house_8L,43,8,P,KNN,17396.881800000003,333.5139834880829,7.0,6.0,1.0,1001.0,0.728163400107956
+house_8L,43,8,P,Árbol,22251.816333333332,333.5139834880829,7.0,6.0,1.0,1001.0,0.728163400107956
+house_8L,43,8,P,Random Forest,16498.353233333335,333.5139834880829,7.0,6.0,1.0,1001.0,0.728163400107956
+sulfur,44,6,P,Regresión lineal,0.018151468286436177,236.52320170402527,5.0,3.0,2.0,1008.0,0.5867133818559659
+sulfur,44,6,P,KNN,0.008747503066666667,236.52320170402527,5.0,3.0,2.0,1008.0,0.5867133818559659
+sulfur,44,6,P,Árbol,0.011402301333333333,236.52320170402527,5.0,3.0,2.0,1008.0,0.5867133818559659
+sulfur,44,6,P,Random Forest,0.00884557442,236.52320170402527,5.0,3.0,2.0,1008.0,0.5867133818559659
+california,44,8,P,Regresión lineal,0.5046750740501245,283.2395689487457,7.0,6.0,1.0,1001.0,0.5379515377590756
+california,44,8,P,KNN,0.33259387726098194,283.2395689487457,7.0,6.0,1.0,1001.0,0.5379515377590756
+california,44,8,P,Árbol,0.4408337548449613,283.2395689487457,7.0,6.0,1.0,1001.0,0.5379515377590756
+california,44,8,P,Random Forest,0.31581167068798466,283.2395689487457,7.0,6.0,1.0,1001.0,0.5379515377590756
+space_ga,44,6,P,Regresión lineal,0.09221613654381705,274.01100420951843,5.0,2.0,3.0,1008.0,0.5638391821137021
+space_ga,44,6,P,KNN,0.07461412008448078,274.01100420951843,5.0,2.0,3.0,1008.0,0.5638391821137021
+space_ga,44,6,P,Árbol,0.10091907873781092,274.01100420951843,5.0,2.0,3.0,1008.0,0.5638391821137021
+space_ga,44,6,P,Random Forest,0.07171140383555488,274.01100420951843,5.0,2.0,3.0,1008.0,0.5638391821137021
+puma8NH,44,8,P,Regresión lineal,3.5272834883494806,213.80284547805786,2.0,2.0,0.0,1001.0,0.6390630015988423
+puma8NH,44,8,P,KNN,2.640622950772986,213.80284547805786,2.0,2.0,0.0,1001.0,0.6390630015988423
+puma8NH,44,8,P,Árbol,3.323639595606184,213.80284547805786,2.0,2.0,0.0,1001.0,0.6390630015988423
+puma8NH,44,8,P,Random Forest,2.5916141585313266,213.80284547805786,2.0,2.0,0.0,1001.0,0.6390630015988423
+cpu_small,43,12,P,Regresión lineal,2.5295464959856755,354.87826132774353,11.0,6.0,5.0,1008.0,0.28063226495202104
+cpu_small,43,12,P,KNN,2.4087876322213186,354.87826132774353,11.0,6.0,5.0,1008.0,0.28063226495202104
+cpu_small,43,12,P,Árbol,2.7721724979658258,354.87826132774353,11.0,6.0,5.0,1008.0,0.28063226495202104
+cpu_small,43,12,P,Random Forest,2.0371236777868185,354.87826132774353,11.0,6.0,5.0,1008.0,0.28063226495202104
+bank8FM,44,8,P,Regresión lineal,0.028003598459801198,242.544273853302,7.0,3.0,4.0,1001.0,0.2410064624341955
+bank8FM,44,8,P,KNN,0.025674381041497153,242.544273853302,7.0,3.0,4.0,1001.0,0.2410064624341955
+bank8FM,44,8,P,Árbol,0.03359663059397884,242.544273853302,7.0,3.0,4.0,1001.0,0.2410064624341955
+bank8FM,44,8,P,Random Forest,0.024565570244100894,242.544273853302,7.0,3.0,4.0,1001.0,0.2410064624341955
+kin8nm,44,8,P,Regresión lineal,0.16652787304089994,265.62859630584717,7.0,6.0,1.0,1001.0,0.6759574094916917
+kin8nm,44,8,P,KNN,0.10328639862074859,265.62859630584717,7.0,6.0,1.0,1001.0,0.6759574094916917
+kin8nm,44,8,P,Árbol,0.1559118943832384,265.62859630584717,7.0,6.0,1.0,1001.0,0.6759574094916917
+kin8nm,44,8,P,Random Forest,0.11041017047831979,265.62859630584717,7.0,6.0,1.0,1001.0,0.6759574094916917
+house_8L,44,8,P,Regresión lineal,22719.71232455566,225.64182090759277,7.0,6.0,1.0,1001.0,0.7343924094262085
+house_8L,44,8,P,KNN,17313.31166666667,225.64182090759277,7.0,6.0,1.0,1001.0,0.7343924094262085
+house_8L,44,8,P,Árbol,22368.480333333333,225.64182090759277,7.0,6.0,1.0,1001.0,0.7343924094262085
+house_8L,44,8,P,Random Forest,16215.330343333333,225.64182090759277,7.0,6.0,1.0,1001.0,0.7343924094262085
+wine_quality,44,11,P,Regresión lineal,0.5533572380948081,229.14604878425598,10.0,9.0,1.0,1008.0,0.9115709153069382
+wine_quality,44,11,P,KNN,0.5304615384615385,229.14604878425598,10.0,9.0,1.0,1008.0,0.9115709153069382
+wine_quality,44,11,P,Árbol,0.4794871794871795,229.14604878425598,10.0,9.0,1.0,1008.0,0.9115709153069382
+wine_quality,44,11,P,Random Forest,0.43976410256410253,229.14604878425598,10.0,9.0,1.0,1008.0,0.9115709153069382
+cpu_small,44,12,P,Regresión lineal,2.5332849588659117,232.09312272071838,11.0,7.0,4.0,1008.0,0.2793879539048866
+cpu_small,44,12,P,KNN,2.237347436940602,232.09312272071838,11.0,7.0,4.0,1008.0,0.2793879539048866
+cpu_small,44,12,P,Árbol,2.6521562245728236,232.09312272071838,11.0,7.0,4.0,1008.0,0.2793879539048866
+cpu_small,44,12,P,Random Forest,1.9246704637917007,232.09312272071838,11.0,7.0,4.0,1008.0,0.2793879539048866

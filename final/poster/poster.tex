@@ -1,0 +1,191 @@
+% Póster de congreso A0 vertical (tikzposter). Compilar desde esta carpeta:  latexmk -pdf poster.tex
+% Cifras de ../numeros.tex, filas de tablas de ../tablas.tex y figuras de ../figuras/ (generadas por ../analisis.py).
+\documentclass[25pt, a0paper, portrait, margin=0mm, innermargin=14mm, blockverticalspace=14mm,
+               colspace=14mm, subcolspace=8mm]{tikzposter}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usetikzlibrary{arrows.meta,positioning}
+\graphicspath{{../figuras/}}
+\input{../numeros.tex}\input{../tablas.tex}
+
+% ---------------- colores UC3M ----------------
+\definecolor{uc3mazul}{HTML}{003A70}
+\definecolor{uc3mcian}{HTML}{00A6D6}
+\definecolor{fondo}{HTML}{F4F7FA}
+\definecolor{azulm}{HTML}{2E6DB4}\definecolor{naranjam}{HTML}{D9731A}
+\definecolor{verdem}{HTML}{2F9467}\definecolor{grism}{HTML}{5A6772}
+\definecolorstyle{uc3m}{}{%
+  \colorlet{backgroundcolor}{white}
+  \colorlet{framecolor}{uc3mazul}
+  \colorlet{titlefgcolor}{white}
+  \colorlet{titlebgcolor}{uc3mazul}
+  \colorlet{blocktitlebgcolor}{uc3mazul}
+  \colorlet{blocktitlefgcolor}{white}
+  \colorlet{blockbodybgcolor}{fondo}
+  \colorlet{blockbodyfgcolor}{black}
+  \colorlet{innerblocktitlebgcolor}{uc3mcian}
+  \colorlet{innerblocktitlefgcolor}{white}
+  \colorlet{innerblockbodybgcolor}{white}
+  \colorlet{innerblockbodyfgcolor}{black}
+  \colorlet{notefgcolor}{black}
+  \colorlet{notebgcolor}{uc3mcian!15}
+  \colorlet{noteframecolor}{uc3mcian}}
+\usecolorstyle{uc3m}
+\usetitlestyle{Filled}
+\useblockstyle{Default}
+\settitle{%
+  \parbox{\linewidth}{\centering\color{titlefgcolor}\vspace*{16mm}
+  {\fontsize{88}{100}\selectfont\bfseries Forma, relevancia, reducción y síntesis\par}\vspace{8mm}
+  {\fontsize{52}{62}\selectfont aprendizaje evolutivo de la representación de atributos para regresión\par}\vspace{12mm}
+  {\fontsize{40}{48}\selectfont \@author\par}\vspace{5mm}
+  {\fontsize{30}{36}\selectfont \@institute\par}\vspace*{14mm}}}
+\title{Forma, relevancia, reducción y síntesis}
+\author{Andrea López Salazar}
+\institute{IA con inspiración biológica \textbullet\ Máster en Ciencia y Tecnología \textbullet\ Universidad Carlos III de Madrid}
+
+\newcommand{\cifra}[3]{% color, valor, etiqueta
+  \begin{minipage}[t]{0.48\linewidth}\centering
+  {\fontsize{64}{72}\selectfont\bfseries\color{#1}#2}\\[2mm]{\normalsize #3}\end{minipage}}
+
+\begin{document}
+\maketitle[width=\paperwidth, roundedcorners=0, linewidth=0, innersep=0mm, titletotopverticalspace=0mm,
+           titletoblockverticalspace=14mm]
+
+\begin{columns}
+% ===================================================================== columna 1
+\column{0.33}
+\block{1. El problema}{
+Aprender, \textbf{solo con el entrenamiento}, $X\mapsto X'$ con \textbf{síntesis y reducción} ($\dim X'<n$, criterio
+de eliminación evolutivo) tal que un modelo \textbf{arbitrario} $M$ entrenado con $X'$ tenga menor MAE en
+validación: \;$e'<e$.
+\vspace{4mm}
+
+\textbf{La dificultad: ``arbitrario''.} Cada familia ve cosas distintas:
+\vspace{3mm}
+\begin{center}\small
+\begin{tabular}{@{}p{0.2\linewidth}p{0.36\linewidth}p{0.36\linewidth}@{}}\toprule
+Modelo & Le afecta & Le es indiferente\\\midrule
+KNN & escalas, colas, ruido & rotaciones\\
+R. lineal & forma de cada atributo & combinaciones lineales\\
+Árboles & \textbf{direcciones nuevas} & todo cambio monótono por atributo\\\bottomrule
+\end{tabular}\end{center}
+\vspace{3mm}
+\textbf{Idea:} construir $X'$ por bloques, cada uno útil para una familia y \emph{neutro} para las demás.
+}
+
+\block{2. El método $P$}{
+\begin{center}\includegraphics[width=\linewidth]{esquema}\end{center}
+\vspace{2mm}
+\begin{itemize}
+\item \textbf{Forma}: Yeo-Johnson, $\lambda_j\in[-2,2]$. \textbf{Relevancia}: $w_j\in[0,3]$.
+\item \textbf{Reducción}: fuera los atributos con $w_j<\tau$; \textbf{el umbral $\tau$ lo aprende CMA-ES}. Si no cae
+ninguno, fuera el de menor peso: $\dim X'<n$ para \emph{todo} individuo, sin reparar.
+\item \textbf{Síntesis}: el hueco hasta $n-1$ se rellena en una fracción $\rho$ (aprendida) con componentes
+principales del espacio aprendido.
+\item \textbf{CMA-ES} sobre $\theta=(\lambda,w,\tau,\rho)$, 1000 evaluaciones, fitness = MAE de VC de KNN; inicio en
+la estandarización, $\sigma_0=0{,}2$.
+\end{itemize}
+\innerblock{Por qué reducir y sintetizar compiten}{
+Añadir \emph{todas} las componentes no cambia KNN ni la R.\ lineal y da cortes oblicuos a los árboles, pero duplica
+la dimensión. Con $\dim X'<n$, la síntesis compite por el hueco con los atributos originales.}
+}
+
+\block{Protocolo}{
+\begin{itemize}
+\item 12 datasets (diabetes, california + 10 de OpenML). Particiones 70/30 \textbf{nuevas}, no usadas para diseñar.
+\item \textbf{Modelos triviales y fijos}: R. lineal, KNN ($k=5$), árbol, RF; sin ajustar. El enunciado fija $M$.
+\item \textbf{Estadística por dataset} ($n=12$): Wilcoxon + Holm; Friedman + Nemenyi.
+\end{itemize}
+}
+
+\block{Contraste por dataset}{
+\begin{center}\includegraphics[width=0.8\linewidth]{poster_cd}\end{center}
+{\small Nemenyi ($\alpha=0{,}05$): las barras unen transformaciones no distinguibles.}
+}
+
+% ===================================================================== columna 2
+\column{0.34}
+\block{3. Resultado: menos atributos, menos error en KNN y R. lineal}{
+\cifra{azulm}{\dimMedia}{atributos usados de media \textbullet\ siempre $<n$}\hfill
+\cifra{azulm}{\cambioKNN}{KNN \textbullet\ \dsKNN{} datasets \textbullet\ $p$=\pKNN}\\[8mm]
+\cifra{azulm}{\cambioRL}{R. lineal \textbullet\ \dsRL{} datasets \textbullet\ $p$=\pRL}\hfill
+\cifra{grism}{\cambioRF}{Random Forest \textbullet\ árbol \cambioArbol}
+\vspace{6mm}
+
+{\small $p$: Wilcoxon por dataset con Holm. \textbf{Concluyente en KNN}; en R.\ lineal la mejora no es
+significativa con 12 datasets; en los árboles el error queda igual.}
+\vspace{2mm}
+\begin{center}\includegraphics[width=0.95\linewidth]{poster_barras}\end{center}
+\begin{center}\includegraphics[width=0.85\linewidth]{poster_heatmap}\end{center}
+}
+
+\block{4. Frente a otras diez transformaciones}{
+\begin{center}\small
+\begin{tabular}{@{}lcccccc@{}}\toprule
+ & R.\,lin. & KNN & Árbol & RF & Rango & $d/n$\\\midrule
+\filasComparativa\bottomrule
+\end{tabular}\end{center}
+{\small $e'/e$; negrita: mejor; $^*$: $P$ mejor con $p<0{,}05$. Rango: Friedman, 1 = mejor. $d/n$: $\dim X'/n$.}
+\vspace{3mm}
+
+\textbf{Entre las transformaciones que no aumentan la dimensión, $P$ tiene el mejor rango} (\rangoP) y es la única
+que reduce sin dañar a los árboles. Las tres por delante usan $2n$ atributos ($P$ sin reducir, estándar + PCA, PG).
+}
+
+\block{Coste}{
+Búsqueda: \segMediana\,s de mediana por partición (1000 evaluaciones), una vez por dataset. MLKR \segMLKR\,s, PG
+\segPG\,s, Yeo-Johnson MV \segYJMV\,s. Aplicarla después es inmediato, y $X'$ tiene menos columnas.
+}
+
+% ===================================================================== columna 3
+\column{0.33}
+\block{5. Reducción y síntesis}{
+\begin{itemize}
+\item CMA-ES elimina el \fracEliminados{} de los atributos ($\tau$ mediano \tauMediana); en puma8NH se queda con 2 y
+añade componentes.
+\item \textbf{Reducir cuesta poco}: frente a $P$ sin reducir ($2n$), KNN \cambioRedKNN, R.\ lineal \cambioRedRL; solo
+RF empeora de forma significativa (\cambioRedRF).
+\item \textbf{Umbral fijo} $w_j<0{,}1$: no reduce en \cribFijoNoReduce{} particiones. Aprenderlo garantiza $s<n$.
+\end{itemize}
+\begin{center}\includegraphics[width=\linewidth]{sintesis_rf}\end{center}
+{\small A RF le ayuda \emph{añadir} direcciones oblicuas ($2n$); sustituir los ejes (solo PCA) lo empeora. Con
+$\dim X'<n$, CMA-ES solo sintetiza en el \fracConSintesis{} de las particiones.}
+}
+
+\block{6. La búsqueda}{
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}\toprule
+Cambio frente a $P$ & KNN & R.\,lin. & RF\\\midrule
+\filasAblacion\bottomrule
+\end{tabular}\end{center}
+{\small $>0$: peor que $P$; $^*$: $p<0{,}05$ por dataset (Holm).}
+\vspace{2mm}
+\begin{itemize}
+\item \textbf{Los pesos son la pieza clave}; la búsqueda gana al azar (\ctrlAleat) y a la información mutua (\ctrlMI).
+\item \textbf{Población inicial}: CMA-ES es robusto; $m_0=\theta_0$ (estandarizar) se elige por interpretable.
+\item \textbf{Rango} de $\lambda$: poco crítico; $[-2,2]$ evita el colapso de los $\lambda$ extremos.
+\item \textbf{Algoritmo}: CMA-ES mejor en fitness (rango \rangoCMA), pero AG, HS y BBO a 1--2 puntos.
+\end{itemize}
+\innerblock{Operadores evolutivos}{\small
+Selección por rango de $\mu=\lambda/2$ ($\lambda=$\popMin--\popMax) \textbullet\ recombinación intermedia ponderada
+\textbullet\ mutación $\mathcal N(m,\sigma^2C)$ adaptativa \textbullet\ reemplazo $(\mu/\mu_w,\lambda)$ + mejor
+guardado \textbullet\ parada: 1000 evaluaciones (\genMin--\genMax{} generaciones).}
+}
+
+\block{7. Conclusiones}{
+\begin{itemize}
+\item \textbf{$\dim X'<n$ siempre}, con el criterio de eliminación aprendido por CMA-ES.
+\item $e'<e$ en KNN (\textbf{concluyente}) y R.\ lineal; árboles sin cambio.
+\item \textbf{Reducir y sintetizar compiten}: a los árboles les ayuda añadir dimensiones.
+\item Mejor rango entre las transformaciones que no aumentan la dimensión.
+\item \textbf{La representación pesa más que el optimizador.}
+\item Límites: 12 datasets pequeños; sobreajuste con pocos datos (diabetes); fitness de KNN.
+\end{itemize}
+}
+\end{columns}
+\end{document}

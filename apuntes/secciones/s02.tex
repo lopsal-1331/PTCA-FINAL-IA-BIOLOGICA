@@ -1,140 +1,665 @@
 \section{Teoría}
-\subsection{Modelos basados en distancias: dependencia de la representación}
-El KNN predice el valor de un punto nuevo promediando el valor de sus \textit{k} vecinos más cercanos. La cercanía la defina la distancia, usualmente la euclídea: 
+\subsection{Importancia de la representación en KNN (modelos basados en distancias)}
+\subsubsection{Predicciones del KNN}
+Para poder predecir el valor de un punto nuevo $q$ se bucan los $k$ puntos del entrenamiento más cercanos a $q$, devolviendo la media de sus valores $y$. No construye un modelo, sino que guarda los datos $y$, y en cada consulta mira a los vecinos. 
 
-\begin{equation}
-   d(x,x')^2 = \sum^n_{j=1}(x_j - x_j')^2 
-\end{equation}
+Todo se apoya en el supuesto de que los puntos cercanos tienen valores parecidos. Por ello la calidad del KNN depende de las distancias. Usualmente, usamos la distancia Euclídea. 
 
-Esta fórmula trata a todos los atributos por igual, lo que supone un problema porque: 
+$$ 
+d(x, x')^2 = \sum_{j} (x_{j}-x_{j}')^2
+$$
+
+Para cada atributo, restamos los dos valores, elevados al cuadrado, y lo sumamos todo. 
+
+\subsubsection{Valor de los atributos}
+La fórmula suma las diferencias de todos los atributos con el mismo peso. Parece neutral, pero el resultado depende de las unidades y de la forma de cada atributo. Aquí nos encontramos con tres problemas: 
+
+\begin{enumerate}
+    \item \textbf{Escala}: Si un atributo mide en miles y otro en unidades, el primero domina la suma, aunque no sea el más útil. 
+    \item \textbf{Atributos irrelevantes}: Cada atributo que no aporta información, añadiendo una diferencia que es puro ruido. Con varios así, la distancia refleja más ese ruido que la similitud real, y muchos de los $k$ vecinos dejan de ser vecinos de verdad. Cuando hay muchas dimensiones, todas las distancias tienden a parecerse y el ''más cercano'' deja de tener sentido. Esta es la maldición de la dimensionalidad. La \autoref{fig:vecindarios} nos muestra cómo cambia el vecindario de un mismo punto según la representación.
+    \item \textbf{Distribuciones sesgadas o con valores extremos}: Si unos puntos tienen valores enormes, ocupan casi todo el rango y el resto queda comprimido a una franja estrecha. Incluso estandarizando, las diferencias entre los puntos normales son minúsculas y el atributo apenas distingue donde están la mayoría de datos (\autoref{fig:compresion}).
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.75,
+  pt/.style={circle, fill=gris, inner sep=1.2pt},
+  qq/.style={circle, fill=rojo, inner sep=2pt}]
+\foreach \dx/\titulo/\rx/\ry in {0/{(a) Sin escalar}/0.25/1.8,
+                                 5/{(b) Estandarizado}/1/1,
+                                 10/{(c) Pesos aprendidos}/1.8/0.35}{
+  \begin{scope}[xshift=\dx cm]
+    \fill[azul!15] (2,2) ellipse ({\rx} and {\ry});
+    \draw[azul, thick] (2,2) ellipse ({\rx} and {\ry});
+    \draw[->] (0,0) -- (4.3,0) node[below] {$x_1$};
+    \draw[->] (0,0) -- (0,4.3) node[left] {$x_2$};
+    \foreach \p in {(0.4,0.7),(0.9,3.1),(1.3,1.2),(1.6,2.6),(1.9,0.5),
+                    (2.15,3.5),(2.3,1.6),(2.6,2.3),(2.9,0.9),(3.2,3.0),
+                    (3.5,1.9),(3.7,0.4),(0.6,2.2),(1.1,0.3),(3.0,3.7),
+                    (0.3,3.6),(2.05,1.0),(1.7,2.05),(2.45,2.85),(3.6,2.6)}{
+      \node[pt] at \p {};
+    }
+    \node[qq] at (2,2) {};
+    \node at (2,-0.8) {\small \titulo};
+  \end{scope}
+}
+\end{tikzpicture}
+\caption{Vecindario del punto $q$ (rojo) según la representación.
+(a) Si $x_1$ se mide en miles, una pequeña diferencia en $x_1$ pesa muchísimo:
+solo son vecinos los puntos con $x_1$ casi igual, sea cual sea $x_2$.
+(b) Tras estandarizar, ambos atributos cuentan igual y el vecindario es un círculo.
+(c) Si se aprende que $x_1$ es poco relevante ($w_1$ pequeño), el vecindario se
+alarga en esa dirección y los vecinos se eligen sobre todo por $x_2$.}
+\label{fig:vecindarios}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  pt/.style={circle, fill=azul, inner sep=1.5pt},
+  extremo/.style={circle, fill=rojo, inner sep=1.5pt}]
+% Escala original: 0..500 -> 0..12 cm
+\node[anchor=west, font=\small] at (0,0.55) {Escala original};
+\draw[->] (0,0) -- (12.5,0);
+\foreach \v in {0,100,200,300,400,500} {
+  \draw (\v*0.024,0.08) -- (\v*0.024,-0.08) node[below]{\scriptsize \v};
+}
+\foreach \v in {2,3,4,5} { \node[pt] at (\v*0.024,0) {}; }
+\node[extremo] at (500*0.024,0) {};
+% Escala transformada con log(x+1)
+\begin{scope}[yshift=-2cm]
+\node[anchor=west, font=\small] at (0,0.55) {Tras $\log(x+1)$};
+\draw[->] (0,0) -- (12.5,0);
+\foreach \v in {0,1,...,6} {
+  \draw (\v*1.9,0.08) -- (\v*1.9,-0.08) node[below]{\scriptsize \v};
+}
+\foreach \v in {2,3,4,5} { \node[pt] at ({ln(\v+1)*1.9},0) {}; }
+\node[extremo] at ({ln(501)*1.9},0) {};
+\end{scope}
+\end{tikzpicture}
+\caption{Valores 2, 3, 4 y 5 (azul) y un valor extremo de 500 (rojo).
+En la escala original los valores normales quedan apilados junto al cero y
+son indistinguibles. Tras aplicar $\log(x+1)$ (Yeo-Johnson con $\lambda=0$) se
+separan, y el valor extremo deja de acaparar todo el rango.}
+\label{fig:compresion}
+\end{figure}
+
+\textbf{\textsc{Idea clave}}: La estandarización habitual de $z= (x-\mu)/\sigma$ arregla el primer problema, pero no arregla ni el segundo ni el tercero. No sabemos qué atributos importan, ni corrige las formas de la distribución. Por ello, en el trabajo también buscamos aprender la \textbf{representación}. Buscamos la transformación que hace que la distancia euclídea sea útil a la hora de predecir. 
+
+\subsubsection{Árbol de decisión como experimento de control}
+El árbol de decisión lo que hace es dividir los datos con preguntas de tipo ''¿$x_{j}\leq t$?''. Por ende, solo le importa el \textbf{orden} de los valores dentro de cada atributo, pero no cuánto distan entre sí. 
+
+Si a un atributo le aplicas una transformación creciente --- que nunca cambia el orden --- el árbol tampoco cambia. Para cada umbral original existe un umbral equivalente $t'=\psi(t)$ en el transformado que separa exactamente los mismos puntos (\autoref{fig:arbol}). Todas nuestras transformaciones --- Yeo-Johnson, estandarizar, multiplicar por un peso positivo --- son crecientes.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  izq/.style={circle, fill=azul, inner sep=1.6pt},
+  der/.style={circle, fill=naranja, inner sep=1.6pt}]
+\draw[->] (0,0) -- (10.5,0) node[right]{\small $x_j$};
+\draw[->] (0,-2.2) -- (10.5,-2.2) node[right]{\small $\psi(x_j)$};
+\foreach \v in {0.5,1,2,3} {
+  \draw[gris, densely dotted] (\v*0.5,0) -- ({ln(\v+1)*3.2},-2.2);
+  \node[izq] at (\v*0.5,0) {};
+  \node[izq] at ({ln(\v+1)*3.2},-2.2) {};
+}
+\foreach \v in {5,8,12,20} {
+  \draw[gris, densely dotted] (\v*0.5,0) -- ({ln(\v+1)*3.2},-2.2);
+  \node[der] at (\v*0.5,0) {};
+  \node[der] at ({ln(\v+1)*3.2},-2.2) {};
+}
+\draw[rojo, thick, dashed] (2,-0.4) -- (2,0.5) node[above]{\small $t$};
+\draw[rojo, thick, dashed] ({ln(5)*3.2},-1.8) -- ({ln(5)*3.2},-2.7)
+      node[below]{\small $t'=\psi(t)$};
+\end{tikzpicture}
+\caption{Una transformación creciente (aquí $\log(x+1)$) cambia las distancias
+entre puntos pero no su orden. El umbral $t$ y su imagen $t'=\psi(t)$ separan
+exactamente los mismos puntos (azul a la izquierda, naranja a la derecha), así
+que el árbol encuentra las mismas particiones.}
+\label{fig:arbol}
+\end{figure}
+
+Por ello, el árbol nos sirve de control, ya que si con la transformación aprendida el error del árbol no cambia, pero el KNN mejora, la mejora viene de la geometría --- las distancias -- que es lo que buscamos demostrar. Si el árbol también cambiara, sospechamos que puede haber fuga de información, preprocesado distinto, etc.
+
+\textsc{Nota}: Si un peso $w_{j}=0$, el atributo se vuelve constante y el árbol ya no puede usarlo. El árbol es invariante siempre que todos los pesos sean mayores que cero. Si en los resultados el árbol empeora un poco, la causa también puede ser que en la búsqueda se ha anulado alguno de los atributos.
+
+\subsection{La transformación aprendida}
+Para cada atributo \textit{j} aprendemos dos números: 
 \begin{itemize}
-    \item Si un atributo se mide en miles, y otro en unidades, el primero dominará la distancia, incluso cuando no tiene por qué ser el más informativo. 
-
-    \item Los atributos de menor importancia añaden ruido a la distancia, por lo que muchos vecinos dejan de ser vecinos verdaderos: maldición de la dimensionalidad. 
-
-    \item Con atributos muy sesgados o con valores extremos, unos pocos puntos acaparan prácticamente todo el rango y el resto queda comprimido.
+    \item Un exponente $\lambda_{j}$, que cambia la forma de la distribución. 
+    \item Un peso $w_{j}$ que decide cuánto cuenta ese atributo en la distancia.
 \end{itemize}
 
-Un árbol de decisión no sufre nada de esto, porque solo compara los atributos con umbrales. Cualquier transformación monótona no cambiará el orden de los datos, y por ende, tampoco el árbol. LO usamos como control: si la transformación aprendida no cambia el error del árbol, es lo que esperamos, y por ende, confirma que la mejora en KNN viene de la geometría y no de otra cosa.
+El proceso por atributo consta de tres pasos visualizados en la \autoref{fig:pipeline}.
 
-\subsection{Transformación aprendida}
-Para cada atributo \textit{j} aprendemos dos números, un exponente $\lambda_j$ y un peso $w_j$.
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=0.5cm and 0.55cm,
+  caja/.style={draw, rounded corners, fill=azul!10, align=center,
+               minimum height=1.1cm, minimum width=2.1cm, font=\small},
+  flecha/.style={-{Stealth}, thick}]
+\node (x) {$x_j$};
+\node[caja, right=of x]  (yj) {Yeo-Johnson\\ $\lambda_j$};
+\node[caja, right=of yj] (st) {Estandarizar\\ $\mu_j,\ \sigma_j$};
+\node[caja, right=of st] (w)  {Ponderar\\ $\times\, w_j$};
+\node[right=of w] (z) {$z_j$};
+\draw[flecha] (x) -- (yj);
+\draw[flecha] (yj) -- (st);
+\draw[flecha] (st) -- (w);
+\draw[flecha] (w) -- (z);
+\node[below=0.2cm of yj, font=\footnotesize, naranja] {corrige la forma};
+\node[below=0.2cm of st, font=\footnotesize, naranja] {iguala la escala};
+\node[below=0.2cm of w,  font=\footnotesize, naranja] {fija la relevancia};
+\node[draw, rounded corners, fill=verde!12, align=center, font=\small,
+      text width=5.8cm, inner sep=6pt, below=1.3cm of st] (d)
+      {Distancia euclídea en el espacio nuevo:\\[2pt]
+       $d_\theta(x,x')^2=\sum_j (z_j-z'_j)^2$\\[2pt]
+       $\Rightarrow$ KNN o regla lineal local};
+\draw[flecha] (z.south) |- (d.east);
+\end{tikzpicture}
+\caption{Cada atributo pasa por tres etapas, cada una con un propósito distinto.
+Los parámetros aprendidos son $\lambda_j$ y $w_j$; $\mu_j$ y $\sigma_j$ se
+calculan con los datos de entrenamiento.}
+\label{fig:pipeline}
+\end{figure}
 
-\subsubsection{Yeo-Johnson}
-Aquí tenemos en cuenta los exponentes Yeo-Johnson. Es una familia de transformaciones de potencia, que a diferencia de otras como Box-Cox, admite valores negativos y cero. 
-
-\begin{equation}
-\psi(x;\lambda) =
-\begin{cases}
-\dfrac{(x+1)^{\lambda}-1}{\lambda} & x \ge 0,\ \lambda \ne 0 \\[4pt]
-\log(x+1) & x \ge 0,\ \lambda = 0 \\[4pt]
--\dfrac{(-x+1)^{2-\lambda}-1}{2-\lambda} & x < 0,\ \lambda \ne 2 \\[4pt]
--\log(-x+1) & x < 0,\ \lambda = 2
-\end{cases}
-\end{equation}
-
-Con $\lambda = 1$ la transformación es la identidad; con valores menores a 1, comprime los valores grandes --- útil en presencia de colas largas a la derecha --- y con valores mayores a 1 los expande.
-
-\subsubsection{Estandarización y peso}
-Después de transformar, centramos y escalamos con la media $\mu_j$ y la desviación $\sigma_j$ del entrenamiento y multiplicamos por el peso. 
-
-\begin{equation}
-    z_j = w_j \cdot \frac{\psi (x_j;\lambda_j)-\mu_j}{\sigma_j}
-\end{equation}
-
-
-Con esto, la distancia euclídea en el espacio transformado es una distancia ponderada en el espacio original: 
-\begin{equation}
-    d_\theta (x, x')^2 = \sum_j w_j² (\tilde{x_j}-\tilde{x_j ')²}
-\end{equation}
-
-Donde $\tilde{x}_j$ es el atributo transformado y estandarizado. El peso $w_j ^2$ es la importancia del atributo \textit{j} en la distancia. Si $w_j=0$, el atributo desaparece, y si $w_j$ es grande domina. En términos de aprendizaje de métricas, es una \textbf{métrica diagonal}: matriz de Mahalanobis diagonal, con un paso previo de transformación no lineal por atributo. 
-
-\subsubsection{Parámetros}
-El vector que buscamos es $\theta=(\lambda_1, ..., \lambda_n, w_1,..., w_n)$ con dimensión $2n$ (16 en California y 20 en Diabetes). Lo limitamos a $\lambda_j \in [-2,2]$ y $w_j \in [0,3]$.
-
-\subsubsection{Punto de partida}
-Con $\theta_0=(1,...,1)$, la transformación es exactamente la estandarización. Por eso la búsqueda arranca de la línea base ''estándar'' y cualquier mejora que encuentre es mejora real sobre ella. Esta propiedad la usamos siempre al diseñar los experimentos. 
-
-\subsubsection{Limitación de $\lambda$}
-Sin límites, el estimador de máxima verosimilitud de Yeo-Johnson dio $\lambda\approx13,6$ para la  longitud de California. Con ese valor la columna se colapsaba prácticamente en un solo valor. Con el rango que se ha definido, eso no ocurre. 
-
-\subsection{CMA-ES}
-CMA-ES (Covariance Matrix Adaptation Evolution Strategy) es una estrategia evolutiva para optimización continua sin gradiente. Es la técnica evolutiva que usaremos para buscar $\theta$.
-
-Mantiene una distribución normal multivariante sobre el espacio de búsqueda con media \textit{m}, tamaño de paso $\sigma$ y matriz de covarianza $C$. En cada generación: 
+\subsubsection{Paso 1: \textit{Yeo-Johnson}}
+Yeo-Johnson es una familia de transformaciones de potencia. Según $\lambda$, ''dobla'' el eje del atributo para comprimir o estirar zonas. Es una sucesora de Box-Cox, con una ventaja. En el caso de Yeo-Johnson se aceptan los ceros y negativos. Box-Cox solo funciona con valores positivos, y en California, por ejemplo, tenemos atributos como longitud que son negativos. La fórmula de Yeo-Johnson tiene cuatro casos: 
 \begin{enumerate}
-    \item Muestrea $\lambda_{pop}$ candidatos: $x_k \sim m+\sigma \mathcal{N}(0,C) $. 
-
-    \item Evalúa el fitness de cada uno y los ordena. 
-
-    \item Selecciona los $\mu$ mejores y recalcula la media como una media ponderada entre ellos. 
-
-    \item Adapta el valor de $\sigma$ - con un camino de evolución que mide si los pasos van todos en la misma dirección o se cancelan - y C - con una actualización de rango uno y otra de rango $\mu$ - para que la distribución se alargue en las direcciones que funciona.
+    \item Si $x\geq 0\space \text{ y } \lambda \neq 0: \psi=\frac{(x+1)^{\lambda}-1}{\lambda}$
+    \item Si $x \geq 0$ y $\lambda =0$: $\psi = \log(x+1)$
+    \item Si $x < 0$ y $\lambda \neq 2$: $\psi=-\frac{(-x+1)^{2-\lambda}-1}{2-\lambda}$
+    \item Si $x<0$ y $\lambda=2$: $\psi=-\log(-x+1)$
 \end{enumerate}
 
-Esto nos conviene porque: 
+Es importante advertir que los casos con logaritmo no son arbitrarios. Son el límite de la fórmula general cuando $\lambda$ tiende a 0 o a 2. Así la transformación varía de forma suave con $\lambda$, sin saltos, lo cual es bueno para el optimizador. Además, el $+1$ evita problemas con el 0, ya que el $\log(0)$ no existe. Los valores negativos se tratan como un espejo de los positivos, con exponente $2-\lambda$. Para cualquier $\lambda$, la transformación será estrictamente creciente. Nunca cambia el orden. La \autoref{fig:yeojohnson} muestra la curva para varios valores de $\lambda$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.8\textwidth, height=7cm,
+  xmin=-2, xmax=4, ymin=-5, ymax=5,
+  axis lines=middle, xlabel={$x$}, ylabel={$\psi(x;\lambda)$},
+  legend pos=south east, legend cell align=left, legend style={font=\small},
+  samples=100, grid=major, grid style={gris!25}]
+% lambda = -1
+\addplot[rojo, thick, domain=0:4] {1 - 1/(x+1)};
+\addlegendentry{$\lambda=-1$}
+\addplot[rojo, thick, domain=-2:0, forget plot] {-((1-x)^3 - 1)/3};
+% lambda = 0
+\addplot[naranja, thick, domain=0:4] {ln(x+1)};
+\addlegendentry{$\lambda=0$ (logaritmo)}
+\addplot[naranja, thick, domain=-2:0, forget plot] {-((1-x)^2 - 1)/2};
+% lambda = 0.5
+\addplot[verde, thick, domain=0:4] {2*((x+1)^0.5 - 1)};
+\addlegendentry{$\lambda=0{,}5$}
+\addplot[verde, thick, domain=-2:0, forget plot] {-((1-x)^1.5 - 1)/1.5};
+% lambda = 1
+\addplot[black, thick, dashed, domain=-2:4] {x};
+\addlegendentry{$\lambda=1$ (identidad)}
+% lambda = 2
+\addplot[azul, thick, domain=0:4] {((x+1)^2 - 1)/2};
+\addlegendentry{$\lambda=2$}
+\addplot[azul, thick, domain=-2:0, forget plot] {-ln(1-x)};
+\end{axis}
+\end{tikzpicture}
+\caption{Transformación de Yeo-Johnson para varios $\lambda$. Con $\lambda=1$ es
+la identidad (línea discontinua). Con $\lambda<1$ la curva se aplana para $x$
+grandes: comprime la cola derecha. Con $\lambda>1$ se empina: la estira. Todas las
+curvas son crecientes, así que nunca cambian el orden de los datos.}
+\label{fig:yeojohnson}
+\end{figure}
+
+\textsc{¿Qué hace cada valor de $\lambda$?}
+
+\begin{itemize}
+    \item $\lambda=1$: es la identidad, no cambia nada. Sirve cuando los atributos están ya bien distribuidos. 
+    \item $\lambda < 1$: comprime los valores grandes, lo cual es útil cuando tenemos colas  largas a la derecha. 
+    \item $\lambda = 0$: logaritmo para valores mayores o iguales que cero. Esto sirve además en presencia de datos muy sesgados.
+    \item $\lambda>1$: estira los valores grandes, útil en presencia de colas a la izquierda.
+\end{itemize}
+
+\textsc{Importante}: Yeo-Johnson suele usarse para datos que sigan o se parezcan a una normal. Se estima $\lambda$ por máxima verosimilitud. Nosotros lo que hacemos, por el contrario es elegir $\lambda$ de manera que la distancia prediga bien, que es un objetivo distinto. Por eso el valor de $\lambda$ lo busca CMA-ES.
+
+\subsubsection{Paso 2 y 3: estandarizar y ponderar}
+Después de transformar, centramos y escalamos con la media $\mu_{j}$ y la desviación estándar $\sigma_{j}$ calculadas en el entrenamiento, y multiplicamos por el peso. 
+
+$$ 
+z_{j} = w_{j} \cdot \frac{\psi(x_{j}; \lambda_{j})-\mu_{j}}{\sigma_{j}}
+$$
+
+Estandarizar lo que hace es poner todos los atributos en la misma escala, por lo que el peso pasa a ser lo único que decida la importancia. Se usan $\mu$ y $\sigma$ del entrenamiento para no filtrar los datos del test. 
+
+\textsc{¿Qué significa esto para la distancia?}
+
+Si llamamos $\tilde{x_{j}}$ al atributo transformado y estandarizado --- antes del peso --- la distancia euclídea en el nuevo espacio se define como: 
+
+$$ 
+d_{\theta}(x, x')^2=\sum_{j}w_{j}^2 \cdot (\tilde{x_{j}}-\tilde{x_{j}'})^2
+$$
+
+Pasa a ser una distancia ponderada, donde cada atributo contribuye con la importancia $w_{j}^2$. Si el peso se reduce el cero, el atributo desaparece. Es una selección de atributos automática: el optimizador puede apagar los irrelevantes. Y si el peso es muy grande, ese atributo dominará en las distancias. 
+
+Si repartiéramos las tareas: 
+\begin{itemize}
+    \item El $\lambda$ arregla la forma --- problema 3. 
+    \item Estandarizar arregla la escala --- problema 1. 
+    \item Los pesos arreglan la relevancia --- problema 2.
+\end{itemize}
+
+\subsubsection{Conexión con la teoría de métricas}
+Una distancia de Mahalanobis general es de: 
+$$ 
+d^2  = (x-x')^{T} M (x-x')
+$$
+
+Donde $M$ es una matriz que puede mezclar atributos. Nuestra M es diagonal, con valores que van desde $w_{1}^2 \cdots w_{n}^2$. En este caso no estamos mezclando atributos, pero sí que los estamos ponderando. Además, se aplica después de una transformación no lineal por atributo. Por eso podemos decir que aprendemos una métrica diagonal con transformación previa. Es menos expresiva que una M completa (\autoref{fig:mahalanobis}), pero tiene muchos menos parámetros ($2n$ en lugar de unos $\frac{n^2}{2}$). Esto reduce el sobreajuste y la hace interpretable, ya que puedes leer qué atributo importa mirando su peso. 
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.8]
+\foreach \dx/\titulo/\rx/\ry/\rot in {
+   0/{(a) Euclídea\\ $M=I$}/1/1/0,
+   4.5/{(b) Diagonal (la nuestra)\\ $M=\mathrm{diag}(w_1^2,w_2^2)$}/1.6/0.6/0,
+   9/{(c) Completa\\ $M$ mezcla atributos}/1.6/0.6/35}{
+  \begin{scope}[xshift=\dx cm]
+    \draw[azul, thick, fill=azul!12, rotate=\rot] (0,0) ellipse ({\rx} and {\ry});
+    \draw[->, gris] (-1.9,0) -- (1.9,0) node[right]{\scriptsize $x_1$};
+    \draw[->, gris] (0,-1.9) -- (0,1.9) node[above]{\scriptsize $x_2$};
+    \node[circle, fill=rojo, inner sep=1.5pt] at (0,0) {};
+    \node[align=center, font=\small] at (0,-2.6) {\titulo};
+  \end{scope}
+}
+\end{tikzpicture}
+\caption{Puntos a distancia 1 del centro según el tipo de métrica. La euclídea
+trata todas las direcciones igual. La diagonal estira o encoge cada eje por
+separado, pero los ejes de la elipse siguen alineados con los atributos. La
+completa puede además rotar la elipse, combinando atributos, a costa de muchos
+más parámetros.}
+\label{fig:mahalanobis}
+\end{figure}
+
+\subsubsection{El vector de parámetros}
+Lo que buscamos al final es un $\theta = (\lambda_{1}\cdots \lambda_{n}, w_{1}, \cdots w_{n})$. Siendo el punto de partida $\theta=(1...1)$. Es decir, con todos los $\lambda=1$ (identidad) y todos los $w=1$(sin ponderación), o lo que es estandarización normal. La búsqueda no empieza en un punto aleatorio, que sí que podría llegar a ser peor que la estandarización. 
+
+\textsc{Limitación de $\lambda$}: limitamos los valores de $\lambda$ porque sin límites, el estimador de máxima verosimilitud de Yeo-Johnson dio un $\lambda\approx 13,6$ para el atributo de longitud de California. Esto falla porque: 
+\begin{itemize}
+    \item La longitud de California no tiene una forma simple, si vemos su histograma, es una variable bimodal. El estimador lo que hace es forzar una normal, yendo a valores extremos. 
+    \item Además, como las coordenadas pueden ser negativas, se usa la rama del exponente de $2-\lambda=-11,6$. Elevar a números del orden de 120 a -11,6 da valores prácticamente cero para todos, por lo que toda columna colapsa cerca de un único valor (-0,0862) con diferencias del orden de $10^{25}$. Esto lo podemos ver en la \autoref{fig:colapso}.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[pt/.style={circle, fill=azul, inner sep=1.5pt}]
+% Original
+\node[anchor=west, font=\small] at (0,0.6) {Longitud original};
+\draw[->] (0,0) -- (10.5,0);
+\foreach \v in {-124,-122,-120,-118,-116,-114} {
+  \draw ({\v+124},0.08) -- ({\v+124},-0.08) node[below]{\scriptsize $\v$};
+}
+\foreach \v in {-123.5,-122.2,-121.8,-120.4,-118.3,-118,-117.6,-116.9,-115.5} {
+  \node[pt] at ({\v+124},0) {};
+}
+% Transformada
+\begin{scope}[yshift=-2.2cm]
+\node[anchor=west, font=\small] at (0,0.6) {Tras Yeo-Johnson con $\lambda \approx 13{,}6$};
+\draw[->] (0,0) -- (10.5,0);
+\foreach \k in {0,...,8} { \node[pt] at (5,0.12*\k) {}; }
+\draw[rojo, thick, -{Stealth}] (7.3,0.5) -- (5.25,0.5);
+\node[anchor=west, font=\small, rojo, align=left] at (7.4,0.5)
+     {todos $\approx -0{,}0862$\\ (diferencias $\sim 10^{-25}$)};
+\end{scope}
+\end{tikzpicture}
+\caption{Con $\lambda \approx 13{,}6$, los valores negativos de la longitud se
+elevan a $2-\lambda=-11{,}6$, lo que da números prácticamente nulos. Todos los
+puntos acaban en el mismo valor y el atributo deja de servir para medir
+distancias. Limitar $\lambda\in[-2,2]$ lo evita.}
+\label{fig:colapso}
+\end{figure}
+
+Con $\lambda\in[-2,2]$ la transformación puede comprimir o estirar con fuerza, pero nunca hasta destruir el atributo.
+
+\subsection{CMA-ES: cómo buscamos $\theta$}
+\subsubsection{Qué problema resolvemos}
+
+Tenemos una función $f(\theta)$ que nos dice lo bueno que es cada $\theta$ (el fitness), y queremos que $\theta$ la minimice. Pero: 
+\begin{itemize}
+    \item No tiene gradiente: depende de qué puntos acaban siendo vecinos de los otros. Y esto cambia a saltos. 
+    \item Cada evaluación es cara, porque hay que hacer validazión cruzada entera. 
+    \item Tiene algo de ruido, por lo que pueden haber varios mínimos locales.
+\end{itemize}
+
+CMA-ES (Covariance Matrix Adaptation Evolution Strategy, Hansen y Ostermeier, 2001) es una estrategia evolutiva pensada para esto. Optimización continua, sin gradiente, en dimensiones moderadas (de unas pocas a cientos de variables). 
+
+\subsubsection{La idea intuitiva}
+En vez de mantener una población de soluciones sueltas, CMA-ES mantiene una distribución normal multivariante que representa ''dónde creo que está el óptimo''. Tenemos tres elementos: 
 \begin{enumerate}
-    \item No necesita gradiente. Nuestro fitness incluye vecinos más cercanos y ajustes locales, que no son derivables.
-
-    \item Solo usa el orden de los candidatos, no su valor. Es invariante a transformaciones monótonas del fitness y bastante robusto al ruido.
-
-    \item Aprende la forma del problema - qué parámetros están correlacionados o necesitan pasos distintos - con pocos parámetros propios. El tamaño de la población por defecto es: $\lambda_{pop}=4+\lfloor3\ln D\rfloor$
+    \item $m$(media): el centro, la mejor estimación actual. 
+    \item $\sigma$(el tamaño de paso): cuánto se aleja al explorar. Es la escala global. 
+    \item $C$(matriz de covarianza): la forma de la nube de búsqueda. Puede ser alargada, inclinada, etc; explorando más en unas direcciones que en otras.
 \end{enumerate}
+
+Es una nube de exploración que se mueve hacia las zonas buenas, se encoge cuando se encuentra cerca del óptimo y se deforma para alinearse con aquellas direcciones más prometedoras. 
+
+\textsc{Aclaración} En el caso del CMA-ES, el $\lambda$ es el tamaño de la población, no tiene nada que  ver con los $\lambda$ de Yeo-Johnson. Por eso la vamos a denominar $\lambda_{pop}$. 
+
+\subsubsection{Una generación, paso a paso.}
+
+Una generación de CMA-ES agrupa los siguientes pasos, visualizados en la \autoref{fig:cmaciclo}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  paso/.style={draw, rounded corners, fill=azul!10, align=center,
+               text width=3.2cm, font=\small, minimum height=1cm},
+  flecha/.style={-{Stealth}, thick}]
+\node[paso] (a) at (90:3.2)   {1. Muestrear $\lambda_{pop}$ candidatos\\ $x_k = m + \sigma\, y_k$};
+\node[paso] (b) at (18:3.8)   {2. Evaluar $f$ y ordenar};
+\node[paso] (c) at (-54:3.3)  {3. Nueva media: media ponderada de los $\mu$ mejores};
+\node[paso] (d) at (-126:3.3) {4. Adaptar $\sigma$ con el camino de evolución};
+\node[paso] (e) at (162:3.8)  {5. Adaptar $C$ (rango uno y rango $\mu$)};
+\node[align=center, font=\small\bfseries] at (0,0) {Distribución\\ $\mathcal{N}(m,\ \sigma^2 C)$};
+\draw[flecha] (a) to[bend left=15] (b);
+\draw[flecha] (b) to[bend left=15] (c);
+\draw[flecha] (c) to[bend left=15] (d);
+\draw[flecha] (d) to[bend left=15] (e);
+\draw[flecha] (e) to[bend left=15] (a);
+\end{tikzpicture}
+\caption{Una generación de CMA-ES. Toda la información se guarda en la
+distribución normal $\mathcal{N}(m,\sigma^2 C)$: los pasos 3, 4 y 5 actualizan
+su centro, su tamaño y su forma.}
+\label{fig:cmaciclo}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Muestrear}. Se generan $\lambda_{pop}$ candidatos alrededor de la media $x_{k}=m+\sigma\cdot y_{k}$, con $y_{k}\sim N(0,C)$.
+    \item \textbf{Evaluar y ordenar}: Se calcula el fitness de cada uno y se ordena de mejor a peor. 
+    \item \textbf{Seleccionar y recombinar}: Se quedan con los $\mu$ mejores (por defecto la mitad) y la nueva media es una \textbf{media ponderada} de ellos, con más peso al mejor. La nube se desplaza hacia donde están los buenos. 
+    \item \textbf{Adaptar $\sigma$}: CMA-ES guarda un camino de evolución, es decir, la suma acumulada de los últimos desplazamientos de la media. Esto se representa en la \autoref{fig:camino}. Si todos los pasos van en la misma dirección, el camino es largo, por lo que vamos lento y conviene aumentar la $\sigma$. Sin embargo, si los caminos se cancelan, el camino es corto. Estamos dando vueltas alrededor del óptimo, por lo que nos conviene reducir el valor de $\sigma$. 
+    
+    \begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[paso/.style={-{Stealth}, thick, azul},
+                        total/.style={-{Stealth}, very thick, rojo, dashed}]
+    % (a) Pasos alineados
+    \draw[paso] (0,0) -- (0.9,0.3);
+    \draw[paso] (0.9,0.3) -- (1.9,0.5);
+    \draw[paso] (1.9,0.5) -- (2.8,0.9);
+    \draw[paso] (2.8,0.9) -- (3.8,1.1);
+    \draw[total] (0,0) -- (3.8,1.1);
+    \node[align=center, font=\small] at (1.9,-0.8)
+        {(a) Pasos alineados: camino largo\\ $\Rightarrow$ aumentar $\sigma$};
+    % (b) Pasos que se cancelan
+    \begin{scope}[xshift=6.5cm]
+    \draw[paso] (0,0) -- (0.9,0.5);
+    \draw[paso] (0.9,0.5) -- (0.2,0.9);
+    \draw[paso] (0.2,0.9) -- (1.0,0.4);
+    \draw[paso] (1.0,0.4) -- (0.4,0.1);
+    \draw[total] (0,0) -- (0.4,0.1);
+    \node[align=center, font=\small] at (0.6,-0.8)
+        {(b) Pasos que se cancelan: camino corto\\ $\Rightarrow$ reducir $\sigma$};
+    \end{scope}
+    \end{tikzpicture}
+    \caption{Pasos sucesivos de la media (azul) y su suma acumulada, el camino de
+    evolución (rojo). Si el camino es más largo de lo esperado por azar, el paso es
+    demasiado pequeño; si es más corto, demasiado grande.}
+    \label{fig:camino}
+    \end{figure}
+
+    \item \textbf{Adaptamos el C} con dos actualizaciones: 
+    \begin{enumerate}
+        \item Rango uno - usa el camino de evolución para estirar la nube en la dirección por la que se viene avanzando de forma consistente. 
+        \item Rango $\mu$: usa los $\mu$ mejores de la generación para aprender la forma de la región nueva.
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Qué ganamos con C}
+
+Si dos parámetros están correlacionados --- por ejemplo, subir el peso de un atributo solo funciona si a la vez cambias su $\lambda$ --- C lo aprende y propone cambios conjuntos. Si un parámetro necesita pasos mucho más pequeños que otro, C también lo aprende. Es como aprender un ''reescalado'' del problema, y por eso CMA-ES funciona bien en problemas mal condicionados (\autoref{fig:cmaelipses}).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.85]
+% Curvas de nivel de la función (valle inclinado)
+\begin{scope}[shift={(7,3.5)}, rotate=30]
+  \foreach \k in {1,...,5} { \draw[gris!60] (0,0) ellipse ({0.9*\k} and {0.3*\k}); }
+  \node[star, star points=5, fill=rojo, inner sep=1.5pt] at (0,0) {};
+\end{scope}
+% Generación 1: nube amplia y redonda
+\draw[azul, thick, dashed, fill=azul!10] (1.3,0.4) circle (0.9);
+\foreach \p in {(0.8,0.7),(1.7,0.9),(1.1,-0.1),(1.9,0.2),(0.7,0.2),(1.5,0.55)} {
+  \node[circle, fill=azul, inner sep=0.8pt] at \p {};
+}
+% Generación intermedia: alargada en la dirección del valle
+\draw[azul, thick, dashed, fill=azul!10, rotate around={30:(3.88,1.7)}]
+     (3.88,1.7) ellipse (1.1 and 0.3);
+% Final: pequeña junto al óptimo
+\draw[azul, thick, fill=azul!25, rotate around={30:(6.6,3.27)}]
+     (6.6,3.27) ellipse (0.3 and 0.1);
+% Trayectoria de la media
+\draw[-{Stealth}, thick, naranja] (1.3,0.4) -- (2.4,0.9) -- (3.88,1.7)
+      -- (5.3,2.52) -- (6.55,3.24);
+% Etiquetas
+\node[font=\scriptsize, align=center, below] at (1.3,-0.6) {Generación 1:\\ nube amplia};
+\node[font=\scriptsize, align=center] at (2.9,2.7) {Generación intermedia:\\ nube alargada en el valle};
+\node[font=\scriptsize, align=center, above] at (6.6,6.2) {Final: $\sigma$ pequeño,\\ junto al óptimo};
+\draw[gris] (6.6,6.2) -- (6.6,3.4);
+\end{tikzpicture}
+\caption{Esquema de la búsqueda sobre una función con un valle inclinado (curvas
+de nivel en gris, óptimo en rojo). La nube empieza amplia, se alarga en la
+dirección del valle gracias a $C$ y se encoge al acercarse al óptimo gracias a
+$\sigma$. La línea naranja es la trayectoria de la media $m$.}
+\label{fig:cmaelipses}
+\end{figure}
+
+\subsubsection{Por qué nos conviene CMA-ES}
+
+En primer lugar, porque no necesita gradiente. Nuestro fitness incluye  búsqueda de vecinos y ajustes locales, que no son derivables. Además, usa el orden de los candidatos, no el valor del fitness. Si un fitness pasara de 0,4 a 0,41 o a 100, si el orden es el mismo, CMA-ES opera de la misma manera. Es invariante a transformaciones monótonas del fitness y bastante robusto al ruido (pequeñas variaciones solo importan si cambian el orden). Finalmente, casi no hace falta ajustarlo. Aprende la forma del problema él solo. El tamaño de población por defecto es $\lambda_{pop}=4+\rfloor 3 \cdot \ln D\lfloor$. En el caso de California son 12 candidatos por generación, y en diabetes también. Con 1.000 evaluaciones tendremos un total de 83 generaciones. 
 
 \subsubsection{Implementación}
-Usamos una implementación propia en la práctica, pero en los experimentos de esta extensión usamos la librería de referencia `cma` (Hansen), con la que obtenemos resultados equivalentes. Trabajamos en el cubo normalizado $[0,1]^D$ y reescalamos a los límites de cada parámetro. 
+En la práctica usamos una implementación propia. En la extensión usamos la librería de referencia \texttt{cma} (de Hansen), donde obtenemos resultados equivalentes, lo que nos permite también validar nuestra implementación. 
 
-\subsubsection{Presupuesto}
-Cada evaluación del fitness es lo más caro --- validación cruzada con KNN o con el ajuste local. Usamos 1000 evaluaciones en los experimentos de la extensión y 2020 en el notebook principal. En todas las comparacioens, todos los métodos tienen el mismo presupuesto. 
+Trabajamos en el cubo normalizado de $[0,1]^D$. Cada parámetro se mapea a [0,1] y se reescala a sus límites reales al evaluar. Así todos los parámetros tienen la misma escala inicial y un único $\sigma$ inicial tiene sentido para todos. El punto de partida $\theta_{0}$ se corresponde a 0,75 para cada $\lambda$ (1 está a 3/4 del camino entre -2 y 2) y a 1/3 para cada w. 
 
-\subsection{El fitness. Cómo sabe la búsqueda que un $\theta$ es bueno}
-Para cada candidato $\theta$ medimos el error de un modelo sobre el entrenamiento usando validación cruzada de 5 pliegues. Pasos: 
+\subsection{El fitness: cómo sabe la búsqueda si un $\theta$ es bueno}
+\subsubsection{Procedimiento}
+
+\begin{figure}[htbp]
+\centering
+% (a) Flujo
+\begin{tikzpicture}[node distance=0.45cm,
+  caja/.style={draw, rounded corners, fill=azul!10, align=center,
+               text width=2cm, minimum height=1.1cm, font=\small},
+  flecha/.style={-{Stealth}, thick}]
+\node[font=\small, align=center] (ent) {Datos de\\ entrenamiento};
+\node[caja, right=of ent] (sub) {Submuestra\\ $\le 2000$ filas};
+\node[caja, right=of sub] (tr)  {Transformar\\ con $\theta$};
+\node[caja, right=of tr]  (vc)  {VC de\\ 5 pliegues};
+\node[caja, right=of vc]  (nor) {Dividir\\ MAE entre $s$};
+\node[right=of nor, font=\small] (f) {$f(\theta)$};
+\draw[flecha] (ent) -- (sub);
+\draw[flecha] (sub) -- (tr);
+\draw[flecha] (tr) -- (vc);
+\draw[flecha] (vc) -- (nor);
+\draw[flecha] (nor) -- (f);
+\node[above=0.5cm of tr, font=\small, naranja] (th) {candidato $\theta$ (de CMA-ES)};
+\draw[flecha, naranja] (th) -- (tr);
+\end{tikzpicture}
+
+\bigskip
+
+% (b) Pliegues
+\begin{tikzpicture}[x=1.1cm, y=0.55cm]
+\foreach \i in {1,...,5} {
+  \foreach \j in {1,...,5} {
+    \ifnum\i=\j \def\colorpliegue{naranja!70}\else \def\colorpliegue{azul!20}\fi
+    \fill[fill=\colorpliegue, draw=white, thick] (\j-1,-\i) rectangle (\j,-\i+0.85);
+  }
+  \node[anchor=east, font=\small] at (-0.1,-\i+0.42) {Pliegue \i};
+  \node[anchor=west, font=\small] at (5.1,-\i+0.42) {$\mathrm{MAE}_{\i}$};
+}
+\fill[azul!20] (0,-6.4) rectangle (0.4,-6.0);
+\node[anchor=west, font=\small] at (0.45,-6.2) {entrenar};
+\fill[naranja!70] (2.4,-6.4) rectangle (2.8,-6.0);
+\node[anchor=west, font=\small] at (2.85,-6.2) {evaluar};
+\node[font=\small] at (2.5,-7.4)
+     {$f(\theta)=\dfrac{1}{5}\displaystyle\sum_{i=1}^{5}\dfrac{\mathrm{MAE}_i}{s}$};
+\end{tikzpicture}
+\caption{(a) Flujo para evaluar un candidato $\theta$. (b) Validación cruzada
+de 5 pliegues: en cada fila se entrena con cuatro bloques (azul) y se mide el
+error en el restante (naranja). El fitness es la media de los cinco errores,
+normalizados por el error del predictor trivial.}
+\label{fig:fitness}
+\end{figure}
+
+El procedimiento se resume en la \autoref{fig:fitness}. Para cada candidato $\theta$: 
 \begin{enumerate}
-    \item Subsample de hasta 2000 filas del entrenamiento - para que cada evaluación sea rápida. 
-    \item Transformamos con $\theta$, con la media y la desviación calculadas sobre esas filas.
-
-    \item Para cada pliegue ajustamos el modelo y medimos el MAE en el pliegue de prueba.
-
-    \item Dividimos entre $s = \overline{|y - \text{mediana}(y)|}$, el error de un predictor trivial que siempre dice la mediana: 
-
-    \begin{equation}
-        f(\theta)=\frac{1}{5}\sum_{\text{pliegues}}\frac{MAE_{\text{pliegue}}(\theta)}{s}
-    \end{equation}
+    \item Subustreo: se toman gasta 2000 filas del entrenamiento para que cada evaluación sea rápida. 
+    \item Transformación: se aplica $\theta$ con $\mu$ y $\sigma$ calculadas sobre esas filas. 
+    \item Validación cruzada de cinco pliegues: se divide en 5 partes; 5 veces se entrenan con 4, y se mide el MAE (error absoluto medio) en la restante. 
+    \item Normalización: cada MAE se divide entre $s$, el error de un predictor trivial que siempre predice la mediana.
 \end{enumerate}
 
-El fitness es una fracción del error trivial: 0.5 significa que el modelo comeye la mitad de error que un predictor sin información. Esa normalización permite comparar datasets con escalas diferentes. En el notebook principal el fitness promedia regresión lineal y KNN. En la extensión usa el modelo para el que optimizamos: KNN o la regla local lineal. 
+\subsubsection{Cómo leemos el fitness}
+Es el error como fracción del error de no saber nada (\autoref{fig:escalafitness})
 
-\subsubsection{Riesgo de sobreajuste al fitness}
-La búsqueda optimiza uan estimación del error, no el error real. Con pocos datos (Diabetes tiene 309 muestras de entrenamiento) la búsqueda aprende el ruido de esos pliegues. Veremos que el fitness mejora y la validación no. Es el problema central que tenemos con el dataset de Diabetes.
-
-\subsection{La regla de predicción. De KNN a regresión lineal local.}
-KNN es una regresión local constante. La predicción es la media de los \textit{k} vecinos. Funciona bien si la función es plana en el entorno, pero cuando hay pendiente comete un sesgo, sobre todo en los bordes de los datos.
-
-La regresión lineal local ponderada ajusta, para cada punto de consulta $q$, un hiperplano a sus vecinos, y evalúa en q. Para los k vecinos $z_j$ con valores $y_i$: 
-
-\begin{equation}
-    min_{\beta_0, \beta}\sum^{k}_{i=1} w_i(y_i - \beta_0 - \beta ^T (z_i -q))² + r \overline{w}||\beta||² 
-\end{equation}
-
-Y la predicción es $\hat{y}(q)=\beta_0$. Como centramos en q, el término independiente es directamente la predicción. 
-
-\begin{enumerate}
-    \item Pesos de vecindad tricúbicos: $w_i= (1-u_i ³)³$ con $u_i=\frac{d_i}{d_{max}}$ de modo que lso vecinos lejanos pesan menos y el último pesa casi cero. 
-    \item Ridge r: estabiliza el ajuste cuando hay pocos vecinos o atributos muy correlacionados. No penalizamos el término independiente. 
-    \item Parámetros de la regla: k y r. En el método final, los aprende CMA-ES junto a $\theta$.
-\end{enumerate}
-
-Es la idea clásica de la \textit{locally weighted regression} Atkenson, Moore y Schaal, 1997; y de la regresión polinómica local de la estadística no paramétrica. Lo que añadimos es optimizar la métrica de la distancia directamente para esta regla, en lugar de reutilizar la que era buena para KNN.
-
-\subsection{Qué hay en la literatura y dónde nos situamos}
-Aprender métricas para el KNN ya es un campo establecido. LMNN y NCA se plantean para la clarificación. Para la regresión, Weinberger y Tesauro aprenden la métrica minimizando el error de regresión por kernel con gradiente, y existe una adaptación de LMNN a regresión con algoritmo evolutivo. También se han publicado artículos donde se ponderan atributos con CMA-ES. Un ancho de banda por variable elegido por validación cruzada es, en la práctica, una métrica diagonal optimizada para el estimador de regresión no paramétrica y elimina de forma automática las variables irrelevantes. Cambiar la regla de predicción manteniendo una métrica fija lo hace DNNR, que usa información diferencial entre los vecinos.
-
-Lo que no encontramos publicado es una combinación concreta de:
 \begin{itemize}
-    \item Exponente de Yeo-Johnson y peso por atributo
-    \item Optimización con CMA-ES
-    \item Directamente contra la regla local lineal
-    \item Evaluación de forma sistemática frente a controles y modelos de referencia.
+    \item $f=1$: el modelo es tan malo como predecir siempre la mediana. 
+    \item $f=0,5$: comete la mitad de error que un predictor sin información. 
+    \item $f=0$: perfecto
 \end{itemize}
 
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\shade[left color=verde!50, right color=rojo!50] (0,-0.15) rectangle (12,0.15);
+\draw (0,-0.15) rectangle (12,0.15);
+\draw[thick] (0,0.3) -- (0,-0.3);
+\draw[thick] (3,0.3) -- (3,-0.3);
+\draw[thick] (6,0.3) -- (6,-0.3);
+\draw[thick] (9,0.3) -- (9,-0.3);
+\draw[thick] (12,0.3) -- (12,-0.3);
+\node[above, font=\small] at (0,0.3)  {$0$};
+\node[above, font=\small] at (3,0.3)  {$0{,}25$};
+\node[above, font=\small] at (6,0.3)  {$0{,}5$};
+\node[above, font=\small] at (9,0.3)  {$0{,}75$};
+\node[above, font=\small] at (12,0.3) {$1$};
+\node[below, font=\footnotesize, align=center] at (0,-0.35)  {modelo\\ perfecto};
+\node[below, font=\footnotesize, align=center] at (6,-0.35)  {mitad del error\\ del predictor trivial};
+\node[below, font=\footnotesize, align=center] at (12,-0.35) {igual que predecir\\ siempre la mediana};
+\end{tikzpicture}
+\caption{Escala del fitness $f(\theta)$. Al expresarse como fracción del error
+del predictor trivial, es comparable entre datasets con escalas distintas.}
+\label{fig:escalafitness}
+\end{figure}
+
+
+\textsc{Por qué usamos la mediana}: es la constante que minimiza el error absoluto, así que es la referencia natural para el MAE (para el error cuadrático sería la media). 
+
+\textsc{Por qué normalizar}: Un MAE de 0,4 en precios de vivienda que se mide en miles de dólares, no es comparable con un MAE de 40 en Diabetes. Al dividir entre $s$, ambos se expresan en la misma escala relativa y podemos comparar datasets. 
+
+\textsc{Qué modelo usa}: en el notebook principal, el fitness promedia regresión lineal y KNN. En la extensión usa el modelo para el que optimizamos: KNN o la regla local lineal. 
+
+\subsubsection{El riesgo: sobreajustar el fitness}
+La búsqueda lo que hace es optimizar una estimación del error, no el error real. Con 1000 evaluaciones, probando muchos $\theta$ distintos, acaba encontrando alguno que funciona especialmente bien en esos pliegues en concreto, en parte por casualidad. Es la maldición del ganador, si elegimos el mejor de muchos candidatos ruidosos, su puntuación está inflada. Cuando hay pocos datos, cada pliegue tiene unas 60 filas y el ruido es gande. La búsqueda aprende ese ruido: el fitness mejora en entrenamiento, pero no en la validación. Esto lo vemos en la \autoref{fig:sobreajuste}. Este es el problema principal de Diabetes, y es una conclusión valiosa. El método necesita suficientes datos para que el fitness sea fiable. Formas de mitigarlo podrían ser: repetir la validación cruzada con varias particiones, regularizar $\theta$ hacia $\theta_{0}$ o reducir el número de parámetros (por ejemplo, solo pesos).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[name=cal, width=6.2cm, height=5cm,
+  title={California (muchos datos)}, xlabel={Evaluaciones}, ylabel={Error relativo},
+  xmin=0, xmax=1000, ymin=0.3, ymax=0.8, domain=0:1000, samples=60,
+  ticklabel style={font=\scriptsize}, legend style={font=\scriptsize},
+  legend pos=north east, legend cell align=left]
+\addplot[azul, thick] {0.42 + 0.2*exp(-x/150)};
+\addlegendentry{Fitness (VC)}
+\addplot[naranja, thick, dashed] {0.44 + 0.2*exp(-x/150)};
+\addlegendentry{Validación}
+\end{axis}
+\begin{axis}[at={(cal.outer east)}, anchor=outer west, width=6.2cm, height=5cm,
+  title={Diabetes (pocos datos)}, xlabel={Evaluaciones},
+  xmin=0, xmax=1000, ymin=0.3, ymax=0.8, domain=0:1000, samples=60,
+  ticklabel style={font=\scriptsize}]
+\addplot[azul, thick] {0.5 + 0.2*exp(-x/150)};
+\addplot[naranja, thick, dashed] {0.66 + 0.04*exp(-x/100) + 0.00004*x};
+\end{axis}
+\end{tikzpicture}
+\caption{Esquema ilustrativo (no son datos reales). Con muchos datos, el fitness
+y el error de validación bajan juntos. Con pocos datos, la búsqueda sigue
+bajando el fitness, pero la validación no mejora: está aprendiendo el ruido de
+los pliegues.}
+\label{fig:sobreajuste}
+\end{figure}
+
+\subsection{La regla de predicción: de KNN a regresión lineal local}
+\subsubsection{El límite de KNN}
+KNN predice con la media de los vecinos, es decir, supone que la función es plana en el entorno de $q$. Por eso se le llama regresión local constante. El problema es que si la función tiene pendiente en esa zona, la media de los vecinos se desvía. Y es peor en los bordes de los datos: si $q$ está en el extremo --- por ejemplo, en el barrio con renta más alta --- todos sus vecinos tienen renta más baja, todos tienen precio más bajo y KNN subestima sistemáticamente. Esto se le llama \textbf{sesgo de borde} y lo podemos visualizar en \autoref{fig:sesgoborde}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.75\textwidth, height=6.5cm, clip=false,
+  xmin=0, xmax=5, ymin=1, ymax=5, xlabel={$x$}, ylabel={$y$},
+  legend pos=north west, legend cell align=left, legend style={font=\small}]
+\addplot[gris, densely dotted, thick, domain=0:5] {1 + 0.8*x};
+\addlegendentry{Función real}
+\addplot[only marks, mark=*, gris!70]
+  coordinates {(0.5,1.55) (1,1.70) (1.5,2.32) (2,2.45)};
+\addlegendentry{Datos}
+\addplot[only marks, mark=*, azul]
+  coordinates {(2.5,3.10) (3,3.32) (3.5,3.94) (4,4.15)};
+\addlegendentry{$k=4$ vecinos de $q$}
+\addplot[naranja, very thick, domain=2.5:4.3] {3.6275};
+\addlegendentry{KNN: media de los vecinos}
+\addplot[verde, very thick, domain=2.5:4.3] {3.6275 + 0.754*(x-3.25)};
+\addlegendentry{Lineal local: hiperplano}
+\draw[dashed, gris] (axis cs:4.3,1) -- (axis cs:4.3,5);
+\node[below, font=\small] at (axis cs:4.3,1) {$q$};
+\addplot[only marks, mark=square*, naranja, mark size=2.5pt, forget plot]
+  coordinates {(4.3,3.6275)};
+\addplot[only marks, mark=triangle*, verde, mark size=3pt, forget plot]
+  coordinates {(4.3,4.419)};
+\draw[decorate, decoration={brace, amplitude=4pt}, rojo, thick]
+  (axis cs:4.45,4.44) -- (axis cs:4.45,3.6275)
+  node[midway, right=6pt, font=\small, align=left] {sesgo\\ de KNN};
+\end{axis}
+\end{tikzpicture}
+\caption{El punto $q$ está en el borde de los datos y todos sus vecinos quedan a
+su izquierda. KNN predice su media (cuadrado naranja), que subestima el valor
+real. La regresión lineal local ajusta una recta a los mismos vecinos y la
+evalúa en $q$ (triángulo verde), con lo que recupera la tendencia y casi
+elimina el sesgo.}
+\label{fig:sesgoborde}
+\end{figure}
+
+\subsubsection{La regresión lineal local}
+La idea es que en vez de suponer la función plana alrededor de $q$, la suponemos lineal. Por ende, para cada $q$: 
+\begin{enumerate}
+    \item Se buscan sus \textit{k} vecinos $z_{j}$ con valores $y_{j}$. 
+    \item Se ajusta un hiperplano solo con esos vecinos. 
+    \item Se evalúa un hiperplano en \textit{q}. 
+\end{enumerate}
+
+En la \autoref{fig:sesgoborde} podemos ver el sesgo del borde. El ajuste lo que minimiza: 
+$$ 
+\sum_{i}w_{i} \cdot (y_{i}-\beta_{0}+\beta^T(z_{i}-q))^2 + r \cdot \overline{x} \cdot || \beta ||^2 
+$$
+
+Por partes: 
+\begin{itemize}
+    \item $\beta_{0}+\beta^T(z_{i}-q)$ es el hiperplano. Donde $\beta_{0}$ es la altura y $\beta$ la pendiente en cada dirección. 
+    \item $(z_{i}-q)$: se centra en \textit{q}. Así, al evaluar en \textit{q}, el término dependiente se anula y la predicción es directamente $\beta_{0}$. 
+    \item $w_{i}$ es el peso de cada vecino --- los cercanos cuentan más. 
+    \item $r\cdot \overline{w}\cdot ||\beta||^2$ es la penalización ridge sobre la pendiente.
+\end{itemize}
+
+Es un problema de mínimos cuadrados ponderados con solución cerrada : un sistema lineal pequeño por consulta. Esto reduce el sesgo porque si la función es aproximadamente lineal cerca de \textit{q}, el hiperplano captura esa pendiente y el sesgo de borde desaparece. En la teoría de regresión no paramétrica se demuestra que la regresión local lineal tiene el mismo orden de sesgo en el borde que en el interior. Mientras que la local constante (KNN) tiene un sesgo mayor en los bordes. 
+
+\subsubsection{Los tres componentes}
+\textsc{Pesos tricúbicos}
+
+$$ 
+w_{i} = (1-u_{i}^3)^3 \text{ con } u_{i} = \frac{d_{i}}{d_{max}}
+$$
+
+Donde $d_{i}$ es la distancia del vecino \textit{i} 

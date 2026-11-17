@@ -1,0 +1,149 @@
+% Póster A0 vertical (tikzposter). Compilar desde esta carpeta:  latexmk -pdf poster.tex
+\documentclass[25pt, a0paper, portrait, margin=0mm, innermargin=14mm, blockverticalspace=14mm,
+               colspace=14mm, subcolspace=8mm]{tikzposter}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usetikzlibrary{arrows.meta,positioning}
+\graphicspath{{../figuras/}}
+\input{../numeros.tex}\input{../tablas.tex}
+
+\definecolor{uc3mazul}{HTML}{003A70}
+\definecolor{uc3mcian}{HTML}{00A6D6}
+\definecolor{fondo}{HTML}{F4F7FA}
+\definecolor{azulm}{HTML}{2E6DB4}\definecolor{naranjam}{HTML}{D9731A}
+\definecolor{verdem}{HTML}{2F9467}\definecolor{grism}{HTML}{5A6772}
+\definecolorstyle{uc3m}{}{%
+  \colorlet{backgroundcolor}{white}
+  \colorlet{framecolor}{uc3mazul}
+  \colorlet{titlefgcolor}{white}
+  \colorlet{titlebgcolor}{uc3mazul}
+  \colorlet{blocktitlebgcolor}{uc3mazul}
+  \colorlet{blocktitlefgcolor}{white}
+  \colorlet{blockbodybgcolor}{fondo}
+  \colorlet{blockbodyfgcolor}{black}
+  \colorlet{innerblocktitlebgcolor}{uc3mcian}
+  \colorlet{innerblocktitlefgcolor}{white}
+  \colorlet{innerblockbodybgcolor}{white}
+  \colorlet{innerblockbodyfgcolor}{black}
+  \colorlet{notefgcolor}{black}
+  \colorlet{notebgcolor}{uc3mcian!15}
+  \colorlet{noteframecolor}{uc3mcian}}
+\usecolorstyle{uc3m}
+\usetitlestyle{Filled}
+\useblockstyle{Default}
+\settitle{%
+  \parbox{\linewidth}{\centering\color{titlefgcolor}\vspace*{16mm}
+  {\fontsize{92}{104}\selectfont\bfseries Aumentar, ponderar y reducir\par}\vspace{8mm}
+  {\fontsize{50}{60}\selectfont aprendizaje evolutivo de una representación de atributos más pequeña\par}\vspace{12mm}
+  {\fontsize{40}{48}\selectfont \@author\par}\vspace{5mm}
+  {\fontsize{30}{36}\selectfont \@institute\par}\vspace*{14mm}}}
+\title{Aumentar, ponderar y reducir}
+\author{Andrea López Salazar}
+\institute{IA con inspiración biológica \textbullet\ Máster en Ciencia y Tecnología \textbullet\ Universidad Carlos III de Madrid}
+
+\newcommand{\cifra}[3]{%
+  \begin{minipage}[t]{0.48\linewidth}\centering
+  {\fontsize{64}{72}\selectfont\bfseries\color{#1}#2}\\[2mm]{\normalsize #3}\end{minipage}}
+
+\begin{document}
+\maketitle[width=\paperwidth, roundedcorners=0, linewidth=0, innersep=0mm, titletotopverticalspace=0mm,
+           titletoblockverticalspace=14mm]
+
+\begin{columns}
+% ===================================================================== columna 1
+\column{0.33}
+\block{1. El problema}{
+Aprender, \textbf{solo con el entrenamiento} y con \textbf{computación evolutiva}, $X\mapsto X'$ con
+\textbf{síntesis} de atributos y \textbf{reducción} de la dimensionalidad ($\dim X'<n$), tal que un modelo
+\textbf{arbitrario} $M$ entrenado con $X'$ tenga menor MAE: $e'<e$.
+\vspace{4mm}
+
+\textbf{La dificultad: ``arbitrario''.} KNN ve la geometría; la R.\ lineal, la forma de cada atributo; un árbol,
+invariante a cambios monótonos, solo las \emph{direcciones} por las que corta.
+}
+
+\block{2. El método $P$}{
+\begin{center}\includegraphics[width=\linewidth]{esquema}\end{center}
+\vspace{2mm}
+\begin{itemize}
+\item \textbf{Aumentar}: $2n$ candidatos = atributos con forma Yeo-Johnson + sus componentes principales
+(\textbf{síntesis}).
+\item \textbf{Ponderar}: un peso $v_k$ por candidato.
+\item \textbf{Reducir}: se conservan los de $v_k\ge\tau$, como mucho $n-1$: $\dim X'<n$ para \emph{todo} individuo.
+\textbf{CMA-ES aprende $\tau$}: qué y cuánto se elimina.
+\item \textbf{Fitness}: media del MAE normalizado de \textbf{KNN, R.\ lineal y un árbol} (validación cruzada).
+\item \textbf{CMA-ES}: $\theta=(\lambda,v,\tau)$, $3n+1$ genes, 1000 evaluaciones.
+\end{itemize}
+\innerblock{Operadores evolutivos}{\small
+Selección por rango de $\mu=\lambda/2$ (robusta al ruido) \textbullet\ recombinación intermedia ponderada
+\textbullet\ mutación $\mathcal N(m,\sigma^2C)$ adaptativa (genes acoplados) \textbullet\ reemplazo
+$(\mu/\mu_w,\lambda)$ + mejor guardado \textbullet\ restricción por decodificación.}
+}
+
+\block{Protocolo}{
+\begin{itemize}
+\item 12 datasets (diabetes, california + 10 de OpenML). \textbf{Ninguno excluido}.
+\item \textbf{Cribado} en semillas de exploración; \textbf{confirmación} en particiones 70/30 nuevas.
+\item \textbf{Modelos fijos}: R.\ lineal, KNN, árbol, RF.
+\item \textbf{Estadística por dataset} ($n=12$): Wilcoxon + Holm; Friedman + Nemenyi.
+\end{itemize}
+}
+
+% ===================================================================== columna 2
+\column{0.34}
+\block{3. Resultado: menos atributos, menos error}{
+\cifra{azulm}{\dimMedia}{atributos usados de media \textbullet\ siempre $<n$}\hfill
+\cifra{azulm}{\cambioRL}{R. lineal \textbullet\ \dsRL{} datasets \textbullet\ $p$=\pRL}\\[8mm]
+\cifra{azulm}{\cambioKNN}{KNN \textbullet\ \dsKNN{} datasets}\hfill
+\cifra{grism}{\cambioRF}{Random Forest \textbullet\ árbol \cambioArbol}
+\vspace{6mm}
+
+{\small $p$: Wilcoxon por dataset con Holm. Máximo: \maxRL{} (\maxDsRL, R.\ lineal) y \maxKNN{} (\maxDsKNN, KNN).
+Caso negativo: \peorDsKNN{} (KNN \peorKNN); sin él, KNN \sinKinKNN.}
+\vspace{2mm}
+\begin{center}\includegraphics[width=\linewidth]{principal}\end{center}
+}
+
+\block{4. Frente a otras ocho transformaciones}{
+\begin{center}\small
+\begin{tabular}{@{}lcccccc@{}}\toprule
+ & R.\,lin. & KNN & Árbol & RF & Rango & $d/n$\\\midrule
+\filasComparativa\bottomrule
+\end{tabular}\end{center}
+{\small $e'/e$; negrita: mejor; $^*$: $P$ mejor con $p<0{,}05$. Rango: Friedman (1 = mejor). $d/n$: $\dim X'/n$.}
+\vspace{3mm}
+
+\textbf{Mejor rango medio} (\rangoP) y la única que mejora R.\ lineal y KNN \textbf{reduciendo} la dimensión.
+}
+
+% ===================================================================== columna 3
+\column{0.33}
+\block{5. Cada decisión, contrastada}{
+\textbf{Cribado} (exploración): fitness y parada.
+\begin{center}\includegraphics[width=\linewidth]{cribado}\end{center}
+{\small Tres familias $>$ solo KNN (\cribP{} vs \cribKnn); minimax y parada por sobreajuste empeoran.}
+\vspace{4mm}
+
+\textbf{Ablación} (confirmación): una pieza cada vez.
+\begin{center}\includegraphics[width=\linewidth]{ablacion}\end{center}
+{\small Necesarias: la \textbf{forma} (sin ella, R.\ lineal \ablSinFormaRL$^*$), el \textbf{fitness de tres
+familias} (solo KNN: R.\ lineal \ablKnnRL$^*$) y la \textbf{búsqueda evolutiva} (aleatoria: \ablAleat). Un AG empata
+con CMA-ES. Sin límite $n-1$ o sin síntesis el error no cambia, pero sin límite $\dim X'=$\,\ablSinLimiteDim\,$n$.
+$^*$: $p<0{,}05$ con Holm.}
+}
+
+\block{6. Conclusiones}{
+\begin{itemize}
+\item Cumple \textbf{todos los requisitos}: síntesis, $\dim X'<n$ siempre, criterio de eliminación evolutivo.
+\item $e'<e$ en \textbf{R.\ lineal} (significativo) y \textbf{KNN}; árboles sin cambio.
+\item \textbf{Mejor rango medio} entre nueve transformaciones.
+\item Límites: 12 datasets pequeños; a los árboles les ayuda \emph{añadir} dimensiones.
+\end{itemize}
+}
+\end{columns}
+\end{document}

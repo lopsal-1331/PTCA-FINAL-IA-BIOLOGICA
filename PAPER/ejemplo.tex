@@ -1,0 +1,44 @@
+% Cambia la opción: memoria | deber | apuntes
+\documentclass[memoria]{uc3mmaster}
+
+\titulo{Título de la memoria}
+\subtitulo{Subtítulo opcional}
+\asignatura{Nombre de la asignatura}
+\tipo{Memoria}                % p. ej. Práctica 3, Apuntes, Trabajo final
+\curso{Curso 2026--2027}
+\fecha{Octubre de 2026}
+% \logo{logo-uc3m.png}        % opcional: pon aquí tu logo (no incluido)
+\autor{Nombre Apellidos}{NIA}
+\autor{Nombre Apellidos}{NIA}
+
+\begin{document}
+\makeportada
+
+\section{Introducción}
+Texto con fórmulas: $h^{*}(s)=\min_{\pi}\sum_{o\in\pi}c(o)$.
+
+\begin{definicion}[Heurística admisible]
+$h(s)\le h^{*}(s)$ para todo estado $s$.
+\end{definicion}
+\begin{teorema}[A$^*$]  A$^*$ con $h$ admisible es óptimo. \end{teorema}
+\begin{ejemplo} Un ejemplo breve. \end{ejemplo}
+\begin{nota} Aviso o comentario. \end{nota}
+\begin{resultado}[Resultado]  $h=6$. \end{resultado}
+
+\begin{pseudocodigo}{Búsqueda}
+\pl $\mathit{Abiertos}\gets\{s_0\}$
+\pl \kw{mientras} $\mathit{Abiertos}\neq\emptyset$ \kw{hacer}
+\pl \ind extraer $n$ con menor $f$
+\end{pseudocodigo}
+
+\begin{table}[h]\centering
+\begin{tabular}{@{}lcc@{}}\toprule A & B & C\\\midrule 1 & 2 & 3\\\bottomrule\end{tabular}
+\caption{Ejemplo de tabla.}
+\end{table}
+
+\begin{thebibliography}{9}\footnotesize
+\bibitem{x} Autor. Título. Editorial, 2026.
+\end{thebibliography}
+
+\makecontraportada   % quítala si no quieres contraportada
+\end{document}

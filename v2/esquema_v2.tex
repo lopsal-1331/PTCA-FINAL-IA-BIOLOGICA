@@ -1,0 +1,29 @@
+% Esquema de P v2 (aumentar -> ponderar -> reducir), compartido por memoria, paper y póster de v2.
+% Requiere tikz con arrows.meta y positioning; colores azulm, naranjam, verdem, grism.
+\providecommand{\esquemaescala}{1}
+\begin{tikzpicture}[scale=\esquemaescala, every node/.style={transform shape},
+  node distance=3.5mm and 4mm,
+  caja/.style={draw=azulm, rounded corners=2pt, fill=azulm!8, align=center, inner sep=2.5pt,
+               minimum height=9mm, font=\footnotesize},
+  sint/.style={caja, draw=verdem, fill=verdem!10},
+  red/.style={caja, draw=naranjam, fill=naranjam!8},
+  fl/.style={-{Stealth[length=2mm]}, thick, azulm!80!black},
+  fv/.style={fl, verdem!80!black},
+  fn/.style={fl, naranjam!80!black}]
+\node (x) {$X$};
+\node[caja, right=of x] (yj) {1. Forma\\$\psi(x_j;\lambda_j)$, estandarizar};
+\node[sint, right=of yj] (aum) {2. Aumentar ($2n$)\\$c=[\,\tilde x_1..\tilde x_n \mid p_1..p_n\,]$};
+\node[caja, below=7mm of aum] (pes) {3. Pesos dobles\\$v_k\,c_k$,\; $k=1..2n$};
+\node[red, left=of pes] (red) {4. Reducir\\$v_k\ge\tau$, como mucho $n-1$};
+\node[draw=grism, thick, rounded corners=2pt, fill=white, font=\footnotesize, minimum height=7mm,
+      left=of red] (xp) {$X'$,\; $\dim X'<n$};
+\draw[fl] (x)--(yj); \draw[fv] (yj)--(aum); \draw[fl] (aum)--(pes); \draw[fn] (pes)--(red); \draw[fn] (red)--(xp);
+\node[font=\scriptsize\itshape, text=grism, align=left, anchor=west] at ([xshift=8mm]aum.east)
+     {$p$: componentes\\principales de $\tilde x$};
+\coordinate (r) at ([xshift=5mm]aum.east);
+\node[caja, draw=naranjam, fill=naranjam!10, above=6mm of yj.north east, anchor=south, align=center] (cma)
+     {CMA-ES busca $\theta=(\lambda,v,\tau)$ ($3n+1$ genes) minimizando la media del MAE normalizado\\
+      de validación cruzada de \textbf{KNN, regresión lineal y árbol} en el entrenamiento};
+\draw[fn] (cma.south -| yj) -- (yj.north);
+\draw[fn] (cma.south -| r) -- (r |- pes.east) -- (pes.east);
+\end{tikzpicture}

@@ -1,0 +1,40 @@
+% Esquema del método P, compartido por memoria, paper y póster.
+% Requiere: tikz con las librerías arrows.meta y positioning; colores azulm, naranjam, verdem, grism.
+% \esquemaescala permite reducirlo o ampliarlo sin tocar el dibujo.
+\providecommand{\esquemaescala}{1}
+\begin{tikzpicture}[scale=\esquemaescala, every node/.style={transform shape},
+  node distance=3.5mm and 3.5mm,
+  caja/.style={draw=azulm, rounded corners=2pt, fill=azulm!8, align=center, inner sep=2.5pt,
+               minimum height=9mm, font=\footnotesize},
+  sint/.style={caja, draw=verdem, fill=verdem!10},
+  red/.style={caja, draw=naranjam, fill=naranjam!8},
+  fl/.style={-{Stealth[length=2mm]}, thick, azulm!80!black},
+  fv/.style={fl, verdem!80!black},
+  fn/.style={fl, naranjam!80!black}]
+% fila 1: bloques por atributo (forma, escala, relevancia)
+\node (x) {$x_j$};
+\node[caja, right=of x]   (yj) {1. Forma\\$\psi(x_j;\lambda_j)$};
+\node[caja, right=of yj]  (st) {Escala\\$(\psi_j-\mu_j)/\sigma_j$};
+\node[caja, right=of st]  (w)  {2. Relevancia\\$\times\,w_j$};
+\node[right=of w] (z) {$z_j$};
+\draw[fl] (x)--(yj); \draw[fl] (yj)--(st); \draw[fl] (st)--(w); \draw[fl] (w)--(z);
+% fila 2: reducción, síntesis y salida
+\node[red, below=7mm of st] (sel) {3. Reducción\\$S=\{j: w_j\ge\tau\}$};
+\node[sint, right=5mm of sel] (pca) {4. Síntesis\\$p_{1..m}=V_m^{\top}(z_S-\bar z_S)$};
+\node[draw=grism, thick, rounded corners=2pt, fill=white, font=\footnotesize, minimum height=7mm, align=center,
+     below=5mm of pca] (xp) {$X'=[\,z_S\;|\;p_1\ldots p_m\,]$,\; $|S|+m\le n-1$};
+\draw[fn] (z.south) |- ([yshift=3.5mm]sel.north) -- (sel.north);
+\draw[fv] (sel.east) -- (pca.west);
+\draw[fv] (pca.south) -- (xp.north);
+\draw[fn] (sel.south) |- (xp.west);
+\node[font=\scriptsize\itshape, text=grism, align=right, anchor=east] at ([xshift=-3mm]sel.west)
+     {si $|S|=n$, fuera\\el de menor $w_j$};
+\node[font=\scriptsize\itshape, text=grism, align=left, anchor=west] at ([xshift=2mm]pca.east)
+     {$m=\mathrm{round}(\rho\,(n{-}1{-}|S|))$};
+% búsqueda
+\node[caja, draw=naranjam, fill=naranjam!10, above=6mm of st, align=center] (cma)
+     {CMA-ES busca $\theta=(\lambda,w,\tau,\rho)$:\; $\lambda_j\in[-2,2]$,\; $w_j,\tau\in[0,3]$,\; $\rho\in[0,1]$\\
+      minimizando el MAE de validación cruzada de KNN en el entrenamiento};
+\draw[fn] (cma.south -| yj) -- (yj.north);
+\draw[fn] (cma.south -| w) -- (w.north);
+\end{tikzpicture}

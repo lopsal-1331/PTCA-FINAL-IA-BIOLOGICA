@@ -1,0 +1,217 @@
+elegido,dataset,semilla,representacion,n_activos,n,MAE
++KNN oof +lineal oof,diabetes,1,estándar,8,10,47.722932330827064
++KNN oof +lineal oof,diabetes,1,+PCA aprendida,8,10,46.0487969924812
++KNN oof +lineal oof,diabetes,1,selección wf≥0.1·max,8,10,48.30917293233083
++KNN oof +lineal oof,diabetes,1,+KNN oof,8,10,45.61428571428572
++KNN oof +lineal oof,diabetes,1,+lineal oof,8,10,44.87812030075189
++KNN oof +lineal oof,diabetes,1,+KNN oof +lineal oof,8,10,43.820751879699245
++KNN oof +lineal oof,diabetes,1,+PCA +KNN oof,8,10,45.916390977443605
++KNN oof +lineal oof,diabetes,1,selección por CV,8,10,43.820751879699245
+,diabetes,1,KNN (referencia),10,10,48.84360902255639
++PCA aprendida,diabetes,0,estándar,6,10,47.799624060150386
++PCA aprendida,diabetes,0,+PCA aprendida,6,10,45.47406015037595
++PCA aprendida,diabetes,0,selección wf≥0.1·max,6,10,49.36436090225565
++PCA aprendida,diabetes,0,+KNN oof,6,10,47.6609022556391
++PCA aprendida,diabetes,0,+lineal oof,6,10,47.412255639097744
++PCA aprendida,diabetes,0,+KNN oof +lineal oof,6,10,47.478045112781956
++PCA aprendida,diabetes,0,+PCA +KNN oof,6,10,45.935112781954885
++PCA aprendida,diabetes,0,selección por CV,6,10,45.47406015037595
+,diabetes,0,KNN (referencia),10,10,51.44812030075188
++PCA aprendida,concrete_compressive_strength,1,estándar,7,8,3.860091925302337
++PCA aprendida,concrete_compressive_strength,1,+PCA aprendida,7,8,3.8313793969905676
++PCA aprendida,concrete_compressive_strength,1,selección wf≥0.1·max,7,8,3.983986813598984
++PCA aprendida,concrete_compressive_strength,1,+KNN oof,7,8,4.148465323810145
++PCA aprendida,concrete_compressive_strength,1,+lineal oof,7,8,4.066460079415251
++PCA aprendida,concrete_compressive_strength,1,+KNN oof +lineal oof,7,8,3.9559910305543267
++PCA aprendida,concrete_compressive_strength,1,+PCA +KNN oof,7,8,4.036143441600722
++PCA aprendida,concrete_compressive_strength,1,selección por CV,7,8,3.8313793969905676
+,concrete_compressive_strength,1,KNN (referencia),8,8,4.4379728329678265
++KNN oof,stock,0,estándar,8,9,0.6393377192982457
++KNN oof,stock,0,+PCA aprendida,8,9,0.6222587719298248
++KNN oof,stock,0,selección wf≥0.1·max,8,9,0.6403201754385964
++KNN oof,stock,0,+KNN oof,8,9,0.5500614035087722
++KNN oof,stock,0,+lineal oof,8,9,0.6163464912280702
++KNN oof,stock,0,+KNN oof +lineal oof,8,9,0.5425570175438597
++KNN oof,stock,0,+PCA +KNN oof,8,9,0.5352192982456139
++KNN oof,stock,0,selección por CV,8,9,0.5500614035087722
+,stock,0,KNN (referencia),9,9,0.5814912280701753
++KNN oof +lineal oof,concrete_compressive_strength,0,estándar,8,8,3.6021835457927867
++KNN oof +lineal oof,concrete_compressive_strength,0,+PCA aprendida,8,8,3.782594853828424
++KNN oof +lineal oof,concrete_compressive_strength,0,selección wf≥0.1·max,8,8,3.5964433738666446
++KNN oof +lineal oof,concrete_compressive_strength,0,+KNN oof,8,8,4.014407653925851
++KNN oof +lineal oof,concrete_compressive_strength,0,+lineal oof,8,8,3.4775691258393158
++KNN oof +lineal oof,concrete_compressive_strength,0,+KNN oof +lineal oof,8,8,3.590872696443737
++KNN oof +lineal oof,concrete_compressive_strength,0,+PCA +KNN oof,8,8,3.9505386359517667
++KNN oof +lineal oof,concrete_compressive_strength,0,selección por CV,8,8,3.590872696443737
+,concrete_compressive_strength,0,KNN (referencia),8,8,4.222638672267081
++KNN oof +lineal oof,stock,1,estándar,8,9,0.5758070175438595
++KNN oof +lineal oof,stock,1,+PCA aprendida,8,9,0.5950701754385965
++KNN oof +lineal oof,stock,1,selección wf≥0.1·max,8,9,0.5885131578947368
++KNN oof +lineal oof,stock,1,+KNN oof,8,9,0.5222412280701754
++KNN oof +lineal oof,stock,1,+lineal oof,8,9,0.5823114035087721
++KNN oof +lineal oof,stock,1,+KNN oof +lineal oof,8,9,0.5213114035087718
++KNN oof +lineal oof,stock,1,+PCA +KNN oof,8,9,0.5321798245614034
++KNN oof +lineal oof,stock,1,selección por CV,8,9,0.5213114035087718
+,stock,1,KNN (referencia),9,9,0.5316666666666667
++PCA aprendida,space_ga,1,estándar,4,6,0.07921152185966887
++PCA aprendida,space_ga,1,+PCA aprendida,4,6,0.07273290441433294
++PCA aprendida,space_ga,1,selección wf≥0.1·max,4,6,0.07833914051662813
++PCA aprendida,space_ga,1,+KNN oof,4,6,0.080413992542123
++PCA aprendida,space_ga,1,+lineal oof,4,6,0.07601177826956099
++PCA aprendida,space_ga,1,+KNN oof +lineal oof,4,6,0.0744418103183567
++PCA aprendida,space_ga,1,+PCA +KNN oof,4,6,0.07178970737303514
++PCA aprendida,space_ga,1,selección por CV,4,6,0.07273290441433294
+,space_ga,1,KNN (referencia),6,6,0.08076748227247961
++PCA aprendida,space_ga,0,estándar,3,6,0.0838281770482005
++PCA aprendida,space_ga,0,+PCA aprendida,3,6,0.07703236581141394
++PCA aprendida,space_ga,0,selección wf≥0.1·max,3,6,0.08543555250077911
++PCA aprendida,space_ga,0,+KNN oof,3,6,0.08541434786196485
++PCA aprendida,space_ga,0,+lineal oof,3,6,0.07831533830790446
++PCA aprendida,space_ga,0,+KNN oof +lineal oof,3,6,0.0804369365172059
++PCA aprendida,space_ga,0,+PCA +KNN oof,3,6,0.077236474057578
++PCA aprendida,space_ga,0,selección por CV,3,6,0.07703236581141394
+,space_ga,0,KNN (referencia),6,6,0.08608433289527817
++PCA +KNN oof,wine_quality,1,estándar,11,11,0.453948717948718
++PCA +KNN oof,wine_quality,1,+PCA aprendida,11,11,0.4444564102564103
++PCA +KNN oof,wine_quality,1,selección wf≥0.1·max,11,11,0.4540717948717949
++PCA +KNN oof,wine_quality,1,+KNN oof,11,11,0.48075384615384614
++PCA +KNN oof,wine_quality,1,+lineal oof,11,11,0.4594205128205128
++PCA +KNN oof,wine_quality,1,+KNN oof +lineal oof,11,11,0.4776358974358974
++PCA +KNN oof,wine_quality,1,+PCA +KNN oof,11,11,0.4780102564102564
++PCA +KNN oof,wine_quality,1,selección por CV,11,11,0.4780102564102564
+,wine_quality,1,KNN (referencia),11,11,0.5329230769230769
++PCA +KNN oof,kin8nm,0,estándar,8,8,0.11516891003462165
++PCA +KNN oof,kin8nm,0,+PCA aprendida,8,8,0.10676531069823435
++PCA +KNN oof,kin8nm,0,selección wf≥0.1·max,8,8,0.11518806826380798
++PCA +KNN oof,kin8nm,0,+KNN oof,8,8,0.08066597753242068
++PCA +KNN oof,kin8nm,0,+lineal oof,8,8,0.11023398496438976
++PCA +KNN oof,kin8nm,0,+KNN oof +lineal oof,8,8,0.08030736360797804
++PCA +KNN oof,kin8nm,0,+PCA +KNN oof,8,8,0.08079603554627746
++PCA +KNN oof,kin8nm,0,selección por CV,8,8,0.08079603554627746
+,kin8nm,0,KNN (referencia),8,8,0.09013947035565499
++PCA +KNN oof,kin8nm,1,estándar,8,8,0.11180722334195688
++PCA +KNN oof,kin8nm,1,+PCA aprendida,8,8,0.11077609455037837
++PCA +KNN oof,kin8nm,1,selección wf≥0.1·max,8,8,0.1118376858221481
++PCA +KNN oof,kin8nm,1,+KNN oof,8,8,0.0789159627879048
++PCA +KNN oof,kin8nm,1,+lineal oof,8,8,0.10927202556681044
++PCA +KNN oof,kin8nm,1,+KNN oof +lineal oof,8,8,0.07847804167530106
++PCA +KNN oof,kin8nm,1,+PCA +KNN oof,8,8,0.07869308658004476
++PCA +KNN oof,kin8nm,1,selección por CV,8,8,0.07869308658004476
+,kin8nm,1,KNN (referencia),8,8,0.08916415579845403
++KNN oof +lineal oof,cpu_small,0,estándar,12,12,1.9965663140764847
++KNN oof +lineal oof,cpu_small,0,+PCA aprendida,12,12,1.9806590724165989
++KNN oof +lineal oof,cpu_small,0,selección wf≥0.1·max,12,12,1.9962327095199348
++KNN oof +lineal oof,cpu_small,0,+KNN oof,12,12,2.0006102522375917
++KNN oof +lineal oof,cpu_small,0,+lineal oof,12,12,1.990793327908869
++KNN oof +lineal oof,cpu_small,0,+KNN oof +lineal oof,12,12,1.9934214808787631
++KNN oof +lineal oof,cpu_small,0,+PCA +KNN oof,12,12,1.987111472742067
++KNN oof +lineal oof,cpu_small,0,selección por CV,12,12,1.9934214808787631
+,cpu_small,0,KNN (referencia),12,12,2.1502847843775426
+estándar,house_8L,0,estándar,8,8,16438.013153333333
+estándar,house_8L,0,+PCA aprendida,8,8,16155.312636666666
+estándar,house_8L,0,selección wf≥0.1·max,8,8,16429.92091333333
+estándar,house_8L,0,+KNN oof,8,8,16357.675386666666
+estándar,house_8L,0,+lineal oof,8,8,16613.61633333333
+estándar,house_8L,0,+KNN oof +lineal oof,8,8,16298.315016666666
+estándar,house_8L,0,+PCA +KNN oof,8,8,16356.233219999998
+estándar,house_8L,0,selección por CV,8,8,16438.013153333333
+,house_8L,0,KNN (referencia),8,8,16973.8538
++KNN oof +lineal oof,bank8FM,0,estándar,4,8,0.022391966236777867
++KNN oof +lineal oof,bank8FM,0,+PCA aprendida,4,8,0.02229280055329536
++KNN oof +lineal oof,bank8FM,0,selección wf≥0.1·max,4,8,0.026815652729861677
++KNN oof +lineal oof,bank8FM,0,+KNN oof,4,8,0.022475856757526447
++KNN oof +lineal oof,bank8FM,0,+lineal oof,4,8,0.021576192253864934
++KNN oof +lineal oof,bank8FM,0,+KNN oof +lineal oof,4,8,0.022052330679414155
++KNN oof +lineal oof,bank8FM,0,+PCA +KNN oof,4,8,0.02244453492676973
++KNN oof +lineal oof,bank8FM,0,selección por CV,4,8,0.022052330679414155
+,bank8FM,0,KNN (referencia),8,8,0.02465201366965012
++KNN oof,cpu_small,1,estándar,9,12,1.9529373474369405
++KNN oof,cpu_small,1,+PCA aprendida,9,12,1.9374491456468674
++KNN oof,cpu_small,1,selección wf≥0.1·max,9,12,2.009182262001627
++KNN oof,cpu_small,1,+KNN oof,9,12,1.96620016273393
++KNN oof,cpu_small,1,+lineal oof,9,12,1.94813262815297
++KNN oof,cpu_small,1,+KNN oof +lineal oof,9,12,1.9644548413344183
++KNN oof,cpu_small,1,+PCA +KNN oof,9,12,1.979646053702197
++KNN oof,cpu_small,1,selección por CV,9,12,1.96620016273393
+,cpu_small,1,KNN (referencia),12,12,2.126118795768918
++KNN oof +lineal oof,house_8L,1,estándar,7,8,15954.402673333332
++KNN oof +lineal oof,house_8L,1,+PCA aprendida,7,8,16319.640896666666
++KNN oof +lineal oof,house_8L,1,selección wf≥0.1·max,7,8,16399.295453333332
++KNN oof +lineal oof,house_8L,1,+KNN oof,7,8,16226.663296666668
++KNN oof +lineal oof,house_8L,1,+lineal oof,7,8,16432.75232
++KNN oof +lineal oof,house_8L,1,+KNN oof +lineal oof,7,8,16266.128253333334
++KNN oof +lineal oof,house_8L,1,+PCA +KNN oof,7,8,16358.941193333332
++KNN oof +lineal oof,house_8L,1,selección por CV,7,8,16266.128253333334
+,house_8L,1,KNN (referencia),8,8,16548.888733333333
++PCA aprendida,wine_quality,0,estándar,10,11,0.4532666666666666
++PCA aprendida,wine_quality,0,+PCA aprendida,10,11,0.4525333333333333
++PCA aprendida,wine_quality,0,selección wf≥0.1·max,10,11,0.4555589743589743
++PCA aprendida,wine_quality,0,+KNN oof,10,11,0.4808820512820513
++PCA aprendida,wine_quality,0,+lineal oof,10,11,0.4655538461538461
++PCA aprendida,wine_quality,0,+KNN oof +lineal oof,10,11,0.48477435897435894
++PCA aprendida,wine_quality,0,+PCA +KNN oof,10,11,0.4762769230769231
++PCA aprendida,wine_quality,0,selección por CV,10,11,0.4525333333333333
+,wine_quality,0,KNN (referencia),11,11,0.548923076923077
++KNN oof +lineal oof,bank8FM,1,estándar,7,8,0.02313255364930839
++KNN oof +lineal oof,bank8FM,1,+PCA aprendida,7,8,0.02289971176973149
++KNN oof +lineal oof,bank8FM,1,selección wf≥0.1·max,7,8,0.023111670915378357
++KNN oof +lineal oof,bank8FM,1,+KNN oof,7,8,0.02295832697314891
++KNN oof +lineal oof,bank8FM,1,+lineal oof,7,8,0.022110124930838082
++KNN oof +lineal oof,bank8FM,1,+KNN oof +lineal oof,7,8,0.022443624422294556
++KNN oof +lineal oof,bank8FM,1,+PCA +KNN oof,7,8,0.022954556399511807
++KNN oof +lineal oof,bank8FM,1,selección por CV,7,8,0.022443624422294556
+,bank8FM,1,KNN (referencia),8,8,0.023759782017900733
++PCA +KNN oof,sulfur,0,estándar,5,6,0.009260155003333333
++PCA +KNN oof,sulfur,0,+PCA aprendida,5,6,0.008893364766666665
++PCA +KNN oof,sulfur,0,selección wf≥0.1·max,5,6,0.009042523616666666
++PCA +KNN oof,sulfur,0,+KNN oof,5,6,0.009639417103333332
++PCA +KNN oof,sulfur,0,+lineal oof,5,6,0.00933564256
++PCA +KNN oof,sulfur,0,+KNN oof +lineal oof,5,6,0.00950134281
++PCA +KNN oof,sulfur,0,+PCA +KNN oof,5,6,0.009346870953333333
++PCA +KNN oof,sulfur,0,selección por CV,5,6,0.009346870953333333
+,sulfur,0,KNN (referencia),6,6,0.009227876333333333
++KNN oof +lineal oof,puma8NH,0,estándar,4,8,2.484510624401953
++KNN oof +lineal oof,puma8NH,0,+PCA aprendida,4,8,2.482473796037429
++KNN oof +lineal oof,puma8NH,0,selección wf≥0.1·max,4,8,2.499429193938161
++KNN oof +lineal oof,puma8NH,0,+KNN oof,4,8,2.5560889038161103
++KNN oof +lineal oof,puma8NH,0,+lineal oof,4,8,2.4779890664320585
++KNN oof +lineal oof,puma8NH,0,+KNN oof +lineal oof,4,8,2.511827717274207
++KNN oof +lineal oof,puma8NH,0,+PCA +KNN oof,4,8,2.5645706446094385
++KNN oof +lineal oof,puma8NH,0,selección por CV,4,8,2.511827717274207
+,puma8NH,0,KNN (referencia),8,8,2.612173864524003
++KNN oof +lineal oof,sulfur,1,estándar,5,6,0.00932964795
++KNN oof +lineal oof,sulfur,1,+PCA aprendida,5,6,0.0091809587
++KNN oof +lineal oof,sulfur,1,selección wf≥0.1·max,5,6,0.009029416049999999
++KNN oof +lineal oof,sulfur,1,+KNN oof,5,6,0.009684708033333336
++KNN oof +lineal oof,sulfur,1,+lineal oof,5,6,0.009651431836666667
++KNN oof +lineal oof,sulfur,1,+KNN oof +lineal oof,5,6,0.009801814743333335
++KNN oof +lineal oof,sulfur,1,+PCA +KNN oof,5,6,0.00937988648
++KNN oof +lineal oof,sulfur,1,selección por CV,5,6,0.009801814743333335
+,sulfur,1,KNN (referencia),6,6,0.008528087133333334
++KNN oof +lineal oof,puma8NH,1,estándar,5,8,2.5197759761391376
++KNN oof +lineal oof,puma8NH,1,+PCA aprendida,5,8,2.5172958689869813
++KNN oof +lineal oof,puma8NH,1,selección wf≥0.1·max,5,8,2.57122877593572
++KNN oof +lineal oof,puma8NH,1,+KNN oof,5,8,2.598175522156225
++KNN oof +lineal oof,puma8NH,1,+lineal oof,5,8,2.5295287256916192
++KNN oof +lineal oof,puma8NH,1,+KNN oof +lineal oof,5,8,2.5516135134499596
++KNN oof +lineal oof,puma8NH,1,+PCA +KNN oof,5,8,2.5846409264279906
++KNN oof +lineal oof,puma8NH,1,selección por CV,5,8,2.5516135134499596
+,puma8NH,1,KNN (referencia),8,8,2.674351406102522
++KNN oof +lineal oof,california,1,estándar,4,8,0.333599587403101
++KNN oof +lineal oof,california,1,+PCA aprendida,4,8,0.31681891789405703
++KNN oof +lineal oof,california,1,selección wf≥0.1·max,4,8,0.32321356419573655
++KNN oof +lineal oof,california,1,+KNN oof,4,8,0.3008598017603361
++KNN oof +lineal oof,california,1,+lineal oof,4,8,0.3353117536983206
++KNN oof +lineal oof,california,1,+KNN oof +lineal oof,4,8,0.30147159163436715
++KNN oof +lineal oof,california,1,+PCA +KNN oof,4,8,0.3011278936208012
++KNN oof +lineal oof,california,1,selección por CV,4,8,0.30147159163436715
+,california,1,KNN (referencia),8,8,0.33614936046511623
++KNN oof +lineal oof,california,0,estándar,6,8,0.33924183129844976
++KNN oof +lineal oof,california,0,+PCA aprendida,6,8,0.3146987337370803
++KNN oof +lineal oof,california,0,selección wf≥0.1·max,6,8,0.32059028567506476
++KNN oof +lineal oof,california,0,+KNN oof,6,8,0.29678494341085293
++KNN oof +lineal oof,california,0,+lineal oof,6,8,0.3296174737564601
++KNN oof +lineal oof,california,0,+KNN oof +lineal oof,6,8,0.29560861038436714
++KNN oof +lineal oof,california,0,+PCA +KNN oof,6,8,0.29632109589793304
++KNN oof +lineal oof,california,0,selección por CV,6,8,0.29560861038436714
+,california,0,KNN (referencia),8,8,0.3175037561369509

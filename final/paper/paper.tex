@@ -1,0 +1,219 @@
+% Versión de congreso (Springer LNCS). Compilar desde esta carpeta:  latexmk -pdf paper.tex
+% Las cifras vienen de ../numeros.tex y las filas de tablas de ../tablas.tex (generadas por ../analisis.py).
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hidelinks]{hyperref}
+\definecolor{azulm}{HTML}{2E6DB4}\definecolor{naranjam}{HTML}{D9731A}
+\definecolor{verdem}{HTML}{2F9467}\definecolor{grism}{HTML}{5A6772}
+\graphicspath{{../figuras/}}
+\input{../numeros.tex}\input{../tablas.tex}
+\setlength{\textfloatsep}{10pt plus 2pt}
+
+\begin{document}
+\title{Forma, relevancia, reducción y síntesis: aprendizaje evolutivo de una representación de atributos más
+pequeña para regresión}
+\titlerunning{Aprendizaje evolutivo de una representación de atributos más pequeña}
+\author{Andrea López Salazar}
+\authorrunning{A. López Salazar}
+\institute{Universidad Carlos III de Madrid, Máster en Ciencia y Tecnología}
+\maketitle
+
+\begin{abstract}
+Proponemos un método que aprende, solo con el conjunto de entrenamiento, una transformación de los atributos con
+\emph{menos} dimensiones que la original y que reduce el error de modelos de regresión. La transformación tiene
+cuatro bloques: un exponente de Yeo-Johnson por atributo (\emph{forma}), un peso por atributo (\emph{relevancia}),
+la eliminación de los atributos cuyo peso queda bajo un umbral (\emph{reducción}) y la adición de componentes
+principales del espacio aprendido hasta $n-1$ atributos (\emph{síntesis}). CMA-ES optimiza los $2n+2$ parámetros,
+umbral incluido, sobre el error de validación cruzada de KNN; la restricción de dimensión se impone en la
+decodificación, así que todo individuo es válido. En \nDatasets{} datasets y \nParticiones{} particiones no usadas
+en el diseño, la representación usa de media el \dimMedia{} de los atributos y el error baja un \cambioKNN{} en KNN
+($p=$\pKNN) y un \cambioRL{} en regresión lineal (no significativo), mientras que en árboles queda igual. Mostramos
+que reducir la dimensión y sintetizar direcciones oblicuas compiten: a los árboles les ayuda añadir dimensiones.
+\keywords{CMA-ES \and reducción de dimensionalidad \and selección de atributos \and Yeo-Johnson \and KNN}
+\end{abstract}
+
+\section{Introducción}
+Dado $(X_t,y_t)$, buscamos un programa $P$ que aprenda una transformación $X\mapsto X'=P(X)$ con
+$\dim X'<\dim X$ tal que un modelo \emph{arbitrario} $M$ entrenado con $X'_t$ tenga menor error absoluto medio en
+validación que entrenado con $X_t$ ($e'<e$), y en la que el criterio para eliminar atributos lo decida el algoritmo
+evolutivo. La dificultad está en ``arbitrario'': KNN depende de la geometría (escalas, atributos irrelevantes, colas
+largas); la regresión lineal (RL), de la forma de la relación con $y$; un árbol es invariante a cualquier
+transformación monótona por atributo y solo cambia si se le dan \emph{direcciones nuevas}.
+
+Contribuciones: (i) una transformación con $2n+2$ parámetros interpretables, optimizada con CMA-ES~\cite{hansen2001},
+en la que el umbral de eliminación forma parte del genoma y la restricción $\dim X'<n$ se cumple por construcción;
+(ii) una evaluación en dos fases (exploración y confirmación con particiones nuevas) en 12 datasets y cuatro familias
+de modelos, con estadística por dataset; (iii) un análisis de la tensión entre reducir y sintetizar.
+
+\section{Trabajos relacionados}
+Ponderar atributos para KNN es una idea clásica~\cite{wettschereck1997}, y los algoritmos genéticos se han usado
+para aprender esos pesos y seleccionar atributos~\cite{raymer2000}. El aprendizaje de métricas generaliza la
+ponderación a una matriz de Mahalanobis completa~\cite{weinberger2009}, con $O(n^2)$ parámetros y sin corregir la
+forma de cada atributo. Las transformaciones de potencia (Yeo-Johnson~\cite{yeo2000}) se ajustan normalmente por
+máxima verosimilitud, buscando normalidad; aquí sus exponentes se eligen para predecir. Añadir componentes
+principales para dar cortes oblicuos a los árboles es la idea de Rotation Forest~\cite{rodriguez2006}. Para la
+búsqueda comparamos CMA-ES con metaheurísticas bioinspiradas~\cite{fister2013}.
+
+\section{Método}
+\subsection{Transformación}
+Para cada atributo $j$, con $\psi(\cdot;\lambda)$ la transformación de Yeo-Johnson y $\mu_j,\sigma_j$ calculadas
+\emph{solo} en el entrenamiento:
+\begin{equation}
+z_j = w_j\,\frac{\psi(x_j;\lambda_j)-\mu_j}{\sigma_j},\qquad S=\{j: w_j\ge\tau\},\qquad
+X'=\big[\,z_S\;\big|\;V_m^\top(z_S-\bar z_S)\,\big],
+\end{equation}
+con $\lambda_j\in[-2,2]$, $w_j,\tau\in[0,3]$, $V_m$ las $m$ primeras componentes principales de $z_S$ en el
+entrenamiento y $m=\mathrm{round}(\rho\,(n-1-|S|))$, $\rho\in[0,1]$. Si $|S|=n$ se elimina además el atributo de
+menor peso, y si $|S|=0$ se conserva el de mayor peso. Así $\dim X'=|S|+m\le n-1$ para \emph{cualquier} $\theta$
+(Fig.~\ref{fig:esquema}). El punto de partida $\theta_0$ es la estandarización ($\lambda=w=\mathbf 1$) con
+$\tau_0=\rho_0=0{,}5$.
+
+\begin{figure}[t]\centering\def\esquemaescala{0.8}
+\input{../esquema_metodo.tex}
+\caption{El programa $P$. CMA-ES ajusta forma, relevancia, el umbral de eliminación $\tau$ y la fracción de síntesis
+$\rho$; la decodificación garantiza $\dim X'\le n-1$.}
+\label{fig:esquema}
+\end{figure}
+
+\begin{proposition}
+Sea $\tilde z=[z,V^\top(z-\bar z)]$ con $V$ ortogonal y \emph{todas} las componentes. Entonces (a)
+$\lVert\tilde z-\tilde z'\rVert^2=2\lVert z-z'\rVert^2$, por lo que KNN obtiene los mismos vecinos; (b) el espacio
+columna de $[\mathbf 1, Z, (Z-\bar z)V]$ coincide con el de $[\mathbf 1,Z]$, por lo que la RL da las mismas
+predicciones.
+\end{proposition}
+\begin{proof}
+(a) $\lVert V^\top(z-z')\rVert=\lVert z-z'\rVert$ por ortogonalidad. (b) $(Z-\bar z)V=ZV-\mathbf 1\bar z^\top V$ es
+combinación lineal de las columnas de $Z$ y de $\mathbf 1$.\qed
+\end{proof}
+La síntesis completa, por tanto, solo cambia a los árboles, pero duplica la dimensión ($P$ sin reducir, que usamos
+como referencia). Con $\dim X'<n$ la síntesis compite por el hueco con los atributos originales y la decide el
+fitness.
+
+\subsection{Fitness y búsqueda}
+El fitness de $\theta=(\lambda,w,\tau,\rho)$ es el MAE de validación cruzada (5 pliegues fijos) de KNN ($k=5$) en
+$X'$, dividido por el MAE del predictor constante (la mediana), sobre una submuestra de hasta 2000 filas del
+entrenamiento. No es derivable (depende de qué puntos son vecinos y tiene escalones en $\tau$) y es ruidoso, lo que
+motiva CMA-ES: selección por rango (invariante a transformaciones monótonas del fitness), recombinación intermedia
+de los $\mu$ mejores (promedia el ruido) y adaptación de la covarianza (aprende qué genes se mueven juntos: el peso y
+el exponente de un atributo, el umbral y los pesos). Optimizamos en $[0,1]^{2n+2}$ reescalado a los límites, con
+$\sigma_0=0{,}2$, población por defecto $4+\lfloor3\ln D\rfloor$ y 1000 evaluaciones. No hay penalización por
+dimensión: CMA-ES decide qué atributos sobran (los de menor peso) y cuántos (el umbral), y eliminar más de los
+necesarios solo compensa si mejora el fitness.
+
+\section{Diseño experimental}
+Usamos 12 datasets de regresión: los dos de la práctica (diabetes y california) y diez de OpenML (concrete, stock,
+space\_ga, sulfur, kin8nm, bank8FM, puma8NH, house\_8L, cpu\_small, wine\_quality) con 6--12 atributos numéricos y
+como mucho 10\,000 filas. Las variantes del método se exploraron con otras semillas; el experimento de confirmación
+usa 5 particiones 70/30 nuevas (semillas 40--44), \nCasos{} casos por modelo. Modelos fijos y sin ajustar: RL, KNN
+($k=5$), árbol de decisión y Random Forest (RF, 100 árboles). Como las particiones de un dataset comparten filas, la
+unidad estadística es el dataset ($n=12$): $e'/e$ se resume con medias geométricas y se contrasta con Wilcoxon y
+corrección de Holm; las comparaciones múltiples, con Friedman y Nemenyi~\cite{demsar2006}.
+
+\section{Resultados}
+\subsection{Resultado principal}
+\begin{table}[tb]\centering\setlength{\tabcolsep}{5pt}
+\caption{$e'/e$ (media geométrica de los 12 datasets). \emph{Datasets}: con $e'<e$; $p$: Wilcoxon por dataset con
+Holm; última columna: cambio de $P$ frente a $X$ estandarizado.}
+\label{tab:principal}
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Modelo & estándar & $P$ sin reducir ($2n$) & $P$ ($<n$) & Datasets & $p$ & vs.\ est.\\\midrule
+\filasPrincipal\bottomrule
+\end{tabular}
+\end{table}
+
+$X'$ usa de media el \dimMedia{} de los atributos y siempre menos de $n$. Con esa representación más pequeña
+(Tabla~\ref{tab:principal}, Fig.~\ref{fig:principal}), KNN mejora \cambioKNN{} frente a $X$ original ($p=$\pKNN,
+\dsKNN{} datasets) y \cambioVsEstKNN{} frente a estandarizar ($p=$\pVsEstKNN). La RL mejora \cambioRL{} sin
+significación, y los árboles quedan igual (árbol \cambioArbol, RF \cambioRF).
+
+\begin{figure}[tb]\centering\includegraphics[width=\textwidth]{principal}
+\caption{Izquierda: $e'/e$ por modelo. Derecha: $e'/e$ de $P$ por dataset (azul: mejora; naranja: empeora).}
+\label{fig:principal}
+\end{figure}
+
+\subsection{Reducción de dimensionalidad}
+\begin{table}[tb]\centering\setlength{\tabcolsep}{6pt}
+\caption{Reducción aprendida (media de 5 particiones): $n$ atributos, $s$ conservados, $m$ componentes
+sintetizadas, $\dim X'$ y umbral $\tau$ (mediana).}
+\label{tab:dimension}\scriptsize
+\begin{tabular}{@{}lccccc@{}}\toprule
+Dataset & $n$ & $s$ & $m$ & $\dim X'$ & $\tau$\\\midrule
+\filasDimension\bottomrule
+\end{tabular}
+\end{table}
+CMA-ES elimina el \fracEliminados{} de los atributos originales (Tabla~\ref{tab:dimension}), con un umbral mediano
+$\tau=$\tauMediana; en puma8NH conserva 2 y añade componentes. Frente a $P$ sin reducir ($2n$), reducir cambia el
+error de KNN \cambioRedKNN{} y el de RL \cambioRedRL{} (no significativos), pero empeora RF un \cambioRedRF{}
+($p=$\pRedRF): pierde las direcciones oblicuas. Dentro del presupuesto de $n-1$, CMA-ES solo sintetiza en el
+\fracConSintesis{} de las particiones y quitar la síntesis apenas cambia nada (RF \cambioSintRF): con un fitness de
+KNN el hueco no se dedica a los árboles. Fijar el umbral fuera de la evolución da resultados parecidos con una regla
+de un error estándar (KNN \cribSelKNN), pero un umbral fijo $w_j<0{,}1$ no reduce en \cribFijoNoReduce{} particiones.
+
+\subsection{Comparativa}
+\begin{table}[tb]\centering\setlength{\tabcolsep}{4pt}
+\caption{Comparativa en las mismas particiones: $e'/e$ (negrita: mejor; $^*$: $P$ mejor con $p<0{,}05$, Wilcoxon por
+dataset con Holm), rango medio de Friedman (1 = mejor) y dimensión relativa $d/n$.}
+\label{tab:comparativa}\scriptsize
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Transformación & R.\ lin. & KNN & Árbol & RF & Rango & $d/n$\\\midrule
+\filasComparativa\bottomrule
+\end{tabular}
+\end{table}
+Comparamos con estandarizar, Yeo-Johnson por máxima verosimilitud, cuantiles, ``solo PCA'' (95\,\% de varianza o \%
+elegido por validación cruzada), añadir la PCA de $X$ estandarizado, MLKR y programación genética (\texttt{gplearn}).
+Las tres transformaciones con mejor rango medio usan $2n$ atributos; \textbf{entre las que no aumentan la dimensión,
+$P$ es la mejor} (rango \rangoP) y la única que reduce sin dañar a los árboles: ``solo PCA'' empeora a RF un
+\compPCAnoventaRF{} (Tabla~\ref{tab:comparativa}, Fig.~\ref{fig:sintesis}).
+
+\begin{figure}[tb]\centering\includegraphics[width=0.7\textwidth]{sintesis_rf}
+\caption{Random Forest en las mismas particiones: a los árboles les ayuda \emph{añadir} direcciones oblicuas ($2n$);
+sustituir los ejes por componentes los empeora.}
+\label{fig:sintesis}
+\end{figure}
+
+\subsection{La búsqueda}
+Cambiando una decisión de la búsqueda de $(\lambda,w)$ cada vez (\nAblCasos{} particiones), los pesos son la pieza principal (quitar
+los exponentes cuesta poco; fijar $w=1$, un \ctrlExp{} en KNN) y la búsqueda gana a la aleatoria (\ctrlAleat) y a
+los pesos por información mutua (\ctrlMI). CMA-ES es robusto a la población inicial y al rango de los exponentes.
+Con el mismo $\theta$, fitness y presupuesto, CMA-ES obtiene el mejor rango de fitness (\rangoCMA) entre siete
+optimizadores, pero las metaheurísticas quedan cerca y solo la búsqueda aleatoria es claramente peor.
+
+\subsection{Coste y caso negativo}
+Una búsqueda tarda \segMediana\,s de mediana por partición y se paga una vez por dataset. En diabetes (309 filas de
+entrenamiento) el fitness mejora pero la validación no de forma fiable: sobreajuste al criterio de búsqueda.
+
+\section{Conclusiones}
+Una transformación con forma, relevancia, reducción y síntesis, aprendida con CMA-ES solo sobre el entrenamiento,
+cumple $\dim X'<n$ con un umbral de eliminación aprendido y reduce el error de KNN de forma concluyente y el de RL en
+media. La restricción de dimensión revela una tensión: lo que ayuda a los árboles es añadir direcciones, no
+quitarlas. Limitaciones: datos numéricos de tamaño medio, sobreajuste con pocos datos y un fitness que solo mira a
+KNN. Queda optimizar para varias familias a la vez, para que el presupuesto de atributos se reparta entre originales
+y componentes.
+
+\begin{thebibliography}{10}
+\bibitem{hansen2001} Hansen, N., Ostermeier, A.: Completely derandomized self-adaptation in evolution strategies.
+Evolutionary Computation \textbf{9}(2), 159--195 (2001)
+\bibitem{yeo2000} Yeo, I.K., Johnson, R.A.: A new family of power transformations to improve normality or symmetry.
+Biometrika \textbf{87}(4), 954--959 (2000)
+\bibitem{wettschereck1997} Wettschereck, D., Aha, D.W., Mohri, T.: A review and empirical evaluation of feature
+weighting methods for a class of lazy learning algorithms. Artif. Intell. Rev. \textbf{11}, 273--314 (1997)
+\bibitem{raymer2000} Raymer, M.L., Punch, W.F., Goodman, E.D., Kuhn, L.A., Jain, A.K.: Dimensionality reduction using
+genetic algorithms. IEEE Trans. Evol. Comput. \textbf{4}(2), 164--171 (2000)
+\bibitem{weinberger2009} Weinberger, K.Q., Saul, L.K.: Distance metric learning for large margin nearest neighbor
+classification. J. Mach. Learn. Res. \textbf{10}, 207--244 (2009)
+\bibitem{rodriguez2006} Rodríguez, J.J., Kuncheva, L.I., Alonso, C.J.: Rotation forest: a new classifier ensemble
+method. IEEE Trans. Pattern Anal. Mach. Intell. \textbf{28}(10), 1619--1630 (2006)
+\bibitem{fister2013} Fister Jr., I., Yang, X.S., Fister, I., Brest, J., Fister, D.: A brief review of
+nature-inspired algorithms for optimization. Elektrotehniški vestnik \textbf{80}(3), 1--7 (2013)
+\bibitem{demsar2006} Demšar, J.: Statistical comparisons of classifiers over multiple data sets. J. Mach. Learn.
+Res. \textbf{7}, 1--30 (2006)
+\end{thebibliography}
+\end{document}

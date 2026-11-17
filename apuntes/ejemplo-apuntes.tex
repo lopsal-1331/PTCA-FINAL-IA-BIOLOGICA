@@ -7,6 +7,26 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+
+
+% ---- Paquetes para las figuras ----
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, positioning, calc, shapes.geometric, decorations.pathreplacing}
+\usepackage{booktabs}
+
+% Si usas babel en español, evita conflictos con las flechas de TikZ:
+% \usepackage[spanish, es-noshorthands]{babel}
+% (o bien añade la librería: \usetikzlibrary{babel})
+
+% ---- Colores ----
+\definecolor{azul}{HTML}{2E5EAA}
+\definecolor{naranja}{HTML}{E07A1F}
+\definecolor{verde}{HTML}{3A8F5C}
+\definecolor{rojo}{HTML}{C0392B}
+\definecolor{gris}{HTML}{8C8C8C}
 \begin{document}
 \makeportada
 \input{secciones/s01}

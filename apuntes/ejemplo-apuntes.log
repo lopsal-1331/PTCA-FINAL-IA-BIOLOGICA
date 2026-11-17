@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.24)  7 NOV 2026 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.24)  13 NOV 2026 18:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/apuntes/ejemplo-apuntes.tex
-(/home/lopsal1331/UNIVERSIDAD/MASTER/IA-BIO/PTCA-FINAL/apuntes/ejemplo-apuntes.tex
+**/home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/apuntes/ejemplo-apuntes.tex
+(/home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/apuntes/ejemplo-apuntes.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (./uc3mmaster.cls
@@ -757,9 +757,54 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 116.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybabel.code.tex
+File: tikzlibrarybabel.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
+ (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks49
+\t@pgfplots@tokb=\toks50
+\t@pgfplots@tokc=\toks51
+\pgfplots@tmpa=\dimen336
+\c@pgfplots@coordindex=\count369
+\c@pgfplots@scanlineindex=\count370
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count371
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count372
+\t@pgfplotstable@a=\toks52
+) (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count373
+ (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen337
+\pgfdecoratedremainingdistance=\dimen338
+\pgfdecoratedinputsegmentcompleteddistance=\dimen339
+\pgfdecoratedinputsegmentremainingdistance=\dimen340
+\pgf@decorate@distancetomove=\dimen341
+\pgf@decorate@repeatstate=\count374
+\pgfdecorationsegmentamplitude=\dimen342
+\pgfdecorationsegmentlength=\dimen343
+)
+\tikz@lib@dec@box=\box89
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count375
+\pgfplots@xmin@reg=\dimen344
+\pgfplots@xmax@reg=\dimen345
+\pgfplots@ymin@reg=\dimen346
+\pgfplots@ymax@reg=\dimen347
+\pgfplots@zmin@reg=\dimen348
+\pgfplots@zmax@reg=\dimen349
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count369
+\l__color_backend_stack_int=\count376
 )
 
 LaTeX Warning: Unused global option(s):
@@ -773,33 +818,33 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `ejemplo-apuntes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Info: Redefining \. on input line 10.
-LaTeX Info: Redefining \% on input line 10.
-LaTeX Info: Redefining \microtypecontext on input line 10.
-Package microtype Info: Applying patch `item' on input line 10.
-Package microtype Info: Applying patch `toc' on input line 10.
-Package microtype Info: Applying patch `eqnum' on input line 10.
-Package microtype Info: Applying patch `footnote' on input line 10.
-Package microtype Info: Applying patch `verbatim' on input line 10.
-LaTeX Info: Redefining \microtypesetup on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
+LaTeX Info: Redefining \microtypecontext on input line 30.
+Package microtype Info: Applying patch `item' on input line 30.
+Package microtype Info: Applying patch `toc' on input line 30.
+Package microtype Info: Applying patch `eqnum' on input line 30.
+Package microtype Info: Applying patch `footnote' on input line 30.
+Package microtype Info: Applying patch `verbatim' on input line 30.
+LaTeX Info: Redefining \microtypesetup on input line 30.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -814,26 +859,20 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 ) (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count370
-\scratchdimen=\dimen336
-\scratchbox=\box89
-\nofMPsegments=\count371
-\nofMParguments=\count372
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count373
-\MPscratchDim=\dimen337
-\MPnumerator=\count374
-\makeMPintoPDFobject=\count375
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count377
+\scratchdimen=\dimen350
+\scratchbox=\box90
+\nofMPsegments=\count378
+\nofMParguments=\count379
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count380
+\MPscratchDim=\dimen351
+\MPnumerator=\count381
+\makeMPintoPDFobject=\count382
+\everyMPtoPDFconversion=\toks54
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
@@ -875,48 +914,51 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count376
-Package hyperref Info: Link coloring ON on input line 10.
+\c@lstlisting=\count383
+Package hyperref Info: Link coloring ON on input line 30.
 (./ejemplo-apuntes.out) (./ejemplo-apuntes.out)
 \@outlinefile=\write4
 \openout4 = `ejemplo-apuntes.out'.
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 11.
- (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
+
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 31.
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 11.
+(Font)              scaled to size 9.49997pt on input line 31.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 11.
+(Font)              scaled to size 13.67995pt on input line 31.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 11.
+(Font)              scaled to size 13.67995pt on input line 31.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 11.
+(Font)              scaled to size 8.54997pt on input line 31.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.54997pt on input line 11.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 11.
+(Font)              scaled to size 8.54997pt on input line 31.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 31.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
-(Font)              scaled to size 8.54997pt on input line 11.
+(Font)              scaled to size 8.54997pt on input line 31.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.99994pt on input line 11.
+(Font)              scaled to size 18.99994pt on input line 31.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.99994pt on input line 11.
+(Font)              scaled to size 18.99994pt on input line 31.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 11.
+(Font)              scaled to size 9.49997pt on input line 31.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 11.
+(Font)              scaled to size 8.54997pt on input line 31.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./secciones/s01.tex
@@ -969,121 +1011,78 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 7.
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ))
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 13.
+(Font)              scaled to size 6.64998pt on input line 33.
  [2] (./secciones/s02.tex
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 48.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 48.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 48.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 48.
-
-Missing character: There is no ² in font pplr7t!
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 48.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 48.
-
-Missing character: There is no ² in font pplr7t!
-Missing character: There is no ² in font pplr7t!
-[3]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 59.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 59.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 59.
-
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 91.
+(Font)              scaled to size 9.37807pt on input line 52.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 91.
+(Font)              scaled to size 7.29405pt on input line 52.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 91.
+(Font)              scaled to size 5.21004pt on input line 52.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 91.
+(Font)              scaled to size 9.37807pt on input line 52.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 91.
+(Font)              scaled to size 7.29405pt on input line 52.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 91.
+(Font)              scaled to size 5.21004pt on input line 52.
+ [3]
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 166.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.49997pt on input line 166.
+ [4] [5] [6]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 12.50409pt on input line 322.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 12.50409pt on input line 322.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 91.
+(hyperref)                removing `math shift' on input line 322.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 91.
+(hyperref)                removing `\theta' on input line 322.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 91.
+(hyperref)                removing `math shift' on input line 322.
 
-[4]
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 117.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 117.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 117.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 117.
-
-Missing character: There is no ² in font pplr7t!
-Missing character: There is no ² in font pplr7t!
-
-LaTeX Warning: Command \textthreesuperior invalid in math mode on input line 123.
-
-
-LaTeX Warning: Command \textthreesuperior invalid in math mode on input line 123.
-
-
-LaTeX Warning: Command \textthreesuperior invalid in math mode on input line 123.
-
-
-LaTeX Warning: Command \textthreesuperior invalid in math mode on input line 123.
-
-Missing character: There is no ³ in font pplr7t!
-Missing character: There is no ³ in font pplr7t!
-[5]) [6] (./secciones/s03.tex
+[7]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [7{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./secciones/s04.tex
-<img/configs.png, id=265, 1004.553pt x 534.798pt>
+ [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 464.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\theta' on input line 464.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 464.
+
+[9{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [10] [11]) [12] (./secciones/s03.tex) [13] (./secciones/s04.tex
+<img/configs.png, id=372, 1004.553pt x 534.798pt>
 File: img/configs.png Graphic file (type png)
 <use img/configs.png>
 Package pdftex.def Info: img/configs.png  used on input line 46.
 (pdftex.def)             Requested size: 414.83868pt x 220.8517pt.
- [8 <./img/configs.png>]) [9] (./secciones/s05.tex
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 22.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 22.
-<img/cambio_mae_particiones.png, id=285, 781.2387pt x 296.307pt>
+ [14 <./img/configs.png>]) [15] (./secciones/s05.tex
+<img/cambio_mae_particiones.png, id=392, 781.2387pt x 296.307pt>
 File: img/cambio_mae_particiones.png Graphic file (type png)
 <use img/cambio_mae_particiones.png>
 Package pdftex.def Info: img/cambio_mae_particiones.png  used on input line 32.
 (pdftex.def)             Requested size: 460.935pt x 174.82413pt.
- [10 <./img/cambio_mae_particiones.png>]
+ [16 <./img/cambio_mae_particiones.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/comparativa_algoritmos.png, id=299, 955.4094pt x 551.4201pt>
+<img/comparativa_algoritmos.png, id=406, 955.4094pt x 551.4201pt>
 File: img/comparativa_algoritmos.png Graphic file (type png)
 <use img/comparativa_algoritmos.png>
 Package pdftex.def Info: img/comparativa_algoritmos.png  used on input line 111.
@@ -1091,7 +1090,7 @@ Package pdftex.def Info: img/comparativa_algoritmos.png  used on input line 111.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11]
+[17]
 Underfull \hbox (badness 1728) in paragraph at lines 133--134
 []|\T1/ppl/m/n/10 (+20) Más di-ver-si-dad, al-go
  []
@@ -1102,20 +1101,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12 <./img/comparativa_algoritmos.png>]
-<img/variantes_hibridas.png, id=321, 860.013pt x 303.534pt>
+[18 <./img/comparativa_algoritmos.png>]
+<img/variantes_hibridas.png, id=427, 860.013pt x 303.534pt>
 File: img/variantes_hibridas.png Graphic file (type png)
 <use img/variantes_hibridas.png>
 Package pdftex.def Info: img/variantes_hibridas.png  used on input line 171.
 (pdftex.def)             Requested size: 368.74939pt x 130.14655pt.
- [13 <./img/variantes_hibridas.png>]
-<img/heatmap_knn_datasets.png, id=330, 626.5809pt x 397.485pt>
+ [19 <./img/variantes_hibridas.png>]
+<img/heatmap_knn_datasets.png, id=437, 626.5809pt x 397.485pt>
 File: img/heatmap_knn_datasets.png Graphic file (type png)
 <use img/heatmap_knn_datasets.png>
 Package pdftex.def Info: img/heatmap_knn_datasets.png  used on input line 213.
 (pdftex.def)             Requested size: 391.79755pt x 248.54881pt.
- [14 <./img/heatmap_knn_datasets.png>]
-<img/efecto_pca_knn.png, id=346, 643.203pt x 325.215pt>
+ [20 <./img/heatmap_knn_datasets.png>]
+<img/efecto_pca_knn.png, id=453, 643.203pt x 325.215pt>
 File: img/efecto_pca_knn.png Graphic file (type png)
 <use img/efecto_pca_knn.png>
 Package pdftex.def Info: img/efecto_pca_knn.png  used on input line 224.
@@ -1128,21 +1127,14 @@ Underfull \hbox (badness 3343) in paragraph at lines 246--246
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[15 <./img/efecto_pca_knn.png>]
-<img/resultados_llr.png, id=360, 987.9309pt x 368.577pt>
+[21 <./img/efecto_pca_knn.png>]
+<img/resultados_llr.png, id=467, 987.9309pt x 368.577pt>
 File: img/resultados_llr.png Graphic file (type png)
 <use img/resultados_llr.png>
 Package pdftex.def Info: img/resultados_llr.png  used on input line 280.
 (pdftex.def)             Requested size: 460.935pt x 171.96579pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[16 <./img/resultados_llr.png>]
-<img/comparativa_modelos.png, id=369, 1004.553pt x 360.6273pt>
+ [22 <./img/resultados_llr.png>]
+<img/comparativa_modelos.png, id=476, 1004.553pt x 360.6273pt>
 File: img/comparativa_modelos.png Graphic file (type png)
 <use img/comparativa_modelos.png>
 Package pdftex.def Info: img/comparativa_modelos.png  used on input line 319.
@@ -1151,13 +1143,13 @@ Package pdftex.def Info: img/comparativa_modelos.png  used on input line 319.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./img/comparativa_modelos.png>]
-<img/diabetes_particiones_knn.png, id=380, 570.933pt x 303.534pt>
+[23 <./img/comparativa_modelos.png>]
+<img/diabetes_particiones_knn.png, id=486, 570.933pt x 303.534pt>
 File: img/diabetes_particiones_knn.png Graphic file (type png)
 <use img/diabetes_particiones_knn.png>
 Package pdftex.def Info: img/diabetes_particiones_knn.png  used on input line 354.
 (pdftex.def)             Requested size: 322.65309pt x 171.54333pt.
- [18 <./img/diabetes_particiones_knn.png>]) [19] (./secciones/s06.tex [20]) [21] 
+ [24 <./img/diabetes_particiones_knn.png>]) [25] (./secciones/s06.tex [26]) [27] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./ejemplo-apuntes.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -1168,21 +1160,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `ejemplo-apuntes.out' has not changed.
-(rerunfilecheck)             Checksum: 747E5B5471B947436D309E293742202B;7272.
+(rerunfilecheck)             Checksum: 0672830B786BDD18EC78423213C4784F;9650.
  ) 
 Here is how much of TeX's memory you used:
- 35632 strings out of 469453
- 695131 string characters out of 5469036
- 1166748 words of memory out of 5000000
- 63143 multiletter control sequences out of 15000+600000
- 718090 words of font info for 424 fonts, out of 8000000 for 9000
+ 47276 strings out of 469453
+ 1070232 string characters out of 5469036
+ 1775254 words of memory out of 5000000
+ 74469 multiletter control sequences out of 15000+600000
+ 736514 words of font info for 523 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 101i,14n,110p,1074b,619s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ejemplo-apuntes.pdf (21 pages, 715293 bytes).
+ 101i,19n,110p,1071b,2267s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on ejemplo-apuntes.pdf (27 pages, 775801 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 399 compressed objects within 4 object streams
- 113 named destinations out of 1000 (max. 500000)
- 103914 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 505 compressed objects within 6 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 124480 words of extra memory for PDF output out of 128383 (max. 10000000)
 

@@ -1,0 +1,233 @@
+% Memoria (3 caras, doble columna) — plantilla uc3mmaster. Compilar desde esta carpeta: latexmk -pdf memoria.tex
+% Todas las cifras vienen de ../numeros.tex y las filas de tablas de ../tablas.tex (generados por ../analisis.py).
+\documentclass[memoria,twocolumn]{uc3mmaster}
+\newgeometry{top=1.7cm,bottom=1.6cm,left=1.45cm,right=1.45cm,headheight=13pt,headsep=8pt,footskip=16pt}
+\setlength{\columnsep}{0.6cm}
+\usetikzlibrary{arrows.meta,positioning}
+\definecolor{azulm}{HTML}{2E6DB4}\definecolor{naranjam}{HTML}{D9731A}
+\definecolor{verdem}{HTML}{2F9467}\definecolor{grism}{HTML}{5A6772}
+\input{../numeros.tex}\input{../tablas.tex}
+\titulo{Aumentar, ponderar y reducir}
+\asignatura{IA con inspiración biológica}
+\autor{Andrea López Salazar}{}
+\graphicspath{{../figuras/}}
+\captionsetup{font=footnotesize,skip=3pt}
+\setlength{\textfloatsep}{7pt plus 2pt}
+\setlength{\floatsep}{5pt plus 2pt}
+\setlength{\dbltextfloatsep}{7pt plus 2pt}
+\titlespacing*{\section}{0pt}{0.9ex plus .3ex}{0.4ex}
+\titlespacing*{\subsection}{0pt}{0.7ex plus .2ex}{0.25ex}
+\setlength{\parskip}{2pt plus 1pt}
+
+\begin{document}
+\twocolumn[{%
+\begin{tikzpicture}[remember picture,overlay,every node/.style={anchor=west,text=white,font=\sffamily}]
+  \fill[uc3mazul] (current page.north west) rectangle ([yshift=-3.0cm]current page.north east);
+  \fill[uc3mcian] ([yshift=-3.0cm]current page.north west) rectangle ([yshift=-3.1cm]current page.north east);
+  \node[font=\sffamily\scriptsize\bfseries] at ([xshift=1.45cm,yshift=-0.75cm]current page.north west)
+     {MEMORIA \textbullet\ IA CON INSPIRACIÓN BIOLÓGICA \textbullet\ MÁSTER EN CIENCIA Y TECNOLOGÍA \textbullet\ UC3M};
+  \node[font=\sffamily\Large\bfseries] at ([xshift=1.45cm,yshift=-1.5cm]current page.north west)
+     {Aumentar, ponderar y reducir: transformación evolutiva de atributos};
+  \node[font=\sffamily\small] at ([xshift=1.45cm,yshift=-2.35cm]current page.north west) {Andrea López Salazar};
+  \node[font=\sffamily\small,anchor=east] at ([xshift=-1.45cm,yshift=-2.35cm]current page.north east)
+     {Curso 2026--2027};
+\end{tikzpicture}
+\vspace*{1.05cm}
+\begin{resultado}[Resumen]\small
+Proponemos un programa $P$ que aprende con CMA-ES, solo con el entrenamiento, una transformación $X\!\to\!X'$ con
+\emph{menos} atributos que $X$. Primero \emph{aumenta}: añade a los atributos (con su forma corregida por Yeo-Johnson)
+sus componentes principales. Después \emph{pondera} cada uno de los $2n$ candidatos y \emph{reduce}: conserva los de
+peso mayor que un umbral que aprende la propia evolución, como mucho $n-1$. El fitness es la media del error de
+KNN, regresión lineal y un árbol. En \nDatasets{} datasets $\times$ \nParticiones{} particiones no usadas para
+diseñarlo, $X'$ usa el \dimMedia{} de los atributos (siempre menos de $n$) y el MAE baja en regresión lineal
+(\cambioRL, significativo) y KNN (\cambioKNN), con reducciones de hasta \maxRL{} y \maxKNN; en los árboles queda
+igual. Tiene el mejor rango medio frente a ocho transformaciones conocidas. Cada decisión del diseño está contrastada
+con una alternativa.
+\end{resultado}
+\vspace{1pt}}]
+
+\section{Problema y requisitos}
+El enunciado pide un programa $P$ que, viendo solo $(X_t,y_t)$, use computación evolutiva para hacer \textbf{síntesis
+de atributos} y \textbf{reducción de la dimensionalidad} ($s<n$), de modo que un modelo \emph{arbitrario} $M$
+entrenado con $X'_t$ tenga menor MAE en validación que con $X_t$ ($e'<e$). La Tabla~\ref{tab:requisitos} resume cómo
+lo cumple $P$. La dificultad está en ``arbitrario'': KNN depende de la geometría (escalas, atributos ruidosos), la
+regresión lineal (RL) de la forma de cada atributo y un árbol, invariante a cualquier cambio monótono de cada
+atributo, solo de las \emph{direcciones} por las que corta. Por eso evaluamos siempre cuatro modelos de familias
+distintas con una única $X'$.
+
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
+\caption{Requisitos del enunciado y cómo los cumple $P$.}
+\label{tab:requisitos}
+\begin{tabular}{@{}p{2.25cm}p{5.75cm}@{}}\toprule
+Requisito & Cómo se cumple\\\midrule
+Solo entrenamiento & forma, componentes, pesos y umbral se ajustan con $X_t$; la validación solo mide\\
+Evolutivo & CMA-ES busca $\theta=(\lambda,v,\tau)$; mejora a búsqueda aleatoria y empata con un AG (Tabla~\ref{tab:ablacion})\\
+Síntesis & componentes principales $z=f(x_1..x_n)$ como candidatos; se usan en el \fracComp{} de las particiones\\
+Reducción $s<n$ & como mucho $n-1$ atributos para \emph{todo} individuo; de media, el \dimMedia\\
+Eliminación evolutiva & CMA-ES aprende el umbral $\tau$ y los pesos: qué se elimina y cuánto\\
+$M$ arbitrario & una sola $X'$ para RL, KNN, árbol y RF; fitness con tres familias\\\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Método}
+\textbf{(1) Forma}: $\tilde x_j=(\psi(x_j;\lambda_j)-\mu_j)/\sigma_j$, con $\psi$ la transformación de Yeo-Johnson,
+$\lambda_j\in[-2,2]$ (corrige colas y asimetrías y admite negativos). \textbf{(2) Aumentar}: $2n$ candidatos
+$c=[\tilde x_1..\tilde x_n\mid p_1..p_n]$, con $p$ las componentes principales de $\tilde x$ estandarizadas: son
+combinaciones lineales de todos los atributos y dan a los árboles cortes oblicuos que no pueden construir solos.
+\textbf{(3) Ponderar}: cada candidato se multiplica por su peso $v_k\in[0,3]$ (para KNN, una métrica aprendida).
+\textbf{(4) Reducir}: se conservan los de $v_k\ge\tau$; si son $n$ o más, los $n-1$ de mayor peso
+(Fig.~\ref{fig:esquema}).
+
+\begin{figure}[t]
+\centering\def\esquemaescala{0.6}
+\input{../esquema.tex}
+\caption{El programa $P$. CMA-ES aprende la forma, un peso por candidato y el umbral de eliminación $\tau$.}
+\label{fig:esquema}
+\end{figure}
+
+\textbf{Individuo}: $\theta=(\lambda,v,\tau)$, $3n+1$ genes reales. La restricción $\dim X'\le n-1$ va en la
+decodificación, así que todo individuo es válido y no hay que repararlo ni descartarlo. CMA-ES decide qué candidatos
+sobreviven (originales o componentes) y cuántos.
+\textbf{Fitness}: media, sobre KNN ($k=5$), RL y un árbol de decisión, del MAE de validación cruzada (5 pliegues
+fijos) dividido por el MAE de predecir la mediana (escala común a los datasets), en hasta 2000 filas del
+entrenamiento. El árbol representa a la familia de RF, que sería diez veces más caro de evaluar.
+\textbf{Búsqueda}: CMA-ES (Tabla~\ref{tab:operadores}). El fitness no es derivable (depende de qué puntos son vecinos
+y de dónde corta el árbol), es ruidoso y tiene genes acoplados (el peso y el exponente de un atributo; el umbral y los
+pesos): selección por rango, recombinación de los mejores y covarianza adaptativa responden a esas tres cosas.
+
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{2.5pt}
+\caption{Operadores evolutivos de la búsqueda (CMA-ES).}
+\label{tab:operadores}
+\begin{tabular}{@{}p{1.6cm}p{6.4cm}@{}}\toprule
+Inicio & $\mathcal N(\theta_0,0{,}2^2I)$ en $[0,1]^D$; $\theta_0$ = estandarizar sin componentes\\
+Población & $\lambda=4+\lfloor3\ln D\rfloor$ por generación (valor por defecto de CMA-ES)\\
+Selección & los $\mu=\lambda/2$ mejores por \emph{rango}: invariante a cambios monótonos del fitness\\
+Recombinación & media ponderada de los $\mu$ seleccionados: promedia el ruido\\
+Mutación & $\mathcal N(m,\sigma^2C)$; $\sigma$ y $C$ adaptativas: aprende genes acoplados\\
+Reemplazo & $(\mu/\mu_w,\lambda)$ generacional; se guarda el mejor evaluado\\
+Restricción & cubo $[0,1]^D$ y $\dim X'<n$ por decodificación\\
+Parada & 1000 evaluaciones (Sec.~\ref{sec:justificacion})\\\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Protocolo}
+Doce datasets de regresión: diabetes y california (práctica) y diez de OpenML (6--12 atributos, $\le$10\,000 filas).
+\textbf{Dos fases}: las decisiones de diseño se tomaron en un \emph{cribado} con semillas de exploración (0--1); el
+método se mide en particiones 70/30 \emph{nuevas} (semillas 40--44), así que el resultado no está ajustado a las
+particiones con que se mide. \textbf{Modelos fijos}: RL, KNN ($k=5$), árbol y RF (100 árboles), por defecto: el
+enunciado fija $M$. \textbf{Estadística por dataset}: las particiones de un dataset comparten filas, así que la unidad
+es el dataset ($n=12$): media geométrica de $e'/e$, Wilcoxon con corrección de Holm y Friedman con Nemenyi (Demšar,
+2006). \textbf{Ningún dataset se excluye.}
+
+\section{Resultados}
+\subsection{¿$e'<e$ con $\dim X'<n$?}
+\begin{figure*}[t]
+\centering\includegraphics[width=0.84\textwidth]{principal}
+\caption{Izquierda: $e'/e$ por modelo con $X$ estandarizado y con $X'=P(X)$. Derecha: $e'/e$ de $P$ por dataset
+(azul: mejora; naranja: empeora).}
+\label{fig:principal}
+\end{figure*}
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2.3pt}
+\caption{$e'/e$ en las particiones de confirmación (media geométrica, 12 datasets). $p$: Wilcoxon por dataset con
+Holm (8 contrastes), frente a $X$ original y frente a $X$ estandarizado.}
+\label{tab:principal}
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Modelo & estándar & $P$ & Datasets & $p$ & vs.\ est. & $p$\\\midrule
+\filasPrincipal\bottomrule
+\end{tabular}
+\end{table}
+Con $\dim X'<n$ (Tabla~\ref{tab:principal}, Fig.~\ref{fig:principal}), el MAE baja en \textbf{RL} un \cambioRL{}
+(\dsRL{} datasets, $p=$\pRL), un \vsEstRL{} más que estandarizando, y en \textbf{KNN} un \cambioKNN{} (\dsKNN), un
+\vsEstKNN{} más que estandarizando. Las mayores reducciones son \maxRL{} (\maxDsRL, RL; el MAE pasa de
+\maxMaeOrig{} a \maxMaeP) y \maxKNN{} (\maxDsKNN, KNN). En el \textbf{árbol} (\cambioArbol) y \textbf{RF}
+(\cambioRF) el error queda igual: un árbol no cambia con la forma ni con los pesos, y con menos de $n$ atributos solo
+puede ganar si alguna dirección oblicua es mejor corte que el atributo original al que sustituye. KNN no es
+significativo tras Holm por un único dataset, \peorDsKNN{} (\peorKNN): sus atributos importan todos por igual y
+reducir obliga a perder información. Sin él (análisis de sensibilidad, no selección), KNN mejora \sinKinKNN{}
+($p=$\pSinKinKNN) y la media de los cuatro modelos pasa de \cambioMedio{} a \sinKinMedio.
+
+\subsection{Reducción y síntesis}
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{$X'$ aprendida (media de 5 particiones): atributos originales y componentes conservados.}
+\label{tab:dimension}
+\begin{tabular}{@{}lcccc@{}}\toprule
+Dataset & $n$ & originales & componentes & $\dim X'$\\\midrule
+\filasDimension\bottomrule
+\end{tabular}
+\end{table}
+$X'$ tiene siempre menos de $n$ atributos: de media \origMedia{} originales y \compMedia{} componentes, el
+\dimMedia{} de $n$ (Tabla~\ref{tab:dimension}). La evolución elimina el \fracElim{} de los atributos originales y
+conserva componentes en el \fracComp{} de las particiones: síntesis y reducción ocurren a la vez.
+
+\subsection{Justificación de cada decisión}\label{sec:justificacion}
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{2.2pt}
+\caption{Cribado de diseño (\cribCasos{} particiones de \emph{exploración}): $e'/e$ por modelo, media, peor modelo y
+segundos por búsqueda.}
+\label{tab:cribado}
+\begin{tabular}{@{}lccccccc@{}}\toprule
+Variante & RL & KNN & Árbol & RF & media & peor & s\\\midrule
+\filasCribado\bottomrule
+\end{tabular}
+\end{table}
+\textbf{Fitness} (Tabla~\ref{tab:cribado}). Con KNN solo, la $X'$ sirve sobre todo a KNN; con tres familias, la
+media de los cuatro modelos mejora (\cribP{} frente a \cribKnn). Exigir que mejoren todos a la vez (minimax: el peor
+modelo, cada uno relativo a sí mismo) empeora (\cribMinimax): el máximo de cuatro estimaciones ruidosas premia el
+ruido. Aprender una $X'$ distinta para cada familia apenas mejora (\cribFamilia) y deja de ser una sola $X'$ para un
+$M$ arbitrario. \textbf{Parada}: apartar un 20\,\% para parar ante el sobreajuste ahorra tiempo (\cribParadaSeg{}
+frente a \cribPSeg\,s) pero empeora (\cribParada, \cribParadaTreinta{} con más paciencia, \cribSeleccion{} usando lo
+apartado solo para elegir): quita datos al fitness para un criterio demasiado ruidoso.
+
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{2.2pt}
+\caption{Ablación (\ablCasos{} particiones de confirmación): cambio del MAE frente a $P$ al cambiar una sola pieza
+($>0$: peor que $P$; $^*$: $p<0{,}05$ por dataset con Holm) y $\dim X'/n$.}
+\label{tab:ablacion}
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Variante & RL & KNN & Árbol & RF & media & $d/n$\\\midrule
+\filasAblacion\bottomrule
+\end{tabular}
+\end{table}
+\textbf{Piezas} (Tabla~\ref{tab:ablacion}). Cambiar una sola pieza, en particiones de confirmación, muestra de dónde
+viene la mejora. La \textbf{forma} es la que más aporta: sin ella ($\lambda=1$), RL empeora \ablSinFormaRL{}
+(significativo). Con el \textbf{fitness solo de KNN}, KNN gana \ablKnnKNN{} pero RL pierde \ablKnnRL{}
+(significativo): una sola $X'$ para un $M$ arbitrario necesita varias familias en el fitness. La \textbf{búsqueda
+evolutiva} importa: con el mismo presupuesto, la búsqueda aleatoria empeora los cuatro modelos (\ablAleat{} de media;
+RL \ablAleatRL, significativo). Un \textbf{AG} llega al mismo resultado que CMA-ES (\ablAG): cuenta buscar con
+selección y variación más que el algoritmo concreto; se prefiere CMA-ES porque adapta sola la mutación, sin tasas
+de cruce y mutación que fijar. \textbf{Sin el límite de $n-1$} el error no cambia de forma apreciable
+(\ablSinLimite), pero $X'$ crece hasta \ablSinLimiteDim{}\,$n$: el límite garantiza la reducción que pide el
+enunciado sin coste medible. \textbf{Sin síntesis} el error tampoco cambia (\ablSinSint): las componentes no dan una
+mejora medible en estos datos, aunque la evolución las conserva en el \fracComp{} de las particiones; se mantienen
+porque el enunciado pide síntesis y no empeoran nada.
+
+\subsection{Comparativa con otras transformaciones}
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2.2pt}
+\caption{Comparativa en las particiones de confirmación: $e'/e$ (negrita: mejor; $^*$: $P$ mejor con $p<0{,}05$,
+Wilcoxon por dataset con Holm), rango medio de Friedman (1 = mejor) y $d/n=\dim X'/n$.}
+\label{tab:comparativa}
+\begin{tabular}{@{}lcccccc@{}}\toprule
+Transformación & R.\ lin. & KNN & Árbol & RF & Rango & $d/n$\\\midrule
+\filasComparativa\bottomrule
+\end{tabular}
+\end{table}
+Frente a estandarizar, Yeo-Johnson por máxima verosimilitud, cuantiles, ``solo PCA'' (95\,\% de varianza o \% por
+validación cruzada), $X$ estandarizado con su PCA, MLKR (aprendizaje de métricas) y programación genética
+(\texttt{gplearn}), $P$ tiene el \textbf{mejor rango medio} (\rangoP; Tabla~\ref{tab:comparativa}), y es la única que
+mejora a RL y KNN a la vez \emph{reduciendo} la dimensión. La programación genética empata en RL pero usa $2n$
+atributos, y ``solo PCA'', la otra forma de reducir, empeora a RF un \compPCARF: sustituir los ejes originales daña a
+los árboles; \emph{elegir} cuáles conservar, no.
+
+\section{Conclusiones}
+\begin{itemize}
+\item \textbf{$P$ cumple todos los requisitos}: solo entrenamiento, búsqueda evolutiva, síntesis y reducción
+($\dim X'<n$ siempre, \dimMedia{} de media) con un criterio de eliminación que aprende CMA-ES.
+\item \textbf{$e'<e$ en RL} (\cambioRL, significativo) \textbf{y KNN} (\cambioKNN), con hasta \maxRL{} y
+\maxKNN; en los árboles el error queda igual.
+\item \textbf{Mejor rango medio} entre nueve transformaciones, y la única que reduce mejorando RL y KNN.
+\item \textbf{Cada decisión está contrastada}: el fitness de tres familias, la síntesis, la forma, el límite de
+$n-1$ y CMA-ES frente a búsqueda aleatoria y un AG; la parada por sobreajuste se probó y se descartó.
+\item \textbf{Límites}: 12 datasets pequeños y numéricos; un caso negativo (\peorDsKNN); la síntesis cumple el requisito pero no reduce el error de forma medible; los árboles no mejoran
+porque lo que les ayuda es \emph{añadir} dimensiones; \segMediana\,s por búsqueda.
+\end{itemize}
+{\footnotesize\textbf{Reproducibilidad.} \texttt{ptca.py} (programa $P$ y estadística), \texttt{experimentos.py},
+\texttt{analisis.py} y \texttt{notebook\_final.ipynb} (todo el proceso, ejecutable).\par}
+\end{document}

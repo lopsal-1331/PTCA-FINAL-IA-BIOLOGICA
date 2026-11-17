@@ -1,0 +1,3 @@
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.prefix, expected /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/final/../.venv
+<frozen site>:101: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/.venv, got /home/lopsal1331/ESTUDIOS/MASTER/IA-BIO/PTCA-FINAL/final/../.venv
+incompletas: []
